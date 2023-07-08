@@ -1,0 +1,22 @@
+.account {
+  margin-top: 10px;
+  width: 250px;
+  height: 38px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  align-items: flex-end;
+}
+
+.balance {
+  display: flex;
+  justify-content: space-between;
+}
+
+.balanceText {
+  align-self: center;
+  font-size: 15px;
+  font-family: "Jost";
+  color: white;
+  margin-right: 5px;
+}

@@ -1,0 +1,16 @@
+.backgroundHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 860px;
+  background-color: #030201;
+  align-items: center;
+  padding-top: 14px;
+}
+
+.blockHeader {
+  height: 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

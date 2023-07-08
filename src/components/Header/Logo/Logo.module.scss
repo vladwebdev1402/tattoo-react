@@ -1,0 +1,23 @@
+.logo {
+  margin-left: 142px;
+  width: 186px;
+  height: 63px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.logoText {
+  color: #bb8c5f;
+  align-self: center;
+}
+
+.logoName {
+  font-size: 30px;
+  font-family: "Forum";
+}
+
+.logoSubName {
+  font-size: 14px;
+  font-family: "Jost";
+}
