@@ -1,0 +1,33 @@
+.slideContent {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slideHeadTxt {
+  font-size: 75px;
+  font-family: "Forum";
+  color: #bb8c5f;
+}
+
+.slideDescTxt {
+  font-size: 25px;
+  font-family: "Jost";
+  color: white;
+}
+
+.slideBtn {
+  width: 275px;
+  height: 70px;
+  background-color: #524336;
+  border: none;
+}
+
+.txtBtn {
+  font-size: 20px;
+  font-family: "Jost";
+  color: white;
+  text-align: center;
+}

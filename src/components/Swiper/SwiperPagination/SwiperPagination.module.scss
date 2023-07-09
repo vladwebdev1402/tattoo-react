@@ -1,0 +1,46 @@
+.swiperPagination {
+  width: 40px;
+  height: 356px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: calc(1216px + (95% - 1216px) / 2);
+  top: 100px;
+}
+
+.swiperBtn {
+  display: flex;
+  height: 86px;
+  width: 40px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.up {
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+.down {
+  align-items: flex-start;
+  margin-top: 5px;
+
+  .swiperBtnIcon {
+    transform: rotate(180deg);
+  }
+}
+
+.swiperBtnBox {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #bb8c5f;
+}
+.swiperBtnIcon {
+  position: absolute;
+  left: 40%;
+  bottom: 20%;
+}

@@ -1,5 +1,5 @@
 .logo {
-  margin-left: 142px;
+  margin-left: 11.68%;
   width: 186px;
   height: 63px;
   display: flex;
@@ -20,4 +20,16 @@
 .logoSubName {
   font-size: 14px;
   font-family: "Jost";
+}
+
+@media screen and (width < 1060px) {
+  .logo {
+    margin-left: 8%;
+  }
+}
+
+@media screen and (width < 920px) {
+  .logo {
+    margin-left: 2%;
+  }
 }

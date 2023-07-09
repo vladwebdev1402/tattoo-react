@@ -9,8 +9,15 @@
 }
 
 .blockHeader {
+  width: 1216px;
   height: 146px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media screen and (width < 1216px) {
+  .blockHeader {
+    width: 100%;
+  }
 }

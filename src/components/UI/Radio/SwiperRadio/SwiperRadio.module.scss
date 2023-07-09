@@ -1,0 +1,45 @@
+.inputRadio {
+  display: none;
+}
+
+.radioBlock {
+  position: relative;
+  width: 16px;
+  height: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #524336;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #bb8c5f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.2s;
+  }
+}
+
+.inputRadio:checked + .radioBlock::after {
+  opacity: 1;
+}
+.inputRadio:checked + .radioBlock::before {
+  border: 1px solid #bb8c5f;
+}

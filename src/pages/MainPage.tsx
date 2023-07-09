@@ -3,6 +3,7 @@ import styles from "./MainPage.module.css";
 import Navbar from "../components/Navbar/Navbar";
 import Header from "../components/Header/Header";
 import Line from "../components/UI/Line/Line";
+import Swiper from "../components/Swiper/Swiper";
 
 const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ const MainPage = () => {
         <Line />
         <Navbar />
       </div>
+      <Swiper />
     </div>
   );
 };

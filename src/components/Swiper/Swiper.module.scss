@@ -1,0 +1,24 @@
+.swiperContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.slideContainer {
+  margin-top: 6.5%;
+  width: 1216px;
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerForImg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../assets/images/bg1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
