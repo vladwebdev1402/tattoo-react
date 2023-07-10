@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import IconSearch from "../../UI/icons/IconSearch";
+import IconSearch from "../../UI/icons/headerAndNavIcons/IconSearch";
 import styles from "./Search.module.scss";
 const Search: FC = () => {
   return (

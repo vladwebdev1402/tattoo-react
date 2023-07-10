@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Account.module.scss";
-import Basket from "../../UI/icons/Basket";
-import Favorites from "../../UI/icons/Favorites";
-import Profile from "../../UI/icons/Profile";
+import Basket from "../../UI/icons/headerAndNavIcons/Basket";
+import Favorites from "../../UI/icons/headerAndNavIcons/Favorites";
+import Profile from "../../UI/icons/headerAndNavIcons/Profile";
+
 const Account: React.FC = () => {
   return (
     <div className={styles.account}>

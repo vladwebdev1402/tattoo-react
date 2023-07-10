@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { buttonProps } from "../../../../types/buttonProps";
-const SlideButton: FC<buttonProps> = ({
+
+const MoreButton: FC<buttonProps> = ({
   nameClassDiv,
   nameClassText,
   onClick,
@@ -16,16 +17,16 @@ const SlideButton: FC<buttonProps> = ({
       >
         <path
           d="M16 17.5V1H259V17.5V26.25V26.8244L259.496 27.1138L273.015 35L259.496 42.8862L259 43.1756V43.75V52.5V69H16V52.5V43.75V43.1756L15.5039 42.8862L1.98463 35L15.5039 27.1138L16 26.8244V26.25V17.5Z"
-          fill="#524336"
+          fill="#EEEEEE"
           stroke="#BB8C5F"
           stroke-width="2"
         />
-        <text x="64" y="41" className={nameClassText}>
-          Смотреть каталог
+        <text x="77" y="40" fill="#BB8C5F" className={nameClassText}>
+          Показать ещё
         </text>
       </svg>
     </div>
   );
 };
 
-export default SlideButton;
+export default MoreButton;

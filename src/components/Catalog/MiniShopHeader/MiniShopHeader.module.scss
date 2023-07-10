@@ -1,0 +1,83 @@
+.catalogHeader {
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-around;
+}
+.catalogHeaderLinkBlock {
+  min-width: 180px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  &:not(.active):hover {
+    .hoverLine {
+      display: block;
+      animation: displayLink 0.5s;
+    }
+
+    .catalogHeaderLink {
+      color: #bb8c5f;
+    }
+  }
+}
+
+.active {
+  .hoverLine {
+    display: block;
+  }
+
+  .catalogHeaderLink {
+    color: #bb8c5f;
+  }
+}
+
+.catalogHeaderLink {
+  display: block;
+  font-size: 30px;
+  font-family: "Jost";
+  font-weight: 500;
+  margin: 0px 2px;
+  color: #3e424b;
+}
+
+.hoverLine {
+  display: none;
+  width: 100%;
+  background-color: #bb8c5f;
+  height: 3px;
+  position: relative;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    width: 6px;
+    height: 6px;
+    background-color: #bb8c5f;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: 0px;
+    width: 6px;
+    height: 6px;
+    background-color: #bb8c5f;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes displayLink {
+  0% {
+    width: 0px;
+    margin-left: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

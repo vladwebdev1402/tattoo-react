@@ -1,5 +1,5 @@
 import React from "react";
-import Line from "../../UI/Line/Line";
+import Line from "../../UI/line/Line";
 import styles from "./Logo.module.scss";
 const Logo: React.FC = () => {
   return (

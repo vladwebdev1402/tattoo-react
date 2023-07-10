@@ -2,16 +2,14 @@ import React from "react";
 import styles from "./LinkRow.module.scss";
 interface LinkProps {
   name: string;
+  active: boolean;
 }
 
-const MyLink: React.FC<LinkProps> = ({ name }) => {
+const MyLink: React.FC<LinkProps> = ({ name, active }) => {
   return (
-    <div className={styles.linkBlock}>
+    <div className={`${styles.linkBlock} ${active ? styles.active : ""}`}>
       <span className={styles.link}>{name}</span>
-      <div className={styles.lineBlock}>
-        <div className={styles.degBlock}></div>
-        <div className={styles.line}></div>
-      </div>
+      <div className={styles.hoverLine}></div>
     </div>
   );
 };

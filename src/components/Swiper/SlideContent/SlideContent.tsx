@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SlideButton from "../../UI/button/SlideButton/SlideButton";
+import SlideButton from "../../UI/button/slideButton/SlideButton";
 import styles from "./SlideContent.module.scss";
 
 interface SlideContentProps {
@@ -11,7 +11,13 @@ const SlideContent: FC<SlideContentProps> = ({ header, desc }) => {
     <div className={styles.slideContent}>
       <span className={styles.slideHeadTxt}>{header}</span>
       <span className={styles.slideDescTxt}>{desc}</span>
-      <SlideButton />
+      <SlideButton
+        nameClassDiv={styles.slideBtn}
+        nameClassText={styles.txtBtn}
+        onClick={() => {
+          console.log("click to catalog");
+        }}
+      />
     </div>
   );
 };

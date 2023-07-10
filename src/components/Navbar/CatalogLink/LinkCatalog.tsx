@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import IconCatalog from "../../UI/icons/IconCatalog";
-import styles from "./Catalog.module.scss";
-const Catalog: FC = () => {
+import IconCatalog from "../../UI/icons/headerAndNavIcons/IconCatalog";
+import styles from "./LinkCatalog.module.scss";
+const LinkCatalog: FC = () => {
   return (
     <div className={styles.catalog}>
       <span className={styles.catalogTxt}>Каталог</span>
@@ -12,4 +12,4 @@ const Catalog: FC = () => {
   );
 };
 
-export default Catalog;
+export default LinkCatalog;

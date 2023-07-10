@@ -13,6 +13,7 @@
 }
 
 .linkBlock {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,31 +27,42 @@
   align-items: center;
 }
 
-.degBlock {
-  height: 6px;
-  width: 6px;
-  transform: rotate(45deg);
-  background-color: #bb8c5f;
-}
-
-.line {
+.hoverLine {
+  display: none;
   width: 2px;
   height: 15px;
   background-color: #bb8c5f;
+  position: relative;
+  margin-left: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    transform: rotate(45deg);
+    background-color: #bb8c5f;
+    left: -100%;
+    top: -5px;
+  }
 }
 
-.linkBlock:hover {
-  cursor: pointer;
+.linkBlock:not(.active):hover {
   .link {
     color: #bb8c5f;
   }
-
-  .lineBlock {
-    display: flex;
+  .hoverLine {
+    display: block;
+    animation: hoverLink 0.2s;
   }
+}
 
-  .line {
-    animation: hoverLink 0.5s;
+.active {
+  .link {
+    color: #bb8c5f;
+  }
+  .hoverLine {
+    display: block;
   }
 }
 

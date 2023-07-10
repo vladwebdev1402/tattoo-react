@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./SwiperRadio.module.scss";
+import styles from "./radio.module.scss";
 
 interface SwiperRadioProps {
   currentRadio: string;
@@ -7,7 +7,7 @@ interface SwiperRadioProps {
   setCurrentRadio: (radio: string) => void;
 }
 
-const SwiperRadio: FC<SwiperRadioProps> = ({
+const MiniShopSwiperRadioButton: FC<SwiperRadioProps> = ({
   currentRadio,
   radio,
   setCurrentRadio,
@@ -15,19 +15,19 @@ const SwiperRadio: FC<SwiperRadioProps> = ({
   const changeRadio = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentRadio(e.target.value);
   };
+
   return (
     <label>
       <input
+        className={styles.inputRadio}
         type="radio"
-        name={radio}
         value={radio}
         checked={currentRadio == radio ? true : false}
         onChange={changeRadio}
-        className={styles.inputRadio}
-      />
+      ></input>
       <div className={styles.radioBlock}></div>
     </label>
   );
 };
 
-export default SwiperRadio;
+export default MiniShopSwiperRadioButton;

@@ -1,6 +1,6 @@
 import React from "react";
-import Call from "../../UI/icons/Call";
-import Mail from "../../UI/icons/Mail";
+import Call from "../../UI/icons/headerAndNavIcons/Call";
+import Mail from "../../UI/icons/headerAndNavIcons/Mail";
 import styles from "./Contacts.module.scss";
 const Contacts = () => {
   return (

@@ -21,13 +21,17 @@
 .slideBtn {
   width: 275px;
   height: 70px;
-  background-color: #524336;
-  border: none;
+  cursor: pointer;
+
+  &:hover {
+    svg path {
+      fill: rgba(82, 67, 54, 1);
+    }
+  }
 }
 
 .txtBtn {
   font-size: 20px;
   font-family: "Jost";
-  color: white;
-  text-align: center;
+  fill: white;
 }
