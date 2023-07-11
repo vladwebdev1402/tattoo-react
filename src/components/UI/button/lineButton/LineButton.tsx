@@ -7,7 +7,7 @@ interface LineButtonProps {
 
 const LineButton: FC<LineButtonProps> = ({ children, onClick }) => {
   return (
-    <div className={styles.btn}>
+    <div className={styles.btn} onClick={onClick}>
       <span className={styles.txtBtn}>{children}</span>
       <div className={styles.line}></div>
     </div>

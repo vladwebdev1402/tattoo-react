@@ -22,6 +22,7 @@ const MainPage = () => {
       <MiniShop />
       <Catalog />
       <Banners />
+      <div style={{ width: "100%", height: "1000px" }}></div>
     </div>
   );
 };

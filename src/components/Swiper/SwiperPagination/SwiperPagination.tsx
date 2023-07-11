@@ -26,11 +26,14 @@ const SwiperPagination: FC<SwiperPagination> = ({
 
   return (
     <div className={styles.swiperPagination}>
-      <div className={`${styles.swiperBtn} ${styles.up}`} onClick={clickUp}>
-        <div className={styles.swiperBtnIcon}>
-          <img src={""}></img>
+      <div className={styles.swiperBtn} onClick={clickUp}>
+        <div className={`${styles.swiperBtnBox} ${styles.upBox}`}>
+          <div
+            className={`${styles.line}  ${styles.up} ${
+              Number(currentRadio) > 0 ? styles.active : ""
+            }`}
+          ></div>
         </div>
-        <div className={styles.swiperBtnBox}></div>
       </div>
 
       {radios.map((radio) => (
@@ -42,11 +45,14 @@ const SwiperPagination: FC<SwiperPagination> = ({
         />
       ))}
 
-      <div className={`${styles.swiperBtn} ${styles.down}`} onClick={clickDown}>
-        <div className={styles.swiperBtnIcon}>
-          <img src={""}></img>
+      <div className={styles.swiperBtn} onClick={clickDown}>
+        <div className={styles.swiperBtnBox}>
+          <div
+            className={`${styles.line}  ${styles.down} ${
+              Number(currentRadio) < radios.length - 1 ? styles.active : ""
+            }`}
+          ></div>
         </div>
-        <div className={styles.swiperBtnBox}></div>
       </div>
     </div>
   );
