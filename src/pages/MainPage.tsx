@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Header from "../components/Header/Header";
 import Line from "../components/UI/line/Line";
 import Swiper from "../components/Swiper/Swiper";
-import MiniShop from "../components/Catalog/MiniShop";
+import MiniShop from "../components/MiniShop/MiniShop";
 
 const MainPage = () => {
   return (

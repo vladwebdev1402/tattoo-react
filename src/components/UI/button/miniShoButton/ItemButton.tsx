@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { buttonProps } from "../../../../types/buttonProps";
+import { buttonProps } from "../../../../types/buttonProps123";
 
 const ItemButton: FC<buttonProps> = ({
   nameClassDiv,

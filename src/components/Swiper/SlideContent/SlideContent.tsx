@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import SlideButton from "../../UI/button/slideButton/SlideButton";
+import DarkButton from "../../UI/button/darkButton/DarkButton";
 import styles from "./SlideContent.module.scss";
 
 interface SlideContentProps {
@@ -11,13 +11,18 @@ const SlideContent: FC<SlideContentProps> = ({ header, desc }) => {
     <div className={styles.slideContent}>
       <span className={styles.slideHeadTxt}>{header}</span>
       <span className={styles.slideDescTxt}>{desc}</span>
-      <SlideButton
-        nameClassDiv={styles.slideBtn}
-        nameClassText={styles.txtBtn}
-        onClick={() => {
-          console.log("click to catalog");
-        }}
-      />
+
+      <div className={styles.btn}>
+        <DarkButton
+          x="64"
+          y="41"
+          onClick={() => {
+            console.log("click to catalog");
+          }}
+        >
+          Смотреть каталог
+        </DarkButton>
+      </div>
     </div>
   );
 };

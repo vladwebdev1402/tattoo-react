@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { minishopData } from "../../data/minishopData";
 import { minishopItem } from "../../types/minishop";
 import styles from "./Catalog.module.scss";
-import MiniShopFooter from "./CatalogFooter/MiniShopFooter";
+import MiniShopFooter from "./MiniShopFooter/MiniShopFooter";
 import MiniShopHeader from "./MiniShopHeader/MiniShopHeader";
 import MiniShopItem from "./MiniShopItem/MiniShopItem";
 const MiniShop: FC = () => {

@@ -1,13 +1,9 @@
 import React, { FC } from "react";
-import { buttonProps } from "../../../../types/buttonProps";
-
-const MoreButton: FC<buttonProps> = ({
-  nameClassDiv,
-  nameClassText,
-  onClick,
-}) => {
+import { IButtonProps } from "../../../../types/buttonProps";
+import styles from "./button.module.scss";
+const LightButton: FC<IButtonProps> = ({ onClick, children, x, y }) => {
   return (
-    <div className={nameClassDiv} onClick={onClick}>
+    <div className={styles.blockBtn} onClick={onClick}>
       <svg
         width="275"
         height="70"
@@ -21,12 +17,12 @@ const MoreButton: FC<buttonProps> = ({
           stroke="#BB8C5F"
           stroke-width="2"
         />
-        <text x="77" y="40" fill="#BB8C5F" className={nameClassText}>
-          Показать ещё
+        <text x={x} y={y} className={styles.txtBtn}>
+          {children}
         </text>
       </svg>
     </div>
   );
 };
 
-export default MoreButton;
+export default LightButton;

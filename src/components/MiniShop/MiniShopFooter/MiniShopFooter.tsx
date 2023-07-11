@@ -1,16 +1,18 @@
 import React, { FC } from "react";
-import MoreButton from "../../UI/button/miniShoButton/MoreButton";
+import LightButton from "../../UI/button/lightButton/LightButton";
 import styles from "./MiniShopFooter.module.scss";
 const MiniShopFooter: FC = () => {
   return (
     <div className={styles.catalogFooter}>
-      <MoreButton
-        nameClassDiv={styles.moreButton}
-        nameClassText={styles.moreBtnTxt}
+      <LightButton
+        x="77"
+        y="42"
         onClick={() => {
-          console.log("click more");
+          console.log("click more footer");
         }}
-      />
+      >
+        Показать ещё
+      </LightButton>
     </div>
   );
 };

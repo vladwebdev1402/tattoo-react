@@ -18,20 +18,13 @@
   color: white;
 }
 
-.slideBtn {
-  width: 275px;
-  height: 70px;
-  cursor: pointer;
-
-  &:hover {
-    svg path {
-      fill: rgba(82, 67, 54, 1);
-    }
-  }
-}
-
 .txtBtn {
   font-size: 20px;
   font-family: "Jost";
   fill: white;
+}
+
+.btn {
+  width: 275px;
+  height: 70px;
 }

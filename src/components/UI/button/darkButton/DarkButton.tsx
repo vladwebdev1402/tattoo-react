@@ -1,12 +1,10 @@
 import React, { FC } from "react";
-import { buttonProps } from "../../../../types/buttonProps";
-const SlideButton: FC<buttonProps> = ({
-  nameClassDiv,
-  nameClassText,
-  onClick,
-}) => {
+import { IButtonProps } from "../../../../types/buttonProps";
+import styles from "./button.module.scss";
+
+const DarkButton: FC<IButtonProps> = ({ onClick, children, x, y }) => {
   return (
-    <div className={nameClassDiv} onClick={onClick}>
+    <div className={styles.blockBtn} onClick={onClick}>
       <svg
         width="275"
         height="70"
@@ -20,12 +18,12 @@ const SlideButton: FC<buttonProps> = ({
           stroke="#BB8C5F"
           stroke-width="2"
         />
-        <text x="64" y="41" className={nameClassText}>
-          Смотреть каталог
+        <text x={x} y={y} className={styles.txtBtn}>
+          {children}
         </text>
       </svg>
     </div>
   );
 };
 
-export default SlideButton;
+export default DarkButton;
