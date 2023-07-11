@@ -1,0 +1,101 @@
+.catalogContainer {
+  width: 1216px;
+  height: 1570px;
+  margin-top: 120px;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+
+.catalogHeader {
+  grid-row: 1/ 2;
+  display: flex;
+  justify-self: center;
+  font-size: 60px;
+  font-family: "Forum";
+}
+
+.itemName {
+  margin-left: 50px;
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #3e424b;
+}
+
+.catalogBody {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 350px);
+  grid-template-columns: 341px 133px 186px 135px 1fr;
+  grid-row: 2 / 3;
+  gap: 20px;
+}
+.item {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  img {
+    position: absolute;
+    z-index: 0;
+  }
+  &:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3;
+    background-position: right;
+    background-image: url(../../assets/images/catalog-category/tattoo-kits.png);
+
+    .itemName {
+      width: 30px;
+    }
+  }
+  &:nth-child(2) {
+    grid-area: 1 / 3 / 2 / 6;
+    background-image: url(../../assets/images/catalog-category/holders.png);
+  }
+  &:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 2;
+    background-image: url(../../assets/images/catalog-category/tattoo-machine.png);
+  }
+  &:nth-child(4) {
+    grid-area: 2 / 2 / 3 / 5;
+    background-image: url(../../assets/images/catalog-category/wires.png);
+    background-position: right;
+    .itemName {
+      width: 30px;
+    }
+  }
+  &:nth-child(5) {
+    grid-area: 2 / 5 / 3 / 6;
+    background-image: url(../../assets/images/catalog-category/paints.png);
+  }
+  &:nth-child(6) {
+    grid-area: 3 / 1 / 4 / 3;
+    background-image: url(../../assets/images/catalog-category/power.png);
+  }
+  &:nth-child(7) {
+    grid-area: 3 / 3 / 4 / 5;
+    background-image: url(../../assets/images/catalog-category/tattoo-tips.png);
+  }
+  &:nth-child(8) {
+    grid-area: 3 / 5 / 4 / 6;
+    background-image: url(../../assets/images/catalog-category/tattoo-needles.png);
+  }
+  &:nth-child(9) {
+    grid-area: 4 / 1 / 5 / 2;
+    background-image: url(../../assets/images/catalog-category/consumables.png);
+  }
+  &:nth-child(10) {
+    grid-area: 4 / 2 / 5 / 4;
+    background-image: url(../../assets/images/catalog-category/accessories.png);
+  }
+  &:nth-child(11) {
+    grid-area: 4 / 4 / 5 / 6;
+    background-image: url(../../assets/images/catalog-category/printers.png);
+  }
+}

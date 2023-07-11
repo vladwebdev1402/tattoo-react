@@ -1,5 +1,5 @@
 import React, { FC, ChangeEvent } from "react";
-import btnIcon from "../../../assets/lineBtnSlide.svg";
+// import btnIcon from "../../../assets/lineBtnSlide.svg";
 import SwiperRadio from "../../UI/Radio/SwiperRadio/SwiperRadio";
 import styles from "./SwiperPagination.module.scss";
 
@@ -28,7 +28,7 @@ const SwiperPagination: FC<SwiperPagination> = ({
     <div className={styles.swiperPagination}>
       <div className={`${styles.swiperBtn} ${styles.up}`} onClick={clickUp}>
         <div className={styles.swiperBtnIcon}>
-          <img src={btnIcon}></img>
+          <img src={""}></img>
         </div>
         <div className={styles.swiperBtnBox}></div>
       </div>
@@ -44,7 +44,7 @@ const SwiperPagination: FC<SwiperPagination> = ({
 
       <div className={`${styles.swiperBtn} ${styles.down}`} onClick={clickDown}>
         <div className={styles.swiperBtnIcon}>
-          <img src={btnIcon}></img>
+          <img src={""}></img>
         </div>
         <div className={styles.swiperBtnBox}></div>
       </div>
