@@ -6,6 +6,7 @@ import Line from "../components/UI/line/Line";
 import Swiper from "../components/Swiper/Swiper";
 import MiniShop from "../components/MiniShop/MiniShop";
 import Catalog from "../components/catalog/Catalog";
+import Banners from "../components/banners/Banners";
 
 const MainPage = () => {
   return (
@@ -20,6 +21,7 @@ const MainPage = () => {
       </div>
       <MiniShop />
       <Catalog />
+      <Banners />
     </div>
   );
 };

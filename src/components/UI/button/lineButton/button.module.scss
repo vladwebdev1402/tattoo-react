@@ -1,0 +1,39 @@
+.btn {
+  min-width: 20px;
+  height: 30px;
+  padding-top: 10xp;
+  cursor: pointer;
+  text-align: center;
+}
+
+.txtBtn {
+  color: #bb8c5f;
+  font-size: 20px;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: #bb8c5f;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #bb8c5f;
+    transform: rotate(45deg);
+    left: 0;
+    bottom: calc(50% - 3px);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #bb8c5f;
+    transform: rotate(45deg);
+    right: 0;
+    bottom: calc(50% - 3px);
+  }
+}
