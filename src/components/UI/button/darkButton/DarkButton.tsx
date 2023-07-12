@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { IButtonProps } from "../../../../types/buttonProps";
 import styles from "./button.module.scss";
 
-const DarkButton: FC<IButtonProps> = ({ onClick, children, x, y }) => {
+const DarkButton: FC<IButtonProps> = ({ onClick, children, x }) => {
   return (
     <div className={styles.blockBtn} onClick={onClick}>
       <svg
@@ -18,7 +18,7 @@ const DarkButton: FC<IButtonProps> = ({ onClick, children, x, y }) => {
           stroke="#BB8C5F"
           stroke-width="2"
         />
-        <text x={x} y={y} className={styles.txtBtn}>
+        <text x={x} y="42" className={styles.txtBtn}>
           {children}
         </text>
       </svg>

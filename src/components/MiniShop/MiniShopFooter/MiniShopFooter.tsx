@@ -6,7 +6,6 @@ const MiniShopFooter: FC = () => {
     <div className={styles.catalogFooter}>
       <LightButton
         x="77"
-        y="42"
         onClick={() => {
           console.log("click more footer");
         }}

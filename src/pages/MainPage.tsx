@@ -7,22 +7,18 @@ import Swiper from "../components/Swiper/Swiper";
 import MiniShop from "../components/MiniShop/MiniShop";
 import Catalog from "../components/catalog/Catalog";
 import Banners from "../components/banners/Banners";
+import AboutCompany from "../components/aboutCompany/AboutCompany";
+import Subscribe from "../components/subscribe/Subscribe";
 
 const MainPage = () => {
   return (
     <div className="page">
-      <div className={styles.backgroundHeader}>
-        <div className={styles.blockHeader}>
-          <Header />
-          <Line />
-          <Navbar />
-        </div>
-        <Swiper />
-      </div>
+      <Swiper />
       <MiniShop />
       <Catalog />
       <Banners />
-      <div style={{ width: "100%", height: "1000px" }}></div>
+      <AboutCompany />
+      <Subscribe />
     </div>
   );
 };

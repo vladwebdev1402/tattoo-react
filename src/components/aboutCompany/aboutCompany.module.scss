@@ -1,0 +1,37 @@
+.aboutContainer {
+  max-width: 1920px;
+  height: 635px;
+  margin-top: 120px;
+  display: flex;
+}
+
+.aboutIm {
+  height: 100%;
+  width: 60%;
+  background-image: url(../../assets/images/about.png);
+  background-repeat: no-repeat;
+}
+
+.aboutInfo {
+  align-self: center;
+  width: 598px;
+  height: 503px;
+  margin-left: 40px;
+}
+
+.aboutInfoHead {
+  display: block;
+  font-size: 50px;
+  font-family: "Forum";
+  color: #bb8c5f;
+}
+
+.aboutInfoDesc {
+  margin-top: 20px;
+  display: block;
+  font-size: 17px;
+  color: #3e424b;
+}
+.btn {
+  margin-top: 40px;
+}

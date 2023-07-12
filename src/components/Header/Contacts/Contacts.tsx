@@ -13,13 +13,13 @@ const Contacts = () => {
           <span className={styles.contactText}>+7 952 552-52-52</span>
         </div>
         <div className={styles.contacsLink}>
-          <a className={styles.link} href="https://www.wildberries.ru/">
+          <a className={styles.link} href="#">
             Viber
           </a>
-          <a className={styles.link} href="https://www.wildberries.ru/">
+          <a className={styles.link} href="#">
             Whats App
           </a>
-          <a className={styles.link} href="https://www.wildberries.ru/">
+          <a className={styles.link} href="#">
             Telegram
           </a>
         </div>

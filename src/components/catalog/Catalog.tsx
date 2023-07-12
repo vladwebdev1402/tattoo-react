@@ -5,7 +5,9 @@ import tattoKits from "../../assets/images/catalog-category/tattoo-kits.png";
 const Catalog: FC = () => {
   return (
     <div className={styles.catalogContainer}>
-      <div className={styles.catalogHeader}>Каталог</div>
+      <div className={styles.catalogHeader}>
+        <span className="txtHeaderBlock">Каталог</span>
+      </div>
       <div className={styles.catalogBody}>
         <CatalogItem
           name="Тату наборы"

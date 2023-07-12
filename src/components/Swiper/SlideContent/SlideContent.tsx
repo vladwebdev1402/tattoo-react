@@ -15,7 +15,6 @@ const SlideContent: FC<SlideContentProps> = ({ header, desc }) => {
       <div className={styles.btn}>
         <DarkButton
           x="64"
-          y="41"
           onClick={() => {
             console.log("click to catalog");
           }}

@@ -9,7 +9,7 @@ const MiniShopSwiper: FC = () => {
       <div
         className={styles.itemImage}
         style={{
-          backgroundImage: `url(${require("../../../assets/images/tattoo-mashine/5.jpg")})`,
+          backgroundImage: `url(${require("../../../assets/images/tattoo-mashine/7.jpg")})`,
         }}
       ></div>
       <MiniShopRadio
