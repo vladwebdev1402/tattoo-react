@@ -3,4 +3,7 @@ export interface minishopItem {
   price: string;
   name: string;
   isFavourite: boolean;
+  img: string[];
 }
+
+

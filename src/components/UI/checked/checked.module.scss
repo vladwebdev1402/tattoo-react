@@ -1,7 +1,7 @@
 .title {
   margin-left: 40px;
   font-size: 13px;
-  color: #3e424b;
+  color: var(--dark-orange);
 }
 
 .input {
@@ -20,7 +20,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 1px solid #bb8c5f;
+    border: 1px solid var(--orange);
     left: 0;
     top: calc(50% - 11px);
     background-position: 2px 3px;
@@ -29,6 +29,6 @@
 }
 
 .input:checked + .title::after {
-  background-color: #bb8c5f;
+  background-color: var(--orange);
   background-image: url(../../../assets/staticIcons/checked.svg);
 }

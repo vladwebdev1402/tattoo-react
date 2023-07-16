@@ -3,7 +3,11 @@ import React, { FC } from "react";
 const NewMarker: FC = () => {
   return (
     <div
-      style={{ position: "absolute", marginTop: "10px", marginLeft: "30px" }}
+      style={{
+        position: "absolute",
+        marginTop: "10px",
+        marginLeft: "30px",
+      }}
     >
       <svg
         width="85"

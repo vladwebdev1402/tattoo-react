@@ -9,7 +9,6 @@ const MyLink: React.FC<LinkProps> = ({ name, active }) => {
   return (
     <div className={`${styles.linkBlock} ${active ? styles.active : ""}`}>
       <span className={styles.link}>{name}</span>
-      <div className={styles.hoverLine}></div>
     </div>
   );
 };

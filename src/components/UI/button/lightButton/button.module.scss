@@ -2,7 +2,7 @@
   cursor: pointer;
   &:hover {
     svg path {
-      fill: #bb8c5f;
+      fill: var(--orange);
     }
     .txtBtn {
       fill: white;
@@ -13,6 +13,6 @@
 .txtBtn {
   font-size: 20px;
   font-family: "Jost";
-  fill: #bb8c5f;
+  fill: var(--orange);
   user-select: none;
 }

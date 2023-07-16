@@ -7,7 +7,7 @@
 
 .inputName {
   font-size: 17px;
-  color: #3e424b;
+  color: var(--dark-orange);
 }
 
 .input {
@@ -16,7 +16,7 @@
   border: none;
   background-color: #f5f5f5;
   font-size: 17px;
-  color: #3e424b;
+  color: var(--dark-orange);
 }
 
 .input:focus {
@@ -24,6 +24,6 @@
 }
 
 .input::placeholder {
-  color: #d0d0d0;
+  color: var(--gray);
   font-size: 17px;
 }

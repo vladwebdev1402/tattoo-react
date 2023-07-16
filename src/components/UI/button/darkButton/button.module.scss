@@ -2,7 +2,7 @@
   cursor: pointer;
   &:hover {
     svg path {
-      fill: #bb8c5f;
+      fill: var(--orange);
     }
   }
 }

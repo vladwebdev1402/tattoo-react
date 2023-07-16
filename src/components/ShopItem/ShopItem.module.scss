@@ -1,0 +1,91 @@
+.item {
+  margin-top: 20px;
+  width: 289px;
+  height: 384px;
+  position: relative;
+  transition: 0.2s;
+  background-color: #f5f5f5;
+}
+
+.itemContainer {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 289px;
+  height: 384px;
+  padding-top: 20px;
+  position: absolute;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.3);
+    height: 454px;
+    top: -25px;
+    z-index: 1;
+
+    .button {
+      opacity: 1;
+    }
+  }
+}
+
+.itemName {
+  margin-left: 30px;
+  margin-top: 6px;
+  width: 229px;
+  min-height: 48px;
+  max-height: 48px;
+  font-size: 17px;
+  font-family: "Jost";
+  color: var(--dark);
+}
+
+.itemPrice {
+  width: 229px;
+  height: 31px;
+  font-family: "Jost";
+  font-size: 24px;
+  margin-left: 30px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.button {
+  position: relative;
+  align-self: center;
+  margin-top: 20px;
+  opacity: 0;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    svg path {
+      fill: var(--orange);
+    }
+    svg text {
+      fill: white;
+    }
+  }
+}
+
+.buttonText {
+  font-size: 20px;
+  font-family: "Jost";
+  fill: var(--orange);
+}
+
+.favorite {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 235px;
+  z-index: 1;
+
+  &:hover {
+    svg path {
+      fill-rule: nonzero;
+      fill: var(--orange);
+    }
+  }
+}

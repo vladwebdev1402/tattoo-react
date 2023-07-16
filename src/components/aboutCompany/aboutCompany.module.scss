@@ -23,14 +23,14 @@
   display: block;
   font-size: 50px;
   font-family: "Forum";
-  color: #bb8c5f;
+  color: var(--orange);
 }
 
 .aboutInfoDesc {
   margin-top: 20px;
   display: block;
   font-size: 17px;
-  color: #3e424b;
+  color: var(--dark);
 }
 .btn {
   margin-top: 40px;

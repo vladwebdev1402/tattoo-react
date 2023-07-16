@@ -1,6 +1,9 @@
 import React, { FC } from "react";
-import { buttonProps } from "../../../../types/buttonProps123";
-
+export interface buttonProps {
+  nameClassDiv: string;
+  nameClassText: string;
+  onClick: () => void;
+}
 const ItemButton: FC<buttonProps> = ({
   nameClassDiv,
   nameClassText,
