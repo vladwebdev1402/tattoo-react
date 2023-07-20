@@ -3,19 +3,41 @@
   align-items: center;
   width: 418px;
   height: 44px;
-  border: 1px solid #bb8c5f;
+  border: 1px solid var(--dark-orange);
 }
 
 .myInput {
-  background-color: #030201;
-  border: none;
-  height: 90%;
-  width: 80%;
-  color: white;
-  font-family: "Jost";
-  font-size: 15px;
+  position: relative;
+  border: 1px solid var(--dark-orange);
+  width: 418px;
+  height: 44px;
+  padding-left: 54px;
+  padding-right: 15px;
+  padding-top: 1px;
+  background-color: transparent;
+  font-size: 17px;
+  color: rgba(250, 246, 242, 1);
+  background-image: url(../../../assets/staticIcons/search.svg);
+  background-repeat: no-repeat;
+  background-position: 22px 50%;
 }
 
 .myInput:focus {
-  outline: none;
+  outline: 1px solid var(--orange);
+}
+
+.myInput::placeholder {
+  font-size: 15px;
+  color: rgba(99, 107, 120, 1);
+}
+
+@media (max-width: 1218px) {
+  .myInput {
+    width: 350px;
+  }
+}
+@media (max-width: 900px) {
+  .myInput {
+    width: 250px;
+  }
 }

@@ -4,11 +4,11 @@
   height: 38px;
   display: flex;
   justify-content: space-between;
-  margin-left: auto;
   align-items: flex-end;
 }
 
 .balance {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -19,4 +19,49 @@
   font-family: "Jost";
   color: white;
   margin-right: 5px;
+}
+
+.countItemsInBasket {
+  position: absolute;
+  background-color: var(--orange);
+  width: 24px;
+  height: 21px;
+  text-align: center;
+  top: -8px;
+  right: -12px;
+  font-size: 14px;
+  color: var(--txt-white);
+}
+
+.iconBtn:hover {
+  path {
+    stroke: var(--orange);
+  }
+  circle {
+    stroke: var(--orange);
+  }
+}
+
+.basket:hover {
+  path {
+    fill: var(--orange);
+  }
+}
+
+@media (max-width: 1020px) {
+  .account {
+    width: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .account {
+    width: 190px;
+  }
+}
+
+@media (max-width: 768px) {
+  .account {
+    align-items: flex-start;
+  }
 }

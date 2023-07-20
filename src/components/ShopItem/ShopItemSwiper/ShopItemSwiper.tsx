@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react";
-import HorizontalSlider from "../../UI/Slider/HorizontalSlider/HorizontalSlider";
 import Slider from "../../UI/Slider/Slider";
 import styles from "./ShopItemSwiper.module.scss";
 

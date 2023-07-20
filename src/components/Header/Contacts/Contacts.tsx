@@ -1,6 +1,6 @@
 import React from "react";
-import Call from "../../UI/icons/headerAndNavIcons/Call";
-import Mail from "../../UI/icons/headerAndNavIcons/Mail";
+import callImg from "../../../assets/staticIcons/call.svg";
+import mailImg from "../../../assets/staticIcons/mail.svg";
 import styles from "./Contacts.module.scss";
 const Contacts = () => {
   return (
@@ -8,7 +8,7 @@ const Contacts = () => {
       <div className={styles.phone}>
         <div className={styles.number}>
           <div className="icon">
-            <Call />
+            <img src={callImg} />
           </div>
           <span className={styles.contactText}>+7 952 552-52-52</span>
         </div>
@@ -26,7 +26,7 @@ const Contacts = () => {
       </div>
       <div className={styles.mail}>
         <div className="icon">
-          <Mail />
+          <img src={mailImg} />
         </div>
         <span className={styles.contactText}>Mr.Driskell@mail.ru</span>
       </div>

@@ -17,7 +17,7 @@ const Brands: FC = () => {
       </div>
       <div className={styles.brandsContainerBody}>
         <Slider
-          spaceBetween={0}
+          spaceBetween={80}
           st__pag__btn__next={`${styles.btnNext} ${styles.btn}`}
           st__pag__btn__prev={`${styles.btnPrev} ${styles.btn}`}
         >

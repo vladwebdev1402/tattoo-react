@@ -1,6 +1,5 @@
 import React, { FC, useState } from "react";
 import { ISlide } from "../../types/swiper";
-import VerticalSlider from "../UI/Slider/VerticalSlider/VerticalSlider";
 import styles from "./Swiper.module.scss";
 import bgImg from "../../assets/images/bg1.png";
 import Slide from "./Slide";

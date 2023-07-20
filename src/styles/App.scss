@@ -9,6 +9,7 @@
   --dark-orange: #524336;
   --dark: #3e424b;
   --gray: #d0d0d0;
+  --txt-white: rgba(250, 246, 242, 1);
 }
 
 button {
@@ -45,35 +46,46 @@ a {
   color: #3e424b;
 }
 
-.divider {
-  position: relative;
+.horizontal-divider {
   width: 100%;
   height: 6px;
-}
-
-.divider .line {
-  height: 1px;
   background-color: var(--dark-orange);
-  position: relative;
+  // clip-path: polygon(
+  //   0px 0px,
+  //   5px 2px,
+  //   calc(100% - 5px) 2px,
+  //   100% 0px,
+  //   100% 100%,
+  //   calc(100% - 5px) 3px,
+  //   5px 3px,
+  //   0px 100%,
+  //   0px 0px
+  // );
+  clip-path: polygon(
+    0px 0px,
+    6px 2px,
+    calc(100% - 6px) 2px,
+    100% 0px,
+    100% 100%,
+    calc(100% - 6px) 4px,
+    6px 4px,
+    0px 100%,
+    0px 0px
+  );
 }
-
-.divider .line::before,
-.divider .line::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+.vertical-divider {
+  height: 100%;
+  width: 5px;
   background-color: var(--dark-orange);
-}
-
-.divider .line::before {
-  left: -6px;
-  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-}
-
-.divider .line::after {
-  right: -6px;
-  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+  clip-path: polygon(
+    0px 0px,
+    5px 0px,
+    3px 5px,
+    3px calc(100% - 5px),
+    5px 100%,
+    0px 100%,
+    2px calc(100% - 5px),
+    2px 5px,
+    0px 0px
+  );
 }

@@ -26,7 +26,7 @@
     position: absolute;
     height: 0px;
     width: 6px;
-    bottom: 0;
+    bottom: -2px;
     right: calc(50% - 3px);
     clip-path: polygon(
       3px 0px,
@@ -57,5 +57,23 @@
   }
   &::after {
     height: 20px;
+  }
+}
+
+@media (max-width: 1218px) {
+  .linkRow {
+    width: 460px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .linkRow {
+    width: 380px;
+  }
+}
+
+@media (max-width: 800px) {
+  .linkRow {
+    width: 360px;
   }
 }

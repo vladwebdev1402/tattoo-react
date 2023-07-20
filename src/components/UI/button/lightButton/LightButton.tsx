@@ -3,7 +3,7 @@ import { IButtonProps } from "../../../../types/buttonProps";
 import styles from "./button.module.scss";
 const LightButton: FC<IButtonProps> = ({ onClick, children, x }) => {
   return (
-    <div className={styles.blockBtn} onClick={onClick}>
+    <button className={styles.blockBtn} onClick={onClick}>
       <svg
         width="275"
         height="70"
@@ -21,7 +21,7 @@ const LightButton: FC<IButtonProps> = ({ onClick, children, x }) => {
           {children}
         </text>
       </svg>
-    </div>
+    </button>
   );
 };
 

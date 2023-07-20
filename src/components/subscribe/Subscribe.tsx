@@ -56,14 +56,16 @@ const Subscribe: FC = () => {
           title="Вы соглашаетесь на обработку ваших персональных данных"
         />
 
-        <DarkButton
-          onClick={() => {
-            console.log(values);
-          }}
-          x="82"
-        >
-          Подписаться
-        </DarkButton>
+        <div>
+          <DarkButton
+            onClick={() => {
+              console.log(values);
+            }}
+            x="82"
+          >
+            Подписаться
+          </DarkButton>
+        </div>
       </div>
       <div className={styles.subscribeImg}></div>
     </div>

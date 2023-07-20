@@ -9,16 +9,17 @@ const Account: React.FC = () => {
     <div className={styles.account}>
       <div className={styles.balance}>
         <span className={styles.balanceText}>37 532 ₽</span>
-        <div className="icon">
+        <button className={`icon ${styles.iconBtn} ${styles.basket}`}>
           <Basket />
-        </div>
+        </button>
+        <div className={styles.countItemsInBasket}>17</div>
       </div>
-      <div className="icon">
+      <button className={`icon ${styles.iconBtn}`}>
         <Favorites />
-      </div>
-      <div className="icon">
+      </button>
+      <button className={`icon ${styles.iconBtn}`}>
         <Profile />
-      </div>
+      </button>
     </div>
   );
 };

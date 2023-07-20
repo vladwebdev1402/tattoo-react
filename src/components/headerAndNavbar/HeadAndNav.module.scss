@@ -1,6 +1,8 @@
 .headContainer {
+  padding-top: 14px;
   min-width: 100%;
   background-color: #050402;
+  height: 168px;
 }
 
 .head {
@@ -9,4 +11,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 1218px) {
+  .head {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headContainer {
+    height: 80px;
+    padding: 20px 18px;
+  }
 }
