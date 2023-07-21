@@ -4,7 +4,7 @@ import MiniShopHeaderLink from "./MiniShopHeaderLink";
 
 const MiniShopHeader: FC = () => {
   return (
-    <div className={styles.catalogHeader}>
+    <div className={styles.miniShopHeader}>
       <MiniShopHeaderLink active={false}>Хиты продаж</MiniShopHeaderLink>
       <MiniShopHeaderLink active={false}>Самые популярные</MiniShopHeaderLink>
       <MiniShopHeaderLink active={true}>Новые поступления</MiniShopHeaderLink>

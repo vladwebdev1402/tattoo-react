@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./Brands.module.scss";
+import styles from "./BrandItem.module.scss";
 interface Props {
   img: string;
   link: string;

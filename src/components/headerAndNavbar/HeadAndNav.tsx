@@ -6,20 +6,8 @@ import { WidthContext } from "../../context";
 import { useContext } from "react";
 const HeadAndNav: FC = () => {
   const width = useContext(WidthContext);
-  if (width > 768) {
-    return (
-      <header className={styles.headContainer}>
-        <div className={styles.head}>
-          <Header />
-          <div
-            className="horizontal-divider"
-            style={{ marginTop: "11px" }}
-          ></div>
-          <Navbar />
-        </div>
-      </header>
-    );
-  } else
+
+  if (width <= 768) {
     return (
       <header>
         <div className={styles.headContainer}>
@@ -27,6 +15,17 @@ const HeadAndNav: FC = () => {
         </div>
       </header>
     );
+  }
+
+  return (
+    <header className={styles.headContainer}>
+      <div className={styles.head}>
+        <Header />
+        <div className="horizontal-divider" style={{ marginTop: "11px" }}></div>
+        <Navbar />
+      </div>
+    </header>
+  );
 };
 
 export default HeadAndNav;

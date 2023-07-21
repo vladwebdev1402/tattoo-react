@@ -1,7 +1,7 @@
 import React, { FC, RefObject, useRef, useState } from "react";
 import st from "./HorizontalSwiper.module.scss";
 
-interface TestSwiperProps {
+interface Props {
   children?: React.ReactNode;
 }
 
@@ -33,7 +33,7 @@ function useStateRef<S>( // создаём ref, отвечающий за пол
   return [state, setState, ref];
 }
 
-const VerticalSwiper: FC<TestSwiperProps> = ({ children }) => {
+const HorizontalSwiper: FC<Props> = ({ children }) => {
   const containerRef = useRef<HTMLUListElement>(null); // ссылка на контейнер-слайдер, в котором находятся все элементы
   const currentOffsetXRef = useRef(0);
   const minOffsetXRef = useRef(0);
@@ -67,6 +67,9 @@ const VerticalSwiper: FC<TestSwiperProps> = ({ children }) => {
     const scrollWidth = containerEl.scrollWidth;
     let curIdx = Math.abs((newOffsetX * array.length) / scrollWidth); //
     setCurrentIdx(Math.round(curIdx));
+
+    if (newOffsetX === getRefValue(minOffsetXRef))
+      setCurrentIdx(array.length - 1);
   };
 
   const onTouchEnd = () => {
@@ -128,4 +131,4 @@ const VerticalSwiper: FC<TestSwiperProps> = ({ children }) => {
   );
 };
 
-export default VerticalSwiper;
+export default HorizontalSwiper;

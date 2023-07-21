@@ -1,10 +1,10 @@
-.catalogHeader {
+.miniShopHeader {
   grid-row: 1 / 2;
   display: flex;
   justify-content: space-around;
 }
-.catalogHeaderLinkBlock {
-  min-width: 180px;
+.miniShopHeaderLinkBlock {
+  min-width: 120px;
   height: 48px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
       animation: displayLink 0.5s;
     }
 
-    .catalogHeaderLink {
+    .miniShopHeaderLink {
       color: var(--orange);
     }
   }
@@ -27,12 +27,12 @@
     display: block;
   }
 
-  .catalogHeaderLink {
+  .miniShopHeaderLink {
     color: #bb8c5f;
   }
 }
 
-.catalogHeaderLink {
+.miniShopHeaderLink {
   display: block;
   font-size: 30px;
   font-family: "Jost";
@@ -79,5 +79,14 @@
 
   100% {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .miniShopHeaderLink {
+    font-size: 20px;
+  }
+  .miniShopHeaderLinkBlock {
+    height: 31px;
   }
 }

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { IBrandItem } from "../../types/brandItem";
-import BrandItem from "./BrandItem";
-import styles from "./Brands.module.scss";
+import { IBrandItem } from "../../../types/brandItem";
+import BrandItem from "../brandItem/BrandItem";
+import styles from "./BrandsBlock.module.scss";
 interface Props {
   brands: IBrandItem[];
 }

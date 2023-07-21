@@ -1,8 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styles from "./Catalog.module.scss";
-import CatalogItem from "./CatalogItem";
-import tattoKits from "../../assets/images/catalog-category/tattoo-kits.png";
+import CatalogItem from "./catalogItem/CatalogItem";
+import { WidthContext } from "../../context";
+import CatalogFooter from "./catalogFooter/CatalogFooter";
 const Catalog: FC = () => {
+  const width = useContext(WidthContext);
   return (
     <div className={styles.catalogContainer}>
       <div className={styles.catalogHeader}>
@@ -54,6 +56,7 @@ const Catalog: FC = () => {
           onClick={() => console.log("clcik Принтеры и планшеты")}
         />
       </div>
+      {width <= 768 && <CatalogFooter />}
     </div>
   );
 };

@@ -178,3 +178,31 @@
     background-position: -700px center;
   }
 }
+
+@media (max-width: 768px) {
+  .slider__pagination {
+    top: 400px;
+    right: 50%;
+    rotate: -90deg;
+  }
+  .pagination__btn__next,
+  .pagination__btn__prev {
+    display: none;
+  }
+  .sliderContainer {
+    width: 100%;
+    height: 536px;
+  }
+  .slide {
+    width: 760px;
+    height: 100%;
+    background-position: -500px center;
+    padding-top: 48px;
+  }
+  .slideContent {
+    width: 476px;
+    .slideHeader {
+      font-size: 60px;
+    }
+  }
+}

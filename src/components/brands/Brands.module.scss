@@ -5,11 +5,17 @@
   margin-top: 120px;
   display: grid;
   grid-template-rows: 85px 1fr;
+  @media (max-width: 768px) {
+    width: 728px;
+  }
 }
 
 .brandsContainerHead {
   padding: 0px 80px;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 0px 0px;
+  }
 }
 .brandsLink {
   font-size: 25px;
@@ -17,9 +23,15 @@
   position: absolute;
   right: 80px;
   bottom: 0px;
+  @media (max-width: 768px) {
+    right: 0px;
+  }
 }
 .brandsContainerBody {
   width: 1376px;
+  @media (max-width: 768px) {
+    width: 728px;
+  }
 }
 
 .btn {
@@ -27,89 +39,15 @@
   width: 50px;
   border: 2px solid var(--orange);
 }
-.brandsBlock {
-  width: 1216px;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.brands {
-  display: grid;
-  grid-template-columns: 232px 250px 250px 250px 232px;
-  grid-template-rows: repeat(2, 1fr);
-  width: 1216px;
-  height: 100%;
-}
-
-.brandItem {
-  position: relative;
-  border: 1px solid var(--gray);
-  border-top: none;
-  padding: 20px;
-  padding-top: 0px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: -3px;
-    top: 0;
-    width: 6px;
-    height: 7px;
-    background-color: var(--gray);
-    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
-  }
-}
-
-.brandItem:nth-child(1) {
-  border-left: none;
-  padding-left: 0px;
-  &::after {
-    top: calc(100% - 3px);
-    rotate: -90deg;
-    width: 6px;
-    height: 7px;
-  }
-}
-.brandItem:nth-child(5) {
-  border-right: none;
-  padding-right: 0px;
-}
-.brandItem:nth-child(6) {
-  border-left: none;
-  padding-left: 0px;
-}
-.brandItem:nth-child(n + 6) {
-  border-bottom: none;
-  padding-bottom: 0px;
-  padding-top: 20px;
-  &::after {
-    left: calc(100% - 2px);
-    top: calc(100% - 7px);
-    rotate: 180deg;
-  }
-}
-
-.brandItem:nth-child(10) {
-  border-right: none;
-  padding-right: 0px;
-  &::after {
-    top: -4px;
-    rotate: 90deg;
-    width: 6px;
-    height: 7px;
-  }
-}
-
-.brandImg {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-
 .slide {
   height: 220px;
   width: 1216px;
   margin-left: 80px;
+  @media (max-width: 768px) {
+    width: 728px;
+    margin-left: 0px;
+    margin-right: 80px;
+  }
 }
 .btn {
   top: calc(50% - 25px);
@@ -130,6 +68,10 @@
 
   &:hover {
     box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 .btnPrev {

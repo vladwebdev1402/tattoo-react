@@ -4,8 +4,10 @@ import styles from "./Swiper.module.scss";
 import bgImg from "../../assets/images/bg1.png";
 import Slide from "./Slide";
 import Slider from "../UI/Slider/Slider";
-
+import { useContext } from "react";
+import { WidthContext } from "../../context";
 const HeaderSlider: FC = () => {
+  const width = useContext(WidthContext);
   const slides: ISlide[] = [
     {
       id: "0",
@@ -16,28 +18,28 @@ const HeaderSlider: FC = () => {
     },
     {
       id: "1",
-      header: "Лучшие товары в мире татуировок 1",
+      header: "Лучшие товары в мире татуировок",
       description:
         "Оборудование и расходники для самых ярких и качественных работ",
       img: bgImg,
     },
     {
       id: "2",
-      header: "Лучшие товары в мире татуировок 2",
+      header: "Лучшие товары в мире татуировок",
       description:
         "Оборудование и расходники для самых ярких и качественных работ",
       img: bgImg,
     },
     {
       id: "3",
-      header: "Лучшие товары в мире татуировок 3",
+      header: "Лучшие товары в мире татуировок",
       description:
         "Оборудование и расходники для самых ярких и качественных работ",
       img: bgImg,
     },
     {
       id: "4",
-      header: "Лучшие товары в мире татуировок 4",
+      header: "Лучшие товары в мире татуировок",
       description:
         "Оборудование и расходники для самых ярких и качественных работ",
       img: bgImg,
@@ -47,7 +49,8 @@ const HeaderSlider: FC = () => {
   return (
     <div className={styles.sliderContainer}>
       <Slider
-        direction="column"
+        direction={width <= 768 ? "row" : "column"}
+        spaceBetween={0}
         st__pagination={styles.slider__pagination}
         st__pag__btn__next={styles.pagination__btn__next}
         st__pag__btn__prev={styles.pagination__btn__prev}

@@ -3,7 +3,7 @@ import LightButton from "../../UI/button/lightButton/LightButton";
 import styles from "./MiniShopFooter.module.scss";
 const MiniShopFooter: FC = () => {
   return (
-    <div className={styles.catalogFooter}>
+    <div className={styles.miniShopFooter}>
       <LightButton
         x="77"
         onClick={() => {

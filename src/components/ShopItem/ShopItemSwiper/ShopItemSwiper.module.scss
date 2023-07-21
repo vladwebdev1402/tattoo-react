@@ -4,7 +4,7 @@
 }
 
 .itemImage {
-  background-size: cover;
+  object-fit: fill;
   background-color: #f4f4f4;
 }
 
@@ -32,4 +32,13 @@
 
 .active {
   background-color: var(--dark-orange);
+}
+
+@media (max-width: 768px) {
+  .itemImage {
+    width: 229px;
+  }
+  .slider__pagination {
+    display: none;
+  }
 }

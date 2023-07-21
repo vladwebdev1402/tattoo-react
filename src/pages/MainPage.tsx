@@ -12,12 +12,12 @@ const MainPage = () => {
   return (
     <div className="page">
       <HeaderSlider />
-      {/* <MiniShop />
+      <MiniShop />
       <Catalog />
       <Banners />
       <Brands />
       <AboutCompany />
-      <Subscribe /> */}
+      <Subscribe />
     </div>
   );
 };

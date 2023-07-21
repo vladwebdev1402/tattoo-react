@@ -1,14 +1,14 @@
 import { IBrandItem } from "../types/brandItem";
 import { useMemo } from "react";
 
-export const useBrands = (brands: IBrandItem[]) => {
+export const useBrands = (brands: IBrandItem[], countInGroup: number) => {
     const brandsGroup = useMemo(() => {
       let groups: Array<Array<IBrandItem>> = [];
-      for (let i = 0; i < brands.length; i+=10) {
-        groups.push(brands.slice(i, i+10));
+      for (let i = 0; i < brands.length; i+=countInGroup) {
+        groups.push(brands.slice(i, i+countInGroup));
       }
       return groups;
-    }, [brands]);
+    }, [brands, countInGroup]);
   
     return brandsGroup as Array<Array<IBrandItem>>;
   };

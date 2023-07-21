@@ -14,3 +14,18 @@
   padding-bottom: 20px;
   transform-style: preserve-3d;
 }
+
+@media (max-width: 768px) {
+  .catalogContainer {
+    grid-template-rows: 63px 1fr;
+    width: 727px;
+    height: 467px;
+  }
+
+  .catalogItems {
+    height: 467px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding-bottom: 0px;
+  }
+}

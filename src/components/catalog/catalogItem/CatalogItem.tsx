@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./Catalog.module.scss";
+import styles from "./CatalogItem.module.scss";
 interface CatalogItemProps {
   name: string;
   onClick: () => void;

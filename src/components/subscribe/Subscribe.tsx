@@ -36,27 +36,31 @@ const Subscribe: FC = () => {
           Подпишитесь на новостную рассылку с самыми интересными новостями
           и акциями
         </span>
-        <MyInput
-          onChange={changeMail}
-          value={values.mail}
-          width={392}
-          title="Эл. почта"
-          placeholder="Figur@mail.ru"
-        />
-        <MyInput
-          onChange={changeName}
-          value={values.name}
-          width={392}
-          title="Имя"
-          placeholder="Введите имя"
-        />
-        <MyChecked
-          checked={checked}
-          onChange={changeChecked}
-          title="Вы соглашаетесь на обработку ваших персональных данных"
-        />
+        <div className={styles.input}>
+          <MyInput
+            onChange={changeMail}
+            value={values.mail}
+            title="Эл. почта"
+            placeholder="Figur@mail.ru"
+          />
+        </div>
+        <div className={styles.input}>
+          <MyInput
+            onChange={changeName}
+            value={values.name}
+            title="Имя"
+            placeholder="Введите имя"
+          />
+        </div>
+        <div className={styles.checked}>
+          <MyChecked
+            checked={checked}
+            onChange={changeChecked}
+            title="Вы соглашаетесь на обработку ваших персональных данных"
+          />
+        </div>
 
-        <div>
+        <div className={styles.btn}>
           <DarkButton
             onClick={() => {
               console.log(values);

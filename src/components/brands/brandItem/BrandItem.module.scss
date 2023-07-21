@@ -1,0 +1,103 @@
+.brandItem {
+  position: relative;
+  border: 1px solid var(--gray);
+  border-top: none;
+  padding: 20px;
+  padding-top: 0px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 0;
+    width: 6px;
+    height: 7px;
+    background-color: var(--gray);
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+  }
+
+  &:nth-child(1) {
+    border-left: none;
+    padding-left: 0px;
+    &::after {
+      top: calc(100% - 3px);
+      rotate: -90deg;
+      width: 6px;
+      height: 7px;
+    }
+  }
+
+  &:nth-child(5) {
+    border-right: none;
+    padding-right: 0px;
+  }
+  &:nth-child(6) {
+    border-left: none;
+    padding-left: 0px;
+  }
+  &:nth-child(n + 6) {
+    border-bottom: none;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    &::after {
+      left: calc(100% - 2px);
+      top: calc(100% - 7px);
+      rotate: 180deg;
+    }
+  }
+
+  &:nth-child(10) {
+    border-right: none;
+    padding-right: 0px;
+    &::after {
+      top: -4px;
+      rotate: 90deg;
+      width: 6px;
+      height: 7px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &:nth-child(3) {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    &:nth-child(n + 4) {
+      padding-top: 20px;
+      &::after {
+        rotate: 180deg;
+        left: calc(100% - 2px);
+        top: 80%;
+      }
+    }
+
+    &:nth-child(4) {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    &:nth-child(5) {
+      padding-right: 20px;
+      border-right: 1px solid var(--gray);
+    }
+
+    &:nth-child(6) {
+      padding-left: 20px;
+      padding-right: 0px;
+      border-right: none;
+      border-left: 1px solid var(--gray);
+      &::after {
+        rotate: 90deg;
+        left: calc(100% - 5px);
+        top: -3px;
+      }
+    }
+  }
+}
+
+.brandImg {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}

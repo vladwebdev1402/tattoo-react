@@ -5,7 +5,7 @@ import HeadAndNav from "./components/headerAndNavbar/HeadAndNav";
 import Footer from "./components/Footer/Footer";
 import { WidthContext } from "./context/index";
 function App() {
-  const [width, setWidth] = useState<number>(0);
+  const [width, setWidth] = useState<number>(1920);
 
   const handleResize = () => {
     setWidth(window.innerWidth);
@@ -23,9 +23,8 @@ function App() {
     <WidthContext.Provider value={width}>
       <div className="App">
         <HeadAndNav />
-        {width}
-        {/* <MainPage /> */}
-        {/* <Footer /> */}
+        <MainPage />
+        <Footer />
       </div>
     </WidthContext.Provider>
   );
