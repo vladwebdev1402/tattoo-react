@@ -10,7 +10,7 @@ import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
 const MiniShop: FC = () => {
   const [items, setItems] = useState<minishopItem[]>(minishopData);
   const width = useContext(WidthContext);
-  if (width <= 768) {
+  if (width <= 1024) {
     return (
       <div className={styles.catalogContainer}>
         <MiniShopHeader />

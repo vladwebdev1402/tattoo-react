@@ -5,7 +5,11 @@
   margin-top: 120px;
   display: grid;
   grid-template-rows: 85px 1fr;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    width: 985px;
+  }
+
+  @media (max-width: 1024px) {
     width: 728px;
   }
 }
@@ -13,14 +17,19 @@
   margin: 0 auto;
   width: 1216px;
   height: 100%;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    width: 985px;
+  }
+
+  @media (max-width: 1024px) {
     width: 728px;
   }
 }
 .brandsContainerHead {
   padding: 0px 80px;
   position: relative;
-  @media (max-width: 768px) {
+
+  @media (max-width: 1300px) {
     padding: 0px 0px;
   }
 }
@@ -30,13 +39,16 @@
   position: absolute;
   right: 80px;
   bottom: 0px;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     right: 0px;
   }
 }
 .brandsContainerBody {
   width: 1376px;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    width: 985px;
+  }
+  @media (max-width: 1024px) {
     width: 728px;
   }
 }
@@ -50,9 +62,11 @@
   height: 220px;
   width: 1216px;
   margin-right: 80px;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    width: 985px;
+  }
+  @media (max-width: 1024px) {
     width: 728px;
-    margin-right: 80px;
   }
 }
 .btn {
@@ -76,7 +90,7 @@
     box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     display: none;
   }
 }

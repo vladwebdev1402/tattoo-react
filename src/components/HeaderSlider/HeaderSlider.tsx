@@ -49,7 +49,7 @@ const HeaderSlider: FC = () => {
   return (
     <div className={styles.sliderContainer}>
       <Slider
-        direction={width <= 768 ? "row" : "column"}
+        direction={width <= 1024 ? "row" : "column"}
         spaceBetween={0}
         st__pagination={styles.slider__pagination}
         st__pag__btn__next={styles.pagination__btn__next}

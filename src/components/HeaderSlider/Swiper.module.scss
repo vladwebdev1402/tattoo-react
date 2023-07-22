@@ -173,13 +173,7 @@
   }
 }
 
-@media (max-width: 900px) {
-  .slide {
-    background-position: -700px center;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .slider__pagination {
     top: 400px;
     right: 50%;
@@ -194,7 +188,7 @@
     height: 536px;
   }
   .slide {
-    width: 760px;
+    width: 1024px;
     height: 100%;
     background-position: -500px center;
     padding-top: 48px;
@@ -204,5 +198,17 @@
     .slideHeader {
       font-size: 60px;
     }
+  }
+}
+
+@media (max-width: 867px) {
+  .slide {
+    width: 867px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    width: 768px;
   }
 }

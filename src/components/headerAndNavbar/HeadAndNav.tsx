@@ -7,7 +7,7 @@ import { useContext } from "react";
 const HeadAndNav: FC = () => {
   const width = useContext(WidthContext);
 
-  if (width <= 768) {
+  if (width <= 1024) {
     return (
       <header>
         <div className={styles.headContainer}>

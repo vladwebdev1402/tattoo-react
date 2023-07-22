@@ -47,20 +47,7 @@
     fill: var(--orange);
   }
 }
-
-@media (max-width: 1020px) {
-  .account {
-    width: 200px;
-  }
-}
-
-@media (max-width: 800px) {
-  .account {
-    width: 190px;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .account {
     align-items: flex-start;
     width: 250px;

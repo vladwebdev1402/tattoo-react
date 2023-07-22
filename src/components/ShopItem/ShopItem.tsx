@@ -20,7 +20,7 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
         <div className={styles.itemName}>{item.name}</div>
         <div className={styles.itemPrice}>{item.price} ₽</div>
 
-        {width <= 768 ? (
+        {width <= 1024 ? (
           <div className={styles.button}>
             <SmallLightButton
               onClick={() => {

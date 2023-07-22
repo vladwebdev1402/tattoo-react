@@ -56,7 +56,7 @@ const Catalog: FC = () => {
           onClick={() => console.log("clcik Принтеры и планшеты")}
         />
       </div>
-      {width <= 768 && <CatalogFooter />}
+      {width <= 1024 && <CatalogFooter />}
     </div>
   );
 };

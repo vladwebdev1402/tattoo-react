@@ -1,9 +1,11 @@
 .aboutContainer {
-  max-width: 1920px;
+  max-width: 1568px;
   height: 635px;
   margin-top: 120px;
   display: flex;
-  @media (max-width: 768px) {
+  padding-right: 15px;
+  @media (max-width: 1300px) {
+    padding-right: 0px;
     flex-direction: column;
     min-height: 953px;
   }
@@ -14,7 +16,8 @@
   width: 60%;
   background-image: url(../../assets/images/about.png);
   background-repeat: no-repeat;
-  @media (max-width: 768px) {
+  background-size: cover;
+  @media (max-width: 1300px) {
     width: 100%;
   }
 }
@@ -24,7 +27,7 @@
   width: 598px;
   height: 503px;
   margin-left: 40px;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     width: 728px;
     margin-top: 40px;
     margin-left: auto;
@@ -47,7 +50,7 @@
 }
 .btn {
   margin-top: 40px;
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     margin-left: calc(50% - 275px / 2);
   }
 }

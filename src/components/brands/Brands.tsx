@@ -15,6 +15,8 @@ const Brands: FC = () => {
   useEffect(() => {
     if (width <= 768) {
       setCountInGroup(6);
+    } else if (width <= 1300) {
+      setCountInGroup(8);
     } else setCountInGroup(10);
   }, [width]);
 

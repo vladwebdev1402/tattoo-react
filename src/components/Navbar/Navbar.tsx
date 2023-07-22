@@ -7,7 +7,7 @@ import Account from "../Header/Account/Account";
 import { WidthContext } from "../../context";
 const Navbar: React.FC = () => {
   const width = useContext(WidthContext);
-  if (width <= 768) {
+  if (width <= 1024) {
     return (
       <div className={styles.down}>
         <LinkCatalog />

@@ -26,6 +26,7 @@ function App() {
         <MainPage />
         <Footer />
       </div>
+      {width}
     </WidthContext.Provider>
   );
 }

@@ -10,7 +10,7 @@ const RightFooter: FC = () => {
   const width = useContext(WidthContext);
   return (
     <div className={styles.rightFooter}>
-      {width <= 768 ? (
+      {width <= 1024 ? (
         <div className="horizontal-divider"></div>
       ) : (
         <div className="vertical-divider"></div>

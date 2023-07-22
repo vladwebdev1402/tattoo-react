@@ -1,7 +1,7 @@
 .rightFooter {
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     margin-top: 75px;
   }
@@ -15,7 +15,7 @@
   height: 140px;
   margin-left: 102px;
   margin-top: 129px;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     margin-left: 20px;
     margin-top: 70px;
