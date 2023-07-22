@@ -29,6 +29,7 @@ const Brands: FC = () => {
           spaceBetween={80}
           st__pag__btn__next={`${styles.btnNext} ${styles.btn}`}
           st__pag__btn__prev={`${styles.btnPrev} ${styles.btn}`}
+          st__slider__container={`${styles.sliderContainer}`}
         >
           {groupBrands.map((group) => (
             <li className={styles.slide}>

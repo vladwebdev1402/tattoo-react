@@ -9,7 +9,14 @@
     width: 728px;
   }
 }
-
+.sliderContainer {
+  margin: 0 auto;
+  width: 1216px;
+  height: 100%;
+  @media (max-width: 768px) {
+    width: 728px;
+  }
+}
 .brandsContainerHead {
   padding: 0px 80px;
   position: relative;
@@ -42,10 +49,9 @@
 .slide {
   height: 220px;
   width: 1216px;
-  margin-left: 80px;
+  margin-right: 80px;
   @media (max-width: 768px) {
     width: 728px;
-    margin-left: 0px;
     margin-right: 80px;
   }
 }

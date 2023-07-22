@@ -31,8 +31,8 @@ export const useSlider = (
   };
   const getContainer = () => {
     return direction === "row"
-      ? containerRef.current!.clientWidth - spaceBetween
-      : containerRef.current!.clientHeight  - spaceBetween;
+      ? containerRef.current!.clientWidth + spaceBetween
+      : containerRef.current!.clientHeight + spaceBetween;
   };
   const getCursorPos = (e: MouseEvent | React.MouseEvent<HTMLDivElement>) => {
     return direction === "row" ? e.clientX : e.clientY;
