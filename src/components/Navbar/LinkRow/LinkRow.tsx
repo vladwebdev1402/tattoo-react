@@ -4,11 +4,11 @@ import styles from "./LinkRow.module.scss";
 const LinkRow: FC = () => {
   return (
     <div className={styles.linkRow}>
-      <MyLink name={"Промокоды"} active={false} />
-      <MyLink name={"Скидки"} active={false} />
-      <MyLink name={"Помощь"} active={false} />
-      <MyLink name={"О нас"} active={true} />
-      <MyLink name={"Контакты"} active={false} />
+      <MyLink name={"Промокоды"} to="/promo" />
+      <MyLink name={"Скидки"} to="/discount" />
+      <MyLink name={"Помощь"} to="/help" />
+      <MyLink name={"О нас"} to="/about" />
+      <MyLink name={"Контакты"} to="/contacts" />
     </div>
   );
 };

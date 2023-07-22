@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   return (
     <div className={styles.up}>
       <Contacts />
-      <a className={styles.logo} href="#">
+      <a className={styles.logo} href="/">
         <img src={logoImg} alt="logo" />
       </a>
       <Account />

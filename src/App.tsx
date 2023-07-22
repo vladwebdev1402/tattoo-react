@@ -4,7 +4,24 @@ import HeadAndNav from "./components/headerAndNavbar/HeadAndNav";
 import Footer from "./components/Footer/Footer";
 import { WidthContext } from "./context/index";
 import MainPage from "./pages/MainPage/MainPage";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+} from "react-router-dom";
 import PromocodesPage from "./pages/PromocodesPage/PromocodesPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainPage />,
+  },
+  {
+    path: "/promo",
+    element: <PromocodesPage />,
+  },
+]);
+
 function App() {
   const [width, setWidth] = useState<number>(1920);
 
@@ -23,9 +40,7 @@ function App() {
   return (
     <WidthContext.Provider value={width}>
       <div className="App">
-        <HeadAndNav />
-        {/* <MainPage /> */}
-        <PromocodesPage />
+        <RouterProvider router={router} />
         <Footer />
       </div>
       {width}

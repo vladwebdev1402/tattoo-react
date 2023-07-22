@@ -7,7 +7,7 @@ const LeftFooter: FC = () => {
     <div className={styles.leftFooter}>
       <div className={styles.leftLinks}>
         <div className={styles.logo}>
-          <a>
+          <a href="/">
             <img src={logoImg} alt="logo" />
           </a>
           <a className={`${styles.link} ${styles.conf}`}>
