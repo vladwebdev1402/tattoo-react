@@ -42,6 +42,8 @@
   color: var(--dark);
 }
 .btn {
+  width: 275px;
+  height: 70px;
   @media (max-width: 1024px) {
     order: 2;
   }

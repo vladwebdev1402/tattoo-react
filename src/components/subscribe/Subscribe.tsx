@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import ClipButton from "../UI/button/clipButton/ClipButton";
 import DarkButton from "../UI/button/darkButton/DarkButton";
 import MyChecked from "../UI/checked/MyChecked";
 import MyInput from "../UI/input/MyInput";
@@ -61,14 +62,13 @@ const Subscribe: FC = () => {
         </div>
 
         <div className={styles.btn}>
-          <DarkButton
+          <ClipButton
             onClick={() => {
               console.log(values);
             }}
-            x="82"
-          >
-            Подписаться
-          </DarkButton>
+            theme="dark"
+            text="Подписаться"
+          />
         </div>
       </div>
       <div className={styles.subscribeImg}></div>
