@@ -1,0 +1,43 @@
+.contacts {
+  min-width: 185px;
+  height: 96px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.txtNumber {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--dark);
+  margin-left: 10px;
+}
+
+.urlContacts {
+  list-style: none;
+  display: flex;
+}
+
+.link {
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0px;
+  }
+}
+
+.linkTxt,
+.mailTxt {
+  color: var(--dark);
+  font-size: 15px;
+}
+
+.mailTxt {
+  margin-left: 10px;
+}
+
+.mail {
+  margin-top: 25px;
+}

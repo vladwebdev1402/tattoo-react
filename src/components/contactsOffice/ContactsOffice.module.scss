@@ -1,0 +1,83 @@
+.containerOffice {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.headTxt {
+  font-weight: 600;
+  font-size: 25px;
+  color: var(--dark);
+}
+
+.containerBodyOffice {
+  width: 100%;
+  height: 568px;
+  display: grid;
+  grid-template-columns: 804px 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.bodyOfficeInfo {
+  position: relative;
+
+  padding: 30px 40px 44px 50px;
+  background-color: var(--white);
+}
+
+.technicalSupport {
+  background-color: var(--white);
+}
+
+.txt {
+  font-size: 17px;
+  color: var(--dark);
+  margin-top: 20px;
+}
+
+.number {
+  font-size: 60px;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.timing {
+  font-size: 20px;
+}
+
+.tgUrl {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.social {
+  color: var(--gray);
+}
+.url {
+  color: var(--dark);
+}
+
+.workingMode {
+  color: #636b78;
+}
+
+.delivery {
+  font-weight: bold;
+}
+
+.socialNetworks {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.link {
+  margin-top: 10px;
+  &:first-child {
+    margin-top: 0px;
+  }
+}

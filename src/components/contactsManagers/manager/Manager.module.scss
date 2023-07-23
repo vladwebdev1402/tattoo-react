@@ -1,0 +1,51 @@
+.managerContainer {
+  position: relative;
+  height: 205px;
+  background-color: var(--white);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 20px;
+}
+
+.managerImg {
+  width: 128px;
+  height: 128px;
+}
+
+.statusContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  min-width: 67px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.statusIcon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c91b1b;
+}
+
+.online {
+  .statusIcon {
+    background-color: #1bc956;
+  }
+}
+.statusTxt {
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.managerName {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--dark);
+}
+
+.rightManagerContainer {
+  padding-top: 16px;
+}

@@ -1,0 +1,17 @@
+.containerManagers {
+  width: 804px;
+  margin-top: 50px;
+}
+
+.containerBodyManagers {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.headTxt {
+  font-weight: 600;
+  font-size: 25px;
+  color: var(--dark);
+}

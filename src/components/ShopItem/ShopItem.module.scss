@@ -61,23 +61,12 @@
   align-self: center;
   margin-top: 20px;
   opacity: 0;
-  transition: 0.2s;
-  cursor: pointer;
-
-  &:hover {
-    svg path {
-      fill: var(--orange);
-    }
-    svg text {
-      fill: white;
-    }
+  transition: 0.1s;
+  height: 51px;
+  width: 259px;
+  @media (max-width: 1024px) {
+    width: 208px;
   }
-}
-
-.buttonText {
-  font-size: 20px;
-  font-family: "Jost";
-  fill: var(--orange);
 }
 
 .favorite {

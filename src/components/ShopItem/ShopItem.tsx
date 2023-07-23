@@ -7,6 +7,7 @@ import NewMarker from "../UI/marcers/NewMarker";
 import ShopItemSwiper from "./ShopItemSwiper/ShopItemSwiper";
 import styles from "./ShopItem.module.scss";
 import SmallLightButton from "../UI/button/lightButton/SmallLightButton";
+import ClipButton from "../UI/button/clipButton/ClipButton";
 interface ShopItemProps {
   item: minishopItem;
 }
@@ -21,26 +22,15 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
         <div className={styles.itemName}>{item.name}</div>
         <div className={styles.itemPrice}>{item.price} ₽</div>
 
-        {width <= 1024 ? (
-          <div className={styles.button}>
-            <SmallLightButton
-              onClick={() => {
-                console.log("clik add basket");
-              }}
-              x="59"
-            >
-              В корзину
-            </SmallLightButton>
-          </div>
-        ) : (
-          <ItemButton
-            nameClassDiv={styles.button}
-            nameClassText={styles.buttonText}
+        <div className={styles.button}>
+          <ClipButton
             onClick={() => {
-              console.log("clik add basket");
+              console.log("add basket");
             }}
+            theme="light"
+            text={`${width <= 1024 ? "В корзину" : "Добавить в корзину"}`}
           />
-        )}
+        </div>
 
         <FavoriteItem
           isActive={item.isFavourite}
