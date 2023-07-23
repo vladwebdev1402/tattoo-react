@@ -3,13 +3,14 @@ import Account from "./Account/Account";
 import Contacts from "./Contacts/Contacts";
 import styles from "./Header.module.scss";
 import logoImg from "../../assets/images/logo.svg";
+import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
     <div className={styles.up}>
       <Contacts />
-      <a className={styles.logo} href="/">
+      <Link className={styles.logo} to="/">
         <img src={logoImg} alt="logo" />
-      </a>
+      </Link>
       <Account />
     </div>
   );

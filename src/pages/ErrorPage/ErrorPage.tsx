@@ -8,7 +8,6 @@ const ErrorPage: FC = () => {
   const navigate = useNavigate();
   return (
     <div className="page">
-      <HeadAndNav />
       <div className={styles.errorContainer}>
         <div className={styles.errorBody}>
           <div className={styles.errorHeadetTxt}>Ошибка 404!</div>

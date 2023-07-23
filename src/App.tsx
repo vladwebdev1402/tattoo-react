@@ -4,25 +4,10 @@ import HeadAndNav from "./components/headerAndNavbar/HeadAndNav";
 import Footer from "./components/Footer/Footer";
 import { WidthContext } from "./context/index";
 import MainPage from "./pages/MainPage/MainPage";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import PromocodesPage from "./pages/PromocodesPage/PromocodesPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/promo",
-    element: <PromocodesPage />,
-  },
-]);
+import Root from "./pages/Root/Root";
 
 function App() {
   const [width, setWidth] = useState<number>(1920);
@@ -41,12 +26,14 @@ function App() {
   }, []);
   return (
     <WidthContext.Provider value={width}>
-      <div className="App">
-        <RouterProvider router={router} />
-
-        <Footer />
-      </div>
-      {width}
+      <Routes>
+        <Route path="/" element={<Root />}>
+          <Route index element={<MainPage />} />
+          <Route path="promo" element={<PromocodesPage />} />
+          <Route path="promo/promo" element={<PromocodesPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
+      </Routes>
     </WidthContext.Provider>
   );
 }
