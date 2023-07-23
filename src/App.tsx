@@ -10,11 +10,13 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import PromocodesPage from "./pages/PromocodesPage/PromocodesPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/promo",
@@ -41,6 +43,7 @@ function App() {
     <WidthContext.Provider value={width}>
       <div className="App">
         <RouterProvider router={router} />
+
         <Footer />
       </div>
       {width}

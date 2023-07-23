@@ -4,6 +4,7 @@
   height: 562px;
   margin-left: auto;
   margin-top: 120px;
+  margin-bottom: 200px;
   display: flex;
 
   @media (max-width: 1024px) {
@@ -62,7 +63,7 @@
 }
 
 .subscribeImg {
-  background-image: url(../../assets/images/hand2.png);
+  background-image: url(../../assets/images/hand.png);
   width: 952px;
   height: 100%;
   background-size: cover;
