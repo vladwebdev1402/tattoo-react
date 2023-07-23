@@ -1,13 +1,13 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import styles from "./RightFooter.module.scss";
 import callImg from "../../../assets/staticIcons/call.svg";
 import mailImg from "../../../assets/staticIcons/mail.svg";
 import viberImg from "../../../assets/staticIcons/viber.svg";
 import telegramImg from "../../../assets/staticIcons/telegram.svg";
 import whatsappImg from "../../../assets/staticIcons/whatsapp.svg";
-import { WidthContext } from "../../../context";
 const RightFooter: FC = () => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
+
   return (
     <div className={styles.rightFooter}>
       {width <= 1024 ? (

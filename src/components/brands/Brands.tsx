@@ -1,13 +1,14 @@
-import React, { FC, useState, useContext, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styles from "./Brands.module.scss";
 import { IBrandItem } from "../../types/brandItem";
 import { brandsData } from "../../data/brandsData";
 import { useBrands } from "../../hooks/useBrands";
 import BrandsBlock from "./brandsBlock/BrandsBlock";
 import Slider from "../UI/Slider/Slider";
-import { WidthContext } from "../../context";
+
 const Brands: FC = () => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
+
   const [countInGroup, setCountInGroup] = useState(10);
   const [brands, setBrands] = useState<IBrandItem[]>(brandsData);
   const groupBrands: Array<Array<IBrandItem>> = useBrands(brands, countInGroup);

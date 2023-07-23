@@ -1,10 +1,10 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import styles from "./Catalog.module.scss";
 import CatalogItem from "./catalogItem/CatalogItem";
-import { WidthContext } from "../../context";
 import CatalogFooter from "./catalogFooter/CatalogFooter";
 const Catalog: FC = () => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
+
   return (
     <div className={styles.catalogContainer}>
       <div className={styles.catalogHeader}>

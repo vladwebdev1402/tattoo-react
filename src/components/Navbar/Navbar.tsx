@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import LinkCatalog from "./CatalogLink/LinkCatalog";
 import LinkRow from "./LinkRow/LinkRow";
 import styles from "./Navbar.module.scss";
 import Search from "./Seacrh/Search";
 import Account from "../Header/Account/Account";
-import { WidthContext } from "../../context";
+
 const Navbar: React.FC = () => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
+
   if (width <= 1024) {
     return (
       <div className={styles.down}>

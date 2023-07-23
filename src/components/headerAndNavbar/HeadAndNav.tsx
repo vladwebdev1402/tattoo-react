@@ -2,10 +2,9 @@ import React, { FC } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import styles from "./HeadAndNav.module.scss";
-import { WidthContext } from "../../context";
-import { useContext } from "react";
+
 const HeadAndNav: FC = () => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
 
   if (width <= 1024) {
     return (

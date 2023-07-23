@@ -1,6 +1,5 @@
-import React, { FC, useState, useContext } from "react";
+import React, { FC, useState } from "react";
 import { minishopData } from "../../data/minishopData";
-import { WidthContext } from "../../context";
 import { minishopItem } from "../../types/minishop";
 import styles from "./MiniShop.module.scss";
 import MiniShopFooter from "./MiniShopFooter/MiniShopFooter";
@@ -9,7 +8,7 @@ import ShopItem from "../ShopItem/ShopItem";
 import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
 const MiniShop: FC = () => {
   const [items, setItems] = useState<minishopItem[]>(minishopData);
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
   if (width <= 1024) {
     return (
       <div className={styles.catalogContainer}>

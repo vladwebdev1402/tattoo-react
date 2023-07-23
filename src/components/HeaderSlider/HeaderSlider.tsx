@@ -4,10 +4,8 @@ import styles from "./Swiper.module.scss";
 import bgImg from "../../assets/images/bg1.png";
 import Slide from "./Slide";
 import Slider from "../UI/Slider/Slider";
-import { useContext } from "react";
-import { WidthContext } from "../../context";
 const HeaderSlider: FC = () => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
   const slides: ISlide[] = [
     {
       id: "0",

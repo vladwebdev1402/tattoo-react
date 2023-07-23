@@ -1,5 +1,5 @@
-import React, { FC, useContext } from "react";
-import { WidthContext } from "../../context";
+import React, { FC } from "react";
+
 import { minishopItem } from "../../types/minishop";
 import ItemButton from "../UI/button/miniShoButton/ItemButton";
 import FavoriteItem from "../UI/icons/itemIcons/favoriteIcon/FavoriteItem";
@@ -12,7 +12,8 @@ interface ShopItemProps {
 }
 
 const ShopItem: FC<ShopItemProps> = ({ item }) => {
-  const width = useContext(WidthContext);
+  const width = window.innerWidth;
+
   return (
     <div className={styles.item}>
       <div className={styles.itemContainer}>
