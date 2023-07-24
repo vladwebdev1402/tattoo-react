@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import TechnicalSupport from "../contactsManagers/manager/TechnicalSupport";
+import { supportManagerData } from "../../data/managersData";
 import styles from "./ContactsOffice.module.scss";
 const ContactsOffice: FC = () => {
   return (
@@ -61,7 +63,7 @@ const ContactsOffice: FC = () => {
             ОГРН: 1192036006645
           </p>
         </div>
-        <div className={styles.technicalSupport}></div>
+        <TechnicalSupport manager={supportManagerData[0]} />
       </div>
     </div>
   );

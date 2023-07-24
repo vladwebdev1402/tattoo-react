@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styles from "./Footer.module.scss";
 import LeftFooter from "./leftFooter/LeftFooter";
 import RightFooter from "./RightFooter/RightFooter";

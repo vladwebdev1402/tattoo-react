@@ -11,21 +11,20 @@
 
 .containerBodyOffice {
   width: 100%;
-  height: 568px;
   display: grid;
-  grid-template-columns: 804px 1fr;
+  grid-template-columns: 804px / 1216px * 100% 1fr;
   gap: 20px;
   margin-top: 30px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bodyOfficeInfo {
   position: relative;
 
   padding: 30px 40px 44px 50px;
-  background-color: var(--white);
-}
-
-.technicalSupport {
   background-color: var(--white);
 }
 
@@ -73,6 +72,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (max-width: 700px) {
+    position: static;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
 }
 
 .link {

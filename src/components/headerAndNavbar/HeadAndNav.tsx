@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
+import { useWidth } from "../../hooks/useWidth";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import styles from "./HeadAndNav.module.scss";
 
 const HeadAndNav: FC = () => {
-  const width = window.innerWidth;
+  const width = useWidth();
 
   if (width <= 1024) {
     return (

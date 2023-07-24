@@ -5,8 +5,9 @@ import mailImg from "../../../assets/staticIcons/mail.svg";
 import viberImg from "../../../assets/staticIcons/viber.svg";
 import telegramImg from "../../../assets/staticIcons/telegram.svg";
 import whatsappImg from "../../../assets/staticIcons/whatsapp.svg";
+import { useWidth } from "../../../hooks/useWidth";
 const RightFooter: FC = () => {
-  const width = window.innerWidth;
+  const width = useWidth();
 
   return (
     <div className={styles.rightFooter}>

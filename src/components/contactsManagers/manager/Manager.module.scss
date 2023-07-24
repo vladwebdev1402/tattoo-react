@@ -1,16 +1,17 @@
 .managerContainer {
   position: relative;
-  height: 205px;
   background-color: var(--white);
   padding: 20px;
   display: grid;
   grid-template-columns: 128px 1fr;
   gap: 20px;
+  @media (max-width: 768px) {
+    grid-template-columns: 80px 1fr;
+  }
 }
 
 .managerImg {
-  width: 128px;
-  height: 128px;
+  width: 100%;
 }
 
 .statusContainer {
@@ -20,6 +21,14 @@
   min-width: 67px;
   bottom: 20px;
   right: 20px;
+  @media (max-width: 768px) {
+    bottom: 51px;
+    right: 0px;
+    left: 95px;
+    .statusTxt {
+      display: none;
+    }
+  }
 }
 
 .statusIcon {
@@ -42,10 +51,48 @@
 .managerName {
   font-size: 17px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 6px;
   color: var(--dark);
 }
 
 .rightManagerContainer {
   padding-top: 16px;
+}
+
+.supportContainer {
+  background-color: var(--white);
+  padding: 40px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.supportProfile {
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: 17px;
+  margin-bottom: 45px;
+  @media (max-width: 1200px) {
+    grid-template-columns: 7fr 6fr;
+  }
+}
+
+.supportData {
+  position: relative;
+}
+
+.supportStatus {
+  bottom: 0;
+  left: 0;
+}
+
+.txt {
+  font-size: 17px;
+  margin-top: 35px;
+}
+
+.supportJobTitle {
+  font-size: 17px;
+  color: var(--txt-gray2);
 }

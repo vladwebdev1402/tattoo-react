@@ -53,5 +53,18 @@ export const managersData: IManager[] = [
             whatsapp: "#",
         }
     },
-
 ]
+
+export const supportManagerData: IManager[]  =  [{   
+    id: 0,
+    img: "https://ae04.alicdn.com/kf/Sb72374b6d55c444ba44f64f47e9adb17w.jpg",
+    name: "Мария",
+    online: true,
+    contacts: {
+        mail: "mariya@28opt.ru",
+        number: "8(963)848-84-00",
+        viber: "#",
+        telegram: "#",
+        whatsapp: "#",
+    }
+},]
