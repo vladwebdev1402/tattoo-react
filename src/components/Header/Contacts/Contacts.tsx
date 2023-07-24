@@ -12,17 +12,23 @@ const Contacts = () => {
           </div>
           <span className={styles.contactText}>+7 952 552-52-52</span>
         </div>
-        <div className={styles.contacsLink}>
-          <a className={styles.link} href="#">
-            Viber
-          </a>
-          <a className={styles.link} href="#">
-            Whats App
-          </a>
-          <a className={styles.link} href="#">
-            Telegram
-          </a>
-        </div>
+        <ul className={styles.contacsLink}>
+          <li className={styles.link}>
+            <a className={styles.linkTxt} href="#">
+              Viber
+            </a>
+          </li>
+          <li className={styles.link}>
+            <a className={styles.linkTxt} href="#">
+              Whats App
+            </a>
+          </li>
+          <li className={styles.link}>
+            <a className={styles.linkTxt} href="#">
+              Telegram
+            </a>
+          </li>
+        </ul>
       </div>
       <div className={styles.mail}>
         <div className="icon">

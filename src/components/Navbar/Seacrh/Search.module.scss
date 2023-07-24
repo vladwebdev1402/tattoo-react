@@ -1,19 +1,8 @@
-.search {
-  display: flex;
-  align-items: center;
-  width: 418px;
-  height: 44px;
-  border: 1px solid var(--dark-orange);
-}
-
 .myInput {
-  position: relative;
   border: 1px solid var(--dark-orange);
   width: 418px;
   height: 44px;
-  padding-left: 54px;
-  padding-right: 15px;
-  padding-top: 1px;
+  padding: 1px 15px 0px 54px;
   background-color: transparent;
   font-size: 17px;
   color: rgba(250, 246, 242, 1);
@@ -33,7 +22,7 @@
 
 @media (max-width: 1218px) {
   .myInput {
-    width: 350px;
+    max-width: 350px;
   }
 }
 @media (max-width: 900px) {

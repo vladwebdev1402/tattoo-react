@@ -1,33 +1,24 @@
 .linkRow {
-  width: 560px;
-  height: 46px;
+  align-self: center;
+}
+
+.linkList {
   display: flex;
-  justify-content: space-between;
-  align-self: flex-end;
+  list-style: none;
 }
 
 .link {
   font-size: 17;
   color: white;
   font-family: "Jost";
-}
-
-.linkBlock {
   position: relative;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 45px;
-  align-self: flex-end;
-
   &::after {
     content: "";
     position: absolute;
     height: 0px;
     width: 6px;
-    bottom: -2px;
-    right: calc(50% - 3px);
+    left: calc(50% - 3px);
+    bottom: -20px;
     clip-path: polygon(
       3px 0px,
       6px 3px,
@@ -40,28 +31,36 @@
     background-color: var(--orange);
     transition: 0.2s;
   }
-}
 
-.linkBlock:not(.active):hover {
-  .link {
-    color: var(--orange);
-  }
-  &::after {
-    height: 20px;
+  @media (min-width: 992px) {
+    &:hover::after {
+      height: 17px;
+    }
+    &:hover {
+      color: var(--orange);
+    }
   }
 }
 
 .active {
-  .link {
-    color: var(--orange);
-  }
   &::after {
-    height: 20px;
+    height: 17px;
+  }
+  color: var(--orange);
+}
+
+.linkElement {
+  margin-left: 60px;
+  &:first-child {
+    margin-left: 0px;
   }
 }
 
 @media (max-width: 1218px) {
-  .linkRow {
-    width: 460px;
+  .linkElement {
+    margin-left: 40px;
+    &:first-child {
+      margin-left: 0px;
+    }
   }
 }

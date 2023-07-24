@@ -9,8 +9,8 @@ interface LinkProps {
 const MyLink: React.FC<LinkProps> = ({ name, to }) => {
   const match = useMatch(to);
   return (
-    <Link to={to} className={`${styles.linkBlock} ${match && styles.active}`}>
-      <span className={styles.link}>{name}</span>
+    <Link to={to}>
+      <span className={`${match && styles.active} ${styles.link}`}>{name}</span>
     </Link>
   );
 };

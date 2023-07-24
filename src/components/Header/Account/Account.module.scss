@@ -1,10 +1,6 @@
 .account {
-  margin-top: 10px;
-  width: 250px;
-  height: 38px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .balance {
@@ -33,18 +29,27 @@
   color: var(--txt-white);
 }
 
-.iconBtn:hover {
-  path {
-    stroke: var(--orange);
-  }
-  circle {
-    stroke: var(--orange);
-  }
+.iconBtn {
+  margin-left: 50px;
 }
 
-.basket:hover {
-  path {
-    fill: var(--orange);
+.basket {
+  margin-left: 0px;
+}
+@media (min-width: 992px) {
+  .iconBtn:hover {
+    path {
+      stroke: var(--orange);
+    }
+    circle {
+      stroke: var(--orange);
+    }
+  }
+
+  .basket:hover {
+    path {
+      fill: var(--orange);
+    }
   }
 }
 @media (max-width: 1024px) {

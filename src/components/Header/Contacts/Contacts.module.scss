@@ -1,9 +1,5 @@
 .contacts {
   display: flex;
-  width: 373px;
-  height: 46px;
-  align-self: flex-end;
-  justify-content: space-between;
 }
 
 .phone {
@@ -24,23 +20,28 @@
 
 .contacsLink {
   display: flex;
-  justify-content: space-between;
+  list-style: none;
 }
 
-.link {
+.linkTxt {
   font-family: "Jost";
   font-size: 12px;
   color: white;
   text-decoration: none;
 }
 
-.link:hover {
-  color: var(--orange);
+.link {
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0px;
+  }
 }
 
 .mail {
   display: flex;
-  justify-content: space-between;
-  width: 161px;
-  height: 28px;
+  margin-left: 56px;
+  .contactText {
+    align-self: flex-start;
+    margin: 3px 0px 0px 10px;
+  }
 }

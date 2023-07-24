@@ -1,9 +1,12 @@
 .up {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 66px;
 }
 .logo {
-  margin-left: -142px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

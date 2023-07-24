@@ -1,10 +1,7 @@
 .catalog {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 118px;
-  height: 35px;
 }
 
 .catalogTxt {
@@ -13,4 +10,5 @@
   font-size: 25px;
   user-select: none;
   cursor: pointer;
+  margin-right: 8px;
 }
