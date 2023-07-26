@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useWidth } from "../../hooks/useWidth";
 import DarkButton from "../UI/button/darkButton/DarkButton";
 import styles from "./Swiper.module.scss";
 

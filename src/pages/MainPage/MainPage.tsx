@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./MainPage.module.scss";
 import HeaderSlider from "../../components/HeaderSlider/HeaderSlider";
 import MiniShop from "../../components/MiniShop/MiniShop";
 import Catalog from "../../components/catalog/Catalog";
@@ -18,10 +17,10 @@ const MainPage = () => {
       <HeaderSlider />
       <MiniShop />
       <Catalog />
-      <Banners />
+      {/* <Banners />
       <Brands />
       <AboutCompany />
-      <Subscribe />
+      <Subscribe /> */}
     </div>
   );
 };

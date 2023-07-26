@@ -8,7 +8,7 @@ const Root: FC = () => {
     <>
       <HeadAndNav />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

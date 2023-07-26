@@ -1,17 +1,21 @@
 import React, { FC } from "react";
+import ClipButton from "../../UI/button/clipButton/ClipButton";
 import LightButton from "../../UI/button/lightButton/LightButton";
 import styles from "./MiniShopFooter.module.scss";
+import { useNavigate } from "react-router-dom";
 const MiniShopFooter: FC = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.miniShopFooter}>
-      <LightButton
-        x="77"
-        onClick={() => {
-          console.log("click more footer");
-        }}
-      >
-        Показать ещё
-      </LightButton>
+      <div className={styles.btn}>
+        <ClipButton
+          text="Показать ещё"
+          theme="light"
+          onClick={() => {
+            navigate("catalog");
+          }}
+        />
+      </div>
     </div>
   );
 };

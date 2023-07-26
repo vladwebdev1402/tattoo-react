@@ -23,7 +23,7 @@
     .itemName {
       width: 30px;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1246px) {
       background-position: center calc(100% - 10px);
       width: 279px;
       height: 330px;
@@ -36,11 +36,8 @@
   &:nth-child(2) {
     width: 701px;
     background-image: url(../../../assets/images/catalog-category/holders.png);
-    @media (max-width: 1300px) {
-      width: 673px;
-    }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1246px) {
       background-position: center calc(100% - 10px);
       width: 429px;
       height: 330px;
@@ -50,7 +47,7 @@
   &:nth-child(3) {
     width: 342px;
     background-image: url(../../../assets/images/catalog-category/tattoo-machine.png);
-    @media (max-width: 1024px) {
+    @media (max-width: 1246px) {
       background-position: center calc(100% - 10px);
       width: 354px;
       height: 314px;
@@ -64,10 +61,8 @@
     .itemName {
       width: 30px;
     }
-    @media (max-width: 1300px) {
-      width: 465px;
-    }
-    @media (max-width: 1024px) {
+
+    @media (max-width: 1246px) {
       background-position: 107px 91px;
       width: 354px;
       height: 314px;
@@ -81,7 +76,7 @@
     width: 341px;
 
     background-image: url(../../../assets/images/catalog-category/smallpaints.png);
-    @media (max-width: 1024px) {
+    @media (max-width: 1246px) {
       background-image: url(../../../assets/images/catalog-category/paints.png);
       background-position: center 79px;
       width: 728px;
@@ -91,9 +86,6 @@
   &:nth-child(6) {
     width: 495px;
     background-image: url(../../../assets/images/catalog-category/power.png);
-    @media (max-width: 1300px) {
-      width: 466px;
-    }
   }
   &:nth-child(7) {
     width: 341px;
@@ -116,12 +108,9 @@
     width: 495px;
     margin-left: 1px;
     background-image: url(../../../assets/images/catalog-category/printers.png);
-    @media (max-width: 1300px) {
-      width: 466px;
-    }
   }
   &:nth-child(n + 6) {
-    @media (max-width: 1024px) {
+    @media (max-width: 1246px) {
       display: none;
     }
   }

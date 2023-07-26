@@ -1,4 +1,4 @@
-import React, { FC, RefObject, useRef, useState } from "react";
+import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import st from "./Slider.module.scss";
 import { useSlider } from "../../../hooks/useSlider";
 interface Props {

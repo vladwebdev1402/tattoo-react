@@ -5,9 +5,10 @@ import { brandsData } from "../../data/brandsData";
 import { useBrands } from "../../hooks/useBrands";
 import BrandsBlock from "./brandsBlock/BrandsBlock";
 import Slider from "../UI/Slider/Slider";
+import { useWidth } from "../../hooks/useWidth";
 
 const Brands: FC = () => {
-  const width = window.innerWidth;
+  const width = useWidth();
 
   const [countInGroup, setCountInGroup] = useState(10);
   const [brands, setBrands] = useState<IBrandItem[]>(brandsData);

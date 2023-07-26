@@ -2,14 +2,12 @@ import React, { FC } from "react";
 import styles from "./Catalog.module.scss";
 import CatalogItem from "./catalogItem/CatalogItem";
 import CatalogFooter from "./catalogFooter/CatalogFooter";
+import { useWidth } from "../../hooks/useWidth";
 const Catalog: FC = () => {
-  const width = window.innerWidth;
-
   return (
-    <div className={styles.catalogContainer}>
-      <div className={styles.catalogHeader}>
-        <span className="txtHeaderBlock">Каталог</span>
-      </div>
+    <section className={styles.catalogContainer}>
+      <h1 className={styles.catalogHeader}>Каталог</h1>
+
       <div className={styles.catalogBody}>
         <CatalogItem
           name="Тату наборы"
@@ -56,8 +54,8 @@ const Catalog: FC = () => {
           onClick={() => console.log("clcik Принтеры и планшеты")}
         />
       </div>
-      {width <= 1024 && <CatalogFooter />}
-    </div>
+      <CatalogFooter />
+    </section>
   );
 };
 

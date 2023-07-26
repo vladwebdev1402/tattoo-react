@@ -1,92 +1,95 @@
-.miniShopHeader {
-  grid-row: 1 / 2;
+.linksList {
   display: flex;
+  list-style: none;
+  margin-bottom: 15px;
   justify-content: space-around;
-}
-.miniShopHeaderLinkBlock {
-  min-width: 120px;
-  height: 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  &:not(.active):hover {
-    .hoverLine {
-      display: block;
-      animation: displayLink 0.5s;
-    }
 
-    .miniShopHeaderLink {
-      color: var(--orange);
+  @media (max-width: 768px) {
+    justify-content: stretch;
+
+    li {
+      margin-left: 25px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+.miniShopHeader {
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.linkTxt {
+  display: block;
+  font-size: 30px;
+  color: var(--dark);
+  font-weight: 500;
+  line-height: 34.5px;
+  margin: 0px 6px;
+  white-space: nowrap;
+  @media (max-width: 1246px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 20px;
+  }
+}
+.link {
+  $height: 12px;
+
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: $height;
+    background-color: var(--orange);
+    transition: 0.2s;
+    clip-path: polygon(
+      0px $height / 2,
+      $height / 2 0px,
+      $height $height / 2 - 1px,
+      calc(100% - $height) $height / 2 - 1px,
+      calc(100% - $height / 2) 0px,
+      100% $height / 2,
+      calc(100% - $height / 2) 100%,
+      calc(100% - $height) $height / 2 + 1px,
+      $height $height / 2 + 1px,
+      $height / 2 100%
+    );
+  }
+
+  @media (max-width: 992px) {
+    $height: 6px;
+  }
+
+  @media (min-width: 992px) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+      .linkTxt {
+        color: var(--orange);
+      }
     }
   }
 }
 
 .active {
-  .hoverLine {
-    display: block;
-  }
-
-  .miniShopHeaderLink {
-    color: #bb8c5f;
-  }
-}
-
-.miniShopHeaderLink {
-  display: block;
-  font-size: 30px;
-  font-family: "Jost";
-  font-weight: 500;
-  margin: 0px 2px;
-  color: #3e424b;
-}
-
-.hoverLine {
-  display: none;
-  width: 100%;
-  background-color: #bb8c5f;
-  height: 3px;
-  position: relative;
-  align-items: center;
-
   &::after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    width: 6px;
-    height: 6px;
-    background-color: #bb8c5f;
-    transform: rotate(45deg);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    right: 0px;
-    width: 6px;
-    height: 6px;
-    background-color: #bb8c5f;
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes displayLink {
-  0% {
-    width: 0px;
-    margin-left: 50%;
-  }
-
-  100% {
     width: 100%;
   }
-}
-
-@media (max-width: 1024px) {
-  .miniShopHeaderLink {
-    font-size: 20px;
-  }
-  .miniShopHeaderLinkBlock {
-    height: 31px;
+  .linkTxt {
+    color: var(--orange);
   }
 }

@@ -1,6 +1,4 @@
 .item {
-  margin-top: 20px;
-  width: 289px;
   height: 384px;
   position: relative;
   transition: 0.2s;
@@ -12,8 +10,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 289px;
-  height: 384px;
+  width: 100%;
   padding-top: 20px;
   position: absolute;
   transition: 0.5s;
@@ -25,7 +22,7 @@
     z-index: 1;
 
     .button {
-      opacity: 1;
+      display: block;
     }
   }
 }
@@ -60,13 +57,10 @@
   position: relative;
   align-self: center;
   margin-top: 20px;
-  opacity: 0;
+  display: none;
   transition: 0.1s;
   height: 51px;
   width: 259px;
-  @media (max-width: 1024px) {
-    width: 208px;
-  }
 }
 
 .favorite {
@@ -83,7 +77,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .item,
   .itemContainer {
     margin-top: 0px;
@@ -103,7 +97,8 @@
     margin-left: 175px;
   }
   .button {
-    opacity: 1;
+    display: block;
+    width: 208px;
   }
   .itemName {
     max-width: 169px;

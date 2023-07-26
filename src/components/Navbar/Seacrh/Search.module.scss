@@ -1,6 +1,7 @@
 .myInput {
   border: 1px solid var(--dark-orange);
-  width: 418px;
+  flex-basis: 418px;
+  flex-shrink: 1;
   height: 44px;
   padding: 1px 15px 0px 54px;
   background-color: transparent;
@@ -9,6 +10,11 @@
   background-image: url(../../../assets/staticIcons/search.svg);
   background-repeat: no-repeat;
   background-position: 22px 50%;
+  margin: 0 30px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
 .myInput:focus {
@@ -18,21 +24,4 @@
 .myInput::placeholder {
   font-size: 15px;
   color: rgba(99, 107, 120, 1);
-}
-
-@media (max-width: 1218px) {
-  .myInput {
-    max-width: 350px;
-  }
-}
-@media (max-width: 900px) {
-  .myInput {
-    width: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .myInput {
-    width: 270px;
-  }
 }

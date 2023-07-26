@@ -14,10 +14,10 @@ const Account: React.FC = () => {
         </button>
         <div className={styles.countItemsInBasket}>17</div>
       </div>
-      <button className={`icon ${styles.iconBtn}`}>
+      <button className={`icon ${styles.iconBtn} ${styles.favorite}`}>
         <Favorites />
       </button>
-      <button className={`icon ${styles.iconBtn}`}>
+      <button className={`icon ${styles.iconBtn} ${styles.profile}`}>
         <Profile />
       </button>
     </div>

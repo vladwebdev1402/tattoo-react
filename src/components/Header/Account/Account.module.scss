@@ -15,6 +15,7 @@
   font-family: "Jost";
   color: white;
   margin-right: 5px;
+  white-space: nowrap;
 }
 
 .countItemsInBasket {
@@ -52,9 +53,10 @@
     }
   }
 }
-@media (max-width: 1024px) {
-  .account {
-    align-items: flex-start;
-    width: 250px;
+
+@media (max-width: 760px) {
+  .profile,
+  .favorite {
+    display: none;
   }
 }

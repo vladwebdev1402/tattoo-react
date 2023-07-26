@@ -11,13 +11,8 @@ const MiniShopHeaderLink: FC<CatalogHeaderLinkProps> = ({
   children,
 }) => {
   return (
-    <div
-      className={`${styles.miniShopHeaderLinkBlock} ${
-        active ? styles.active : ""
-      }`}
-    >
-      <span className={styles.miniShopHeaderLink}>{children}</span>
-      <div className={styles.hoverLine}></div>
+    <div className={`${styles.link} ${active ? styles.active : ""}`}>
+      <span className={styles.linkTxt}>{children}</span>
     </div>
   );
 };

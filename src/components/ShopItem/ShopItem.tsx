@@ -8,12 +8,13 @@ import ShopItemSwiper from "./ShopItemSwiper/ShopItemSwiper";
 import styles from "./ShopItem.module.scss";
 import SmallLightButton from "../UI/button/lightButton/SmallLightButton";
 import ClipButton from "../UI/button/clipButton/ClipButton";
+import { useWidth } from "../../hooks/useWidth";
 interface ShopItemProps {
   item: minishopItem;
 }
 
 const ShopItem: FC<ShopItemProps> = ({ item }) => {
-  const width = window.innerWidth;
+  const width = useWidth();
 
   return (
     <div className={styles.item}>
@@ -28,7 +29,7 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
               console.log("add basket");
             }}
             theme="light"
-            text={`${width <= 1024 ? "В корзину" : "Добавить в корзину"}`}
+            text={`${width <= 992 ? "В корзину" : "Добавить в корзину"}`}
           />
         </div>
 

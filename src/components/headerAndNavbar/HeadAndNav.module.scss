@@ -2,6 +2,9 @@
   padding-top: 14px;
   max-width: 100%;
   background-color: #050402;
+  @media (max-width: 1024px) {
+    padding: 19px 20px;
+  }
 }
 
 .head {
@@ -9,10 +12,4 @@
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-@media (max-width: 1024px) {
-  .headContainer {
-    padding: 20px 18px;
-  }
 }

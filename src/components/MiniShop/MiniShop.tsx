@@ -6,14 +6,15 @@ import MiniShopFooter from "./MiniShopFooter/MiniShopFooter";
 import MiniShopHeader from "./MiniShopHeader/MiniShopHeader";
 import ShopItem from "../ShopItem/ShopItem";
 import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
+import { useWidth } from "../../hooks/useWidth";
 const MiniShop: FC = () => {
   const [items, setItems] = useState<minishopItem[]>(minishopData);
-  const width = window.innerWidth;
-  if (width <= 1024) {
+  const width = useWidth();
+  if (width <= 992) {
     return (
-      <div className={styles.catalogContainer}>
+      <section className={styles.miniShopContainer}>
         <MiniShopHeader />
-        <div className={styles.catalogItems}>
+        <div className={styles.miniShopItems}>
           <HorizontalSwiper>
             {items.map((item) => (
               <li className={styles.slide}>
@@ -22,19 +23,19 @@ const MiniShop: FC = () => {
             ))}
           </HorizontalSwiper>
         </div>
-      </div>
+      </section>
     );
   }
   return (
-    <div className={styles.catalogContainer}>
+    <section className={styles.miniShopContainer}>
       <MiniShopHeader />
-      <div className={styles.catalogItems}>
+      <div className={styles.miniShopItems}>
         {items.map((item) => (
           <ShopItem key={item.id} item={item} />
         ))}
       </div>
       <MiniShopFooter />
-    </div>
+    </section>
   );
 };
 

@@ -1,26 +1,15 @@
 .catalogContainer {
-  width: 1216px;
-  height: 1570px;
+  max-width: 1216px;
   margin: 120px auto 0px auto;
-  display: grid;
-  grid-template-rows: 100px 1fr 110px;
-  @media (max-width: 1300px) {
-    padding: 0 15px;
-  }
-  @media (max-width: 1024px) {
-    width: 728px;
-    height: 1212px;
-    padding: 0 0;
+
+  @media (max-width: 1246px) {
+    max-width: 728px;
   }
 }
 
 .catalogHeader {
-  grid-row: 1/ 2;
-  display: flex;
-  justify-self: center;
-  @media (max-width: 1024px) {
-    justify-self: flex-start;
-  }
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .catalogBody {

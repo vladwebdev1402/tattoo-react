@@ -12,6 +12,7 @@
   color: white;
   font-family: "Jost";
   position: relative;
+  white-space: nowrap;
   &::after {
     content: "";
     position: absolute;
@@ -53,14 +54,5 @@
   margin-left: 60px;
   &:first-child {
     margin-left: 0px;
-  }
-}
-
-@media (max-width: 1218px) {
-  .linkElement {
-    margin-left: 40px;
-    &:first-child {
-      margin-left: 0px;
-    }
   }
 }

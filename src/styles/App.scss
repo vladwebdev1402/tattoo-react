@@ -84,3 +84,26 @@ a {
     0px 0px
   );
 }
+
+h1 {
+  font-family: "Forum";
+  font-size: 60px;
+  color: var(--dark);
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1246px) {
+}
+
+@media (max-width: 1246px) and (min-width: 993px) {
+}
+
+@media (max-width: 992px) and (min-width: 728px) {
+}
+
+@media (max-width: 728px) {
+}

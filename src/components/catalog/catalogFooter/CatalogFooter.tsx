@@ -1,12 +1,20 @@
 import React, { FC } from "react";
-import LightButton from "../../UI/button/lightButton/LightButton";
+import { useNavigate } from "react-router-dom";
+import ClipButton from "../../UI/button/clipButton/ClipButton";
 import styles from "./CatalogFooter.module.scss";
 const CatalogFooter: FC = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.catalogFooterContainer}>
-      <LightButton x="64" onClick={() => {}}>
-        Смотреть каталог
-      </LightButton>
+      <div className={styles.btn}>
+        <ClipButton
+          theme="light"
+          onClick={() => {
+            navigate("catalog");
+          }}
+          text="Смотреть каталог"
+        />
+      </div>
     </div>
   );
 };

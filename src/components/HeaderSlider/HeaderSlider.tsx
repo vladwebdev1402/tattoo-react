@@ -1,11 +1,11 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { ISlide } from "../../types/swiper";
 import styles from "./Swiper.module.scss";
 import bgImg from "../../assets/images/bg1.png";
 import Slide from "./Slide";
 import Slider from "../UI/Slider/Slider";
+import { useWidth } from "../../hooks/useWidth";
 const HeaderSlider: FC = () => {
-  const width = window.innerWidth;
   const slides: ISlide[] = [
     {
       id: "0",
@@ -44,6 +44,8 @@ const HeaderSlider: FC = () => {
     },
   ];
 
+  const width = useWidth();
+
   return (
     <div className={styles.sliderContainer}>
       <Slider
@@ -56,7 +58,7 @@ const HeaderSlider: FC = () => {
         st__pag__item__active={styles.active}
       >
         {slides.map((slide) => (
-          <li className={styles.sliderItem}>
+          <li className={styles.sliderItem} style={{ width: width - 17 }}>
             <Slide
               key={slide.id}
               header={slide.header}
@@ -70,3 +72,27 @@ const HeaderSlider: FC = () => {
 };
 
 export default HeaderSlider;
+{
+  /* <Swiper {...params} className={styles.sliderContainer}>
+        <SwiperSlide>
+          <Slide desc={slides[0].description} header={slides[0].header} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide desc={slides[0].description} header={slides[0].header} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide desc={slides[0].description} header={slides[0].header} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Slide desc={slides[0].description} header={slides[0].header} />
+        </SwiperSlide>
+      </Swiper>
+
+      <div
+        className={`swiper-button-next ${styles.pagination__btn__next}`}
+      ></div>
+      <div
+        className={`swiper-button-prev ${styles.pagination__btn__prev}`}
+      ></div>
+      <div className={`swiper-pagination ${styles.slider__pagination}`}></div> */
+}

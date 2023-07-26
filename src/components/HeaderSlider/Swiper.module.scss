@@ -10,7 +10,7 @@
   padding-left: 18%;
   padding-top: 110px;
   position: relative;
-  width: 100%;
+  width: inherit;
   height: 700px;
   background-image: url(../../assets/images/bg1.png);
   background-repeat: no-repeat;
@@ -188,10 +188,7 @@
     height: 536px;
   }
   .slide {
-    width: 1024px;
-    height: 100%;
     background-position: -500px center;
-    padding-top: 48px;
   }
   .slideContent {
     width: 476px;
