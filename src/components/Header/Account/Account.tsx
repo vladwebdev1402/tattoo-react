@@ -11,8 +11,8 @@ const Account: React.FC = () => {
         <span className={styles.balanceText}>37 532 ₽</span>
         <button className={`icon ${styles.iconBtn} ${styles.basket}`}>
           <Basket />
+          <div className={styles.countItemsInBasket}>17</div>
         </button>
-        <div className={styles.countItemsInBasket}>17</div>
       </div>
       <button className={`icon ${styles.iconBtn} ${styles.favorite}`}>
         <Favorites />

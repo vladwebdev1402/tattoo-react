@@ -11,8 +11,9 @@ const LinkCatalogBody: FC<Props> = ({ isVisible }) => {
   const [isBrands, setIsBrands] = useState<boolean>(false);
   return (
     <div
-      className={`${styles.catalogBody} ${isVisible && styles.active}`}
-      style={{ width: `${isBrands ? "1183px" : ""}` }}
+      className={`${styles.catalogBody} ${isVisible && styles.active} ${
+        isBrands && styles.brandsActive
+      }`}
     >
       <div className={styles.catalogCategoryLinkContainer}>
         <CategoryLink

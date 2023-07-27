@@ -26,8 +26,20 @@
   flex-direction: column;
   flex-wrap: wrap;
   gap: 15px 40px;
-  max-width: 1200px;
   max-height: 416px;
+}
+
+.brandsActive {
+  width: 1200px;
+  @media (max-width: 1246px) {
+    width: 768px;
+  }
+}
+
+.brandsActive .categoryContainer {
+  @media (max-width: 1246px) {
+    max-height: 750px;
+  }
 }
 
 .catalogBody.active {

@@ -8,11 +8,9 @@ interface Props {
 const BrandsBlock: FC<Props> = ({ brands }) => {
   return (
     <div className={styles.brandsBlock}>
-      <div className={styles.brands}>
-        {brands.map((item) => (
-          <BrandItem link={item.link} img={item.img} key={item.id} />
-        ))}
-      </div>
+      {brands.map((item) => (
+        <BrandItem link={item.link} img={item.img} key={item.id} />
+      ))}
     </div>
   );
 };

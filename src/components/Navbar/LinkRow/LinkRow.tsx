@@ -5,19 +5,19 @@ const LinkRow: FC = () => {
   return (
     <nav className={styles.linkRow}>
       <ul className={styles.linkList}>
-        <li className={styles.linkElement}>
+        <li>
           <MyLink name={"Промокоды"} to="/promo" />
         </li>
-        <li className={styles.linkElement}>
+        <li>
           <MyLink name={"Скидки"} to="/discount" />
         </li>
-        <li className={styles.linkElement}>
+        <li>
           <MyLink name={"Помощь"} to="/help" />
         </li>
-        <li className={styles.linkElement}>
+        <li>
           <MyLink name={"О нас"} to="/about" />
         </li>
-        <li className={styles.linkElement}>
+        <li>
           <MyLink name={"Контакты"} to="/contacts" />
         </li>
       </ul>

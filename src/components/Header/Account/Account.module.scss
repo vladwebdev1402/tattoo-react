@@ -4,7 +4,6 @@
 }
 
 .balance {
-  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -21,11 +20,10 @@
 .countItemsInBasket {
   position: absolute;
   background-color: var(--orange);
-  width: 24px;
-  height: 21px;
+  padding: 3px 3px;
   text-align: center;
   top: -8px;
-  right: -12px;
+  right: -25%;
   font-size: 14px;
   color: var(--txt-white);
 }
@@ -36,6 +34,7 @@
 
 .basket {
   margin-left: 0px;
+  position: relative;
 }
 @media (min-width: 992px) {
   .iconBtn:hover {

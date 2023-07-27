@@ -17,10 +17,10 @@ const MainPage = () => {
       <HeaderSlider />
       <MiniShop />
       <Catalog />
-      {/* <Banners />
+      <Banners />
       <Brands />
       <AboutCompany />
-      <Subscribe /> */}
+      <Subscribe />
     </div>
   );
 };

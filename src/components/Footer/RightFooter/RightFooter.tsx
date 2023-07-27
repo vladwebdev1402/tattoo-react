@@ -7,16 +7,8 @@ import telegramImg from "../../../assets/staticIcons/telegram.svg";
 import whatsappImg from "../../../assets/staticIcons/whatsapp.svg";
 import { useWidth } from "../../../hooks/useWidth";
 const RightFooter: FC = () => {
-  const width = useWidth();
-
   return (
     <div className={styles.rightFooter}>
-      {width <= 1024 ? (
-        <div className="horizontal-divider"></div>
-      ) : (
-        <div className="vertical-divider"></div>
-      )}
-
       <div className={styles.rightData}>
         <div className={styles.upRight}>
           <div className={styles.contacts}>

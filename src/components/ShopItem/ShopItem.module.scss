@@ -1,8 +1,24 @@
 .item {
   height: 384px;
+  width: 289px;
   position: relative;
   transition: 0.2s;
   background-color: #f5f5f5;
+
+  @media (min-width: 992px) {
+    &:hover {
+      .itemContainer {
+        box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.3);
+        padding-bottom: 30px;
+        top: -25px;
+        z-index: 1;
+
+        .button {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 .itemContainer {
@@ -13,26 +29,10 @@
   width: 100%;
   padding-top: 20px;
   position: absolute;
-  transition: 0.5s;
-
-  &:hover {
-    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.3);
-    height: 454px;
-    top: -25px;
-    z-index: 1;
-
-    .button {
-      display: block;
-    }
-  }
 }
 
 .itemName {
-  margin-left: 30px;
-  margin-top: 6px;
-  width: 229px;
-  min-height: 48px;
-  max-height: 48px;
+  margin: 6px 30px 0px 30px;
   font-size: 17px;
   font-family: "Jost";
   color: var(--dark);
@@ -43,12 +43,9 @@
 }
 
 .itemPrice {
-  width: 229px;
-  height: 31px;
+  margin: 6px 30px 0px 30px;
   font-family: "Jost";
   font-size: 24px;
-  margin-left: 30px;
-  margin-top: 10px;
   font-weight: bold;
   color: var(--orange);
 }
@@ -57,10 +54,10 @@
   position: relative;
   align-self: center;
   margin-top: 20px;
+  padding: 0 15px;
   display: none;
-  transition: 0.1s;
   height: 51px;
-  width: 259px;
+  width: 100%;
 }
 
 .favorite {
@@ -78,33 +75,24 @@
 }
 
 @media (max-width: 992px) {
-  .item,
-  .itemContainer {
-    margin-top: 0px;
+  .item {
     width: 229px;
-    height: 403px;
-    &:hover {
-      box-shadow: none;
-      height: 403px;
-      top: 0px;
-    }
+    // height: 403px;
   }
 
-  .item {
-    margin-right: 20px;
+  .itemContainer {
+    margin-top: 0px;
   }
+
   .favorite {
     margin-left: 175px;
   }
   .button {
     display: block;
     width: 208px;
+    padding: 0 10px;
   }
   .itemName {
-    max-width: 169px;
-    max-height: 42px;
-    margin-left: 30px;
-    margin-right: 30px;
     font-size: 15px;
   }
 }

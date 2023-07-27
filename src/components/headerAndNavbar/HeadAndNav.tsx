@@ -7,7 +7,7 @@ import styles from "./HeadAndNav.module.scss";
 const HeadAndNav: FC = () => {
   const width = useWidth();
 
-  if (width <= 1024) {
+  if (width <= 992) {
     return (
       <header>
         <div className={styles.headContainer}>

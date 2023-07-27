@@ -1,23 +1,13 @@
 .miniShopContainer {
   margin: 108px auto 0px auto;
-  max-width: 1216px;
-  @media (max-width: 1246px) {
-    max-width: 907px;
-  }
+  max-width: 1246px;
+  padding: 0 15px;
 }
 
 .miniShopItems {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
   margin-top: 40px;
-
-  @media (max-width: 1246px) and (min-width: 993px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media (max-width: 992px) {
-    display: flex;
-    padding: 0 10px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

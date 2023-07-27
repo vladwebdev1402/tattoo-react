@@ -8,7 +8,7 @@ interface Props {
 
 const ShopItemSwiper: FC<Props> = ({ images }) => {
   return (
-    <div className={styles.containerSwiper}>
+    <div className={styles.containerSlider} id="itemSliderContainer">
       <Slider
         st__pagination={styles.slider__pagination}
         st__pag__item={styles.pagination__item}

@@ -1,25 +1,11 @@
 .brandsBlock {
-  width: 1216px;
-  height: 100%;
-  margin: 0 auto;
-
-  @media (max-width: 1300px) {
-    width: 985px;
-  }
-
-  @media (max-width: 1024px) {
-    width: 728px;
-  }
-}
-
-.brands {
   display: grid;
   grid-template-columns: 232px 250px 250px 250px 232px;
   grid-template-rows: repeat(2, 1fr);
   width: 1216px;
   height: 100%;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 985px;
     grid-template-columns: 236px 1fr 1fr 236px;
   }

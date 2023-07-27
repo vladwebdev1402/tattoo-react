@@ -3,9 +3,7 @@
   height: 289px;
   margin: 0 auto;
   margin-top: 120px;
-  display: grid;
-  grid-template-rows: 85px 1fr;
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 985px;
   }
 
@@ -17,7 +15,7 @@
   margin: 0 auto;
   width: 1216px;
   height: 100%;
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 985px;
   }
 
@@ -29,23 +27,20 @@
   padding: 0px 80px;
   position: relative;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     padding: 0px 0px;
   }
 }
 .brandsLink {
   font-size: 25px;
   color: var(--dark);
-  position: absolute;
-  right: 80px;
-  bottom: 0px;
-  @media (max-width: 1300px) {
-    right: 0px;
-  }
+  display: block;
+  width: 146px;
+  margin-left: auto;
 }
 .brandsContainerBody {
   width: 1376px;
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 985px;
   }
   @media (max-width: 1024px) {
@@ -62,7 +57,7 @@
   height: 220px;
   width: 1216px;
   margin-right: 80px;
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 985px;
   }
   @media (max-width: 1024px) {
@@ -90,7 +85,7 @@
     box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     display: none;
   }
 }

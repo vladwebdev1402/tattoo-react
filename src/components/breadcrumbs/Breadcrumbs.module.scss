@@ -1,0 +1,27 @@
+.breadcrumbsContainer {
+  margin: 50px auto 30px auto;
+  display: flex;
+  list-style: none;
+  @media (max-width: 992px) {
+    margin: 30px auto 0px auto;
+  }
+
+  @media (max-width: 768px) {
+    margin: 20px auto 0px auto;
+  }
+}
+
+.linkTxt,
+.slash {
+  color: var(--gray);
+}
+
+.slash {
+  margin: 0px 10px;
+}
+
+.active {
+  .linkTxt {
+    color: var(--txt-gray2);
+  }
+}

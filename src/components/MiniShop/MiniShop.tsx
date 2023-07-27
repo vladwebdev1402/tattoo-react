@@ -10,14 +10,14 @@ import { useWidth } from "../../hooks/useWidth";
 const MiniShop: FC = () => {
   const [items, setItems] = useState<minishopItem[]>(minishopData);
   const width = useWidth();
-  if (width <= 992) {
+  if (width <= 768) {
     return (
       <section className={styles.miniShopContainer}>
         <MiniShopHeader />
         <div className={styles.miniShopItems}>
           <HorizontalSwiper>
             {items.map((item) => (
-              <li className={styles.slide}>
+              <li className={styles.slide} style={{ marginRight: "20px" }}>
                 <ShopItem key={item.id} item={item} />
               </li>
             ))}

@@ -1,13 +1,24 @@
-.footerContainer {
-  display: grid;
-  grid-template-columns: 4fr 3fr;
+.footer {
   width: 100%;
+  background-color: var(--black);
   height: 400px;
-  background-color: #050402;
+  @media (max-width: 1024px) {
+    height: 561px;
+  }
+  @media (max-width: 600px) {
+    height: 701px;
+  }
+}
+
+.footerContainer {
+  max-width: 1256px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
 
   @media (max-width: 1024px) {
-    display: flex;
     flex-direction: column;
-    height: 561px;
+    justify-content: stretch;
   }
 }

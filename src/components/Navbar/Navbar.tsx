@@ -5,15 +5,19 @@ import styles from "./Navbar.module.scss";
 import Search from "./Seacrh/Search";
 import Account from "../Header/Account/Account";
 import { useWidth } from "../../hooks/useWidth";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 const Navbar: React.FC = () => {
   const width = useWidth();
 
-  if (width <= 1024) {
+  if (width <= 992) {
     return (
       <div className={styles.down}>
-        <LinkCatalog />
-        <Search />
+        <BurgerMenu />
+        <div className={styles.inputContainer}>
+          <Search />
+        </div>
+
         <Account />
       </div>
     );
@@ -22,7 +26,10 @@ const Navbar: React.FC = () => {
   return (
     <div className={styles.down}>
       <LinkCatalog />
-      <Search />
+      <div className={styles.inputContainer}>
+        <Search />
+      </div>
+
       <LinkRow />
     </div>
   );

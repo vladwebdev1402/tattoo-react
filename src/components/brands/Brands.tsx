@@ -17,7 +17,7 @@ const Brands: FC = () => {
   useEffect(() => {
     if (width <= 768) {
       setCountInGroup(6);
-    } else if (width <= 1300) {
+    } else if (width <= 1400) {
       setCountInGroup(8);
     } else setCountInGroup(10);
   }, [width]);
@@ -25,7 +25,7 @@ const Brands: FC = () => {
   return (
     <div className={styles.brandsContainer}>
       <div className={styles.brandsContainerHead}>
-        <span className="txtHeaderBlock">Популярные бренды</span>
+        <h1>Популярные бренды</h1>
         <a className={styles.brandsLink}>Смотреть все</a>
       </div>
       <div className={styles.brandsContainerBody}>

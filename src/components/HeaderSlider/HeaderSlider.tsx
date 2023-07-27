@@ -58,7 +58,7 @@ const HeaderSlider: FC = () => {
         st__pag__item__active={styles.active}
       >
         {slides.map((slide) => (
-          <li className={styles.sliderItem} style={{ width: width - 17 }}>
+          <li className={styles.sliderItem} style={{ width: width - 11 }}>
             <Slide
               key={slide.id}
               header={slide.header}

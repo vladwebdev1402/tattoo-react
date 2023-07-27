@@ -1,23 +1,18 @@
 .leftFooter {
-  display: flex;
-  padding-right: 100px;
-  @media (max-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.leftLinks {
-  margin-top: 139px;
-  margin-left: auto;
-  width: 615px;
+  margin: 139px 0px 0px 0px;
   height: 141px;
+  max-width: 615px;
   display: flex;
   justify-content: space-between;
 
   @media (max-width: 1024px) {
-    margin-top: 70px;
-    margin-left: 20px;
+    margin: 70px 0px 70px 20px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    height: 256px;
+    max-width: 270px;
   }
 }
 
@@ -25,8 +20,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 307px;
   height: 100%;
+  @media (max-width: 600px) {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .link {
@@ -37,13 +37,27 @@
 }
 .conf {
   font-size: 14px;
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
 .menu {
+  list-style: none;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 100%;
   width: 306px;
-  gap: 26px;
+  gap: 26px 80px;
+  margin-left: 70px;
+  height: 140px;
+
+  @media (max-width: 600px) {
+    gap: 26px 65px;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 0px;
+    margin-top: 40px;
+  }
 }
