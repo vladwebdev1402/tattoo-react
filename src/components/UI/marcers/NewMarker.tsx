@@ -5,8 +5,8 @@ const NewMarker: FC = () => {
     <div
       style={{
         position: "absolute",
-        marginTop: "10px",
-        marginLeft: "30px",
+        left: "30px",
+        top: "30px",
       }}
     >
       <svg

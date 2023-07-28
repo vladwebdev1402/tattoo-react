@@ -1,14 +1,21 @@
 import React, { FC } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import styles from "./Breadcrumbs.module.scss";
 interface Pathnames {
   [key: string]: string;
 }
-const Breadcrumbs: FC = () => {
+
+interface Props {
+  params?: true;
+  nameParams?: string;
+}
+const Breadcrumbs: FC<Props> = ({ params = false, nameParams = "type" }) => {
   const location = useLocation().pathname.split("/").slice(1);
   const pathnames: Pathnames = {
     promo: "Промокоды",
     contacts: "Контакты",
+    catalog: "Каталог",
+    t: "Тату машинки",
   };
   const getPath = (idx: number): string => {
     let path = "";

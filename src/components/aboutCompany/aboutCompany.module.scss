@@ -49,6 +49,8 @@
   color: var(--dark);
 }
 .btn {
+  width: 277px;
+  height: 70px;
   margin-top: 40px;
   @media (max-width: 1300px) {
     margin-left: calc(50% - 275px / 2);

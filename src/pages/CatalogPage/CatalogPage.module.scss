@@ -1,0 +1,25 @@
+.catalogContainer {
+  margin: 0px auto 130px auto;
+  max-width: 1246px;
+  padding: 0 15px;
+  @media screen and (max-width: 1246px) {
+    max-width: 937px;
+  }
+  @media screen and (max-width: 992px) {
+    max-width: 757px;
+  }
+}
+
+.itemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.btn {
+  width: 275px;
+  height: 70px;
+  margin: 40px auto 0px auto;
+}

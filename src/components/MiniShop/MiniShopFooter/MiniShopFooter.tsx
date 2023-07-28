@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import ClipButton from "../../UI/button/clipButton/ClipButton";
-import LightButton from "../../UI/button/lightButton/LightButton";
 import styles from "./MiniShopFooter.module.scss";
 import { useNavigate } from "react-router-dom";
 const MiniShopFooter: FC = () => {

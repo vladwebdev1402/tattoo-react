@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-import LightButton from "../UI/button/lightButton/LightButton";
-import MyChecked from "../UI/checked/MyChecked";
+import ClipButton from "../UI/button/clipButton/ClipButton";
 import styles from "./aboutCompany.module.scss";
 const AboutCompany: FC = () => {
   return (
@@ -25,9 +24,7 @@ const AboutCompany: FC = () => {
           раскрыть ваш потенциал.
         </span>
         <div className={styles.btn}>
-          <LightButton onClick={() => {}} x="86">
-            О компании
-          </LightButton>
+          <ClipButton onClick={() => {}} theme="light" text="О компании" />
         </div>
       </div>
     </div>

@@ -1,0 +1,21 @@
+.btn {
+  padding: 14px 24px;
+  line-height: 20px;
+  color: var(--orange);
+  font-size: 20px;
+  border: 2px solid var(--orange);
+  font-family: "Jost";
+  transition: 0.2s;
+
+  @media (min-width: 992px) {
+    &:hover {
+      background-color: var(--orange);
+      color: var(--txt-white);
+    }
+
+    &:active {
+      background-color: var(--dark-orange);
+      color: var(--txt-white);
+    }
+  }
+}

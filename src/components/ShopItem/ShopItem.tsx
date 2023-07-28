@@ -1,12 +1,10 @@
 import React, { FC } from "react";
 
 import { minishopItem } from "../../types/minishop";
-import ItemButton from "../UI/button/miniShoButton/ItemButton";
 import FavoriteItem from "../UI/icons/itemIcons/favoriteIcon/FavoriteItem";
 import NewMarker from "../UI/marcers/NewMarker";
 import ShopItemSwiper from "./ShopItemSwiper/ShopItemSwiper";
 import styles from "./ShopItem.module.scss";
-import SmallLightButton from "../UI/button/lightButton/SmallLightButton";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import { useWidth } from "../../hooks/useWidth";
 interface ShopItemProps {

@@ -1,6 +1,5 @@
 import React, { FC, useState } from "react";
 import ClipButton from "../UI/button/clipButton/ClipButton";
-import DarkButton from "../UI/button/darkButton/DarkButton";
 import MyChecked from "../UI/checked/MyChecked";
 import MyInput from "../UI/input/MyInput";
 import styles from "./Subscribe.module.scss";

@@ -5,6 +5,13 @@
 .itemImage {
   object-fit: fill;
   background-color: #f4f4f4;
+
+  @media screen and (max-width: 992px) {
+    width: 229px;
+  }
+  @media screen and (max-width: 576px) {
+    width: 280px;
+  }
 }
 .slide {
   max-width: 100%;
@@ -23,6 +30,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 
 .pagination__item {
@@ -33,13 +43,4 @@
 
 .active {
   background-color: var(--dark-orange);
-}
-
-@media (max-width: 992px) {
-  .itemImage {
-    width: 229px;
-  }
-  .slider__pagination {
-    display: none;
-  }
 }

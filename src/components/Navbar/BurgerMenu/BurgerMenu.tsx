@@ -43,14 +43,25 @@ const BurgerMenu: FC = () => {
               <div className="vertical-divider"></div>
               <div className={styles.categorysBody}>
                 {category.map((category) => (
-                  <Link key={category.id} to="" className={styles.linkCategory}>
+                  <Link
+                    key={category.id}
+                    to=""
+                    className={styles.linkCategory}
+                    onClick={() => {
+                      setIsActiveMenu(!isActiveMenu);
+                    }}
+                  >
                     <span className={styles.linkTxt}>{category.name}</span>
                   </Link>
                 ))}
               </div>
             </div>
           </div>
-          <nav>
+          <nav
+            onClick={() => {
+              setIsActiveMenu(!isActiveMenu);
+            }}
+          >
             <ul className={styles.linkColumn}>
               <li className={styles.linkLi}>
                 <MyLink name={"Промокоды"} to="/promo" />
