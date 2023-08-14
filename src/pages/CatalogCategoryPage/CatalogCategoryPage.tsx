@@ -17,7 +17,7 @@ interface CategoryPage {
 const CatalogPage = () => {
   const params = useParams<CategoryPage>();
   const [filtersItem, setFiltersItem] = useState<IFiltersParametrs>({
-    price: { maxPrice: "", minPrice: "" },
+    price: { maxPrice: "99999", minPrice: "0" },
     inStock: false,
     sortOptions: [
       { name: "Популярные", isActive: true },

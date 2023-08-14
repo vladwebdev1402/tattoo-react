@@ -22,12 +22,15 @@ const MySelect: FC<Props> = ({ options, setOptions }) => {
   useEffect(() => {
     seacrhCurrentOption();
   }, [options]);
+
+  const clickSelect = () => {
+    setOpen(!open);
+  };
+
   return (
     <div
       className={`${styles.selectContainer} ${open && styles.active}`}
-      onClick={() => {
-        setOpen(!open);
-      }}
+      onClick={clickSelect}
     >
       <span className={`${styles.txtOption} ${styles.currentTxtOption}`}>
         {currentOption}
