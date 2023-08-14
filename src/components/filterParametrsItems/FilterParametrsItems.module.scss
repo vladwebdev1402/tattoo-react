@@ -1,0 +1,63 @@
+.filterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterName {
+  font-size: 17px;
+  color: var(--txt-gray2);
+}
+
+.dash {
+  color: #636b78;
+}
+
+.filter {
+  margin-left: 20px;
+}
+
+.inputPrice {
+  width: 83px;
+  height: 40px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--dark-orange);
+  padding: 5px;
+  font-size: 15px;
+  color: var(--dark);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.switch {
+  width: 34px;
+  height: 21px;
+  background-color: var(--orange);
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    top: 3px;
+    left: 2px;
+    transition: 0.2s;
+  }
+}
+
+.switchActive {
+  &::after {
+    left: calc(100% - 17px);
+  }
+}

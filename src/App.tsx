@@ -11,7 +11,7 @@ import PromocodesPage from "./pages/PromocodesPage/PromocodesPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Root from "./pages/Root/Root";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
-import CatalogPage from "./pages/CatalogPage/CatalogPage";
+import CatalogCategoryPage from "./pages/CatalogCategoryPage/CatalogCategoryPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,7 +20,9 @@ function App() {
         <Route index element={<MainPage />} />
         <Route path="promo" element={<PromocodesPage />} />
         <Route path="contacts" element={<ContactsPage />} />
-        <Route path="catalog/:type" element={<CatalogPage />} />
+        <Route path="catalog/" element={<CatalogCategoryPage />}>
+          <Route path=":type" />
+        </Route>
         <Route path="*" element={<ErrorPage />} />
       </Route>
     )

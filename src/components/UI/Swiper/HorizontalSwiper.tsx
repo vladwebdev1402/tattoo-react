@@ -3,6 +3,7 @@ import st from "./HorizontalSwiper.module.scss";
 
 interface Props {
   children?: React.ReactNode;
+  pag?: boolean;
 }
 
 function getTouchEventData(
@@ -33,7 +34,7 @@ function useStateRef<S>( // создаём ref, отвечающий за пол
   return [state, setState, ref];
 }
 
-const HorizontalSwiper: FC<Props> = ({ children }) => {
+const HorizontalSwiper: FC<Props> = ({ children, pag = true }) => {
   const containerRef = useRef<HTMLUListElement>(null); // ссылка на контейнер-слайдер, в котором находятся все элементы
   const currentOffsetXRef = useRef(0);
   const minOffsetXRef = useRef(0);
@@ -116,17 +117,20 @@ const HorizontalSwiper: FC<Props> = ({ children }) => {
       >
         {children}
       </ul>
-      <ul className={st.swiper__pagination}>
-        {array.map((_item, idx) => (
-          <li
-            key={idx}
-            className={`${st.swiper__pagination__item} ${
-              currentIdx === idx ? `${st.active}` : ""
-            }`}
-            onClick={() => indicatorOnClick(idx)}
-          />
-        ))}
-      </ul>
+
+      {pag && (
+        <ul className={st.swiper__pagination}>
+          {array.map((_item, idx) => (
+            <li
+              key={idx}
+              className={`${st.swiper__pagination__item} ${
+                currentIdx === idx ? `${st.active}` : ""
+              }`}
+              onClick={() => indicatorOnClick(idx)}
+            />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

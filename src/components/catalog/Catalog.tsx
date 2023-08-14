@@ -2,8 +2,9 @@ import React, { FC } from "react";
 import styles from "./Catalog.module.scss";
 import CatalogItem from "./catalogItem/CatalogItem";
 import CatalogFooter from "./catalogFooter/CatalogFooter";
-import { useWidth } from "../../hooks/useWidth";
+import { useNavigate } from "react-router-dom";
 const Catalog: FC = () => {
+  const navigate = useNavigate();
   return (
     <section className={styles.catalogContainer}>
       <h1 className={styles.catalogHeader}>Каталог</h1>
@@ -11,47 +12,47 @@ const Catalog: FC = () => {
       <div className={styles.catalogBody}>
         <CatalogItem
           name="Тату наборы"
-          onClick={() => console.log("clcik Тату наборы")}
+          onClick={() => navigate("/catalog/tatto-kits")}
         />
         <CatalogItem
           name="Держатели"
-          onClick={() => console.log("clcik Держатели")}
+          onClick={() => navigate("/catalog/holders")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/tattoo-machine")}
           name="Тату машинки"
-          onClick={() => console.log("clcik Тату машинки")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/wires")}
           name="Педали и провода"
-          onClick={() => console.log("clcik Педали и провода")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/paints")}
           name="Краски"
-          onClick={() => console.log("clcik Краски")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/power")}
           name="Блоки питания"
-          onClick={() => console.log("clcik Блоки питания")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/tattoo-tips")}
           name="Наконечники"
-          onClick={() => console.log("clcik Наконечники")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/tatto-needles")}
           name="Тату иглы"
-          onClick={() => console.log("clcik Тату иглы")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/consumables")}
           name="Защита, ёмкости, расходники"
-          onClick={() => console.log("clcik Защита, ёмкости, расходники")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/accessories")}
           name="Аксессуары"
-          onClick={() => console.log("clcik Аксессуары")}
         />
         <CatalogItem
+          onClick={() => navigate("/catalog/printers")}
           name="Принтеры и планшеты"
-          onClick={() => console.log("clcik Принтеры и планшеты")}
         />
       </div>
       <CatalogFooter />

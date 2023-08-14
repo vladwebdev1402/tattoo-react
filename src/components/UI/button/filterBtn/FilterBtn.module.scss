@@ -6,6 +6,7 @@
   border: 2px solid var(--orange);
   font-family: "Jost";
   transition: 0.2s;
+  white-space: nowrap;
 
   @media (min-width: 992px) {
     &:hover {

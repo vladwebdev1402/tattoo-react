@@ -1,10 +1,11 @@
 import React from "react";
 import FilterBtn from "../UI/button/filterBtn/FilterBtn";
+import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
 import styles from "./Filters.module.scss";
 const FiltersBtnCatalogPage = () => {
   return (
     <div className={styles.containerFilters}>
-      <ul className={styles.filterList}>
+      <HorizontalSwiper pag={false}>
         <li className={styles.filter}>
           <FilterBtn>Для начинающих</FilterBtn>
         </li>
@@ -17,7 +18,7 @@ const FiltersBtnCatalogPage = () => {
         <li className={styles.filter}>
           <FilterBtn>Расходники</FilterBtn>
         </li>
-      </ul>
+      </HorizontalSwiper>
     </div>
   );
 };
