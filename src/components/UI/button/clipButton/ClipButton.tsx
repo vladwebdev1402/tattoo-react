@@ -8,7 +8,10 @@ interface Props {
 const ClipButton: FC<Props> = ({ theme, text, onClick }) => {
   return (
     <div
-      onClick={onClick}
+      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        onClick();
+      }}
       className={`${styles.btnWrapper} ${
         theme == "dark" ? styles.darkBtn : styles.lightBtn
       }`}

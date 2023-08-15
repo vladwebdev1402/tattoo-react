@@ -17,7 +17,10 @@ const FavoriteItem: FC<FavoriteIconProps> = ({
       className={`icon ${nameDivClass} ${isActive ? styles.active : ""} ${
         styles.favorite
       }`}
-      onClick={onClick}
+      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        onClick();
+      }}
     >
       <svg
         width="20"

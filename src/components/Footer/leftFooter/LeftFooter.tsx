@@ -14,19 +14,19 @@ const LeftFooter: FC = () => {
         </a>
       </div>
       <ul className={styles.menu}>
-        <li>
+        <li className={styles.menuLink}>
           <a className={styles.link}>Промокоды</a>
         </li>
-        <li>
+        <li className={styles.menuLink}>
           <a className={styles.link}>Скидки</a>
         </li>
-        <li>
+        <li className={styles.menuLink}>
           <a className={styles.link}>Помощь</a>
         </li>
-        <li>
+        <li className={styles.menuLink}>
           <a className={styles.link}>О нас</a>
         </li>
-        <li>
+        <li className={styles.menuLink}>
           <a className={styles.link}>Контакты</a>
         </li>
       </ul>

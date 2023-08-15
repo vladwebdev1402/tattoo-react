@@ -16,8 +16,8 @@ const ShopItemSwiper: FC<Props> = ({ images }) => {
         st__pag__btn__next=""
         st__pag__btn__prev=""
       >
-        {images.map((img) => (
-          <li className={styles.slide}>
+        {images.map((img, idx) => (
+          <li className={styles.slide} key={idx}>
             <img src={img} draggable="false" className={styles.itemImage} />
           </li>
         ))}

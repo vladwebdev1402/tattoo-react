@@ -5,7 +5,7 @@ import styles from "./Filters.module.scss";
 const FiltersBtnCatalogPage = () => {
   return (
     <div className={styles.containerFilters}>
-      <HorizontalSwiper pag={false}>
+      <ul className={styles.filterList}>
         <li className={styles.filter}>
           <FilterBtn>Для начинающих</FilterBtn>
         </li>
@@ -18,7 +18,7 @@ const FiltersBtnCatalogPage = () => {
         <li className={styles.filter}>
           <FilterBtn>Расходники</FilterBtn>
         </li>
-      </HorizontalSwiper>
+      </ul>
     </div>
   );
 };

@@ -30,6 +30,7 @@ const Breadcrumbs: FC<Props> = () => {
         allPath += `/${path}`;
         return (
           <li
+            key={idx}
             className={`${styles.link} ${
               idx === location.length - 1 && styles.active
             }`}

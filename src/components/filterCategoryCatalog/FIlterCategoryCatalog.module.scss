@@ -1,0 +1,21 @@
+.container {
+  margin-top: 40px;
+
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 1px;
+  }
+}
+
+.containerBtn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  list-style: none;
+
+  @media (max-width: 992px) {
+    flex-wrap: nowrap;
+    justify-content: stretch;
+  }
+}

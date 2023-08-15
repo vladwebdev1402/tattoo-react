@@ -35,8 +35,8 @@ const Brands: FC = () => {
           st__pag__btn__prev={`${styles.btnPrev} ${styles.btn}`}
           st__slider__container={`${styles.sliderContainer}`}
         >
-          {groupBrands.map((group) => (
-            <li className={styles.slide}>
+          {groupBrands.map((group, idx) => (
+            <li className={styles.slide} key={idx}>
               <BrandsBlock brands={group} />
             </li>
           ))}

@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Account.module.scss";
 import Basket from "../../UI/icons/headerAndNavIcons/Basket";
 import Favorites from "../../UI/icons/headerAndNavIcons/Favorites";
 import Profile from "../../UI/icons/headerAndNavIcons/Profile";
+import { FavoriteContext } from "../../../context/favoriteContext";
 
 const Account: React.FC = () => {
+  const { favorites } = useContext(FavoriteContext);
+
   return (
     <div className={styles.account}>
       <div className={styles.balance}>
         <span className={styles.balanceText}>37 532 ₽</span>
         <button className={`icon ${styles.iconBtn} ${styles.basket}`}>
           <Basket />
-          <div className={styles.countItemsInBasket}>17</div>
+          {favorites.length && (
+            <div className={styles.countItemsInBasket}>{favorites.length}</div>
+          )}
         </button>
       </div>
       <button className={`icon ${styles.iconBtn} ${styles.favorite}`}>

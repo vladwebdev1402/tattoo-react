@@ -1,18 +1,18 @@
 import { ICategory } from "../types/category";
 
 export const category: ICategory[] = [
-    {id: 0, name: "Новинки"},
-    {id: 1, name: "Наборы для татуировок"},
-    {id: 2, name: "Тату машинки"},
-    {id: 3, name: "Тату краски"},
-    {id: 4, name: "Тату иглы"},
-    {id: 5, name: "Тату держатели"},
-    {id: 6, name: "Тату наконечники"},
-    {id: 7, name: "Блоки питания"},
-    {id: 8, name: "Педали и провода"},
-    {id: 9, name: "Аксессуары"},
-    {id: 10, name: "Принтеры и планшеты"},
-    {id: 11, name: "Защита, ёмкости, расходные материалы"},
+    {id: 0, name: "Новинки", link: "news"},
+    {id: 1, name: "Наборы для татуировок", link: "tatto-kits", filter: "Промо наборы"},
+    {id: 2, name: "Тату машинки", link: "tattoo-machine", filter: "Тату машинки"},
+    {id: 3, name: "Тату краски", link: "paints", filter: "Краски"},
+    {id: 4, name: "Тату иглы", link: "tatto-needles", filter: "Иглы"},
+    {id: 5, name: "Тату держатели", link: "holders", filter: "Держатели"},
+    {id: 6, name: "Тату наконечники", link: "tattoo-tips", filter: "Наконечники"},
+    {id: 7, name: "Блоки питания", link: "power", filter: "Блоки питания"},
+    {id: 8, name: "Педали и провода", link: "wires", filter: "Педали"},
+    {id: 9, name: "Аксессуары", link: "accessories", filter: "Аксессуары"},
+    {id: 10, name: "Принтеры и планшеты", link: "printers", filter: "Клип-корды"},
+    {id: 11, name: "Защита, ёмкости, расходные материалы", link: "consumables", filter: "Защита и уход"},
 ] 
 
 export const brands: ICategory[] = [

@@ -1,14 +1,22 @@
 import React, { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import { ICategory } from "../../../../types/category";
 import styles from "./LinkCatalogBody.module.scss";
 interface Props {
   items: ICategory[];
 }
 const CategoryContainer: FC<Props> = ({ items }) => {
+  const navigate = useNavigate();
   return (
     <div className={styles.categoryContainer}>
       {items.map((item) => (
-        <div key={item.id} className={styles.category}>
+        <div
+          key={item.id}
+          className={styles.category}
+          onClick={() => {
+            navigate(`catalog/${item?.link}`);
+          }}
+        >
           {item.name}
         </div>
       ))}

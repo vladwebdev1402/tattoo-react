@@ -14,6 +14,10 @@
     height: 256px;
     max-width: 270px;
   }
+
+  @media (max-width: 400px) {
+    margin: 70px 0px 70px 20px;
+  }
 }
 
 .logo {
@@ -27,6 +31,10 @@
       width: 100%;
     }
   }
+}
+
+.menuLink {
+  max-width: 105px;
 }
 
 .link {
@@ -48,12 +56,12 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: 306px;
-  gap: 26px 80px;
+  gap: 26px;
   margin-left: 70px;
   height: 140px;
 
   @media (max-width: 600px) {
-    gap: 26px 65px;
+    width: 280px;
   }
 
   @media (max-width: 600px) {

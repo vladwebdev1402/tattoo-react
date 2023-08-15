@@ -1,33 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./styles/App.scss";
-import MainPage from "./pages/MainPage/MainPage";
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-} from "react-router-dom";
-import PromocodesPage from "./pages/PromocodesPage/PromocodesPage";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Root from "./pages/Root/Root";
-import ContactsPage from "./pages/ContactsPage/ContactsPage";
-import CatalogCategoryPage from "./pages/CatalogCategoryPage/CatalogCategoryPage";
+import { BasketContext } from "./context/basketContext";
+import { FavoriteContext, IFavorite } from "./context/favoriteContext";
+import AppRouter from "./components/appRouter/AppRouter";
 
 function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Root />}>
-        <Route index element={<MainPage />} />
-        <Route path="promo" element={<PromocodesPage />} />
-        <Route path="contacts" element={<ContactsPage />} />
-        <Route path="catalog/" element={<CatalogCategoryPage />}>
-          <Route path=":type" />
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
-      </Route>
-    )
+  const [favorites, setFavorites] = useState<IFavorite[]>([]);
+
+  return (
+    <FavoriteContext.Provider value={{ favorites, setFavorites }}>
+      <AppRouter />;
+    </FavoriteContext.Provider>
   );
-  return <RouterProvider router={router} />;
 }
 
 export default App;

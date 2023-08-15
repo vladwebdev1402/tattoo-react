@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { minishopData } from "../../data/minishopData";
-import { minishopItem } from "../../types/minishop";
+import { IShopItem } from "../../types/shopItem";
 import styles from "./MiniShop.module.scss";
 import MiniShopFooter from "./MiniShopFooter/MiniShopFooter";
 import MiniShopHeader from "./MiniShopHeader/MiniShopHeader";
@@ -8,7 +8,7 @@ import ShopItem from "../ShopItem/ShopItem";
 import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
 import { useWidth } from "../../hooks/useWidth";
 const MiniShop: FC = () => {
-  const [items, setItems] = useState<minishopItem[]>(minishopData);
+  const [items, setItems] = useState<IShopItem[]>(minishopData);
   const width = useWidth();
   if (width <= 768) {
     return (
