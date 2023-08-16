@@ -4,3 +4,14 @@
     fill: #bb8c5f;
   }
 }
+.icon {
+  cursor: pointer;
+  @media (min-width: 992px) {
+    &:hover {
+      svg path {
+        fill-rule: nonzero;
+        fill: var(--orange);
+      }
+    }
+  }
+}

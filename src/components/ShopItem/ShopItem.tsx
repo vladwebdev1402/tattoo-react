@@ -7,10 +7,12 @@ import ClipButton from "../UI/button/clipButton/ClipButton";
 import { useWidth } from "../../hooks/useWidth";
 import Marcers from "./Marcers/Marcers";
 import {
+  clickFavorite,
   deleteFavorite,
   FavoriteContext,
   findFavorite,
 } from "../../context/favoriteContext";
+import { useNavigate } from "react-router-dom";
 interface ShopItemProps {
   item: IShopItem;
 }
@@ -19,9 +21,8 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
   const width = useWidth();
   const [countBasket, setCountBasket] = useState<number>(0);
   const { favorites, setFavorites } = useContext(FavoriteContext);
-  const [isFavorite, setIsFavorite] = useState<boolean>(
-    findFavorite(favorites, item.id)
-  );
+
+  const navigate = useNavigate();
   const plusBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setCountBasket(countBasket + 1);
@@ -31,22 +32,12 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
     setCountBasket(countBasket - 1);
   };
 
-  const clickFavorite = () => {
-    if (isFavorite) {
-      setFavorites(deleteFavorite(favorites, item.id));
-      setIsFavorite(false);
-    } else {
-      setFavorites([...favorites, { id: item.id }]);
-      setIsFavorite(true);
-    }
-  };
-
   return (
     <div className={styles.item}>
       <div
         className={styles.itemContainer}
         onClick={() => {
-          console.log("navigate");
+          navigate(`/catalog/${item.type}/${item.id}`);
         }}
       >
         <ShopItemSwiper images={item.img} />
@@ -83,9 +74,11 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
         </div>
         <Marcers marcers={item.marcers} />
         <FavoriteItem
-          isActive={isFavorite}
-          onClick={clickFavorite}
-          nameDivClass={styles.favorite}
+          isActive={findFavorite(favorites, item.id)}
+          onClick={() => {
+            clickFavorite(setFavorites, favorites, item);
+          }}
+          className={styles.favorite}
         />
       </div>
     </div>

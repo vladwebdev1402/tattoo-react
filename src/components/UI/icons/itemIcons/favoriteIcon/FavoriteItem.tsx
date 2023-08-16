@@ -3,20 +3,20 @@ import styles from "./icon.module.scss";
 
 interface FavoriteIconProps {
   onClick: () => void;
-  nameDivClass: string;
+  className?: string;
   isActive: boolean;
 }
 
 const FavoriteItem: FC<FavoriteIconProps> = ({
   onClick,
-  nameDivClass,
+  className = "",
   isActive,
 }) => {
   return (
     <div
-      className={`icon ${nameDivClass} ${isActive ? styles.active : ""} ${
-        styles.favorite
-      }`}
+      className={`icon ${styles.icon} ${className} ${
+        isActive ? styles.active : ""
+      } ${styles.favorite}`}
       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         onClick();

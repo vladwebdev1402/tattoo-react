@@ -84,15 +84,6 @@
   left: 235px;
   top: 30px;
   z-index: 1;
-
-  @media (min-width: 992px) {
-    &:hover {
-      svg path {
-        fill-rule: nonzero;
-        fill: var(--orange);
-      }
-    }
-  }
 }
 
 .basketBtnContainer {

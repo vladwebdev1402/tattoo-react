@@ -10,11 +10,15 @@ export interface IMarcers {
 export interface IShopItem {
   id: number;
   price: string;
+  oldPrice: string;
   name: string;
   img: string[];
   marcers: IMarcers;
   description: string;
   count: number;
+  type: "tattoo-kits" | "holders" | "tattoo-machine" 
+  | "wires" | "paints" | "power" | "tattoo-tips" | 
+  "tattoo-needles" | "consumables" | "accessories" | "printers";
 }
 
 

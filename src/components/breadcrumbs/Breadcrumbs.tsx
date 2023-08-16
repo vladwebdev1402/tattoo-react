@@ -4,20 +4,11 @@ import { pathnames } from "../../data/pathnames";
 import styles from "./Breadcrumbs.module.scss";
 
 interface Props {
-  params?: true;
+  params?: boolean;
   nameParams?: string;
 }
-const Breadcrumbs: FC<Props> = () => {
+const Breadcrumbs: FC<Props> = ({ params = false, nameParams = "" }) => {
   const location = useLocation().pathname.split("/").slice(1);
-
-  // const getPath = (idx: number): string => {
-  //   const path = location.reduce((allPath, currentPath, reduceIdx) => {
-  //     console.log(reduceIdx);
-  //     if (reduceIdx <= idx) return allPath + `/${currentPath}`;
-  //     return "";
-  //   }, "");
-  //   return path;
-  // };
 
   let allPath = "";
 
@@ -42,6 +33,15 @@ const Breadcrumbs: FC<Props> = () => {
           </li>
         );
       })}
+      {params && (
+        <Link to={allPath}>
+          <li className={`${styles.link} ${styles.active}`}>
+            <Link to={allPath}>
+              <span className={styles.linkTxt}>{nameParams}</span>
+            </Link>
+          </li>
+        </Link>
+      )}
     </ul>
   );
 };

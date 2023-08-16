@@ -22,8 +22,9 @@ const AppRouter: FC = () => {
         <Route path="promo" element={<PromocodesPage />} />
         <Route path="contacts" element={<ContactsPage />} />
         <Route path="catalog" element={<CatalogPage />} />
-        <Route path="catalog/:type" element={<CatalogCategoryPage />} />
-        <Route path="item/:id" element={<ItemPage />} />
+        <Route path="catalog/:type/" element={<CatalogCategoryPage />} />
+        <Route path="catalog/:type/:id" element={<ItemPage />} />
+
         <Route path="*" element={<ErrorPage />} />
       </Route>
     )
