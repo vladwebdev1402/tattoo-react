@@ -6,14 +6,19 @@ import styles from "./Breadcrumbs.module.scss";
 interface Props {
   params?: boolean;
   nameParams?: string;
+  className?: string;
 }
-const Breadcrumbs: FC<Props> = ({ params = false, nameParams = "" }) => {
+const Breadcrumbs: FC<Props> = ({
+  params = false,
+  nameParams = "",
+  className = "",
+}) => {
   const location = useLocation().pathname.split("/").slice(1);
 
   let allPath = "";
 
   return (
-    <ul className={styles.breadcrumbsContainer}>
+    <ul className={`${styles.breadcrumbsContainer} ${className}`}>
       <Link to="/">
         <span className={styles.linkTxt}>Главная</span>
       </Link>

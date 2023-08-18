@@ -41,7 +41,12 @@ const Slider: FC<Props> = ({
   ] = useSlider(childCount, direction, containerRef, spaceBetween);
 
   return (
-    <div className={st.slider__wrapper}>
+    <div
+      className={st.slider__wrapper}
+      onClick={(e: React.MouseEvent) => {
+        e.stopPropagation();
+      }}
+    >
       <div
         className={`${st.slider__container} ${st__slider__container}`}
         onMouseDown={onClickStart}

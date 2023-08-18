@@ -22,10 +22,10 @@ export const deleteFavorite = (favorites: IFavorite[], id: number) : IFavorite[]
     return favorites.filter(item => item.id !== id)
 } 
 
-export const clickFavorite = (setFavorites: Dispatch<SetStateAction<IFavorite[]>>, favorites: IFavorite[], item: IShopItem) => {
-    if (findFavorite(favorites, item.id)) {
-      setFavorites(deleteFavorite(favorites, item.id));
+export const clickFavorite = (setFavorites: Dispatch<SetStateAction<IFavorite[]>>, favorites: IFavorite[], id: number) => {
+    if (findFavorite(favorites, id)) {
+      setFavorites(deleteFavorite(favorites, id));
     } else {
-      setFavorites([...favorites, { id: item.id }]);
+      setFavorites([...favorites, { id: id }]);
     }
   };

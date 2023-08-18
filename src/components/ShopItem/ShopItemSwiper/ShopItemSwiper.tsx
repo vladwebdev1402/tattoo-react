@@ -1,9 +1,10 @@
 import React, { FC, useState } from "react";
+import { IItemImg } from "../../../types/shopItem";
 import Slider from "../../UI/Slider/Slider";
 import styles from "./ShopItemSwiper.module.scss";
 
 interface Props {
-  images: string[];
+  images: IItemImg;
 }
 
 const ShopItemSwiper: FC<Props> = ({ images }) => {
@@ -16,7 +17,7 @@ const ShopItemSwiper: FC<Props> = ({ images }) => {
         st__pag__btn__next=""
         st__pag__btn__prev=""
       >
-        {images.map((img, idx) => (
+        {Object.values(images).map((img, idx) => (
           <li className={styles.slide} key={idx}>
             <img src={img} draggable="false" className={styles.itemImage} />
           </li>

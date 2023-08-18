@@ -3,10 +3,11 @@ import { IMarcers } from "../../../types/shopItem";
 import st from "./Marcers.module.scss";
 interface Props {
   marcers: IMarcers;
+  className?: string;
 }
-const Marcers: FC<Props> = ({ marcers }) => {
+const Marcers: FC<Props> = ({ marcers, className = "" }) => {
   return (
-    <div className={st.marcersContainer}>
+    <div className={`${st.marcersContainer} ${className}`}>
       <div
         className={st.marcer}
         style={{ display: `${!marcers.new && "none"}` }}

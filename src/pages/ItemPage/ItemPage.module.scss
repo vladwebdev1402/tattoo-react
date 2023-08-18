@@ -1,164 +1,96 @@
 .containerPage {
-  max-width: 1216px;
-  margin: 0 auto;
+  max-width: 1256px;
+  margin: 0 auto 200px auto;
 }
 
-.imagesAndBriefInfo,
-.containerImages {
-  display: flex;
+.upContainer {
+  margin-top: 50px;
+  padding: 0 20px;
 }
 
-.radioConrainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.radio {
-  margin-top: 10px;
-  width: 83px;
-  height: 93px;
-  background-color: gray;
-  &:first-child {
-    margin-top: 0px;
-  }
-}
-
-.currentImage {
-  position: relative;
-  width: 470px;
-  height: 400px;
-  margin-left: 20px;
-  background-color: #f5f5f5;
-  display: flex;
-  align-items: center;
-}
-
-.image {
-  width: 100%;
-  object-fit: cover;
-}
-
-.containerBriefInfo {
-  flex: 0 1 598px;
-  margin-left: 45px;
+.downContainer,
+.breadcrumbs {
+  padding: 0 20px;
 }
 
 .itemNameTxt {
-  font-size: 30px;
+  display: none;
+  font-size: 25px;
+  font-weight: bold;
   color: var(--dark);
-  font-weight: bold;
-  line-height: 34px;
-  text-align: left;
 }
 
-.priceBlock {
-  margin-top: 25px;
+.imagesAndBriefInfo {
   display: flex;
-  align-items: center;
 }
 
-.currentPrice {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--orange);
+.fullInfoContainer {
+  margin-top: 48px;
+  display: flex;
 }
 
-.oldPrice {
-  margin-left: 15px;
-  color: var(--gray);
-  text-decoration-line: line-through;
-}
-.availability {
-  font-size: 17px;
-  color: var(--orange);
-  margin-left: 27px;
-}
-.availabilityTxt {
-  color: var(--txt-gray2);
+.descriptionContainer {
+  max-width: 515px;
 }
 
 .descriptionBlock {
-  margin-top: 25px;
-  font-size: 17px;
-  color: var(--txt-gray2);
-}
-
-.btnJob {
-  margin-top: 25px;
-  font-size: 17px !important;
-}
-
-.basketBlock {
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-}
-
-.utilsBasket {
-  display: flex;
-  align-items: center;
-}
-
-.basketBtn {
-  position: relative;
-  width: 11px;
-  height: 11px;
-  cursor: pointer;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 11px;
-    height: 1px;
-    background-color: var(--dark);
-    transform: translateY(-50%);
+  p {
+    font-size: 17px;
+    color: var(--dark);
+    margin-top: 15px;
+    @media (max-width: 576px) {
+      font-size: 15px;
+    }
   }
 }
 
-.plus {
-  &::before {
-    content: "";
-    position: absolute;
-    height: 11px;
-    background-color: var(--dark);
-    width: 1px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.characteristicContainer {
+  flex: 0 1 598px;
+  margin-left: 103px;
 }
-
-.basketCount {
-  margin: 0 25px;
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-  line-height: 23.8px;
+.titleBlock {
+  font-size: 25px;
+  font-weight: bold;
   color: var(--dark);
-}
-.addInBasketBtn {
-  width: 275px;
-  height: 70px;
-  margin-left: 40px;
+  margin-bottom: 20px;
 }
 
-.favorite {
-  position: absolute;
-  top: 50px;
-  right: 37px;
-  svg {
-    width: 33px;
-    height: 30px;
+@media (max-width: 992px) {
+  .itemNameTxt {
+    display: block;
+  }
+  .imagesAndBriefInfo {
+    margin-top: 20px;
+  }
+  .fullInfoContainer {
+    flex-direction: column;
+  }
+  .characteristicContainer {
+    flex: 0 1 auto;
+    max-width: 598px;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+  .descriptionContainer {
+    max-width: 100%;
   }
 }
 
-.shareBtn {
-  margin-left: 25px;
-  font-size: 17px;
-  color: var(--txt-gray2);
+@media (max-width: 766px) {
+  .imagesAndBriefInfo {
+    flex-direction: column;
+  }
+
+  .itemNameTxt {
+    margin: 0 20px;
+  }
+
+  .upContainer {
+    padding: 0;
+  }
+}
+@media (max-width: 576px) {
+  .itemNameTxt {
+    font-size: 20px;
+  }
 }

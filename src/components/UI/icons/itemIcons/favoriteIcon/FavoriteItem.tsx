@@ -1,25 +1,26 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
+import {
+  clickFavorite,
+  FavoriteContext,
+  findFavorite,
+} from "../../../../../context/favoriteContext";
 import styles from "./icon.module.scss";
 
 interface FavoriteIconProps {
-  onClick: () => void;
   className?: string;
-  isActive: boolean;
+  id: number;
 }
 
-const FavoriteItem: FC<FavoriteIconProps> = ({
-  onClick,
-  className = "",
-  isActive,
-}) => {
+const FavoriteItem: FC<FavoriteIconProps> = ({ className = "", id }) => {
+  const { favorites, setFavorites } = useContext(FavoriteContext);
   return (
     <div
       className={`icon ${styles.icon} ${className} ${
-        isActive ? styles.active : ""
+        findFavorite(favorites, id) ? styles.active : ""
       } ${styles.favorite}`}
       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
-        onClick();
+        clickFavorite(setFavorites, favorites, id);
       }}
     >
       <svg
