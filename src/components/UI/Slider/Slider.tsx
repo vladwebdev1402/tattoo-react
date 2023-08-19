@@ -1,4 +1,11 @@
-import React, { FC, RefObject, useEffect, useRef, useState } from "react";
+import React, {
+  Children,
+  FC,
+  RefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import st from "./Slider.module.scss";
 import { useSlider } from "../../../hooks/useSlider";
 interface Props {
@@ -12,12 +19,16 @@ interface Props {
   st__pag__btn__prev?: string;
   st__slider__container?: string;
   spaceBetween?: number;
+  freeMode?: boolean;
+  countPagItem?: number;
 }
 
 const Slider: FC<Props> = ({
   spaceBetween = 0,
   children,
   direction = "row",
+  freeMode = false,
+  countPagItem = 0,
   st__pagination,
   st__list,
   st__pag__item,
@@ -26,9 +37,21 @@ const Slider: FC<Props> = ({
   st__pag__btn__prev,
   st__slider__container,
 }) => {
-  const childCount: number = React.Children.count(children);
+  const countPag: number = countPagItem
+    ? countPagItem
+    : React.Children.count(children);
   const containerRef: RefObject<HTMLUListElement> = useRef(null);
+  const sliderRef: RefObject<HTMLDivElement> = useRef(null);
+  const [width, setWidth] = useState("100%");
 
+  useEffect(() => {
+    setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
+    window.addEventListener("resize", () => {
+      setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
+    });
+
+    return window.removeEventListener("resize", () => {});
+  }, []);
   const [
     isAnimated,
     arrayPagination,
@@ -38,21 +61,22 @@ const Slider: FC<Props> = ({
     onClickPagIndicator,
     offset,
     currentPagIdx,
-  ] = useSlider(childCount, direction, containerRef, spaceBetween);
+  ] = useSlider(countPag, direction, containerRef, spaceBetween, freeMode);
 
   return (
     <div
       className={st.slider__wrapper}
-      onClick={(e: React.MouseEvent) => {
+      onClick={(
+        e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
+      ) => {
         e.stopPropagation();
       }}
     >
       <div
         className={`${st.slider__container} ${st__slider__container}`}
         onMouseDown={onClickStart}
+        ref={sliderRef}
       >
-        {direction === "row"}
-
         <ul
           ref={containerRef}
           className={`${st.slider__list} ${st__list}`}
@@ -64,13 +88,25 @@ const Slider: FC<Props> = ({
             transition: `${isAnimated ? "300ms" : "0ms"}`,
           }}
         >
-          {children}
+          {Children.toArray(children).map((child, idx) => (
+            <li
+              key={idx}
+              className={st.list__item}
+              style={{
+                width: !freeMode ? width : "auto",
+                marginRight: `${spaceBetween}px`,
+              }}
+            >
+              {child}
+            </li>
+          ))}
         </ul>
       </div>
+
       {st__pag__btn__next && (
         <button
           className={`${st__pag__btn__next}`}
-          onClick={onClickPrev}
+          onClick={onClickNext}
         ></button>
       )}
 
@@ -91,7 +127,7 @@ const Slider: FC<Props> = ({
       {st__pag__btn__prev && (
         <button
           className={`${st__pag__btn__prev}`}
-          onClick={onClickNext}
+          onClick={onClickPrev}
         ></button>
       )}
     </div>

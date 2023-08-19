@@ -36,9 +36,7 @@ const Brands: FC = () => {
           st__slider__container={`${styles.sliderContainer}`}
         >
           {groupBrands.map((group, idx) => (
-            <li className={styles.slide} key={idx}>
-              <BrandsBlock brands={group} />
-            </li>
+            <BrandsBlock brands={group} key={idx} />
           ))}
         </Slider>
       </div>

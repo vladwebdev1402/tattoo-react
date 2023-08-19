@@ -12,17 +12,16 @@ const FilterCategoryCatalog: FC<Props> = ({ navigate }) => {
     }
   };
   return (
-    <div className={st.container}>
-      <div className={st.containerBtn}>
+    <div className={st.containerFilters}>
+      <ul className={st.filterList}>
         {category.slice(1).map((category) => (
-          <FilterBtn
-            onClick={() => onClick(category.link || "")}
-            key={category.id}
-          >
-            {category.filter}
-          </FilterBtn>
+          <li className={st.filter} key={category.id}>
+            <FilterBtn onClick={() => onClick(category.link || "")}>
+              {category.filter}
+            </FilterBtn>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

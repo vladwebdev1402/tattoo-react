@@ -4,15 +4,16 @@ interface Props {
   theme: "dark" | "light";
   text: string;
   onClick: () => void;
+  className?: string;
 }
-const ClipButton: FC<Props> = ({ theme, text, onClick }) => {
+const ClipButton: FC<Props> = ({ theme, text, onClick, className = "" }) => {
   return (
     <div
       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         onClick();
       }}
-      className={`${styles.btnWrapper} ${
+      className={` ${className} ${styles.btnWrapper} ${
         theme == "dark" ? styles.darkBtn : styles.lightBtn
       }`}
     >

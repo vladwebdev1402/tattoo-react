@@ -10,9 +10,17 @@ import Marcers from "./Marcers/Marcers";
 import { useNavigate } from "react-router-dom";
 interface ShopItemProps {
   item: IShopItem;
+  smallItem?: boolean;
+  checkbox?: boolean;
+  noneBtn?: boolean;
 }
 
-const ShopItem: FC<ShopItemProps> = ({ item }) => {
+const ShopItem: FC<ShopItemProps> = ({
+  item,
+  smallItem = false,
+  noneBtn = false,
+  checkbox = false,
+}) => {
   const width = useWidth();
   const [countBasket, setCountBasket] = useState<number>(0);
 
@@ -29,14 +37,21 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
   };
 
   return (
-    <div className={styles.item}>
+    <div
+      className={`${styles.item} ${smallItem && styles.smallItem} ${
+        noneBtn && styles.noneBtn
+      }`}
+    >
       <div
         className={styles.itemContainer}
         onClick={() => {
           navigate(`/catalog/${item.type}/${item.id}`);
         }}
       >
-        <ShopItemSwiper images={item.img} />
+        <ShopItemSwiper
+          images={item.img}
+          className={smallItem ? styles.smallImg : ""}
+        />
         <div className={styles.itemName}>{item.name}</div>
         <div className={styles.itemPrice}>{item.price} ₽</div>
 
@@ -68,7 +83,10 @@ const ShopItem: FC<ShopItemProps> = ({ item }) => {
             </div>
           )}
         </div>
-        <Marcers marcers={item.marcers} />
+        <Marcers
+          marcers={item.marcers}
+          className={smallItem ? styles.marcersSmall : ""}
+        />
         <FavoriteItem id={item.id} className={styles.favorite} />
       </div>
     </div>

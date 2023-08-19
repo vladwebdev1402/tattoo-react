@@ -1,10 +1,23 @@
 import React, { useState, useRef, RefObject } from "react";
 import { usePagination } from "./usePaginatioRadios";
+
+function getTouchEventData(
+  e:
+    | TouchEvent
+    | MouseEvent
+    | React.TouchEvent<HTMLElement>
+    | React.MouseEvent<HTMLElement>
+) {
+  return "changedTouches" in e ? e.changedTouches[0] : e;
+}
+
+
 export const useSlider = (
   countChildren: number,
   direction: string,
   containerRef: RefObject<HTMLUListElement>,
-  spaceBetween: number
+  spaceBetween: number,
+  freeMode: boolean=false
 ): [
   boolean,
   number[],
@@ -34,19 +47,25 @@ export const useSlider = (
       ? containerRef.current!.clientWidth + spaceBetween
       : containerRef.current!.clientHeight + spaceBetween;
   };
-  const getCursorPos = (e: MouseEvent | React.MouseEvent<HTMLDivElement>) => {
-    return direction === "row" ? e.clientX : e.clientY;
+  const getCursorPos = (e: | TouchEvent
+    | MouseEvent
+    | React.TouchEvent<HTMLElement>
+    | React.MouseEvent<HTMLElement>) => {
+    return direction === "row" ? getTouchEventData(e).clientX : getTouchEventData(e).clientY;
   };
 
   const changePagIndicator = () => {
     const idx = (-newOffset.current * countChildren) / getScroll();
     setCurrentPagIdx(Math.round(idx));
   };
-  const setNewOffset = (idx: number) => {
-    newOffset.current = -idx * getContainer();
+  const setNewOffsetThroughIdx = (idx: number) => {
+    if (freeMode) newOffset.current = -idx * getScroll() / countChildren
+    else newOffset.current = -idx * getContainer();
+    checkMinMaxOffset()
   };
 
   const checkMinMaxOffset = () => {
+    maxOffset.current = getScroll() - getContainer()
     if (newOffset.current < -maxOffset.current) {
       newOffset.current = -maxOffset.current;
     }
@@ -56,39 +75,40 @@ export const useSlider = (
   };
   const onClickPagIndicator = (idx: number) => {
     setCurrentPagIdx(idx);
-    setNewOffset(idx);
+    setNewOffsetThroughIdx(idx);
     setOffset(newOffset.current);
     setIsAnimatade(true);
   };
 
   const onClickNext = () => {
     let pagInd =
-      currentPagIdx + 1 == arrayPagination.length
+      currentPagIdx + 1 == countChildren
         ? currentPagIdx
         : currentPagIdx + 1;
-    setNewOffset(pagInd);
-    setOffset(-pagInd * getContainer());
+    setNewOffsetThroughIdx(pagInd);
+    setOffset(newOffset.current);
     setCurrentPagIdx(pagInd);
     setIsAnimatade(true);
   };
 
   const onClickPrev = () => {
     let pagInd = currentPagIdx - 1 == -1 ? currentPagIdx : currentPagIdx - 1;
-    setNewOffset(pagInd);
-    setOffset(-pagInd * getContainer());
+    setNewOffsetThroughIdx(pagInd);
+    setOffset(newOffset.current);
     setCurrentPagIdx(pagInd);
     setIsAnimatade(true);
   };
 
-  const onClickStart = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onClickStart = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
     startOffset.current = getCursorPos(e);
-    maxOffset.current = getScroll() - getContainer()
     setIsAnimatade(false);
-
+    
+    window.removeEventListener("touchmove", onMouseMove);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onClickEnd);
+    window.removeEventListener("touchend", onClickEnd);
   };
-  const onMouseMove = (e: MouseEvent) => {
+  const onMouseMove = (e: TouchEvent | MouseEvent) => {
     currentOffset.current = getCursorPos(e);
     const diff = currentOffset.current - startOffset.current;
     newOffset.current = diff + offset;
@@ -98,12 +118,18 @@ export const useSlider = (
 
   };
 
-  const onClickEnd = () => {
+  const magnet = () => {
     const indMulti = Math.round(-newOffset.current / getContainer());
     newOffset.current = indMulti * getContainer() * -1;
+  }
+
+  const onClickEnd = () => {
+    if (!freeMode) magnet()
     setIsAnimatade(true);
     setOffset(newOffset.current);
+    window.removeEventListener("touchmove", onMouseMove);
     window.removeEventListener("mousemove", onMouseMove);
+    window.removeEventListener("touchend", onClickEnd);
     window.removeEventListener("mouseup", onClickEnd);
   };
 

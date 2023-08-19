@@ -18,36 +18,39 @@ const Breadcrumbs: FC<Props> = ({
   let allPath = "";
 
   return (
-    <ul className={`${styles.breadcrumbsContainer} ${className}`}>
-      <Link to="/">
-        <span className={styles.linkTxt}>Главная</span>
-      </Link>
-      {location.map((path, idx) => {
-        allPath += `/${path}`;
-        return (
-          <li
-            key={idx}
-            className={`${styles.link} ${
-              idx === location.length - 1 && styles.active
-            }`}
-          >
-            <span className={styles.slash}>/</span>
-            <Link to={allPath}>
-              <span className={styles.linkTxt}>{pathnames[path]}</span>
-            </Link>
-          </li>
-        );
-      })}
-      {params && (
-        <Link to={allPath}>
+    <div className={styles.breadcrumbsContainer}>
+      <ul className={`${styles.breadcrumbsList} ${className}`}>
+        <li className={`${styles.link}`}>
+          <Link to="/">
+            <span className={styles.linkTxt}>Главная</span>
+          </Link>
+        </li>
+
+        {location.map((path, idx) => {
+          allPath += `/${path}`;
+          return (
+            <li
+              key={idx}
+              className={`${styles.link} ${
+                idx === location.length - 1 && styles.active
+              }`}
+            >
+              <span className={styles.slash}>/</span>
+              <Link to={allPath}>
+                <span className={styles.linkTxt}>{pathnames[path]}</span>
+              </Link>
+            </li>
+          );
+        })}
+        {params && (
           <li className={`${styles.link} ${styles.active}`}>
             <Link to={allPath}>
               <span className={styles.linkTxt}>{nameParams}</span>
             </Link>
           </li>
-        </Link>
-      )}
-    </ul>
+        )}
+      </ul>
+    </div>
   );
 };
 

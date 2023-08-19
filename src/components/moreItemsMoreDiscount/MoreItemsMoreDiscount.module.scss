@@ -1,0 +1,133 @@
+.moreItemsMoreDiscountContainer {
+  margin-top: 70px;
+}
+
+.moreItemsBody {
+  background-color: var(--white);
+  padding: 40px 0px 30px 0px;
+  margin: 25px 0px 0px 0px;
+}
+
+.moreItemsHead {
+  margin: 0px 50px;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.moreItemsContainer {
+  margin: 30px 15px 0px 15px;
+  display: flex;
+  align-items: center;
+}
+
+%pseudoPlus {
+  content: "";
+  position: absolute;
+  background-color: var(--dark);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.plus {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0px 10px;
+
+  &::after {
+    @extend %pseudoPlus;
+    width: 100%;
+    height: 2px;
+  }
+
+  &::before {
+    @extend %pseudoPlus;
+    width: 2px;
+    height: 100%;
+  }
+}
+
+.discountContainer {
+  display: flex;
+  margin: 30px 30px 0px 30px;
+}
+
+.addInBasketBtn {
+  width: 275px;
+  height: 70px;
+}
+
+.countItems {
+  flex-grow: 1;
+  font-size: 17px;
+  color: var(--txt-gray2);
+}
+
+.priceInfo {
+  display: flex;
+  align-items: center;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.price {
+  margin-top: 10px;
+}
+
+.discountTxt {
+  margin-left: 15px;
+}
+
+.savingPrice {
+  padding: 15px;
+  background-color: var(--red);
+  margin-left: 20px;
+  font-size: 17px;
+  color: var(--white);
+}
+
+@media (max-width: 680px) {
+  .discountContainer {
+    flex-direction: column;
+  }
+
+  .priceContainer {
+    margin: 20px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 380px) {
+  .discountContainer {
+    margin: 30px 0px 0px 0px;
+  }
+
+  .addInBasketBtn {
+    width: 100%;
+  }
+
+  .priceInfo {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .moreItemsBody {
+    padding: 30px 0px 30px 0px;
+  }
+
+  .moreItemsHead {
+    margin: 0px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .moreItemsHead {
+    font-size: 17px;
+  }
+}

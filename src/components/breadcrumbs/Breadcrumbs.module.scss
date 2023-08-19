@@ -1,7 +1,10 @@
 .breadcrumbsContainer {
+  position: relative;
   margin: 50px auto 30px auto;
-  display: flex;
-  list-style: none;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 1px;
+  }
   @media (max-width: 992px) {
     margin: 30px auto 0px auto;
   }
@@ -11,13 +14,25 @@
   }
 }
 
+.breadcrumbsList {
+  display: flex;
+  list-style: none;
+  height: 26px;
+}
+
 .linkTxt,
 .slash {
   color: var(--gray);
+  white-space: nowrap;
 }
 
 .slash {
   margin: 0px 10px;
+}
+
+.link {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .active {

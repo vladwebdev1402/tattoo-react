@@ -66,18 +66,11 @@ const HeaderSlider: FC = () => {
       >
         {slides.map((slide) => {
           return (
-            <li
-              className={styles.sliderItem}
-              style={{
-                width: `${sliderItemWidth}px`,
-              }}
-            >
-              <Slide
-                key={slide.id}
-                header={slide.header}
-                desc={slide.description}
-              />
-            </li>
+            <Slide
+              key={slide.id}
+              header={slide.header}
+              desc={slide.description}
+            />
           );
         })}
       </Slider>

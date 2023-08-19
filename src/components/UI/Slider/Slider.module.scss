@@ -1,18 +1,14 @@
+.slider__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .slider__container {
   width: 100%;
   height: 100%;
   overflow: hidden;
   touch-action: pan-y;
-  position: relative;
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-}
-.slider__wrapper {
-  width: 100%;
-  height: 100%;
   position: relative;
 }
 

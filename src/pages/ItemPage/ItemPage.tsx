@@ -7,6 +7,9 @@ import Сharacteristics from "../../components/characteristics/Сharacteristics"
 import { minishopData } from "../../data/minishopData";
 import { IShopItem } from "../../types/shopItem";
 import st from "./ItemPage.module.scss";
+import SubBlockItems from "../../components/subBlockItems/SubBlockItems";
+import ShopItem from "../../components/ShopItem/ShopItem";
+import MoreItemsMoreDiscount from "../../components/moreItemsMoreDiscount/MoreItemsMoreDiscount";
 const ItemPage: FC = () => {
   const params = useParams<{ id: string }>();
   const [item, setItem] = useState<IShopItem>(
@@ -53,6 +56,23 @@ const ItemPage: FC = () => {
             </div>
           )}
         </div>
+        <MoreItemsMoreDiscount />
+
+        <SubBlockItems title="Рекомендованные товары" watchAll={() => {}}>
+          {minishopData.map((item) => (
+            <ShopItem item={item} key={item.id} smallItem={true} />
+          ))}
+        </SubBlockItems>
+        <SubBlockItems title="Товары этого бренда" watchAll={() => {}}>
+          {minishopData.map((item) => (
+            <ShopItem item={item} key={item.id} smallItem={true} />
+          ))}
+        </SubBlockItems>
+        <SubBlockItems title="Похожие товары" watchAll={() => {}}>
+          {minishopData.map((item) => (
+            <ShopItem item={item} key={item.id} smallItem={true} />
+          ))}
+        </SubBlockItems>
       </div>
     </div>
   );
