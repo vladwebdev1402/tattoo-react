@@ -3,4 +3,5 @@ export interface ICategory {
     name: string;
     link?: string;
     filter?: string;
+    img?: string;
 }

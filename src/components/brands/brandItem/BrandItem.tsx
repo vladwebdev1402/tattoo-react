@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import styles from "./BrandItem.module.scss";
 interface Props {
   img: string;
@@ -7,9 +8,7 @@ interface Props {
 const BrandItem: FC<Props> = ({ img, link }) => {
   return (
     <div className={styles.brandItem}>
-      <a href={link}>
-        <img className={styles.brandImg} src={img} alt="" />
-      </a>
+      <img className={styles.brandImg} src={img} alt="" />
     </div>
   );
 };

@@ -1,129 +1,72 @@
 .brandItem {
-  position: relative;
-  border: 1px solid var(--gray);
-  border-top: none;
   padding: 20px;
-  padding-top: 0px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: -3px;
-    top: 0;
-    width: 6px;
-    height: 7px;
-    background-color: var(--gray);
-    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
-  }
-
-  &:nth-child(1) {
-    border-left: none;
-    padding-left: 0px;
-    &::after {
-      top: calc(100% - 3px);
-      rotate: -90deg;
-      width: 6px;
-      height: 7px;
-    }
-  }
-
-  &:nth-child(5) {
-    border-right: none;
-    padding-right: 0px;
-  }
-  &:nth-child(6) {
-    border-left: none;
-    padding-left: 0px;
-  }
-  &:nth-child(n + 6) {
-    border-bottom: none;
-    padding-bottom: 0px;
-    padding-top: 20px;
-    &::after {
-      left: calc(100% - 2px);
-      top: calc(100% - 7px);
-      rotate: 180deg;
-    }
-  }
-
-  &:nth-child(10) {
-    border-right: none;
-    padding-right: 0px;
-    &::after {
-      top: -4px;
-      rotate: 90deg;
-      width: 6px;
-      height: 7px;
-    }
-  }
-
-  @media (max-width: 1400px) {
-    &:nth-child(4) {
-      border-right: none;
-      padding-right: 0px;
-    }
-    &:nth-child(5) {
-      padding-top: 20px;
-      padding-right: 20px;
-      padding-left: 0px;
-      border-left: none;
-      border-right: 1px solid var(--gray);
-    }
-
-    &:nth-child(6) {
-      padding-left: 20px;
-      border-left: 1px solid var(--gray);
-    }
-    &:nth-child(8) {
-      padding-right: 0px;
-      border-right: none;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    &:nth-child(3) {
-      padding-right: 0;
-      border-right: none;
-    }
-
-    &:nth-child(n + 4) {
-      padding-top: 20px;
-      border-right: 1px solid var(--gray);
-      padding-right: 20px;
-      &::after {
-        rotate: 180deg;
-        left: calc(100% - 2px);
-        top: 80%;
-      }
-    }
-
-    &:nth-child(4) {
-      padding-left: 0;
-      border-left: none;
-    }
-
-    &:nth-child(5) {
-      padding-right: 20px;
-      padding-left: 20px;
-      border-left: 1px solid var(--gray);
-      border-right: 1px solid var(--gray);
-    }
-
-    &:nth-child(6) {
-      padding-left: 20px;
-      padding-right: 0px;
-      border-right: none;
-      border-left: 1px solid var(--gray);
-      &::after {
-        rotate: 90deg;
-        left: calc(100% - 5px);
-        top: -3px;
-      }
-    }
-  }
+  display: flex;
 }
 
 .brandImg {
   cursor: pointer;
   max-width: 100%;
+}
+
+@media (max-width: 1920px) and (min-width: 1400px) {
+  .brandItem {
+    padding-top: 0px;
+
+    &:nth-child(1),
+    &:nth-child(6) {
+      padding-left: 0px;
+    }
+
+    &:nth-child(5),
+    &:nth-child(10) {
+      padding-right: 0px;
+    }
+
+    &:nth-child(n + 6) {
+      padding-top: 20px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 1025px) {
+  .brandItem {
+    padding: 20px;
+    padding-top: 0px;
+
+    &:nth-child(1),
+    &:nth-child(5) {
+      padding-left: 0px;
+    }
+
+    &:nth-child(n + 5) {
+      padding-top: 20px;
+      padding-bottom: 0px;
+    }
+
+    &:nth-child(4),
+    &:nth-child(8) {
+      padding-right: 0px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .brandItem {
+    padding: 20px;
+    padding-top: 0px;
+    &:nth-child(1),
+    &:nth-child(4) {
+      padding-left: 0px;
+    }
+    &:nth-child(3),
+    &:nth-child(6) {
+      padding-right: 0px;
+    }
+
+    &:nth-child(n + 4) {
+      padding-top: 20px;
+      padding-bottom: 0px;
+    }
+  }
 }

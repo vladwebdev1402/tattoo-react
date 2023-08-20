@@ -59,7 +59,9 @@ export const useSlider = (
     setCurrentPagIdx(Math.round(idx));
   };
   const setNewOffsetThroughIdx = (idx: number) => {
-    if (freeMode) newOffset.current = -idx * getScroll() / countChildren
+    if (freeMode) newOffset.current = idx == countChildren - 1 ? 
+      -getScroll() + getContainer() :
+      -idx * getScroll() / countChildren
     else newOffset.current = -idx * getContainer();
     checkMinMaxOffset()
   };
@@ -81,8 +83,7 @@ export const useSlider = (
   };
 
   const onClickNext = () => {
-    let pagInd =
-      currentPagIdx + 1 == countChildren
+    let pagInd = currentPagIdx + 1 == countChildren
         ? currentPagIdx
         : currentPagIdx + 1;
     setNewOffsetThroughIdx(pagInd);

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import ContainerBriefInfoProduct from "../../components/containerBriefInfoProduct/ContainerBriefInfoProduct";
@@ -12,23 +12,25 @@ import ShopItem from "../../components/ShopItem/ShopItem";
 import MoreItemsMoreDiscount from "../../components/moreItemsMoreDiscount/MoreItemsMoreDiscount";
 const ItemPage: FC = () => {
   const params = useParams<{ id: string }>();
-  const [item, setItem] = useState<IShopItem>(
-    minishopData.filter((item) => item.id === Number(params.id))[0]
-  );
+  const [item, setItem] = useState<IShopItem>();
 
   useEffect(() => {
-    window.scrollTo({ top: 100 });
-  }, []);
+    setItem(minishopData.filter((item) => item.id === Number(params.id))[0]);
+  }, [params]);
 
-  return (
-    <div className={st.containerPage}>
-      <Breadcrumbs
-        params={true}
-        nameParams={item.name}
-        className={st.breadcrumbs}
-      />
+  useEffect(() => {
+    window.scrollTo({ top: 100, behavior: "smooth" });
+  }, [item]);
 
-      <div className={st.upContainer}>
+  if (item) {
+    return (
+      <div className={st.containerPage}>
+        <Breadcrumbs
+          params={true}
+          nameParams={item.name}
+          className={st.breadcrumbs}
+        />
+
         <div className={st.itemNameTxt}>{item.name}</div>
         <div className={st.imagesAndBriefInfo}>
           <ContainerImagesProduct
@@ -38,14 +40,12 @@ const ItemPage: FC = () => {
           />
           <ContainerBriefInfoProduct item={item} />
         </div>
-      </div>
-      <div className={st.downContainer}>
         <div className={st.fullInfoContainer}>
           <div className={st.descriptionContainer}>
             <div className={st.titleBlock}>Описание</div>
             <div className={st.descriptionBlock}>
               {item.description.split("/").map((desc) => (
-                <p>{desc}</p>
+                <p key={desc}>{desc}</p>
               ))}
             </div>
           </div>
@@ -74,8 +74,10 @@ const ItemPage: FC = () => {
           ))}
         </SubBlockItems>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <></>;
 };
 
 export default ItemPage;

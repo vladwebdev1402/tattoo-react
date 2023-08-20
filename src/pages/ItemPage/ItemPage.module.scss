@@ -1,16 +1,14 @@
 .containerPage {
   max-width: 1256px;
   margin: 0 auto 200px auto;
-}
-
-.upContainer {
   margin-top: 50px;
-  padding: 0 20px;
 }
 
-.downContainer,
-.breadcrumbs {
-  padding: 0 20px;
+.breadcrumbs,
+.itemNameTxt,
+.imagesAndBriefInfo,
+.descriptionContainer {
+  margin: 0 20px;
 }
 
 .itemNameTxt {
@@ -68,8 +66,8 @@
   .characteristicContainer {
     flex: 0 1 auto;
     max-width: 598px;
-    margin-left: 0px;
-    margin-top: 50px;
+
+    margin: 50px 20px 0px 20px;
   }
   .descriptionContainer {
     max-width: 100%;
@@ -79,14 +77,7 @@
 @media (max-width: 766px) {
   .imagesAndBriefInfo {
     flex-direction: column;
-  }
-
-  .itemNameTxt {
-    margin: 0 20px;
-  }
-
-  .upContainer {
-    padding: 0;
+    margin: 20px 0px 0px 0px;
   }
 }
 @media (max-width: 576px) {

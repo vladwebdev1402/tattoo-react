@@ -26,8 +26,8 @@ const ImagesSlider: FC<Props> = ({ images, marcers, id }) => {
         st__pagination={st.pagination}
         st__pag__item={st.pagItem}
       >
-        {Object.values(images).map((img) => (
-          <img className={st.img} src={img} draggable={false} />
+        {Object.values(images).map((img, idx) => (
+          <img className={st.img} key={idx} src={img} draggable={false} />
         ))}
       </Slider>
       <Marcers marcers={marcers} className={st.marcers} />

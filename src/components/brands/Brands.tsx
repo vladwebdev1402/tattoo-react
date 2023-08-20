@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
 import styles from "./Brands.module.scss";
-import { IBrandItem } from "../../types/brandItem";
-import { brandsData } from "../../data/brandsData";
 import { useBrands } from "../../hooks/useBrands";
+import { ICategory } from "../../types/category";
+import { brands } from "../../data/catalogCategory";
 import BrandsBlock from "./brandsBlock/BrandsBlock";
 import Slider from "../UI/Slider/Slider";
 import { useWidth } from "../../hooks/useWidth";
@@ -11,11 +11,11 @@ const Brands: FC = () => {
   const width = useWidth();
 
   const [countInGroup, setCountInGroup] = useState(10);
-  const [brands, setBrands] = useState<IBrandItem[]>(brandsData);
-  const groupBrands: Array<Array<IBrandItem>> = useBrands(brands, countInGroup);
+  const [brand, setBrands] = useState<ICategory[]>(brands.slice(0, 20));
+  const groupBrands: Array<Array<ICategory>> = useBrands(brand, countInGroup);
 
   useEffect(() => {
-    if (width <= 768) {
+    if (width <= 1024) {
       setCountInGroup(6);
     } else if (width <= 1400) {
       setCountInGroup(8);

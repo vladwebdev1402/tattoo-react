@@ -65,6 +65,7 @@
   font-size: 24px;
   font-weight: bold;
   color: var(--orange);
+  white-space: nowrap;
 }
 
 .button {
@@ -165,11 +166,33 @@
 
 .noneBtn .itemContainer {
   background-color: var(--white) !important;
+  position: static;
+}
+.checkboxContainer {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+}
+.checkbox span {
+  &::after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.checkbox input:checked + span::after {
+  background-image: url(../../assets/staticIcons/checkedbig.svg) !important;
+  background-position: 4px 5px !important;
+}
+
+.marcersSmall {
+  display: none !important;
 }
 
 @media (max-width: 992px) {
   .noneBtn {
     height: 316px;
+    margin: 0 5px;
   }
 }
 
@@ -182,10 +205,6 @@
   .smallItem .favorite,
   .smallItem .button {
     display: none;
-  }
-
-  .marcersSmall {
-    display: none !important;
   }
 
   .smallItem .itemName {

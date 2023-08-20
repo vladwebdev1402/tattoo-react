@@ -22,7 +22,7 @@ const ContainerImagesProduct: FC<Props> = ({ images, marcers, id }) => {
               onClick={() => setActiveIdx(idx)}
               img={img}
               active={idx === activeIdx}
-              key={img}
+              key={idx}
             />
           ))}
         </div>

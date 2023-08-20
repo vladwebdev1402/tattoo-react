@@ -6,22 +6,37 @@ import st from "./MoreItemsMoreDiscount.module.scss";
 const MoreItemsMoreDiscount = () => {
   return (
     <div className={st.moreItemsMoreDiscountContainer}>
-      <h1>Больше товаров — больше скидка</h1>
-      <div className={st.moreItemsBody}>
+      <h1 className={st.title}>Больше товаров — больше скидка</h1>
+      <div className={st.moreItemsBodyContainer}>
         <div className={st.moreItemsHead}>
           Дополните комплект нужными товарами
         </div>
-        <div className={st.moreItemsContainer}>
-          <ShopItem item={minishopData[0]} smallItem={true} noneBtn={true} />
-          <div className={st.plus}></div>
-          <ShopItem item={minishopData[0]} smallItem={true} noneBtn={true} />
-          <div className={st.plus}></div>
-          <ShopItem item={minishopData[0]} smallItem={true} noneBtn={true} />
+        <div className={st.scrollDiv}>
+          <div className={st.moreItemsContainer}>
+            <ShopItem
+              item={minishopData[0]}
+              smallItem={true}
+              noneBtn={true}
+              checkbox={true}
+            />
+            <div className={st.plus}></div>
+            <ShopItem
+              item={minishopData[0]}
+              smallItem={true}
+              noneBtn={true}
+              checkbox={true}
+            />
+            <div className={st.plus}></div>
+            <ShopItem
+              item={minishopData[0]}
+              smallItem={true}
+              noneBtn={true}
+              checkbox={true}
+            />
+          </div>
         </div>
-        <div
-          className="horizontal-divider"
-          style={{ backgroundColor: "var(--gray)", marginTop: "20px" }}
-        ></div>
+
+        <div className={`horizontal-divider ${st.divider}`}></div>
         <div className={st.discountContainer}>
           <ClipButton
             className={st.addInBasketBtn}

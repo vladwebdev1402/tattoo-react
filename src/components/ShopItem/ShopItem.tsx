@@ -8,6 +8,7 @@ import { useWidth } from "../../hooks/useWidth";
 import Marcers from "./Marcers/Marcers";
 
 import { useNavigate } from "react-router-dom";
+import MyChecked from "../UI/checked/MyChecked";
 interface ShopItemProps {
   item: IShopItem;
   smallItem?: boolean;
@@ -87,6 +88,17 @@ const ShopItem: FC<ShopItemProps> = ({
           marcers={item.marcers}
           className={smallItem ? styles.marcersSmall : ""}
         />
+        {checkbox && (
+          <div className={styles.checkboxContainer}>
+            <MyChecked
+              className={styles.checkbox}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                e.preventDefault();
+              }}
+              checked={true}
+            />
+          </div>
+        )}
         <FavoriteItem id={item.id} className={styles.favorite} />
       </div>
     </div>

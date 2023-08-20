@@ -9,7 +9,7 @@ const Сharacteristics: FC<Props> = ({ characteristics }) => {
   return (
     <>
       {Object.entries(characteristics).map(([key, value]) => (
-        <div className={st.container}>
+        <div className={st.container} key={key}>
           <div className={st.characteristic}>
             <span className={st.key}>{characteristicsName[key]}</span>
             <span className={st.value}>{value}</span>
