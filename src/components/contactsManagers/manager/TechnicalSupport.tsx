@@ -9,10 +9,13 @@ const TechnicalSupport: FC<Props> = ({ manager }) => {
   return (
     <div className={styles.supportContainer}>
       <div className={styles.supportProfile}>
-        <img
-          src="https://ae04.alicdn.com/kf/Sb72374b6d55c444ba44f64f47e9adb17w.jpg"
-          className={styles.managerImg}
-        />
+        <div className={styles.imgContainer}>
+          <img
+            src="https://ae04.alicdn.com/kf/Sb72374b6d55c444ba44f64f47e9adb17w.jpg"
+            className={styles.supportImg}
+          />
+        </div>
+
         <div className={styles.supportData}>
           <div className={styles.supportJobTitle}>Тех. поддержка</div>
           <div className={styles.managerName}>{manager.name}</div>

@@ -10,7 +10,7 @@
   }
 }
 
-.item:not(.smallItem) {
+.item:not(.noneBtn) {
   @media (min-width: 992px) {
     &:hover {
       .itemContainer {

@@ -89,12 +89,15 @@ const ShopItem: FC<ShopItemProps> = ({
           className={smallItem ? styles.marcersSmall : ""}
         />
         {checkbox && (
-          <div className={styles.checkboxContainer}>
+          <div
+            className={styles.checkboxContainer}
+            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+              e.stopPropagation();
+            }}
+          >
             <MyChecked
               className={styles.checkbox}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                e.preventDefault();
-              }}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {}}
               checked={true}
             />
           </div>

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import ProfileDataInputs from "../../components/profileDataInputs/ProfileDataInputs";
+import ProfileDataInputs from "../../components/profileDataInputs.tsx/ProfileDataInputs";
 import st from "./ProfilePage.module.scss";
 const ProfilePage: FC = () => {
   return (

@@ -18,8 +18,8 @@ const Breadcrumbs: FC<Props> = ({
   let allPath = "";
 
   return (
-    <div className={styles.breadcrumbsContainer}>
-      <ul className={`${styles.breadcrumbsList} ${className}`}>
+    <div className={`${styles.breadcrumbsContainer} ${className}`}>
+      <ul className={styles.breadcrumbsList}>
         <li className={`${styles.link}`}>
           <Link to="/">
             <span className={styles.linkTxt}>Главная</span>

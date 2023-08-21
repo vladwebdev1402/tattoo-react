@@ -1,9 +1,7 @@
 .contacts {
-  min-width: 185px;
-  height: 96px;
 }
 
-.container {
+.contactContainer {
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,6 +12,7 @@
   font-weight: bold;
   color: var(--dark);
   margin-left: 10px;
+  white-space: nowrap;
 }
 
 .urlContacts {
@@ -32,6 +31,7 @@
 .mailTxt {
   color: var(--dark);
   font-size: 15px;
+  white-space: nowrap;
 }
 
 .mailTxt {

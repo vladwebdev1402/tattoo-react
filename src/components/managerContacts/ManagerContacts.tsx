@@ -11,7 +11,7 @@ const ManagerContacts: FC<Props> = ({ contacts }) => {
   return (
     <div className={styles.contacts}>
       <div className={styles.numberAndUrlContacts}>
-        <div className={styles.container}>
+        <div className={styles.contactContainer}>
           <div className="icon">
             <img src={callImg} />
           </div>
@@ -35,7 +35,7 @@ const ManagerContacts: FC<Props> = ({ contacts }) => {
           </li>
         </ul>
       </div>
-      <div className={`${styles.container} ${styles.mail}`}>
+      <div className={`${styles.contactContainer} ${styles.mail}`}>
         <div className="icon">
           <img src={mailImg} />
         </div>

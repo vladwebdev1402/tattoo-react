@@ -1,17 +1,20 @@
 .managerContainer {
   position: relative;
+  display: flex;
   background-color: var(--white);
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  gap: 20px;
-  @media (max-width: 768px) {
-    grid-template-columns: 80px 1fr;
-  }
+  padding: 20px 36px 20px 20px;
   max-width: 392px;
 }
+.leftManagerContainer {
+  margin-right: 20px;
+}
+.imgContainer {
+  position: relative;
+  max-width: 166px;
+}
 
-.managerImg {
+.managerImg,
+.supportImg {
   width: 100%;
 }
 
@@ -19,13 +22,10 @@
   position: absolute;
   display: flex;
   align-items: center;
-  min-width: 67px;
   bottom: 20px;
   right: 20px;
   @media (max-width: 768px) {
-    bottom: 51px;
-    right: 0px;
-    left: 95px;
+    display: none;
     .statusTxt {
       display: none;
     }
@@ -47,6 +47,7 @@
 .statusTxt {
   font-size: 17px;
   margin-left: 10px;
+  white-space: nowrap;
 }
 
 .managerName {
@@ -70,16 +71,13 @@
 }
 
 .supportProfile {
-  display: grid;
-  grid-template-columns: 4fr 3fr;
-  gap: 17px;
+  display: flex;
+  column-gap: 17px;
   margin-bottom: 45px;
-  @media (max-width: 1200px) {
-    grid-template-columns: 7fr 6fr;
-  }
 }
 
 .supportData {
+  margin-left: auto;
   position: relative;
 }
 
@@ -96,4 +94,37 @@
 .supportJobTitle {
   font-size: 17px;
   color: var(--txt-gray2);
+  white-space: nowrap;
+}
+.mobileStatus {
+  display: none;
+  right: -4px;
+  bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .mobileStatus {
+    display: flex;
+  }
+
+  .managerImg {
+    height: 80px;
+  }
+  .leftManagerContainer {
+    margin-right: 0px;
+  }
+
+  .rightManagerContainer {
+    padding-top: 0px;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 350px) {
+  .managerContainer {
+    padding: 20px 10px 20px 20px;
+  }
+  .leftManagerContainer {
+    margin-right: 20px;
+  }
 }
