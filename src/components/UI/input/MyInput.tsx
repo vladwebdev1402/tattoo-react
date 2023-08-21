@@ -6,19 +6,26 @@ interface MyInputProps {
   value: string;
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 }
 
-const MyInput: FC<MyInputProps> = ({ title, placeholder, onChange, value }) => {
+const MyInput: FC<MyInputProps> = ({
+  title,
+  placeholder,
+  onChange,
+  value,
+  className = "",
+}) => {
   return (
-    <form className={styles.inputContainer}>
-      <span className={styles.inputName}>{title}</span>
+    <div className={`${styles.inputContainer} ${className}`}>
+      <div className={styles.inputName}>{title}</div>
       <input
         value={value}
         onChange={onChange}
         className={styles.input}
         placeholder={placeholder}
       />
-    </form>
+    </div>
   );
 };
 

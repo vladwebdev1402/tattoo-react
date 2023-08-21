@@ -1,17 +1,19 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
+import { useClose } from "../../../hooks/useClose";
 import IconCatalog from "../../UI/icons/headerAndNavIcons/IconCatalog";
 import LinkCatalogBody from "./CatalogBody/LinkCatalogBody";
 import styles from "./LinkCatalog.module.scss";
 const LinkCatalog: FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const catalogRef = useRef<HTMLDivElement>(null);
+
+  const { isVisible, setIsVisible } = useClose(catalogRef);
   const clickCatalog = () => {
     setIsVisible(!isVisible);
   };
+
   return (
-    <div className={styles.catalog}>
-      <span className={styles.catalogTxt} onClick={clickCatalog}>
-        Каталог
-      </span>
+    <div className={styles.catalog} onClick={clickCatalog} ref={catalogRef}>
+      <span className={styles.catalogTxt}>Каталог</span>
       <div className="icon" style={{ alignSelf: "flex-end", marginBottom: 1 }}>
         <IconCatalog />
       </div>

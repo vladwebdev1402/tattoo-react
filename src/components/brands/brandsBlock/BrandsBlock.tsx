@@ -9,7 +9,7 @@ const BrandsBlock: FC<Props> = ({ brands }) => {
   return (
     <div className={styles.brandsBlock}>
       {brands.map((item) => (
-        <BrandItem link={item.link || ""} img={item.img || ""} key={item.id} />
+        <BrandItem id={item.id} img={item.img || ""} key={item.id} />
       ))}
       <div className={`vertical-divider ${styles.vD} ${styles.d1}`}></div>
       <div className={`vertical-divider ${styles.vD} ${styles.d2}`}></div>

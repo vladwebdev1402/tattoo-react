@@ -8,9 +8,9 @@ import Subscribe from "../../components/subscribe/Subscribe";
 import Brands from "../../components/brands/Brands";
 
 const MainPage = () => {
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div>

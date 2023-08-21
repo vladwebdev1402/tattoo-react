@@ -8,7 +8,10 @@ interface Props {
 const CategoryLink: FC<Props> = ({ name, isActive, onClick }) => {
   return (
     <div
-      onClick={onClick}
+      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        onClick();
+      }}
       className={`${styles.catalogCategoryLinkBlock} ${
         isActive && styles.active
       }`}

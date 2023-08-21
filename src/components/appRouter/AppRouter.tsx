@@ -13,6 +13,8 @@ import ItemPage from "../../pages/ItemPage/ItemPage";
 import MainPage from "../../pages/MainPage/MainPage";
 import PromocodesPage from "../../pages/PromocodesPage/PromocodesPage";
 import Root from "../../pages/Root/Root";
+import BrandPage from "../../pages/BrandPage/BrandPage";
+import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 
 const AppRouter: FC = () => {
   const router = createBrowserRouter(
@@ -24,7 +26,8 @@ const AppRouter: FC = () => {
         <Route path="catalog" element={<CatalogPage />} />
         <Route path="catalog/:type/" element={<CatalogCategoryPage />} />
         <Route path="catalog/:type/:id" element={<ItemPage />} />
-
+        <Route path="brands/:id" element={<BrandPage />} />
+        <Route path="profile" element={<ProfilePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     )

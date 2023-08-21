@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 270px;
+
+  @media (max-width: 576px) {
+    width: 130px;
+  }
+}
+
+.headerTxt {
+  margin-left: 40px;
+}

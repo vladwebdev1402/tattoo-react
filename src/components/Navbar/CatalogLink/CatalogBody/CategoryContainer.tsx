@@ -4,8 +4,9 @@ import { ICategory } from "../../../../types/category";
 import styles from "./LinkCatalogBody.module.scss";
 interface Props {
   items: ICategory[];
+  brands: boolean;
 }
-const CategoryContainer: FC<Props> = ({ items }) => {
+const CategoryContainer: FC<Props> = ({ items, brands }) => {
   const navigate = useNavigate();
   return (
     <div className={styles.categoryContainer}>
@@ -14,7 +15,8 @@ const CategoryContainer: FC<Props> = ({ items }) => {
           key={item.id}
           className={styles.category}
           onClick={() => {
-            navigate(`catalog/${item?.link}`);
+            if (brands) navigate(`brands/${item?.id}`);
+            else navigate(`catalog/${item?.link}`);
           }}
         >
           {item.name}

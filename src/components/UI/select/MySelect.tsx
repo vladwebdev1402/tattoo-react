@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
+import { useClose } from "../../../hooks/useClose";
 import styles from "./MySelect.module.scss";
 interface Props {
   options: { name: string; isActive: boolean }[];
@@ -6,7 +7,8 @@ interface Props {
 }
 
 const MySelect: FC<Props> = ({ options, setOptions }) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const { isVisible, setIsVisible } = useClose(ref);
   const [currentOption, setCurrentOption] = useState<string>("");
 
   const seacrhCurrentOption = () => {
@@ -24,13 +26,14 @@ const MySelect: FC<Props> = ({ options, setOptions }) => {
   }, [options]);
 
   const clickSelect = () => {
-    setOpen(!open);
+    setIsVisible(!isVisible);
   };
 
   return (
     <div
-      className={`${styles.selectContainer} ${open && styles.active}`}
+      className={`${styles.selectContainer} ${isVisible && styles.active}`}
       onClick={clickSelect}
+      ref={ref}
     >
       <span className={`${styles.txtOption} ${styles.currentTxtOption}`}>
         {currentOption}

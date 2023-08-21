@@ -4,9 +4,11 @@ import Basket from "../../UI/icons/headerAndNavIcons/Basket";
 import Favorites from "../../UI/icons/headerAndNavIcons/Favorites";
 import Profile from "../../UI/icons/headerAndNavIcons/Profile";
 import { FavoriteContext } from "../../../context/favoriteContext";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 const Account: React.FC = () => {
   const { favorites } = useContext(FavoriteContext);
+  const navigate = useNavigate();
 
   return (
     <div className={styles.account}>
@@ -22,7 +24,10 @@ const Account: React.FC = () => {
       <button className={`icon ${styles.iconBtn} ${styles.favorite}`}>
         <Favorites />
       </button>
-      <button className={`icon ${styles.iconBtn} ${styles.profile}`}>
+      <button
+        className={`icon ${styles.iconBtn} ${styles.profile}`}
+        onClick={() => navigate("profile")}
+      >
         <Profile />
       </button>
     </div>

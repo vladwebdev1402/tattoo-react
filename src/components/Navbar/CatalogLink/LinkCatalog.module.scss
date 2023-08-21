@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .catalogTxt {
@@ -9,6 +10,5 @@
   font-family: "Jost";
   font-size: 25px;
   user-select: none;
-  cursor: pointer;
   margin-right: 8px;
 }
