@@ -17,4 +17,10 @@
   font-weight: 600;
   font-size: 25px;
   color: var(--dark);
+  @media (max-width: 1236px) {
+    margin-left: 20px;
+  }
+  @media (max-width: 576px) {
+    font-size: 17px;
+  }
 }

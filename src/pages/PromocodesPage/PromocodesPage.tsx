@@ -6,8 +6,8 @@ import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 const PromocodesPage: FC = () => {
   return (
     <div className={styles.promocodesContainer}>
-      <Breadcrumbs />
-      <h1>Промокоды</h1>
+      <Breadcrumbs className={styles.margin} />
+      <h1 className={styles.margin}>Промокоды</h1>
       <div className={styles.promocodesBody}>
         {promocodes.map((promo) => (
           <PromocodeItem key={promo.id} promo={promo} />

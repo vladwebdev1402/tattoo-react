@@ -1,16 +1,26 @@
 .promocodesContainer {
-  max-width: 1216px;
+  max-width: 1256px;
   min-height: 1319px;
   margin: 50px auto 200px auto;
-
+  padding: 0 20px;
   @media (max-width: 1300px) {
-    max-width: 804px;
+    max-width: 844px;
   }
   @media (max-width: 768px) {
-    max-width: 728px;
+    max-width: 768px;
+    padding: 0 0px;
+    margin: 30px auto 200px auto;
+
+    .margin {
+      margin-left: 20px;
+    }
   }
   @media (max-width: 650px) {
-    max-width: 320px;
+    max-width: 392px;
+  }
+
+  @media (max-width: 576px) {
+    margin: 20px auto 200px auto;
   }
 }
 

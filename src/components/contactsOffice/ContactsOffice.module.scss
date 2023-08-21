@@ -108,3 +108,17 @@
     font-size: 17px;
   }
 }
+
+@media (max-width: 768px) {
+  .containerOffice {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .headTxt {
+    font-size: 17px;
+  }
+  .containerOffice {
+    margin-top: 20px;
+  }
+}
