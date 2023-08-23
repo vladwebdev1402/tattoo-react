@@ -36,8 +36,24 @@
 
 .mailTxt {
   margin-left: 10px;
+  font-size: 17px;
 }
 
 .mail {
   margin-top: 25px;
+}
+
+.personalContactContainer {
+  margin-top: 30px;
+}
+
+.companyNumber {
+  margin-left: 10px;
+  font-size: 17px;
+  color: var(--dark);
+}
+
+.callTxt {
+  margin-top: 10px;
+  color: var(--dark);
 }

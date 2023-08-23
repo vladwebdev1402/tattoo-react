@@ -4,8 +4,9 @@ import { IManager, IManagerContacts } from "../../../types/manager";
 import styles from "./Manager.module.scss";
 interface Props {
   manager: IManager;
+  personalSupport?: boolean;
 }
-const TechnicalSupport: FC<Props> = ({ manager }) => {
+const TechnicalSupport: FC<Props> = ({ manager, personalSupport = false }) => {
   return (
     <div className={styles.supportContainer}>
       <div className={styles.supportProfile}>
@@ -31,12 +32,21 @@ const TechnicalSupport: FC<Props> = ({ manager }) => {
           </div>
         </div>
       </div>
-      <ManagerContacts contacts={manager.contacts} />
-      <p className={styles.txt}>
-        Обратитесь в нашу поддержку, если у Вас возникли какие-либо вопросы
-        по Вашему заказу, либо Вы не можете собрать и настроить Ваше
-        тату-оборудование. Мы поможем.
-      </p>
+      <ManagerContacts contacts={manager.contacts} personal={personalSupport} />
+      {!personalSupport && (
+        <p className={styles.txt}>
+          Обратитесь в нашу поддержку, если у Вас возникли какие-либо вопросы
+          по Вашему заказу, либо Вы не можете собрать и настроить Ваше
+          тату-оборудование. Мы поможем.
+        </p>
+      )}
+
+      {personalSupport && (
+        <p className={styles.txt}>
+          Понедельник — Пятница
+          <br />с 7:00 до 15: 00 (МСК)
+        </p>
+      )}
     </div>
   );
 };

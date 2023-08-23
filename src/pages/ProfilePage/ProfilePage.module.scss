@@ -12,10 +12,25 @@
   }
 }
 
+.discountContainer {
+  font-size: 25px;
+  color: var(--dark);
+  margin-bottom: 30px;
+}
+
+.discount {
+  color: var(--orange);
+  font-weight: bold;
+}
+
 .leftContainer {
   max-width: 804px;
 }
 
 .rightContainer {
   margin-left: 20px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }

@@ -6,8 +6,9 @@ import { IManagerContacts } from "../../types/manager";
 
 interface Props {
   contacts: IManagerContacts;
+  personal?: boolean;
 }
-const ManagerContacts: FC<Props> = ({ contacts }) => {
+const ManagerContacts: FC<Props> = ({ contacts, personal = false }) => {
   return (
     <div className={styles.contacts}>
       <div className={styles.numberAndUrlContacts}>
@@ -35,6 +36,17 @@ const ManagerContacts: FC<Props> = ({ contacts }) => {
           </li>
         </ul>
       </div>
+      {personal && (
+        <div className={styles.personalContactContainer}>
+          <div className={styles.contactContainer}>
+            <div className="icon">
+              <img src={callImg} />
+            </div>
+            <span className={styles.companyNumber}>8(800)600-61-91</span>
+          </div>
+          <div className={styles.callTxt}>(Звонок бесплатный)</div>
+        </div>
+      )}
       <div className={`${styles.contactContainer} ${styles.mail}`}>
         <div className="icon">
           <img src={mailImg} />

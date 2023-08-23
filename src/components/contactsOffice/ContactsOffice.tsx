@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import TechnicalSupport from "../contactsManagers/manager/TechnicalSupport";
 import { supportManagerData } from "../../data/managersData";
 import styles from "./ContactsOffice.module.scss";
+
 const ContactsOffice: FC = () => {
   return (
     <div className={styles.containerOffice}>
