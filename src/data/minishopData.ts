@@ -15,8 +15,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 0,
     name: "Foxxx Kitsune Mini Black Vintage RCA",
-    price: "6 000",
-    oldPrice: "",
+    price: 6000,
+    oldPrice: 0,
     img: {
       img0: img0,
       img1: img0,
@@ -34,8 +34,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 1,
     name: "Foxxx Viper Fox Golden Vintage Lot #1 RCA",
-    price: "34 920",
-    oldPrice: "36 000",
+    price: 34920,
+    oldPrice: 36000,
     img: {
       img0: img11,
       img1: img12,
@@ -66,8 +66,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 2,
     name: "Нитровиниловые перчатки Wally Plastic S",
-    price: "20",
-    oldPrice: "",
+    price: 20,
+    oldPrice: 0,
     img: {
       img0: img2,
       img1: img2,
@@ -90,8 +90,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 3,
     name: "Forever Cartridge Grip Ergo 30 mm Огненно-Рыжий",
-    price: "2 037",
-    oldPrice: "",
+    price: 2037,
+    oldPrice: 0,
     img: {
       img0: img3,
       img1: img3,
@@ -109,8 +109,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 4,
     name: "Verge Direct 2.1 Pink gip EGO 4 mm liners",
-    price: "2 037",
-    oldPrice: "",
+    price: 2037,
+    oldPrice: 0,
     img: {
       img0: img4,
       img1: img4,
@@ -128,8 +128,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 5,
     name: "Deuce Machines Direct Drive #7 RCA Samurai",
-    price: "8 000",
-    oldPrice: "",
+    price: 8000,
+    oldPrice: 0,
     img: {
       img0: img5,
       img1: img5,
@@ -147,8 +147,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 6,
     name: "Cyborg Machines Alter Rotary Axis Cross Sexy Nymph",
-    price: "11 000",
-    oldPrice: "",
+    price: 11000,
+    oldPrice: 0,
     img: {
       img0: img6,
       img1: img6,
@@ -166,8 +166,8 @@ export const minishopData: IShopItem[] = [
   {
     id: 7,
     name: "Verge Direct 2.1 Gunmetal",
-    price: "10 900",
-    oldPrice: "",
+    price: 10900,
+    oldPrice: 0,
     img: {
       img0: img7,
       img1: img7,

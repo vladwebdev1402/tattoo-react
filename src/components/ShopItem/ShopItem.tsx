@@ -54,7 +54,9 @@ const ShopItem: FC<ShopItemProps> = ({
           className={smallItem ? styles.smallImg : ""}
         />
         <div className={styles.itemName}>{item.name}</div>
-        <div className={styles.itemPrice}>{item.price} ₽</div>
+        <div className={styles.itemPrice}>
+          {item.price.toLocaleString("ru-RU")} ₽
+        </div>
 
         <div className={styles.button}>
           {!countBasket && (

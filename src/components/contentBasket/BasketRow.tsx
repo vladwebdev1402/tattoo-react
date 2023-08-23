@@ -3,7 +3,7 @@ import st from "./ContentBasket.module.scss";
 interface Props {
   img: string;
   name: string;
-  price: string;
+  price: number;
   count: number;
 }
 const BasketRow: FC<Props> = ({ img, name, price, count }) => {
@@ -16,7 +16,7 @@ const BasketRow: FC<Props> = ({ img, name, price, count }) => {
       <div className={st.itemTxt}>{price} ₽</div>
       <div className={st.itemTxt}>4</div>
       <div className={st.itemTxt}>
-        {Number(price.split(" ").join("")) * count} ₽
+        {(price * count).toLocaleString("ru-RU")} ₽
       </div>
     </div>
   );

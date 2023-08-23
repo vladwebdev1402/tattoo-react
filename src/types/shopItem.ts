@@ -37,8 +37,8 @@ export interface IItemImg {
 
 export interface IShopItem {
   id: number;
-  price: string;
-  oldPrice: string;
+  price: number;
+  oldPrice: number;
   name: string;
   img: IItemImg;
   marcers: IMarcers;

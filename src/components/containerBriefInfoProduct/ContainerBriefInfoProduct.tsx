@@ -16,8 +16,14 @@ const ContainerBriefInfoProduct: FC<Props> = ({ item }) => {
     <div className={st.containerBriefInfo}>
       <div className={st.itemNameTxt}>{item.name}</div>
       <div className={st.priceBlock}>
-        <span className={st.currentPrice}>{item.price} ₽</span>
-        {item.oldPrice && <span className={st.oldPrice}>{item.oldPrice}</span>}
+        <span className={st.currentPrice}>
+          {item.price.toLocaleString("ru-RU")} ₽
+        </span>
+        {item.oldPrice > 0 && (
+          <span className={st.oldPrice}>
+            {item.oldPrice.toLocaleString("ru-RU")}
+          </span>
+        )}
         <span className={st.availability}>
           <span className={st.availabilityTxt}>Наличие: </span>
           {item.count}
