@@ -9,5 +9,5 @@ export interface IProductOrder {
     sum: number;
     status: string;
     contactPerson: IContactPerson;
-    products: IShopItem;
+    products: {item: IShopItem, count: number}[];
 }

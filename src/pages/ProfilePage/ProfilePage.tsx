@@ -10,8 +10,8 @@ const ProfilePage: FC = () => {
   return (
     <div className={st.container}>
       <div className={st.leftContainer}>
-        <Breadcrumbs />
-        <h1>Личный кабинет</h1>
+        <Breadcrumbs className={st.margin} />
+        <h1 className={st.margin}>Личный кабинет</h1>
         <ProfileDataInputs />
         <StoryOrders />
       </div>

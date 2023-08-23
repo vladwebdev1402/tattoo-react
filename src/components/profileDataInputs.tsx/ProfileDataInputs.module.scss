@@ -29,8 +29,6 @@
   column-gap: 20px;
   row-gap: 23px;
 }
-.input {
-}
 
 .number {
   min-width: 168px;
@@ -68,5 +66,10 @@
 
   .editTxt {
     font-size: 15px;
+  }
+
+  .profileDataWrapper {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
