@@ -11,9 +11,15 @@ const Footer: FC = () => {
       <div className={styles.footerContainer}>
         <LeftFooter />
         {width <= 1024 ? (
-          <div className="horizontal-divider"></div>
+          <div
+            className="horizontal-divider"
+            style={{ backgroundColor: "var(--dark-orange)" }}
+          ></div>
         ) : (
-          <div className="vertical-divider"></div>
+          <div
+            className="vertical-divider"
+            style={{ backgroundColor: "var(--dark-orange)" }}
+          ></div>
         )}
         <RightFooter />
       </div>

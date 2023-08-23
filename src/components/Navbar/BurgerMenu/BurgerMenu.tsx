@@ -26,7 +26,10 @@ const BurgerMenu: FC = () => {
         </div>
       </div>
       <div className={`${styles.menuBody} ${isActiveMenu && styles.active}`}>
-        <div className="horizontal-divider"></div>
+        <div
+          className="horizontal-divider"
+          style={{ backgroundColor: "var(--gray)" }}
+        ></div>
         <div className={styles.burgerMenuNav}>
           <div
             className={`${styles.catalogContainer} ${

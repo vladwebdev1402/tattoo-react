@@ -21,7 +21,10 @@ const HeadAndNav: FC = () => {
     <header className={styles.headContainer}>
       <div className={styles.head}>
         <Header />
-        <div className="horizontal-divider" style={{ marginTop: "11px" }}></div>
+        <div
+          className="horizontal-divider"
+          style={{ marginTop: "11px", backgroundColor: "var(--dark-orange)" }}
+        ></div>
         <Navbar />
       </div>
     </header>

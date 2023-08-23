@@ -27,10 +27,7 @@ const LinkCatalogBody: FC<Props> = ({ isVisible }) => {
           name="По брендам"
         />
       </div>
-      <div
-        className="horizontal-divider"
-        style={{ backgroundColor: "var(--gray)" }}
-      ></div>
+      <div className="horizontal-divider"></div>
       <CategoryContainer
         items={isBrands ? brands : category}
         brands={isBrands}

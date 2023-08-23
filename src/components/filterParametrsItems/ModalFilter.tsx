@@ -16,10 +16,7 @@ const ModalFilter: FC<Props> = ({ name, children, inStock = false }) => {
           <span className={st.filterName}>{name}</span>
           {children}
         </div>
-        <div
-          className="horizontal-divider"
-          style={{ backgroundColor: "var(--gray)", marginTop: "30px" }}
-        ></div>
+        <div className="horizontal-divider" style={{ marginTop: "30px" }}></div>
       </div>
     );
   }
@@ -37,10 +34,7 @@ const ModalFilter: FC<Props> = ({ name, children, inStock = false }) => {
       <div className={st.filterBody}>
         <div className={st.filterChildren}>{children}</div>
 
-        <div
-          className="horizontal-divider"
-          style={{ backgroundColor: "var(--gray)", marginTop: "30px" }}
-        ></div>
+        <div className="horizontal-divider" style={{ marginTop: "30px" }}></div>
       </div>
     </div>
   );
