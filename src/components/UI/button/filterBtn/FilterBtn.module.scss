@@ -19,6 +19,12 @@
       color: var(--txt-white);
     }
   }
+
+  @media (max-width: 576px) {
+    padding: 7px 12px;
+    font-size: 15px;
+    line-height: 15px;
+  }
 }
 
 .active {
