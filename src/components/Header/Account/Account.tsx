@@ -14,7 +14,12 @@ const Account: React.FC = () => {
     <div className={styles.account}>
       <div className={styles.balance}>
         <span className={styles.balanceText}>37 532 ₽</span>
-        <button className={`icon ${styles.iconBtn} ${styles.basket}`}>
+        <button
+          className={`icon ${styles.iconBtn} ${styles.basket}`}
+          onClick={() => {
+            navigate("basket");
+          }}
+        >
           <Basket />
           {favorites.length && (
             <div className={styles.countItemsInBasket}>{favorites.length}</div>

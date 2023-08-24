@@ -6,6 +6,7 @@ interface MyCheckedProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
   className?: string;
+  children?: React.ReactNode;
 }
 
 const MyChecked: FC<MyCheckedProps> = ({
@@ -13,6 +14,7 @@ const MyChecked: FC<MyCheckedProps> = ({
   onChange,
   checked,
   className = "",
+  children,
 }) => {
   return (
     <label className={`${styles.inputBox} ${className}`}>
@@ -22,7 +24,11 @@ const MyChecked: FC<MyCheckedProps> = ({
         checked={checked ? true : false}
         onChange={onChange}
       />
-      <span className={styles.title}>{title}</span>
+
+      <div className={styles.title}>
+        {title}
+        {children}
+      </div>
     </label>
   );
 };

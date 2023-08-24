@@ -12,12 +12,13 @@ const BasketRow: FC<Props> = ({ img, name, price, count, isOrder }) => {
   return (
     <div className={st.tableRow}>
       <div className={st.itemImgNameContainer}>
-        <img className={st.itemImg} src={img} />
+        <div className={st.imgContainer}>
+          <img className={st.itemImg} src={img} />
+        </div>
+
         <div className={st.itemNameContainer}>
           <span className={`${st.itemTxt} ${st.itemName}`}>{name}</span>
-          <span className={st.itemPrice}>
-            Цена: {price.toLocaleString("ru-RU")} ₽
-          </span>
+          <span className={st.itemPrice}>Цена: {price}₽</span>
         </div>
       </div>
       <div className={`${st.itemTxt} ${st.tablePrice}`}>
@@ -32,7 +33,7 @@ const BasketRow: FC<Props> = ({ img, name, price, count, isOrder }) => {
         ) : (
           <BtnChangeCount
             className={st.changeCountBtn}
-            count={0}
+            count={count}
             setCount={() => {}}
             itemCount={4}
           />
@@ -40,7 +41,7 @@ const BasketRow: FC<Props> = ({ img, name, price, count, isOrder }) => {
       </div>
       <div className={st.itemTxt}>
         <span className={st.hint}>Стоимость: </span>
-        {(price * count).toLocaleString("ru-RU")} ₽
+        {(price * count).toLocaleString("ru-RU")}₽
       </div>
       {!isOrder && <button className={st.closeBtn}></button>}
       <div className={`horizontal-divider ${st.itemDivider}`}></div>

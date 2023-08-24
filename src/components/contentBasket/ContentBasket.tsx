@@ -7,12 +7,12 @@ import st from "./ContentBasket.module.scss";
 interface Props {
   items: { item: IShopItem; count: number }[];
   isOrder?: boolean;
+  className?: string;
 }
 
-const ContentBasket: FC<Props> = ({ items, isOrder = false }) => {
-  const shopItem: IShopItem = minishopData[4];
+const ContentBasket: FC<Props> = ({ items, isOrder = false, className }) => {
   return (
-    <div className={st.container}>
+    <div className={`${st.container} ${className}`}>
       <div className={st.tableContainer}>
         <div className={st.tableHeader}>
           <span>Наименование</span>

@@ -22,8 +22,17 @@
   font-size: 15px;
   color: var(--dark);
 }
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 103px;
+  height: 103px;
+  background-color: var(--white);
+  flex-shrink: 0;
+}
 .itemImg {
-  max-width: 103px;
+  width: 100%;
 }
 
 .itemTxt,
@@ -70,9 +79,9 @@
 .closeBtn {
   position: absolute;
   cursor: pointer;
-  width: 10px;
+  width: 11px;
   height: 100%;
-  right: 0px;
+  right: 5px;
   &::after,
   &::before {
     content: "";
@@ -98,9 +107,6 @@
   .changeCountBtn div:nth-child(2) {
     margin: 0 15px;
   }
-  .closeBtn {
-    right: -3px;
-  }
 }
 
 @media (max-width: 576px) {
@@ -109,7 +115,8 @@
     font-size: 15px;
   }
 }
-@media (max-width: 730px) {
+
+@media (max-width: 720px) {
   .itemPrice {
     display: inline;
   }
@@ -120,8 +127,9 @@
   .itemImgNameContainer {
     height: 80px;
   }
-  .itemImg {
-    max-width: 80px;
+  .imgContainer {
+    width: 80px;
+    height: 80px;
   }
 
   .tablePrice {

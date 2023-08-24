@@ -19,5 +19,6 @@ export const pathnames: Pathnames = {
     printers: "Принтеры и планшеты",
     news: "Новинки",
     brands: "Бренды",
-    profile: "Личный кабинет"
+    profile: "Личный кабинет",
+    basket: "Корзина"
   };
