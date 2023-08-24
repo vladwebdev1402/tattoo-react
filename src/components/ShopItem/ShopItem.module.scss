@@ -24,6 +24,8 @@
       }
     }
   }
+}
+.item:not(.smallItem) {
   @media screen and (max-width: 576px) {
     width: 280px;
     height: 410px;
