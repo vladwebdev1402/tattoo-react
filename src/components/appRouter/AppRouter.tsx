@@ -16,6 +16,7 @@ import Root from "../../pages/Root/Root";
 import BrandPage from "../../pages/BrandPage/BrandPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import BasketPage from "../../pages/BasketPage/BasketPage";
+import ServicesPage from "../../pages/ServicesPage/ServicesPage";
 
 const AppRouter: FC = () => {
   const router = createBrowserRouter(
@@ -29,7 +30,8 @@ const AppRouter: FC = () => {
         <Route path="catalog/:type/:id" element={<ItemPage />} />
         <Route path="brands/:id" element={<BrandPage />} />
         <Route path="profile" element={<ProfilePage />} />
-        <Route path="basket" element={<BasketPage />} />
+        <Route path="catalog/basket" element={<BasketPage />} />
+        <Route path="catalog/basket/services" element={<ServicesPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     )

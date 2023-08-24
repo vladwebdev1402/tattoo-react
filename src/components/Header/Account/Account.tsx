@@ -17,7 +17,7 @@ const Account: React.FC = () => {
         <button
           className={`icon ${styles.iconBtn} ${styles.basket}`}
           onClick={() => {
-            navigate("basket");
+            navigate("catalog/basket");
           }}
         >
           <Basket />

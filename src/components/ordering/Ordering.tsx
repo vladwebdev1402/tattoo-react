@@ -18,7 +18,7 @@ const Ordering = () => {
         <div className={st.priceInfoWrapper}>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Всего единиц товара:</span>
-            <span className={st.infoValueTxt}>17₽</span>
+            <span className={st.infoValueTxt}>17</span>
           </div>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Общая скидка:</span>
