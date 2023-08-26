@@ -3,7 +3,7 @@ import ClipButton from "../UI/button/clipButton/ClipButton";
 import MyChecked from "../UI/checked/MyChecked";
 import MyInput from "../UI/input/MyInput";
 import styles from "./Subscribe.module.scss";
-
+import img from "../../assets/images/hand.png";
 interface IStateInput {
   mail: string;
   name: string;
@@ -31,37 +31,37 @@ const Subscribe: FC = () => {
   return (
     <div className={styles.subscribeContainer}>
       <div className={styles.subscribeForms}>
-        <span className={styles.subscribeFormsHead}>Узнавайте первыми</span>
-        <span className={styles.subscribeFormsDesc}>
+        <div className={styles.subscribeFormsHead}>Узнавайте первыми</div>
+        <div className={styles.subscribeFormsDesc}>
           Подпишитесь на новостную рассылку с самыми интересными новостями
           и акциями
-        </span>
-        <div className={styles.input}>
+        </div>
+        <div className={styles.inputsContainer}>
           <MyInput
             onChange={changeMail}
             value={values.mail}
             title="Эл. почта"
             placeholder="Figur@mail.ru"
+            className={styles.input}
           />
-        </div>
-        <div className={styles.input}>
           <MyInput
+            className={styles.input}
             onChange={changeName}
             value={values.name}
             title="Имя"
             placeholder="Введите имя"
           />
         </div>
-        <div className={styles.checked}>
+        <div className={styles.btnsContainer}>
           <MyChecked
+            className={styles.checked}
             checked={checked}
             onChange={changeChecked}
             title="Вы соглашаетесь на обработку ваших персональных данных"
           />
-        </div>
 
-        <div className={styles.btn}>
           <ClipButton
+            className={styles.btn}
             onClick={() => {
               console.log(values);
             }}
@@ -70,7 +70,10 @@ const Subscribe: FC = () => {
           />
         </div>
       </div>
-      <div className={styles.subscribeImg}></div>
+
+      <div className={styles.subscribeImg}>
+        <img src={img} />
+      </div>
     </div>
   );
 };

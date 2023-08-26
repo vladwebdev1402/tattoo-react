@@ -1,39 +1,25 @@
 .subscribeContainer {
+  display: flex;
+  margin: 100px 0px 200px auto;
   max-width: 1568px;
-  padding-left: 15px;
-  height: 562px;
-  margin-left: auto;
-  margin-top: 120px;
-  margin-bottom: 200px;
-  display: flex;
+  @media (max-width: 1588px) {
+    padding-left: 20px;
+    object-position: left;
+  }
+}
 
+.inputsContainer {
+  margin-top: 33px;
+  max-width: 392px;
   @media (max-width: 1024px) {
-    width: 728px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 382px;
+    max-width: 353px;
   }
 }
+
 .input {
-  width: 392px;
-  @media (max-width: 1024px) {
-    width: 353px;
-    order: 1;
-  }
-}
-.subscribeForms {
-  height: 544px;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: a;
-  @media (max-width: 1024px) {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 450px;
+  margin-top: 16px;
+  &:first-child {
+    margin-top: 0;
   }
 }
 
@@ -43,34 +29,99 @@
   color: var(--dark);
 }
 .btn {
+  margin-top: 30px;
   width: 275px;
   height: 70px;
-  @media (max-width: 1024px) {
-    order: 2;
-  }
 }
 
 .checked {
-  @media (max-width: 1024px) {
-    order: 3;
-  }
+  margin-top: 20px;
 }
 
 .subscribeFormsDesc {
   font-size: 25px;
   color: var(--dark);
   font-weight: 500;
+  margin-top: 28px;
+  max-width: 523px;
 }
 
 .subscribeImg {
-  background-image: url(../../assets/images/hand.png);
-  width: 952px;
-  height: 100%;
-  background-size: cover;
-  margin-left: auto;
+  margin-left: 92px;
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 
-  @media (max-width: 1024px) {
+    @media (max-width: 1300px) {
+      object-position: left;
+    }
+  }
+}
+
+@media (max-width: 1216px) {
+  .subscribeImg {
     display: none;
     width: 0px;
+  }
+
+  .subscribeContainer {
+    max-width: 768px;
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscribeFormsDesc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1216px) and (min-width: 569px) {
+  .input {
+    margin-top: 0px;
+  }
+  .inputsContainer {
+    display: flex;
+    column-gap: 20px;
+    max-width: 100%;
+  }
+
+  .btnsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  .btn {
+    margin-top: 0px;
+    order: 1;
+  }
+
+  .checked {
+    margin-top: 0px;
+    margin-left: 20px;
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 568px) {
+  .inputsContainer {
+    max-width: 100%;
+  }
+  .subscribeFormsHead {
+    font-size: 25px;
+  }
+  .subscribeFormsDesc {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  .btnsContainer,
+  .btn {
+    width: 100%;
   }
 }

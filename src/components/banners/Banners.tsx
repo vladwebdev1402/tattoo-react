@@ -11,19 +11,21 @@ const Banners: FC = () => {
   return (
     <div className={styles.bannersContainer}>
       <div className={`${styles.banner}  ${styles.left}`}>
+        <img src={paintsImg} />
+
         <div className={styles.bannerTxt}>Краски Lip Nitn</div>
 
         <div className={styles.bannerBtn}>
           <LineButton onClick={onClick}>Смотреть в каталоге</LineButton>
         </div>
-        <img src={paintsImg} />
       </div>
       <div className={`${styles.banner}  ${styles.right}`}>
+        <img src={foxxImg} />
+
         <div className={styles.bannerTxt}>Foxx viper — хит 2021 года</div>
         <div className={styles.bannerBtn}>
           <LineButton onClick={onClick}>Смотреть в каталоге</LineButton>
         </div>
-        <img src={foxxImg} />
       </div>
     </div>
   );
