@@ -1,67 +1,104 @@
 .bannersContainer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   width: 100%;
   margin-top: 120px;
-  @media (max-width: 1024px) {
-    height: 299px;
-  }
+  height: 470px;
 }
 
 .banner {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 50px 50px 50px;
   height: 100%;
-  width: 49%;
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media (max-width: 645px) {
+    height: 300px;
+  }
 }
 
 .bannerTxt {
-  position: absolute;
   color: #faf6f2;
   font-weight: bold;
   font-size: 40px;
-  width: 301px;
-  top: 40px;
-  @media (max-width: 1024px) {
-    font-size: 30px;
-  }
 }
 
-.img {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 .bannerBtn {
   max-width: 179px;
-  position: absolute;
 }
 .left {
-  .bannerBtn {
-    bottom: 50px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    @media (max-width: 1024px) {
-      left: 50px;
-      transform: translate(0, 0);
-    }
-  }
-  .bannerTxt {
-    margin-left: calc(50% - 150px);
-  }
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(../../assets/images/banners/paints.png);
 }
 
 .right {
-  .bannerBtn {
-    bottom: 50px;
-    left: 50px;
-  }
-
+  background-color: #0f0f0f;
+  justify-content: space-between;
+  background-image: url(../../assets/images/banners/foxx-viper.png);
   .bannerTxt {
-    left: 50px;
+    max-width: 270px;
   }
 }
 
 .bannerImg {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  min-height: 300px;
+}
+
+@media (max-width: 1350px) {
+  .bannersContainer {
+    height: 380px;
+  }
+  .right {
+    background-position: 5px center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bannerTxt {
+    font-size: 30px;
+  }
+
+  .bannersContainer {
+    height: 300px;
+  }
+
+  .left {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 645px) {
+  .bannersContainer {
+    grid-template-columns: 1fr;
+    height: auto;
+    height: 620px;
+  }
+
+  .banner {
+    background-size: auto 300px;
+    background-position: center center;
+  }
+
+  .right {
+    background-position: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .bannerTxt {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 440px) {
+  .right {
+    background-position: -10px center;
+  }
 }

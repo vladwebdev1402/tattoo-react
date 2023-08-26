@@ -1,10 +1,14 @@
 import React, { FC } from "react";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import styles from "./aboutCompany.module.scss";
+import img from "../../assets/images/about.png";
 const AboutCompany: FC = () => {
   return (
     <div className={styles.aboutContainer}>
-      <div className={styles.aboutIm}></div>
+      <div className={styles.coontainerImg}>
+        <img src={img} />
+      </div>
+
       <div className={styles.aboutInfo}>
         <span className={styles.aboutInfoHead}>Тату магазин Mr. Driskell</span>
         <span className={styles.aboutInfoDesc}>
@@ -23,9 +27,12 @@ const AboutCompany: FC = () => {
           становились лучше, чтобы показать, на что они способны, и помочь
           раскрыть ваш потенциал.
         </span>
-        <div className={styles.btn}>
-          <ClipButton onClick={() => {}} theme="light" text="О компании" />
-        </div>
+        <ClipButton
+          className={styles.btn}
+          onClick={() => {}}
+          theme="light"
+          text="О компании"
+        />
       </div>
     </div>
   );
