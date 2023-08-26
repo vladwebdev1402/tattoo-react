@@ -16,14 +16,14 @@ const Banners: FC = () => {
         <div className={styles.bannerBtn}>
           <LineButton onClick={onClick}>Смотреть в каталоге</LineButton>
         </div>
-        {/* <img src={paintsImg} className={styles.bannerImg} /> */}
+        <img src={paintsImg} />
       </div>
       <div className={`${styles.banner}  ${styles.right}`}>
         <div className={styles.bannerTxt}>Foxx viper — хит 2021 года</div>
         <div className={styles.bannerBtn}>
           <LineButton onClick={onClick}>Смотреть в каталоге</LineButton>
         </div>
-        {/* <img src={foxxImg} className={styles.bannerImg} /> */}
+        <img src={foxxImg} />
       </div>
     </div>
   );
