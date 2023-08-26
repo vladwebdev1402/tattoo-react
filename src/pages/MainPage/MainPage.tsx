@@ -14,8 +14,8 @@ const MainPage = () => {
 
   return (
     <div>
-      {/* <HeaderSlider />
-      <MiniShop /> */}
+      <HeaderSlider />
+      <MiniShop />
       <Catalog />
       <Banners />
       {/* <Brands /> */}

@@ -1,9 +1,8 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { useWidth } from "../../hooks/useWidth";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import styles from "./Swiper.module.scss";
-
+import img from "../../assets/images/bg1.png";
 interface Props {
   header: string;
   desc: string;
@@ -13,6 +12,7 @@ const Slide: FC<Props> = ({ header, desc }) => {
 
   return (
     <div className={styles.slide}>
+      <img src={img} />
       <div className={styles.slideContent}>
         <div className={styles.slideHeader}>{header}</div>
         <div className={styles.slideDesc}>{desc}</div>

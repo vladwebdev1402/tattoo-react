@@ -8,13 +8,33 @@ import { useWidth } from "../../hooks/useWidth";
 const HeaderSlider: FC = () => {
   const width = useWidth();
 
-  const ref = useRef<HTMLDivElement>(null);
-  const [sliderItemWidth, setSliderItemWidth] = useState<number>(0);
   useEffect(() => {
-    if (ref.current) {
-      setSliderItemWidth(ref.current.clientWidth);
+    const contWidth = document.getElementsByClassName(styles.sliderContainer)[0]
+      .clientWidth;
+    const pag = document.getElementsByClassName(
+      styles.slider__pagination
+    )[0] as HTMLElement;
+    const next = document.getElementsByClassName(
+      styles.pagination__btn__next
+    )[0] as HTMLElement;
+    const prev = document.getElementsByClassName(
+      styles.pagination__btn__prev
+    )[0] as HTMLElement;
+
+    if (pag && next && prev) {
+      const left =
+        contWidth > 1216
+          ? `${1216 + (contWidth - 1216) / 2 - 60}px`
+          : contWidth >= 1024
+          ? `${contWidth - 60}px`
+          : "50%";
+
+      pag.style.left = left;
+      next.style.left = left;
+      prev.style.left = left;
     }
-  }, [ref.current, width]);
+  }, [width]);
+
   const slides: ISlide[] = [
     {
       id: "0",
@@ -54,7 +74,7 @@ const HeaderSlider: FC = () => {
   ];
 
   return (
-    <div className={`${styles.sliderContainer}`} ref={ref}>
+    <div className={`${styles.sliderContainer}`}>
       <Slider
         direction={width <= 1024 ? "row" : "column"}
         spaceBetween={0}
