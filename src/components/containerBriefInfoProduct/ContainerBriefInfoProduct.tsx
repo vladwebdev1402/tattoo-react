@@ -7,9 +7,11 @@ import st from "./container.module.scss";
 
 interface Props {
   item: IShopItem;
+  setModal: (modal: boolean) => void;
+  modal: boolean;
 }
 
-const ContainerBriefInfoProduct: FC<Props> = ({ item }) => {
+const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
   const [count, setCount] = useState(0);
 
   return (
@@ -41,7 +43,12 @@ const ContainerBriefInfoProduct: FC<Props> = ({ item }) => {
           {item.description.split("/")[0]}
         </span>
       </div>
-      <LineButton className={st.btnJob} onClick={() => {}}>
+      <LineButton
+        className={st.btnJob}
+        onClick={() => {
+          setModal(!modal);
+        }}
+      >
         Работы сделанные этой машинкой
       </LineButton>
       <div className={st.basketUtilsContainer}>

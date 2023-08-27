@@ -21,9 +21,9 @@ export const useSlider = (
 ): [
   boolean,
   number[],
-  (e: React.MouseEvent<HTMLDivElement>) => void,
-  (e: React.MouseEvent<HTMLButtonElement>) => void,
-  (e: React.MouseEvent<HTMLButtonElement>) => void,
+  (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => void,
+  (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLElement>) => void,
+  (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLElement>) => void,
   (idx: number) => void,
   number,
   number
@@ -100,7 +100,7 @@ export const useSlider = (
     setIsAnimatade(true);
   };
 
-  const onClickStart = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+  const onClickStart = (e: React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>) => {
     startOffset.current = getCursorPos(e);
     setIsAnimatade(false);
     

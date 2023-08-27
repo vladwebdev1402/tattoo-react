@@ -10,10 +10,11 @@ import st from "./ItemPage.module.scss";
 import SubBlockItems from "../../components/subBlockItems/SubBlockItems";
 import ShopItem from "../../components/ShopItem/ShopItem";
 import MoreItemsMoreDiscount from "../../components/moreItemsMoreDiscount/MoreItemsMoreDiscount";
+import ModalMashineWork from "../../components/modalMachineWork/ModalMashineWork";
 const ItemPage: FC = () => {
   const params = useParams<{ id: string }>();
   const [item, setItem] = useState<IShopItem>();
-
+  const [modal, setModal] = useState<boolean>(false);
   useEffect(() => {
     setItem(minishopData.filter((item) => item.id === Number(params.id))[0]);
   }, [params]);
@@ -25,6 +26,7 @@ const ItemPage: FC = () => {
   if (item) {
     return (
       <div className={st.containerPage}>
+        {modal && <ModalMashineWork setModal={setModal} />}
         <Breadcrumbs
           params={true}
           nameParams={item.name}
@@ -38,7 +40,11 @@ const ItemPage: FC = () => {
             marcers={item.marcers}
             id={item.id}
           />
-          <ContainerBriefInfoProduct item={item} />
+          <ContainerBriefInfoProduct
+            modal={modal}
+            setModal={setModal}
+            item={item}
+          />
         </div>
         <div className={st.fullInfoContainer}>
           <div className={st.descriptionContainer}>

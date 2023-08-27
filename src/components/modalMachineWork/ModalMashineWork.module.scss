@@ -1,0 +1,79 @@
+.modalContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.swiperContainer {
+  position: relative;
+  margin: 100px auto 0 auto;
+  max-width: 1032px;
+  overflow: hidden;
+}
+.swiper {
+  max-width: 832px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+}
+
+.pagination {
+  bottom: unset !important;
+  position: static !important;
+  top: unset !important;
+}
+
+.bullet {
+  width: 60px !important;
+  height: 60px !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  width: 50px;
+  height: 50px !important;
+  border: 2px solid var(--orange);
+  background-color: var(--white);
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 0;
+  z-index: 10;
+}
+.btnPrev {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 12px;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    background-color: var(--orange);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.btnNext {
+  left: unset;
+  right: 0px;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 12px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    background-color: var(--orange);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
