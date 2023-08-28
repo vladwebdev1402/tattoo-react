@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { IShopItem } from "../types/shopItem";
 export interface IFavorite {
     id?: number;
 }

@@ -10,7 +10,12 @@ interface Props {
 
 const ShopItemSwiper: FC<Props> = ({ images, className = "" }) => {
   return (
-    <div className={`${styles.containerSlider} ${className}`}>
+    <div
+      className={`${styles.containerSlider} ${className}`}
+      onMouseDown={(e: React.MouseEvent | React.TouchEvent) => {
+        e.stopPropagation();
+      }}
+    >
       <Slider
         st__pagination={styles.slider__pagination}
         st__pag__item={styles.pagination__item}

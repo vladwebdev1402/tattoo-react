@@ -132,3 +132,9 @@
     left: 0px;
   }
 }
+
+@media (max-width: 600px) {
+  .menuBody {
+    top: 74px;
+  }
+}

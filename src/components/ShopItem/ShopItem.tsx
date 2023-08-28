@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useContext, useState } from "react";
 import { IShopItem } from "../../types/shopItem";
 import FavoriteItem from "../UI/icons/itemIcons/favoriteIcon/FavoriteItem";
 import ShopItemSwiper from "./ShopItemSwiper/ShopItemSwiper";
@@ -9,6 +9,12 @@ import Marcers from "./Marcers/Marcers";
 
 import { useNavigate } from "react-router-dom";
 import MyChecked from "../UI/checked/MyChecked";
+import {
+  BasketContext,
+  getCountItemInBasket,
+  removeFromBasket,
+  setCountItemsInBasket,
+} from "../../context/basketContext";
 interface ShopItemProps {
   item: IShopItem;
   smallItem?: boolean;
@@ -23,18 +29,23 @@ const ShopItem: FC<ShopItemProps> = ({
   checkbox = false,
 }) => {
   const width = useWidth();
-  const [countBasket, setCountBasket] = useState<number>(0);
+  const { basket, setBasket } = useContext(BasketContext);
+  const itemsInBasket = getCountItemInBasket(basket, item.id);
 
   const navigate = useNavigate();
   const plusBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    setCountBasket(
-      countBasket + 1 > item.count ? countBasket : countBasket + 1
+    setCountItemsInBasket(
+      setBasket,
+      basket,
+      item,
+      itemsInBasket + 1 < item.count ? itemsInBasket + 1 : item.count
     );
   };
   const minusBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    setCountBasket(countBasket - 1);
+    if (itemsInBasket - 1 == 0) removeFromBasket(setBasket, basket, item.id);
+    else setCountItemsInBasket(setBasket, basket, item, itemsInBasket - 1);
   };
 
   return (
@@ -59,24 +70,22 @@ const ShopItem: FC<ShopItemProps> = ({
         </div>
 
         <div className={styles.button}>
-          {!countBasket && (
+          {!itemsInBasket && (
             <ClipButton
-              onClick={() => {
-                setCountBasket(1);
-              }}
+              onClick={() => setCountItemsInBasket(setBasket, basket, item, 1)}
               theme="light"
               text={`${width <= 992 ? "В корзину" : "Добавить в корзину"}`}
             />
           )}
 
-          {countBasket > 0 && (
+          {itemsInBasket > 0 && (
             <div className={styles.basketBtnContainer}>
               <button
                 className={styles.basketBtn}
                 onClick={minusBasket}
               ></button>
               <div className={styles.countInBasket}>
-                <span className={styles.countTxt}>{countBasket}шт</span>
+                <span className={styles.countTxt}>{itemsInBasket}шт</span>
                 <span className={styles.infoTxt}>В корзине</span>
               </div>
               <button

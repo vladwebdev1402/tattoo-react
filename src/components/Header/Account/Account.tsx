@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Account.module.scss";
 import Basket from "../../UI/icons/headerAndNavIcons/Basket";
 import Favorites from "../../UI/icons/headerAndNavIcons/Favorites";
 import Profile from "../../UI/icons/headerAndNavIcons/Profile";
 import { FavoriteContext } from "../../../context/favoriteContext";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import ModalAuth from "../../modalAuth/ModalAuth";
 
 const Account: React.FC = () => {
   const { favorites } = useContext(FavoriteContext);
   const navigate = useNavigate();
+  const [modal, setModal] = useState(false);
 
   return (
     <div className={styles.account}>
+      {modal && <ModalAuth setModal={setModal} />}
       <div className={styles.balance}>
         <span className={styles.balanceText}>37 532 ₽</span>
         <button
@@ -31,7 +34,8 @@ const Account: React.FC = () => {
       </button>
       <button
         className={`icon ${styles.iconBtn} ${styles.profile}`}
-        onClick={() => navigate("profile")}
+        // onClick={() => navigate("profile")}
+        onClick={() => setModal(true)}
       >
         <Profile />
       </button>
