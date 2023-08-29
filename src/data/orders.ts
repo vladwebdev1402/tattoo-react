@@ -19,9 +19,9 @@ export const ordersData: IProductOrder[] = [
       flat: 50,
     },
     products: [
-      { item: minishopData[0], count: 4 },
-      { item: minishopData[1], count: 2 },
-      { item: minishopData[2], count: 3 },
+      { item: minishopData[0], itemId: minishopData[0].id, count: 4 },
+      { item: minishopData[1], itemId: minishopData[1].id, count: 2 },
+      { item: minishopData[2], itemId: minishopData[2].id, count: 3 },
     ],
   },
   {
@@ -41,10 +41,10 @@ export const ordersData: IProductOrder[] = [
       flat: 10,
     },
     products: [
-      { item: minishopData[3], count: 4 },
-      { item: minishopData[2], count: 2 },
-      { item: minishopData[4], count: 3 },
-      { item: minishopData[7], count: 1 }
+      { item: minishopData[3], itemId: minishopData[3].id, count: 4 },
+      { item: minishopData[2], itemId: minishopData[2].id, count: 2 },
+      { item: minishopData[4], itemId: minishopData[4].id, count: 3 },
+      { item: minishopData[7], itemId: minishopData[7].id, count: 1 }
     ],
   },
 ];

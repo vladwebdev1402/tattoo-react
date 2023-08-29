@@ -1,5 +1,5 @@
+import { IBasket } from "../context/basketContext";
 import { IContactPerson } from "./contactPerson";
-import { IShopItem } from "./shopItem";
 
 export interface IProductOrder {
     id: number;
@@ -9,5 +9,5 @@ export interface IProductOrder {
     sum: number;
     status: string;
     contactPerson: IContactPerson;
-    products: {item: IShopItem, count: number}[];
+    products: IBasket[];
 }

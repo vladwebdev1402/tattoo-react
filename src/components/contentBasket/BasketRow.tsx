@@ -1,28 +1,38 @@
-import React, { FC } from "react";
-import BtnChangeCount from "../containerBriefInfoProduct/btnChangeCount/BtnChangeCount";
+import React, { FC, useContext } from "react";
+import {
+  BasketContext,
+  getCountItemInBasket,
+  removeFromBasket,
+} from "../../context/basketContext";
+import { IShopItem } from "../../types/shopItem";
+import BtnChangeCount from "../btnChangeCount/BtnChangeCount";
 import st from "./ContentBasket.module.scss";
 interface Props {
-  img: string;
-  name: string;
-  price: number;
-  count: number;
+  item: IShopItem;
+  count?: number;
   isOrder: boolean;
 }
-const BasketRow: FC<Props> = ({ img, name, price, count, isOrder }) => {
+const BasketRow: FC<Props> = ({ item, isOrder, count }) => {
+  const { basket, setBasket } = useContext(BasketContext);
+
+  const deleteItem = () => {
+    removeFromBasket(setBasket, basket, item.id);
+  };
+
   return (
     <div className={st.tableRow}>
       <div className={st.itemImgNameContainer}>
         <div className={st.imgContainer}>
-          <img className={st.itemImg} src={img} />
+          <img className={st.itemImg} src={item.img.img0} />
         </div>
 
         <div className={st.itemNameContainer}>
-          <span className={`${st.itemTxt} ${st.itemName}`}>{name}</span>
-          <span className={st.itemPrice}>Цена: {price}₽</span>
+          <span className={`${st.itemTxt} ${st.itemName}`}>{item.name}</span>
+          <span className={st.itemPrice}>Цена: {item.price}₽</span>
         </div>
       </div>
       <div className={`${st.itemTxt} ${st.tablePrice}`}>
-        {price.toLocaleString("ru-RU")} ₽
+        {item.price.toLocaleString("ru-RU")}₽
       </div>
       <div className={st.itemTxt}>
         {isOrder ? (
@@ -31,19 +41,21 @@ const BasketRow: FC<Props> = ({ img, name, price, count, isOrder }) => {
             {count}
           </>
         ) : (
-          <BtnChangeCount
-            className={st.changeCountBtn}
-            count={count}
-            setCount={() => {}}
-            itemCount={4}
-          />
+          <BtnChangeCount className={st.changeCountBtn} item={item} />
         )}
       </div>
       <div className={st.itemTxt}>
         <span className={st.hint}>Стоимость: </span>
-        {(price * count).toLocaleString("ru-RU")}₽
+        {isOrder && count
+          ? (item.price * count).toLocaleString("ru-RU")
+          : (item.price * getCountItemInBasket(basket, item.id)).toLocaleString(
+              "ru-RU"
+            )}
+        ₽
       </div>
-      {!isOrder && <button className={st.closeBtn}></button>}
+      {!isOrder && (
+        <button className={st.closeBtn} onClick={deleteItem}></button>
+      )}
       <div className={`horizontal-divider ${st.itemDivider}`}></div>
     </div>
   );

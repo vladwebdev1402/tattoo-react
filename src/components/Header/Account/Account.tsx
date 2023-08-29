@@ -34,8 +34,8 @@ const Account: React.FC = () => {
       </button>
       <button
         className={`icon ${styles.iconBtn} ${styles.profile}`}
-        // onClick={() => navigate("profile")}
-        onClick={() => setModal(true)}
+        onClick={() => navigate("profile")}
+        // onClick={() => setModal(true)}
       >
         <Profile />
       </button>

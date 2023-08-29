@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { IShopItem } from "../../types/shopItem";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import LineButton from "../UI/button/lineButton/LineButton";
-import BtnChangeCount from "./btnChangeCount/BtnChangeCount";
+import BtnChangeCount from "../btnChangeCount/BtnChangeCount";
 import st from "./container.module.scss";
 
 interface Props {
@@ -12,8 +12,6 @@ interface Props {
 }
 
 const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
-  const [count, setCount] = useState(0);
-
   return (
     <div className={st.containerBriefInfo}>
       <div className={st.itemNameTxt}>{item.name}</div>
@@ -30,12 +28,7 @@ const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
           <span className={st.availabilityTxt}>Наличие: </span>
           {item.count}
         </span>
-        <BtnChangeCount
-          setCount={setCount}
-          count={count}
-          itemCount={item.count}
-          className={st.mobileChangeCount}
-        />
+        <BtnChangeCount item={item} className={st.mobileChangeCount} />
       </div>
       <div className={st.descriptionBlock}>
         <div className={st.descriptionTxt}>Описание:</div>
@@ -53,12 +46,7 @@ const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
       </LineButton>
       <div className={st.basketUtilsContainer}>
         <div className={st.utilsBasket}>
-          <BtnChangeCount
-            setCount={setCount}
-            count={count}
-            itemCount={item.count}
-            className={st.desktopChangeCount}
-          />
+          <BtnChangeCount item={item} className={st.desktopChangeCount} />
           <div className={st.addInBasketBtn}>
             <ClipButton
               theme="dark"
