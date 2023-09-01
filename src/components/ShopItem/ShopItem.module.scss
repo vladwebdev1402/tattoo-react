@@ -194,17 +194,19 @@
     height: 316px;
     margin: 0 5px;
   }
-}
-
-@media (max-width: 576px) {
-  .marcersSmall,
   .addTextDesktop {
     display: none !important;
   }
-
   .addTextMobile {
     display: inline-block;
   }
+}
+
+@media (max-width: 576px) {
+  .marcersSmall {
+    display: none !important;
+  }
+
   .smallItem {
     width: 130px;
     height: 217px;

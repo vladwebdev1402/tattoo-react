@@ -24,13 +24,13 @@
 }
 
 .linkTxt {
-  display: block;
   font-size: 30px;
   color: var(--dark);
   font-weight: 500;
   line-height: 34.5px;
   margin: 0px 6px;
   white-space: nowrap;
+  font-family: "Jost";
   @media (max-width: 1246px) {
     font-size: 25px;
   }

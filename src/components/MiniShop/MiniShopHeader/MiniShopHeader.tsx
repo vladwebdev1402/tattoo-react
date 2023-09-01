@@ -1,26 +1,51 @@
 import React, { FC } from "react";
 import styles from "./MiniShopHeader.module.scss";
 import MiniShopHeaderLink from "./MiniShopHeaderLink";
-
-const MiniShopHeader: FC = () => {
+interface Props {
+  setCurrentCategory: (category: string) => void;
+  currentCategory: string;
+}
+const MiniShopHeader: FC<Props> = ({ setCurrentCategory, currentCategory }) => {
   return (
     <div className={styles.miniShopHeader}>
       <ul className={styles.linksList}>
         <li>
-          <MiniShopHeaderLink active={false}>Хиты продаж</MiniShopHeaderLink>
+          <MiniShopHeaderLink
+            onClick={() => {
+              setCurrentCategory("hot");
+            }}
+            active={currentCategory == "hot"}
+          >
+            Хиты продаж
+          </MiniShopHeaderLink>
         </li>
         <li>
-          <MiniShopHeaderLink active={false}>
+          <MiniShopHeaderLink
+            onClick={() => {
+              setCurrentCategory("hot");
+            }}
+            active={currentCategory == "hot"}
+          >
             Самые популярные
           </MiniShopHeaderLink>
         </li>
         <li>
-          <MiniShopHeaderLink active={true}>
+          <MiniShopHeaderLink
+            onClick={() => {
+              setCurrentCategory("new");
+            }}
+            active={currentCategory == "new"}
+          >
             Новые поступления
           </MiniShopHeaderLink>
         </li>
         <li>
-          <MiniShopHeaderLink active={false}>
+          <MiniShopHeaderLink
+            onClick={() => {
+              setCurrentCategory("promotion");
+            }}
+            active={currentCategory == "promotion"}
+          >
             Акционные товары
           </MiniShopHeaderLink>
         </li>
