@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import IconCatalog from "../../UI/icons/headerAndNavIcons/IconCatalog";
 import styles from "./BurgerMenu.module.scss";
 import { category } from "../../../data/catalogCategory";
 import RightFooter from "../../Footer/RightFooter/RightFooter";
 import MyLink from "../LinkRow/MyLink";
 import Search from "../Seacrh/Search";
+import BurgerIcon from "../../UI/icons/headerAndNavIcons/BurgerIcon";
 const BurgerMenu: FC = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [isActiveCatalog, setIsActiveCatalog] = useState(false);
@@ -18,12 +18,7 @@ const BurgerMenu: FC = () => {
         <span className={styles.catalogTxt} onClick={clickMenu}>
           Меню
         </span>
-        <div
-          className="icon"
-          style={{ alignSelf: "flex-end", marginBottom: 1 }}
-        >
-          <IconCatalog />
-        </div>
+        <BurgerIcon isActive={isActiveMenu} />
       </div>
       <div className={`${styles.menuBody} ${isActiveMenu && styles.active}`}>
         <div

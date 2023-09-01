@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { useClose } from "../../../hooks/useClose";
-import IconCatalog from "../../UI/icons/headerAndNavIcons/IconCatalog";
+import BurgerIcon from "../../UI/icons/headerAndNavIcons/BurgerIcon";
 import LinkCatalogBody from "./CatalogBody/LinkCatalogBody";
 import styles from "./LinkCatalog.module.scss";
 const LinkCatalog: FC = () => {
@@ -14,9 +14,7 @@ const LinkCatalog: FC = () => {
   return (
     <div className={styles.catalog} onClick={clickCatalog} ref={catalogRef}>
       <span className={styles.catalogTxt}>Каталог</span>
-      <div className="icon" style={{ alignSelf: "flex-end", marginBottom: 1 }}>
-        <IconCatalog />
-      </div>
+      <BurgerIcon isActive={isVisible} />
       <LinkCatalogBody isVisible={isVisible} />
     </div>
   );
