@@ -103,11 +103,10 @@ export const useSlider = (
   const onClickStart = (e: React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>) => {
     startOffset.current = getCursorPos(e);
     setIsAnimatade(false);
-    
-    window.removeEventListener("touchmove", onMouseMove);
+    window.addEventListener("touchmove", onMouseMove);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onClickEnd);
-    window.removeEventListener("touchend", onClickEnd);
+    window.addEventListener("touchend", onClickEnd);
   };
   const onMouseMove = (e: TouchEvent | MouseEvent) => {
     currentOffset.current = getCursorPos(e);

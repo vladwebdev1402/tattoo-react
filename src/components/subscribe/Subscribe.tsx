@@ -66,8 +66,9 @@ const Subscribe: FC = () => {
               console.log(values);
             }}
             theme="dark"
-            text="Подписаться"
-          />
+          >
+            Подписаться
+          </ClipButton>
         </div>
       </div>
 

@@ -27,12 +27,9 @@ const AboutCompany: FC = () => {
           становились лучше, чтобы показать, на что они способны, и помочь
           раскрыть ваш потенциал.
         </span>
-        <ClipButton
-          className={styles.btn}
-          onClick={() => {}}
-          theme="light"
-          text="О компании"
-        />
+        <ClipButton className={styles.btn} onClick={() => {}} theme="light">
+          О компании
+        </ClipButton>
       </div>
     </div>
   );

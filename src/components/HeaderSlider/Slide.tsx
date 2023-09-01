@@ -22,8 +22,9 @@ const Slide: FC<Props> = ({ header, desc }) => {
               navigate("catalog");
             }}
             theme="dark"
-            text="Смотреть каталог"
-          />
+          >
+            Смотреть каталог
+          </ClipButton>
         </div>
       </div>
     </div>

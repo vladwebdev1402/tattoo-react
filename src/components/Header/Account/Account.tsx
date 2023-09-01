@@ -3,20 +3,26 @@ import styles from "./Account.module.scss";
 import Basket from "../../UI/icons/headerAndNavIcons/Basket";
 import Favorites from "../../UI/icons/headerAndNavIcons/Favorites";
 import Profile from "../../UI/icons/headerAndNavIcons/Profile";
-import { FavoriteContext } from "../../../context/favoriteContext";
 import { useNavigate } from "react-router-dom";
 import ModalAuth from "../../modalAuth/ModalAuth";
+import {
+  BasketContext,
+  getCountItemsInBasket,
+  getSumBasket,
+} from "../../../context/basketContext";
 
 const Account: React.FC = () => {
-  const { favorites } = useContext(FavoriteContext);
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
-
+  const { basket, setBasket } = useContext(BasketContext);
+  const countItems = getCountItemsInBasket(basket);
   return (
     <div className={styles.account}>
       {modal && <ModalAuth setModal={setModal} />}
       <div className={styles.balance}>
-        <span className={styles.balanceText}>37 532 ₽</span>
+        <span className={styles.balanceText}>
+          {getSumBasket(basket).toLocaleString("ru-RU")} ₽
+        </span>
         <button
           className={`icon ${styles.iconBtn} ${styles.basket}`}
           onClick={() => {
@@ -24,9 +30,15 @@ const Account: React.FC = () => {
           }}
         >
           <Basket />
-          {favorites.length && (
-            <div className={styles.countItemsInBasket}>{favorites.length}</div>
-          )}
+          {
+            <div
+              className={`${countItems && styles.active} ${
+                styles.countItemsInBasket
+              }`}
+            >
+              {countItems}
+            </div>
+          }
         </button>
       </div>
       <button className={`icon ${styles.iconBtn} ${styles.favorite}`}>

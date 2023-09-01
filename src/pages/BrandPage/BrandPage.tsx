@@ -25,12 +25,9 @@ const BrandPage = () => {
           <ShopItem item={item} key={item.id} />
         ))}
       </div>
-      <ClipButton
-        theme="light"
-        onClick={() => {}}
-        text="Показать ещё"
-        className={st.btn}
-      />
+      <ClipButton theme="light" onClick={() => {}} className={st.btn}>
+        Показать ещё
+      </ClipButton>
     </div>
   );
 };

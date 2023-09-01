@@ -90,8 +90,9 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
               setSmsTo(true);
             }}
             theme="dark"
-            text="Получить код в SMS"
-          />
+          >
+            Получить код в SMS
+          </ClipButton>
         )}
 
         {smsTo && (

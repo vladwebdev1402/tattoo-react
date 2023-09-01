@@ -71,10 +71,17 @@ const Slider: FC<Props> = ({
       ) => {
         e.stopPropagation();
       }}
+      onMouseDown={(e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+      }}
+      onTouchStart={(e: React.TouchEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+      }}
     >
       <div
         className={`${st.slider__container} ${st__slider__container}`}
         onMouseDown={onClickStart}
+        onTouchStart={onClickStart}
         ref={sliderRef}
       >
         <ul

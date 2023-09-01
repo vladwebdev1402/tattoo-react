@@ -12,8 +12,9 @@ const CatalogFooter: FC = () => {
           onClick={() => {
             navigate("catalog");
           }}
-          text="Смотреть каталог"
-        />
+        >
+          Смотреть каталог
+        </ClipButton>
       </div>
     </div>
   );

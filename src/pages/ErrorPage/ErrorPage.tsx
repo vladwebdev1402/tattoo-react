@@ -20,8 +20,9 @@ const ErrorPage: FC = () => {
               onClick={() => {
                 navigate("/");
               }}
-              text="Вернуться на главную"
-            />
+            >
+              Вернуться на главную
+            </ClipButton>
           </div>
           <div className={styles.lineBtn}>
             <LineButton

@@ -49,11 +49,12 @@ const CatalogPage = () => {
       <div className={styles.btn}>
         <ClipButton
           theme="light"
-          text="Показать ещё"
           onClick={() => {
             console.log(filtersItem);
           }}
-        />
+        >
+          Показать ещё
+        </ClipButton>
       </div>
     </div>
   );

@@ -28,7 +28,6 @@ const ShopItem: FC<ShopItemProps> = ({
   noneBtn = false,
   checkbox = false,
 }) => {
-  const width = useWidth();
   const { basket, setBasket } = useContext(BasketContext);
   const itemsInBasket = getCountItemInBasket(basket, item.id);
 
@@ -74,8 +73,10 @@ const ShopItem: FC<ShopItemProps> = ({
             <ClipButton
               onClick={() => setCountItemsInBasket(setBasket, basket, item, 1)}
               theme="light"
-              text={`${width <= 992 ? "В корзину" : "Добавить в корзину"}`}
-            />
+            >
+              <span className={styles.addTextDesktop}>Добавить в корзину</span>
+              <span className={styles.addTextMobile}>В корзину</span>
+            </ClipButton>
           )}
 
           {itemsInBasket > 0 && (
@@ -95,10 +96,13 @@ const ShopItem: FC<ShopItemProps> = ({
             </div>
           )}
         </div>
-        <Marcers
-          marcers={item.marcers}
-          className={smallItem ? styles.marcersSmall : ""}
-        />
+        {!checkbox && (
+          <Marcers
+            marcers={item.marcers}
+            className={smallItem ? styles.marcersSmall : ""}
+          />
+        )}
+
         {checkbox && (
           <div
             className={styles.checkboxContainer}

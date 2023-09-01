@@ -8,12 +8,13 @@ const MiniShopFooter: FC = () => {
     <div className={styles.miniShopFooter}>
       <div className={styles.btn}>
         <ClipButton
-          text="Показать ещё"
           theme="light"
           onClick={() => {
             navigate("catalog");
           }}
-        />
+        >
+          Показать ещё
+        </ClipButton>
       </div>
     </div>
   );

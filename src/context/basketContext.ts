@@ -27,6 +27,24 @@ export const removeFromBasket = (setBasket: Dispatch<SetStateAction<IBasket[]>>,
 
 export const setCountItemsInBasket = (setBasket: Dispatch<SetStateAction<IBasket[]>>, basket: IBasket[], 
     item: IShopItem, count: number) : void => {
-        setBasket([...basket.filter(basketItem => basketItem.itemId != item.id), 
-            {itemId: item.id, count: count, item: item }])
+        if (!basket.length) setBasket([{item: item, count: count, itemId: item.id}])
+        else if (!basket.filter(basketItem => basketItem.itemId === item.id).length) {
+            setBasket([...basket, {count: 1, itemId: item.id, item: item}])
+        }
+        else 
+        setBasket(basket.map(basketItem => {
+            if (basketItem.itemId === item.id) {
+                return {...basketItem, count: count};
+            }
+            return basketItem;
+        }));
 }
+
+export const getSumBasket = (basket: IBasket[]) => {
+    return basket.reduce((sum, basketItem) => sum += basketItem.item.price * basketItem.count, 0)
+}
+
+export const getCountItemsInBasket = (basket: IBasket[]) => {
+    return basket.reduce((count, basketItem) => count += basketItem.count, 0)
+}
+

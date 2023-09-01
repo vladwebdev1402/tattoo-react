@@ -25,8 +25,9 @@ const PromocodeItem: FC<Props> = ({ promo }) => {
             navigator.clipboard.writeText(promo.promocode);
           }}
           theme="light"
-          text="Скопировать промокод"
-        />
+        >
+          Скопировать промокод
+        </ClipButton>
       </div>
     </div>
   );

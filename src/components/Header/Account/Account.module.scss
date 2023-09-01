@@ -19,6 +19,7 @@
 
 .countItemsInBasket {
   position: absolute;
+  display: none;
   background-color: var(--orange);
   padding: 3px 3px;
   text-align: center;
@@ -26,6 +27,10 @@
   right: -25%;
   font-size: 14px;
   color: var(--txt-white);
+}
+
+.active {
+  display: block;
 }
 
 .iconBtn {

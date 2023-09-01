@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import {
+  BasketContext,
+  getCountItemsInBasket,
+  getSumBasket,
+} from "../../context/basketContext";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import LineButton from "../UI/button/lineButton/LineButton";
 import MyChecked from "../UI/checked/MyChecked";
@@ -11,6 +16,7 @@ const Ordering = () => {
   const [delivery, setDelivery] = useState("Курьерская служба");
   const [checked, setChecked] = useState(false);
   const [promo, setPromo] = useState("");
+  const { basket, setBasket } = useContext(BasketContext);
 
   return (
     <div className={st.container}>
@@ -18,11 +24,13 @@ const Ordering = () => {
         <div className={st.priceInfoWrapper}>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Всего единиц товара:</span>
-            <span className={st.infoValueTxt}>17</span>
+            <span className={st.infoValueTxt}>
+              {getCountItemsInBasket(basket)}
+            </span>
           </div>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Общая скидка:</span>
-            <span className={st.infoValueTxt}>1080₽</span>
+            <span className={st.infoValueTxt}>0₽</span>
           </div>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Доп. услуги</span>
@@ -30,7 +38,9 @@ const Ordering = () => {
           </div>
           <div className={`${st.priceInfoContainer} ${st.totalPrice}`}>
             <span className={st.infoHeadTxt}>Итого:</span>
-            <span className={st.infoValueTxt}>37 820₽</span>
+            <span className={st.infoValueTxt}>
+              {getSumBasket(basket).toLocaleString("ru-RU")}₽
+            </span>
           </div>
         </div>
         <div className={st.promocodeContainer}>
@@ -86,18 +96,12 @@ const Ordering = () => {
       </div>
 
       <div className={st.btnWrapper}>
-        <ClipButton
-          className={st.clipBtn}
-          onClick={() => {}}
-          text="Оформить заказ"
-          theme="dark"
-        />
-        <ClipButton
-          className={st.clipBtn}
-          onClick={() => {}}
-          text="Купить в 1 клик"
-          theme="light"
-        />
+        <ClipButton className={st.clipBtn} onClick={() => {}} theme="dark">
+          Оформить заказ
+        </ClipButton>
+        <ClipButton className={st.clipBtn} onClick={() => {}} theme="light">
+          Купить в 1 клик
+        </ClipButton>
         <MyChecked
           className={st.checked}
           onChange={() => setChecked(!checked)}

@@ -1,8 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { IItemImg } from "../../../types/shopItem";
 import Slider from "../../UI/Slider/Slider";
 import styles from "./ShopItemSwiper.module.scss";
-
 interface Props {
   images: IItemImg;
   className?: string;
@@ -10,12 +9,7 @@ interface Props {
 
 const ShopItemSwiper: FC<Props> = ({ images, className = "" }) => {
   return (
-    <div
-      className={`${styles.containerSlider} ${className}`}
-      onMouseDown={(e: React.MouseEvent | React.TouchEvent) => {
-        e.stopPropagation();
-      }}
-    >
+    <div className={`${styles.containerSlider} ${className}`}>
       <Slider
         st__pagination={styles.slider__pagination}
         st__pag__item={styles.pagination__item}

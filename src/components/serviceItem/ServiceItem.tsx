@@ -32,12 +32,9 @@ const ServiceItem: FC<Props> = ({ item }) => {
           )}
         </div>
       </div>
-      <ClipButton
-        className={st.clipBtn}
-        text="Добавить к заказу"
-        onClick={() => {}}
-        theme="light"
-      />
+      <ClipButton className={st.clipBtn} onClick={() => {}} theme="light">
+        Добавить к заказу
+      </ClipButton>
     </div>
   );
 };

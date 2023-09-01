@@ -48,11 +48,9 @@ const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
         <div className={st.utilsBasket}>
           <BtnChangeCount item={item} className={st.desktopChangeCount} />
           <div className={st.addInBasketBtn}>
-            <ClipButton
-              theme="dark"
-              text="Добавить в корзину"
-              onClick={() => {}}
-            />
+            <ClipButton theme="dark" onClick={() => {}}>
+              Добавить в корзину
+            </ClipButton>
           </div>
           <button className={st.shareBtn}>Поделиться</button>
         </div>

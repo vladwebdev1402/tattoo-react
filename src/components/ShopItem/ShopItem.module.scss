@@ -185,8 +185,8 @@
   background-position: 4px 5px !important;
 }
 
-.marcersSmall {
-  display: none !important;
+.addTextMobile {
+  display: none;
 }
 
 @media (max-width: 992px) {
@@ -197,6 +197,14 @@
 }
 
 @media (max-width: 576px) {
+  .marcersSmall,
+  .addTextDesktop {
+    display: none !important;
+  }
+
+  .addTextMobile {
+    display: inline-block;
+  }
   .smallItem {
     width: 130px;
     height: 217px;

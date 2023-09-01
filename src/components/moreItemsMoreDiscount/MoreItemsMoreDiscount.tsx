@@ -40,10 +40,11 @@ const MoreItemsMoreDiscount = () => {
         <div className={st.discountContainer}>
           <ClipButton
             className={st.addInBasketBtn}
-            text="Добавить в корзину"
             onClick={() => {}}
             theme="dark"
-          />
+          >
+            Добавить в корзину
+          </ClipButton>
           <div className={st.priceInfo}>
             <div className={st.priceContainer}>
               <div className={st.countItems}>3 товара на сумму:</div>
