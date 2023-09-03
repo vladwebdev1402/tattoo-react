@@ -6,6 +6,7 @@ import Banners from "../../components/banners/Banners";
 import AboutCompany from "../../components/aboutCompany/AboutCompany";
 import Subscribe from "../../components/subscribe/Subscribe";
 import Brands from "../../components/brands/Brands";
+import Reviews from "../../components/reviews/Reviews";
 
 const MainPage = () => {
   useEffect(() => {
@@ -20,6 +21,7 @@ const MainPage = () => {
       <Banners />
       <Brands />
       <AboutCompany />
+      <Reviews />
       <Subscribe />
     </div>
   );
