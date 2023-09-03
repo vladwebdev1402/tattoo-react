@@ -25,7 +25,10 @@ const Brands: FC = () => {
   return (
     <div className={styles.brandsContainer}>
       <div className={styles.brandsContainerHead}>
-        <h1>Популярные бренды</h1>
+        <h1 className={styles.headTxt}>Популярные бренды</h1>
+        <h1 className={`${styles.headTxt} ${styles.headTxtMobile}`}>
+          Наши бренды
+        </h1>
         <a className={styles.brandsLink}>Смотреть все</a>
       </div>
       <div className={styles.brandsContainerBody}>

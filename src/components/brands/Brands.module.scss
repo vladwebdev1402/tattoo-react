@@ -1,35 +1,16 @@
 .brandsContainer {
   width: 1376px;
-  height: 289px;
   margin: 0 auto;
   margin-top: 120px;
-  @media (max-width: 1400px) {
-    width: 985px;
-  }
-
-  @media (max-width: 1024px) {
-    width: 728px;
-  }
 }
 .sliderContainer {
   margin: 0 auto;
   width: 1216px;
   height: 100%;
-  @media (max-width: 1400px) {
-    width: 985px;
-  }
-
-  @media (max-width: 1024px) {
-    width: 728px;
-  }
 }
 .brandsContainerHead {
   padding: 0px 80px;
   position: relative;
-
-  @media (max-width: 1400px) {
-    padding: 0px 0px;
-  }
 }
 .brandsLink {
   font-size: 25px;
@@ -39,13 +20,7 @@
   margin-left: auto;
 }
 .brandsContainerBody {
-  width: 1376px;
-  @media (max-width: 1400px) {
-    width: 985px;
-  }
-  @media (max-width: 1024px) {
-    width: 728px;
-  }
+  width: 100%;
 }
 
 .btn {
@@ -53,17 +28,7 @@
   width: 50px;
   border: 2px solid var(--orange);
 }
-.slide {
-  height: 220px;
-  width: 1216px;
-  margin-right: 80px;
-  @media (max-width: 1400px) {
-    width: 985px;
-  }
-  @media (max-width: 1024px) {
-    width: 728px;
-  }
-}
+
 .btn {
   top: calc(50% - 25px);
   z-index: 1;
@@ -84,23 +49,92 @@
   &:hover {
     box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.1);
   }
-
-  @media (max-width: 1400px) {
-    display: none;
-  }
 }
 .btnPrev {
+  left: 0px;
+  &::after {
+    left: calc(50% - 6px);
+    rotate: 90deg;
+  }
+}
+
+.btnNext {
   right: 0px;
   &::after {
     rotate: -90deg;
     right: calc(50% - 6px);
   }
 }
+.headTxtMobile {
+  display: none;
+}
 
-.btnNext {
-  left: 0px;
-  &::after {
-    left: calc(50% - 6px);
-    rotate: 90deg;
+@media (max-width: 1400px) {
+  .brandsContainer {
+    width: 985px;
+  }
+  .sliderContainer {
+    width: 100%;
+  }
+  .brandsContainerHead {
+    padding: 0px 0px;
+  }
+  .btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .brandsContainer {
+    width: 728px;
+  }
+  .brandsContainerBody {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .brandsContainerHead {
+    display: flex;
+    justify-content: space-between;
+  }
+  .brandsLink {
+    text-align: end;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 730px) {
+  .brandsContainer {
+    width: 442px;
+    margin-top: 80px;
+  }
+
+  .headTxt {
+    font-size: 30px;
+  }
+  .brandsLink {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 568px) {
+  .brandsLink {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .brandsContainer {
+    width: 280px;
+    margin-top: 50px;
+  }
+
+  .headTxt {
+    display: none;
+  }
+  .headTxtMobile {
+    display: block;
+    white-space: nowrap;
   }
 }

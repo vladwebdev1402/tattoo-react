@@ -18,7 +18,7 @@ const MainPage = () => {
       <MiniShop />
       <Catalog />
       <Banners />
-      {/* <Brands /> */}
+      <Brands />
       <AboutCompany />
       <Subscribe />
     </div>
