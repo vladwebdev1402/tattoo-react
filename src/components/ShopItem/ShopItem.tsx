@@ -98,7 +98,7 @@ const ShopItem: FC<ShopItemProps> = ({
         </div>
         {!checkbox && (
           <Marcers
-            marcers={item.marcers}
+            marcers={item.marcers || {}}
             className={smallItem ? styles.marcersSmall : ""}
           />
         )}

@@ -37,7 +37,7 @@ const ItemPage: FC = () => {
         <div className={st.imagesAndBriefInfo}>
           <ContainerImagesProduct
             images={item.img}
-            marcers={item.marcers}
+            marcers={item.marcers || {}}
             id={item.id}
           />
           <ContainerBriefInfoProduct

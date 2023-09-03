@@ -41,7 +41,7 @@ export interface IShopItem {
   oldPrice: number;
   name: string;
   img: IItemImg;
-  marcers: IMarcers;
+  marcers?: IMarcers;
   description: string;
   count: number;
   type: "tattoo-kits" | "holders" | "tattoo-machine" 

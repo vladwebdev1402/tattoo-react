@@ -45,6 +45,7 @@ export const minishopData: IShopItem[] = [
 
     },
     marcers: {
+      new: true,
       hot: true,
       promotion: true,
     },

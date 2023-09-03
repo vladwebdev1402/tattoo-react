@@ -14,7 +14,7 @@ const MiniShop: FC = () => {
   useEffect(() => {
     setItems(
       minishopData.filter((item) =>
-        Object.keys(item.marcers).includes(currentCategory)
+        Object.keys(item.marcers || {}).includes(currentCategory)
       )
     );
   }, [currentCategory]);
