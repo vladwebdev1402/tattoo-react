@@ -46,12 +46,13 @@ const Slider: FC<Props> = ({
 
   useEffect(() => {
     setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
-    window.addEventListener("resize", () => {
-      setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
-    });
 
-    return window.removeEventListener("resize", () => {});
-  }, []);
+    var observer = new window.ResizeObserver(() =>
+      setWidth(`${sliderRef.current?.clientWidth}px` || "100%")
+    );
+
+    sliderRef.current && observer.observe(sliderRef.current);
+  }, [sliderRef]);
   const [
     isAnimated,
     arrayPagination,

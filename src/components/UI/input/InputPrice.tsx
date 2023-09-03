@@ -7,7 +7,11 @@ interface Props {
 
 const InputPrice: FC<Props> = ({ value, onChange }) => {
   return (
-    <input className={styles.inputPrice} value={value} onChange={onChange} />
+    <input
+      className={styles.inputPrice}
+      value={Number(value).toLocaleString("ru-RU")}
+      onChange={onChange}
+    />
   );
 };
 

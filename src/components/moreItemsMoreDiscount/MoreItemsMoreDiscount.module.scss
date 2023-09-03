@@ -129,7 +129,6 @@
   .scrollDiv {
     overflow-x: scroll;
     overflow-y: hidden;
-    position: relative;
     &::-webkit-scrollbar {
       height: 1px;
       background-color: var(--gray);

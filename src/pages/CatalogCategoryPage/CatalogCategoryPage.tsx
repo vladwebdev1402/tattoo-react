@@ -9,6 +9,7 @@ import { pathnames } from "../../data/pathnames";
 import FilterParametrsItems from "../../components/filterParametrsItems/FilterParametrsItems";
 import { useParams } from "react-router-dom";
 import { IFiltersParametrs } from "../../types/FilterParametrs";
+import { IShopItem } from "../../types/shopItem";
 
 interface CategoryPage {
   type: string;
@@ -16,8 +17,10 @@ interface CategoryPage {
 }
 const CatalogPage = () => {
   const params = useParams<CategoryPage>();
-  const [filtersItem, setFiltersItem] = useState<IFiltersParametrs>({
-    price: { maxPrice: "99999", minPrice: "0" },
+  const [items, setItems] = useState<IShopItem[]>([]);
+  const [filtersItem, setFiltersItem] = useState<IShopItem[]>([]);
+  const [filters, setFilters] = useState<IFiltersParametrs>({
+    price: { maxPrice: "999999", minPrice: "0" },
     inStock: false,
     sortOptions: [
       { name: "Популярные", isActive: true },
@@ -33,21 +36,50 @@ const CatalogPage = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  }, []);
+    setItems(minishopData.filter((item) => item.type === params.type));
+  }, [params]);
+
+  useEffect(() => {
+    const itemsWithFilter = items.filter(
+      (item) =>
+        item.price <= Number(filters.price.maxPrice) &&
+        item.price >= Number(filters.price.minPrice) &&
+        (!filters.inStock || (filters.inStock && item.count > 0))
+    );
+    filters.sortOptions.forEach((filter) => {
+      if (filter.isActive) {
+        if (filter.name === "Дешёвые")
+          setFiltersItem(itemsWithFilter.sort((a, b) => a.price - b.price));
+        if (filter.name === "Дорогие")
+          setFiltersItem(itemsWithFilter.sort((a, b) => b.price - a.price));
+        if (filter.name === "По алфавиту")
+          setFiltersItem(
+            itemsWithFilter.sort((a, b) => {
+              if (a.name > b.name) return 1;
+              else return -1;
+            })
+          );
+      }
+    });
+    setFiltersItem(itemsWithFilter);
+  }, [items, filters]);
 
   return (
     <div className={styles.catalogContainer}>
       <Breadcrumbs />
       <h1>{pathnames[params.type || ""]}</h1>
       <FiltersBtnCatalogPage />
-      <FilterParametrsItems filters={filtersItem} setFilters={setFiltersItem} />
+      <FilterParametrsItems filters={filters} setFilters={setFilters} />
       <div className={styles.itemsContainer}>
-        {minishopData.map((item) => (
-          <ShopItem item={item} key={item.id} />
-        ))}
+        {filtersItem.length ? (
+          filtersItem.map((item) => <ShopItem item={item} key={item.id} />)
+        ) : (
+          <h1>Товары данного типа отсутствуют</h1>
+        )}
       </div>
-      <div className={styles.btn}>
+      {items.length !== 0 && (
         <ClipButton
+          className={styles.btn}
           theme="light"
           onClick={() => {
             console.log(filtersItem);
@@ -55,7 +87,7 @@ const CatalogPage = () => {
         >
           Показать ещё
         </ClipButton>
-      </div>
+      )}
     </div>
   );
 };

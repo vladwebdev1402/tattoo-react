@@ -48,6 +48,7 @@ export interface IShopItem {
   | "wires" | "paints" | "power" | "tattoo-tips" | 
   "tattoo-needles" | "consumables" | "accessories" | "printers";
   characteristics?: ICharacteristics
+  brand: string;
 }
 
 

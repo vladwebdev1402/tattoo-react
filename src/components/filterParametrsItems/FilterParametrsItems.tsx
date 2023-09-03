@@ -16,9 +16,10 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
   const [modal, setModal] = useState<boolean>(false);
 
   const regValue = (prevValue: string, targetValue: string): string => {
+    const valueSplit = targetValue.split(/\s+/).join("");
     const re = /^\d+$/;
-    let value = re.test(targetValue) ? targetValue : prevValue;
-    value = targetValue ? value : "0";
+    let value = re.test(valueSplit) ? valueSplit : prevValue;
+    value = valueSplit ? value : "0";
     return value;
   };
 

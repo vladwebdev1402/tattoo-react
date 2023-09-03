@@ -27,7 +27,8 @@ export const removeFromBasket = (setBasket: Dispatch<SetStateAction<IBasket[]>>,
 
 export const setCountItemsInBasket = (setBasket: Dispatch<SetStateAction<IBasket[]>>, basket: IBasket[], 
     item: IShopItem, count: number) : void => {
-        if (!basket.length) setBasket([{item: item, count: count, itemId: item.id}])
+        if (item.count <= 0) return
+        else if (!basket.length) setBasket([{item: item, count: count, itemId: item.id}])
         else if (!basket.filter(basketItem => basketItem.itemId === item.id).length) {
             setBasket([...basket, {count: 1, itemId: item.id, item: item}])
         }

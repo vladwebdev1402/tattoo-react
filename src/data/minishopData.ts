@@ -30,6 +30,7 @@ export const minishopData: IShopItem[] = [
     description: "",
     count: 8,
     type: "tattoo-machine",
+    brand: "Aliance",
   },
   {
     id: 1,
@@ -61,7 +62,8 @@ export const minishopData: IShopItem[] = [
       type: "Роторная",
       needleStroke: "Универсальная",
       voltage: 12 
-    }
+    },
+    brand: "Aliance",
   },
   {
     id: 2,
@@ -86,6 +88,7 @@ export const minishopData: IShopItem[] = [
     Машинка подходит как для тату, так и для татуажа.",
     count: 45,
     type: "consumables",
+    brand: "Aliance",
   },
   {
     id: 3,
@@ -105,6 +108,7 @@ export const minishopData: IShopItem[] = [
     description: "",
     count: 3,
     type: "holders",
+    brand: "Aliance",
   },
   {
     id: 4,
@@ -124,6 +128,7 @@ export const minishopData: IShopItem[] = [
     description: "",
     count: 11,
     type: "tattoo-machine",
+    brand: "Aliance",
   },
   {
     id: 5,
@@ -143,6 +148,7 @@ export const minishopData: IShopItem[] = [
     description: "",
     count: 12,
     type: "tattoo-machine",
+    brand: "Aliance",
   },
   {
     id: 6,
@@ -162,6 +168,7 @@ export const minishopData: IShopItem[] = [
     description: "",
     count: 3,
     type: "tattoo-machine",
+    brand: "Aliance",
   },
   {
     id: 7,
@@ -179,7 +186,8 @@ export const minishopData: IShopItem[] = [
       new: true,
     },
     description: "",
-    count: 6,
+    count: 0,
     type: "tattoo-machine",
+    brand: "Aliance",
   },
 ];
