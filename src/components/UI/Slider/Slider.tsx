@@ -148,6 +148,11 @@ const Slider: FC<Props> = ({
 
   const magnet = () => {
     if (withEffect) {
+      const activeLeftPosition = document
+        .getElementsByClassName(st__slide__active || "")[0]
+        .getBoundingClientRect().left;
+
+      newOffset.current += calcPosActiveBlock()[0] - activeLeftPosition;
     } else {
       const indMulti = Math.round(-newOffset.current / getContainer());
       newOffset.current = indMulti * getContainer() * -1;
@@ -172,18 +177,16 @@ const Slider: FC<Props> = ({
   const checkActive = () => {
     const [left, right] = calcPosActiveBlock();
     let count = 0;
-    Array.from(containerRef.current!.children)
-      .reverse()
-      .forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        if (
-          ((rect.left >= left && rect.right <= right) ||
-            (rect.left <= right && rect.right >= left)) &&
-          ++count <= countActive
-        ) {
-          element.className = st__slide__active || "";
-        } else element.className = st__slide__notActive || "";
-      });
+    Array.from(containerRef.current!.children).forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (
+        rect.left <= right &&
+        rect.right - element.clientWidth / 2 >= left &&
+        ++count <= countActive
+      ) {
+        element.className = st__slide__active || "";
+      } else element.className = st__slide__notActive || "";
+    });
   };
 
   const onClickPagIndicator = (idx: number) => {
@@ -191,9 +194,13 @@ const Slider: FC<Props> = ({
     setNewOffsetThroughIdx(idx);
     setOffset(newOffset.current);
     setIsAnimatade(true);
-    setTimeout(() => {
-      if (withEffect) checkActive();
-    }, transition);
+    if (withEffect) {
+      setTimeout(() => {
+        checkActive();
+        magnet();
+        setOffset(newOffset.current);
+      }, transition);
+    }
   };
 
   const onClickNext = () => {

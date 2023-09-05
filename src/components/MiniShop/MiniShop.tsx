@@ -28,8 +28,12 @@ const MiniShop: FC = () => {
         <div className={styles.miniShopItems}>
           <HorizontalSwiper>
             {items.map((item) => (
-              <li className={styles.slide} style={{ marginRight: "20px" }}>
-                <ShopItem key={item.id} item={item} />
+              <li
+                key={item.id}
+                className={styles.slide}
+                style={{ marginRight: "20px" }}
+              >
+                <ShopItem item={item} />
               </li>
             ))}
           </HorizontalSwiper>
