@@ -16,7 +16,7 @@ const RightFooter: FC = () => {
               <div className="icon">
                 <img src={callImg} />
               </div>
-              <span className={styles.txt}>8 800 600-61-91</span>
+              <a className={styles.txt}>8 800 600-61-91</a>
             </div>
             <div className={styles.iconContacts}>
               <a className={styles.linkIcon} href="#">
@@ -38,7 +38,7 @@ const RightFooter: FC = () => {
           <div className="icon">
             <img src={mailImg} />
           </div>
-          <span className={styles.txt}>Mr.Driskell@mail.ru</span>
+          <a className={styles.txt}>Mr.Driskell@mail.ru</a>
         </div>
       </div>
     </div>

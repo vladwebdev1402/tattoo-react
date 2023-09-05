@@ -64,21 +64,23 @@ const ItemPage: FC = () => {
         </div>
         <MoreItemsMoreDiscount />
 
-        <SubBlockItems title="Рекомендованные товары" watchAll={() => {}}>
-          {minishopData.map((item) => (
-            <ShopItem item={item} key={item.id} smallItem={true} />
-          ))}
-        </SubBlockItems>
-        <SubBlockItems title="Товары этого бренда" watchAll={() => {}}>
-          {minishopData.map((item) => (
-            <ShopItem item={item} key={item.id} smallItem={true} />
-          ))}
-        </SubBlockItems>
-        <SubBlockItems title="Похожие товары" watchAll={() => {}}>
-          {minishopData.map((item) => (
-            <ShopItem item={item} key={item.id} smallItem={true} />
-          ))}
-        </SubBlockItems>
+        <SubBlockItems
+          title="Рекомендованные товары"
+          watchAll={() => {}}
+          items={minishopData}
+        />
+
+        <SubBlockItems
+          title="Товары этого бренда"
+          watchAll={() => {}}
+          items={minishopData}
+        />
+
+        <SubBlockItems
+          title="Похожие товары"
+          watchAll={() => {}}
+          items={minishopData}
+        />
       </div>
     );
   }

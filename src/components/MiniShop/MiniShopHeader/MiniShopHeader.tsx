@@ -22,9 +22,9 @@ const MiniShopHeader: FC<Props> = ({ setCurrentCategory, currentCategory }) => {
         <li>
           <MiniShopHeaderLink
             onClick={() => {
-              setCurrentCategory("hot");
+              setCurrentCategory("popular");
             }}
-            active={currentCategory == "hot"}
+            active={currentCategory == "popular"}
           >
             Самые популярные
           </MiniShopHeaderLink>

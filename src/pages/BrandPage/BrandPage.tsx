@@ -13,7 +13,7 @@ import st from "./BrandPage.module.scss";
 const BrandPage = () => {
   const params = useParams<{ id: string }>();
   const [brand, setBrand] = useState<ICategory>();
-  const [currentType, setCurrentType] = useState("");
+  const [currentType, setCurrentType] = useState("all");
   const [items, setItems] = useState<IShopItem[]>([]);
   const [filterItems, setFilterItems] = useState<IShopItem[]>([]);
 
@@ -25,8 +25,8 @@ const BrandPage = () => {
   }, [params]);
 
   useEffect(() => {
-    if (currentType)
-      setFilterItems(items.filter((item) => item.type === currentType));
+    if (currentType == "all") setFilterItems(items);
+    else setFilterItems(items.filter((item) => item.type === currentType));
   }, [currentType]);
   return (
     <div className={st.container}>

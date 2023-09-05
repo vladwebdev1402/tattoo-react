@@ -1,6 +1,5 @@
 import React from "react";
 import FilterBtn from "../UI/button/filterBtn/FilterBtn";
-import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
 import styles from "./Filters.module.scss";
 const FiltersBtnCatalogPage = () => {
   return (

@@ -19,6 +19,14 @@ const FilterCategoryCatalog: FC<Props> = ({
   return (
     <div className={st.containerFilters}>
       <ul className={st.filterList}>
+        <li className={st.filter}>
+          <FilterBtn
+            onClick={() => onClick("all")}
+            active={currentType == "all"}
+          >
+            Все категории
+          </FilterBtn>
+        </li>
         {category.slice(1).map((category) => (
           <li className={st.filter} key={category.id}>
             <FilterBtn

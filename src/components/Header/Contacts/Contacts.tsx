@@ -10,7 +10,7 @@ const Contacts = () => {
           <div className="icon">
             <img src={callImg} />
           </div>
-          <span className={styles.contactText}>+7 952 552-52-52</span>
+          <a className={styles.contactText}>+7 952 552-52-52</a>
         </div>
         <ul className={styles.contacsLink}>
           <li className={styles.link}>
@@ -34,7 +34,7 @@ const Contacts = () => {
         <div className="icon">
           <img src={mailImg} />
         </div>
-        <span className={styles.contactText}>Mr.Driskell@mail.ru</span>
+        <a className={styles.contactText}>Mr.Driskell@mail.ru</a>
       </div>
     </div>
   );

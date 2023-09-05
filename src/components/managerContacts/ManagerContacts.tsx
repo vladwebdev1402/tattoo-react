@@ -16,7 +16,7 @@ const ManagerContacts: FC<Props> = ({ contacts, personal = false }) => {
           <div className="icon">
             <img src={callImg} />
           </div>
-          <span className={styles.txtNumber}>{contacts.number}</span>
+          <a className={styles.txtNumber}>{contacts.number}</a>
         </div>
         <ul className={styles.urlContacts}>
           <li className={styles.link}>
@@ -42,7 +42,7 @@ const ManagerContacts: FC<Props> = ({ contacts, personal = false }) => {
             <div className="icon">
               <img src={callImg} />
             </div>
-            <span className={styles.companyNumber}>8(800)600-61-91</span>
+            <a className={styles.companyNumber}>8(800)600-61-91</a>
           </div>
           <div className={styles.callTxt}>(Звонок бесплатный)</div>
         </div>
@@ -51,7 +51,7 @@ const ManagerContacts: FC<Props> = ({ contacts, personal = false }) => {
         <div className="icon">
           <img src={mailImg} />
         </div>
-        <span className={styles.mailTxt}>{contacts.mail}</span>
+        <a className={styles.mailTxt}>{contacts.mail}</a>
       </div>
     </div>
   );

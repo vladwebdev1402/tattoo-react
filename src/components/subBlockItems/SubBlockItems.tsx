@@ -1,12 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import { IShopItem } from "../../types/shopItem";
+import ShopItem from "../ShopItem/ShopItem";
 import Slider from "../UI/Slider/Slider";
 import st from "./SubBlockItems.module.scss";
 interface Props {
   watchAll: () => void;
-  children: React.ReactNode;
+  items: IShopItem[];
   title: string;
 }
-const SubBlockItems: FC<Props> = ({ watchAll, children, title }) => {
+const SubBlockItems: FC<Props> = ({ watchAll, items, title }) => {
+  const [swipe, setSwipe] = useState(false);
   return (
     <div className={st.container}>
       <div className={st.header}>
@@ -31,10 +34,16 @@ const SubBlockItems: FC<Props> = ({ watchAll, children, title }) => {
           st__pag__item={st.pagItem}
           st__pag__item__active={st.pagItemActive}
           countPagItem={5}
+          onSwipe={setSwipe}
         >
-          {children}
-          {children}
-          {children}
+          {items.map((item) => (
+            <ShopItem
+              swipe={swipe}
+              item={item}
+              key={item.id}
+              smallItem={true}
+            />
+          ))}
         </Slider>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   BasketContext,
   getCountItemsInBasket,
@@ -12,6 +13,7 @@ import MyRadio from "../UI/radio/MyRadio";
 import st from "./Ordering.module.scss";
 import { deliveryRadios, paymentRadios } from "./radios";
 const Ordering = () => {
+  const navigate = useNavigate();
   const [payment, setPayment] = useState("Онлайн на сайте");
   const [delivery, setDelivery] = useState("Курьерская служба");
   const [checked, setChecked] = useState(false);
@@ -96,7 +98,13 @@ const Ordering = () => {
       </div>
 
       <div className={st.btnWrapper}>
-        <ClipButton className={st.clipBtn} onClick={() => {}} theme="dark">
+        <ClipButton
+          className={st.clipBtn}
+          onClick={() => {
+            navigate("services");
+          }}
+          theme="dark"
+        >
           Оформить заказ
         </ClipButton>
         <ClipButton className={st.clipBtn} onClick={() => {}} theme="light">

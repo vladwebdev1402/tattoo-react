@@ -1,6 +1,7 @@
 .breadcrumbsContainer {
   margin: 0px auto 30px auto;
   overflow-x: scroll;
+  position: relative;
   &::-webkit-scrollbar {
     height: 1px;
   }

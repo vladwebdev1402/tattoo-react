@@ -20,6 +20,7 @@ interface ShopItemProps {
   smallItem?: boolean;
   checkbox?: boolean;
   noneBtn?: boolean;
+  swipe?: boolean;
 }
 
 const ShopItem: FC<ShopItemProps> = ({
@@ -27,6 +28,7 @@ const ShopItem: FC<ShopItemProps> = ({
   smallItem = false,
   noneBtn = false,
   checkbox = false,
+  swipe = false,
 }) => {
   const { basket, setBasket } = useContext(BasketContext);
   const itemsInBasket = getCountItemInBasket(basket, item.id);
@@ -56,7 +58,7 @@ const ShopItem: FC<ShopItemProps> = ({
       <div
         className={styles.itemContainer}
         onClick={() => {
-          navigate(`/catalog/${item.type}/${item.id}`);
+          if (!swipe) navigate(`/catalog/${item.type}/${item.id}`);
         }}
       >
         <ShopItemSwiper

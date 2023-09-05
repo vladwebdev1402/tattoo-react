@@ -46,7 +46,7 @@ const BurgerMenu: FC = () => {
                 {category.map((category) => (
                   <Link
                     key={category.id}
-                    to=""
+                    to={`catalog/${category.link}`}
                     className={styles.linkCategory}
                     onClick={() => {
                       setIsActiveMenu(!isActiveMenu);
@@ -83,7 +83,7 @@ const BurgerMenu: FC = () => {
                 <MyLink name={"Избранное"} to="/contacts" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Личный кабинет"} to="/contacts" />
+                <MyLink name={"Личный кабинет"} to="/profile" />
               </li>
             </ul>
           </nav>

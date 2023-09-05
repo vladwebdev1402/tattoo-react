@@ -42,12 +42,11 @@ const ModalFilters: FC<Props> = ({
         </ModalFilter>
         <ModalFilter name="Сортировка">
           {filters.sortOptions.map((option) => (
-            <div className={st.radioItem}>
+            <div key={option.name} className={st.radioItem}>
               <MyRadio
                 onChange={() => {
                   changeSort(option.name);
                 }}
-                key={option.name}
                 title={option.name}
                 checked={option.isActive}
               />
@@ -56,12 +55,11 @@ const ModalFilters: FC<Props> = ({
         </ModalFilter>
         <ModalFilter name="Тип машинки">
           {filters.typeOptions.map((option) => (
-            <div className={st.radioItem}>
+            <div key={option.name} className={st.radioItem}>
               <MyRadio
                 onChange={() => {
                   changeType(option.name);
                 }}
-                key={option.name}
                 title={option.name}
                 checked={option.isActive}
               />

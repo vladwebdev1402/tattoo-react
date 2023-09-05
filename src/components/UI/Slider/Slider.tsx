@@ -37,6 +37,7 @@ interface Props {
   st__slide__active?: string;
   st__slide__notActive?: string;
   transition?: number;
+  onSwipe?: (swipe: boolean) => void;
 }
 
 const Slider: FC<Props> = ({
@@ -48,6 +49,7 @@ const Slider: FC<Props> = ({
   withEffect = false,
   countActive = 0,
   transition = 300,
+  onSwipe,
   st__pagination,
   st__list,
   st__pag__item,
@@ -89,24 +91,27 @@ const Slider: FC<Props> = ({
 
     sliderRef.current && observer.observe(sliderRef.current);
   }, [sliderRef]);
+
   useEffect(() => {
-    setTimeout(() => {
-      checkActive();
-    }, transition);
+    if (withEffect)
+      setTimeout(() => {
+        checkActive();
+      }, transition);
   }, [countActive]);
 
   const getScroll = () => {
+    const spaceWithEffect = withEffect ? calcPosActiveBlock()[0] : 0;
     return direction === "row"
-      ? containerRef.current!.scrollWidth +
-          spaceBetween +
-          calcPosActiveBlock()[0]
+      ? containerRef.current!.scrollWidth + spaceBetween + spaceWithEffect
       : containerRef.current!.scrollHeight + spaceBetween;
   };
+
   const getContainer = () => {
     return direction === "row"
       ? containerRef.current!.clientWidth + spaceBetween
       : containerRef.current!.clientHeight + spaceBetween;
   };
+
   const getCursorPos = (
     e:
       | TouchEvent
@@ -119,10 +124,37 @@ const Slider: FC<Props> = ({
       : getTouchEventData(e).clientY;
   };
 
+  const calcMinOffset = (): number => {
+    return withEffect ? calcPosActiveBlock()[0] : 0;
+  };
+
+  const calcMaxOffset = (): number => {
+    return getScroll() - getContainer();
+  };
+
+  const calcWidthActiveBlock = (): number => {
+    if (countActive == 0) return 0;
+    return (
+      containerRef.current!.children[0].clientWidth * countActive +
+      spaceBetween * (countActive - 1)
+    );
+  };
+
+  const calcPosActiveBlock = (): [number, number] => {
+    const widthActiveBlock = calcWidthActiveBlock();
+    const left = containerRef.current!.clientWidth / 2 - widthActiveBlock / 2;
+    const right = left + widthActiveBlock;
+    return [left, right];
+  };
+
   const changePagIndicator = () => {
-    const idx = (-newOffset.current * countPag) / getScroll();
+    let idx = 0;
+    if (newOffset.current == -calcMaxOffset()) idx = countPag - 1;
+    else if (newOffset.current == calcMinOffset()) {
+    } else idx = (-newOffset.current * countPag) / getScroll();
     setCurrentPagIdx(Math.round(idx));
   };
+
   const setNewOffsetThroughIdx = (idx: number) => {
     if (freeMode)
       newOffset.current =
@@ -132,11 +164,9 @@ const Slider: FC<Props> = ({
     else newOffset.current = -idx * getContainer();
     checkMinMaxOffset();
   };
-  const calcMinOffset = (): number => {
-    return withEffect ? calcPosActiveBlock()[0] : 0;
-  };
+
   const checkMinMaxOffset = () => {
-    maxOffset.current = getScroll() - getContainer();
+    maxOffset.current = calcMaxOffset();
     const minOffset = calcMinOffset();
     if (newOffset.current < -maxOffset.current) {
       newOffset.current = -maxOffset.current;
@@ -157,21 +187,6 @@ const Slider: FC<Props> = ({
       const indMulti = Math.round(-newOffset.current / getContainer());
       newOffset.current = indMulti * getContainer() * -1;
     }
-  };
-
-  const calcWidthActiveBlock = (): number => {
-    if (countActive == 0) return 0;
-    return (
-      containerRef.current!.children[0].clientWidth * countActive +
-      spaceBetween * (countActive - 1)
-    );
-  };
-
-  const calcPosActiveBlock = (): [number, number] => {
-    const widthActiveBlock = calcWidthActiveBlock();
-    const left = containerRef.current!.clientWidth / 2 - widthActiveBlock / 2;
-    const right = left + widthActiveBlock;
-    return [left, right];
   };
 
   const checkActive = () => {
@@ -256,19 +271,24 @@ const Slider: FC<Props> = ({
     window.addEventListener("mouseup", onClickEnd);
     window.addEventListener("touchend", onClickEnd);
   };
+
   const onMouseMove = (e: TouchEvent | MouseEvent) => {
+    if (onSwipe) onSwipe(true);
+
     currentOffset.current = getCursorPos(e);
     const diff = currentOffset.current - startOffset.current;
     newOffset.current = diff + offset;
     checkMinMaxOffset();
-    changePagIndicator();
     setOffset(newOffset.current);
+    changePagIndicator();
     if (withEffect) checkActive();
   };
 
   const onClickEnd = () => {
     if (!freeMode || withEffect) magnet();
     setIsAnimatade(true);
+    if (onSwipe) setTimeout(() => onSwipe(false), 50);
+
     setOffset(newOffset.current);
     window.removeEventListener("touchmove", onMouseMove);
     window.removeEventListener("mousemove", onMouseMove);

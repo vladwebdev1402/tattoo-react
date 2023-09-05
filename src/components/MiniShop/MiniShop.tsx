@@ -5,18 +5,21 @@ import styles from "./MiniShop.module.scss";
 import MiniShopFooter from "./MiniShopFooter/MiniShopFooter";
 import MiniShopHeader from "./MiniShopHeader/MiniShopHeader";
 import ShopItem from "../ShopItem/ShopItem";
-import HorizontalSwiper from "../UI/Swiper/HorizontalSwiper";
 import { useWidth } from "../../hooks/useWidth";
+import Slider from "../UI/Slider/Slider";
 const MiniShop: FC = () => {
   const [items, setItems] = useState<IShopItem[]>([]);
   const [currentCategory, setCurrentCategory] = useState("new");
+  const [swipe, setSwipe] = useState(false);
   const width = useWidth();
   useEffect(() => {
-    setItems(
-      minishopData.filter((item) =>
-        Object.keys(item.marcers || {}).includes(currentCategory)
-      )
-    );
+    if (currentCategory == "popular") setItems(minishopData);
+    else
+      setItems(
+        minishopData.filter((item) =>
+          Object.keys(item.marcers || {}).includes(currentCategory)
+        )
+      );
   }, [currentCategory]);
   if (width <= 768) {
     return (
@@ -26,17 +29,19 @@ const MiniShop: FC = () => {
           setCurrentCategory={setCurrentCategory}
         />
         <div className={styles.miniShopItems}>
-          <HorizontalSwiper>
+          <Slider
+            countPagItem={5}
+            st__pagination={styles.swiper__pagination}
+            st__pag__item__active={styles.active}
+            st__pag__item={styles.swiper__pagination__item}
+            onSwipe={setSwipe}
+            spaceBetween={20}
+            freeMode={true}
+          >
             {items.map((item) => (
-              <li
-                key={item.id}
-                className={styles.slide}
-                style={{ marginRight: "20px" }}
-              >
-                <ShopItem item={item} />
-              </li>
+              <ShopItem swipe={swipe} key={item.id} item={item} />
             ))}
-          </HorizontalSwiper>
+          </Slider>
         </div>
       </section>
     );
