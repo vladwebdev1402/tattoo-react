@@ -4,11 +4,11 @@
   height: 307px;
   background-color: var(--black);
   padding: 50px;
-  margin-right: 20px;
   display: flex;
   flex-direction: column;
-  opacity: 30%;
-  transform: scale(0.75);
+  opacity: inherit;
+  transform: inherit;
+  transition: 0.2s;
   &:last-child {
     margin-right: 0px;
   }
@@ -62,5 +62,22 @@
   border: 3px solid var(--orange);
   img {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 660px) {
+  .reviewTxt {
+    font-size: 15px;
+  }
+  .container {
+    padding: 40px 20px;
+
+    min-width: 279px;
+    height: 403px;
+  }
+  .faceContainer {
+    width: 60px;
+    height: 60px;
+    top: -30px;
   }
 }

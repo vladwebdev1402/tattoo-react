@@ -32,6 +32,11 @@ interface Props {
   spaceBetween?: number;
   freeMode?: boolean;
   countPagItem?: number;
+  withEffect?: boolean;
+  countActive?: number;
+  st__slide__active?: string;
+  st__slide__notActive?: string;
+  transition?: number;
 }
 
 const Slider: FC<Props> = ({
@@ -40,6 +45,9 @@ const Slider: FC<Props> = ({
   direction = "row",
   freeMode = false,
   countPagItem = 0,
+  withEffect = false,
+  countActive = 0,
+  transition = 300,
   st__pagination,
   st__list,
   st__pag__item,
@@ -47,6 +55,8 @@ const Slider: FC<Props> = ({
   st__pag__btn__next,
   st__pag__btn__prev,
   st__slider__container,
+  st__slide__active,
+  st__slide__notActive,
 }) => {
   const countPag: number = countPagItem
     ? countPagItem
@@ -54,16 +64,6 @@ const Slider: FC<Props> = ({
   const containerRef: RefObject<HTMLUListElement> = useRef(null);
   const sliderRef: RefObject<HTMLDivElement> = useRef(null);
   const [width, setWidth] = useState("100%");
-
-  useEffect(() => {
-    setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
-
-    var observer = new window.ResizeObserver(() =>
-      setWidth(`${sliderRef.current?.clientWidth}px` || "100%")
-    );
-
-    sliderRef.current && observer.observe(sliderRef.current);
-  }, [sliderRef]);
   const arrayPagination = usePagination(countPag);
   const [isAnimatade, setIsAnimatade] = useState<boolean>(false);
   const [offset, setOffset] = useState<number>(0);
@@ -73,9 +73,33 @@ const Slider: FC<Props> = ({
   const maxOffset = useRef<number>(0);
   const newOffset = useRef<number>(0);
 
+  useEffect(() => {
+    setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
+
+    var observer = new window.ResizeObserver(() =>
+      setWidth(`${sliderRef.current?.clientWidth}px` || "100%")
+    );
+
+    if (withEffect) {
+      setOffset(calcPosActiveBlock()[0]);
+      setTimeout(() => {
+        checkActive();
+      }, transition);
+    }
+
+    sliderRef.current && observer.observe(sliderRef.current);
+  }, [sliderRef]);
+  useEffect(() => {
+    setTimeout(() => {
+      checkActive();
+    }, transition);
+  }, [countActive]);
+
   const getScroll = () => {
     return direction === "row"
-      ? containerRef.current!.scrollWidth + spaceBetween
+      ? containerRef.current!.scrollWidth +
+          spaceBetween +
+          calcPosActiveBlock()[0]
       : containerRef.current!.scrollHeight + spaceBetween;
   };
   const getContainer = () => {
@@ -108,20 +132,58 @@ const Slider: FC<Props> = ({
     else newOffset.current = -idx * getContainer();
     checkMinMaxOffset();
   };
-
+  const calcMinOffset = (): number => {
+    return withEffect ? calcPosActiveBlock()[0] : 0;
+  };
   const checkMinMaxOffset = () => {
     maxOffset.current = getScroll() - getContainer();
+    const minOffset = calcMinOffset();
     if (newOffset.current < -maxOffset.current) {
       newOffset.current = -maxOffset.current;
     }
-    if (newOffset.current > 0) {
-      newOffset.current = 0;
+    if (newOffset.current > minOffset) {
+      newOffset.current = minOffset;
     }
   };
 
   const magnet = () => {
-    const indMulti = Math.round(-newOffset.current / getContainer());
-    newOffset.current = indMulti * getContainer() * -1;
+    if (withEffect) {
+    } else {
+      const indMulti = Math.round(-newOffset.current / getContainer());
+      newOffset.current = indMulti * getContainer() * -1;
+    }
+  };
+
+  const calcWidthActiveBlock = (): number => {
+    if (countActive == 0) return 0;
+    return (
+      containerRef.current!.children[0].clientWidth * countActive +
+      spaceBetween * (countActive - 1)
+    );
+  };
+
+  const calcPosActiveBlock = (): [number, number] => {
+    const widthActiveBlock = calcWidthActiveBlock();
+    const left = containerRef.current!.clientWidth / 2 - widthActiveBlock / 2;
+    const right = left + widthActiveBlock;
+    return [left, right];
+  };
+
+  const checkActive = () => {
+    const [left, right] = calcPosActiveBlock();
+    let count = 0;
+    Array.from(containerRef.current!.children)
+      .reverse()
+      .forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (
+          ((rect.left >= left && rect.right <= right) ||
+            (rect.left <= right && rect.right >= left)) &&
+          ++count <= countActive
+        ) {
+          element.className = st__slide__active || "";
+        } else element.className = st__slide__notActive || "";
+      });
   };
 
   const onClickPagIndicator = (idx: number) => {
@@ -129,22 +191,51 @@ const Slider: FC<Props> = ({
     setNewOffsetThroughIdx(idx);
     setOffset(newOffset.current);
     setIsAnimatade(true);
+    setTimeout(() => {
+      if (withEffect) checkActive();
+    }, transition);
   };
 
   const onClickNext = () => {
-    let pagInd =
-      currentPagIdx + 1 == countPag ? currentPagIdx : currentPagIdx + 1;
-    setNewOffsetThroughIdx(pagInd);
-    setOffset(newOffset.current);
-    setCurrentPagIdx(pagInd);
+    if (withEffect) {
+      newOffset.current =
+        offset -
+        calcWidthActiveBlock() / countActive -
+        spaceBetween * (countActive - 1 || 1);
+
+      checkMinMaxOffset();
+      setOffset(newOffset.current);
+      setTimeout(() => {
+        checkActive();
+      }, transition);
+    } else {
+      let pagInd =
+        currentPagIdx + 1 == countPag ? currentPagIdx : currentPagIdx + 1;
+      setNewOffsetThroughIdx(pagInd);
+      setOffset(newOffset.current);
+      setCurrentPagIdx(pagInd);
+    }
     setIsAnimatade(true);
   };
 
   const onClickPrev = () => {
-    let pagInd = currentPagIdx - 1 == -1 ? currentPagIdx : currentPagIdx - 1;
-    setNewOffsetThroughIdx(pagInd);
-    setOffset(newOffset.current);
-    setCurrentPagIdx(pagInd);
+    if (withEffect) {
+      newOffset.current =
+        offset +
+        calcWidthActiveBlock() / countActive +
+        spaceBetween * (countActive - 1 || 1);
+
+      checkMinMaxOffset();
+      setOffset(newOffset.current);
+      setTimeout(() => {
+        checkActive();
+      }, 300);
+    } else {
+      let pagInd = currentPagIdx - 1 == -1 ? currentPagIdx : currentPagIdx - 1;
+      setNewOffsetThroughIdx(pagInd);
+      setOffset(newOffset.current);
+      setCurrentPagIdx(pagInd);
+    }
     setIsAnimatade(true);
   };
 
@@ -165,10 +256,11 @@ const Slider: FC<Props> = ({
     checkMinMaxOffset();
     changePagIndicator();
     setOffset(newOffset.current);
+    if (withEffect) checkActive();
   };
 
   const onClickEnd = () => {
-    if (!freeMode) magnet();
+    if (!freeMode || withEffect) magnet();
     setIsAnimatade(true);
     setOffset(newOffset.current);
     window.removeEventListener("touchmove", onMouseMove);
@@ -206,7 +298,7 @@ const Slider: FC<Props> = ({
             transform: `translate3d(${direction === "row" ? offset : 0}px, ${
               direction === "column" ? offset : 0
             }px, 0)`,
-            transition: `${isAnimatade ? "300ms" : "0ms"}`,
+            transition: `${isAnimatade ? `${transition}ms` : "0ms"}`,
           }}
         >
           {Children.toArray(children).map((child, idx) => (
