@@ -3,19 +3,20 @@ import { useNavigate } from "react-router-dom";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import styles from "./Swiper.module.scss";
 import img from "../../assets/images/bg1.png";
-interface Props {
-  header: string;
-  desc: string;
-}
-const Slide: FC<Props> = ({ header, desc }) => {
+
+const Slide: FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className={styles.slide}>
       <img src={img} />
       <div className={styles.slideContent}>
-        <div className={styles.slideHeader}>{header}</div>
-        <div className={styles.slideDesc}>{desc}</div>
+        <div className={styles.slideHeader}>
+          Лучшие товары в мире татуировок
+        </div>
+        <div className={styles.slideDesc}>
+          Оборудование и расходники для самых ярких и качественных работ
+        </div>
         <div className={styles.slideBtn}>
           <ClipButton
             onClick={() => {

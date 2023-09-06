@@ -25,7 +25,7 @@ const HeaderSlider: FC = () => {
       const left =
         contWidth > 1216
           ? `${1216 + (contWidth - 1216) / 2 - 60}px`
-          : contWidth >= 1024
+          : contWidth > 1024
           ? `${contWidth - 60}px`
           : "50%";
 
@@ -34,44 +34,6 @@ const HeaderSlider: FC = () => {
       prev.style.left = left;
     }
   }, [width]);
-
-  const slides: ISlide[] = [
-    {
-      id: "0",
-      header: "Лучшие товары в мире татуировок",
-      description:
-        "Оборудование и расходники для самых ярких и качественных работ",
-      img: bgImg,
-    },
-    {
-      id: "1",
-      header: "Лучшие товары в мире татуировок",
-      description:
-        "Оборудование и расходники для самых ярких и качественных работ",
-      img: bgImg,
-    },
-    {
-      id: "2",
-      header: "Лучшие товары в мире татуировок",
-      description:
-        "Оборудование и расходники для самых ярких и качественных работ",
-      img: bgImg,
-    },
-    {
-      id: "3",
-      header: "Лучшие товары в мире татуировок",
-      description:
-        "Оборудование и расходники для самых ярких и качественных работ",
-      img: bgImg,
-    },
-    {
-      id: "4",
-      header: "Лучшие товары в мире татуировок",
-      description:
-        "Оборудование и расходники для самых ярких и качественных работ",
-      img: bgImg,
-    },
-  ];
 
   return (
     <div className={`${styles.sliderContainer}`}>
@@ -84,15 +46,11 @@ const HeaderSlider: FC = () => {
         st__pag__item={styles.pagination__item}
         st__pag__item__active={styles.active}
       >
-        {slides.map((slide) => {
-          return (
-            <Slide
-              key={slide.id}
-              header={slide.header}
-              desc={slide.description}
-            />
-          );
-        })}
+        <Slide />
+        <Slide />
+        <Slide />
+        <Slide />
+        <Slide />
       </Slider>
     </div>
   );
