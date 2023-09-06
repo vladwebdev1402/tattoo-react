@@ -68,6 +68,11 @@ const ShopItem: FC<ShopItemProps> = ({
         <div className={styles.itemName}>{item.name}</div>
         <div className={styles.itemPrice}>
           {item.price.toLocaleString("ru-RU")} ₽
+          {item.oldPrice && (
+            <span className={styles.oldPrice}>
+              {item.oldPrice.toLocaleString("ru-RU")}
+            </span>
+          )}
         </div>
 
         <div className={styles.button}>

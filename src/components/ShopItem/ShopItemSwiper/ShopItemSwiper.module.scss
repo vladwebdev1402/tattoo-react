@@ -34,9 +34,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 992px) {
-    display: none;
-  }
 }
 
 .pagination__item {
@@ -47,4 +44,22 @@
 
 .active {
   background-color: var(--dark-orange);
+}
+
+.mobileContainerImg {
+  display: none;
+  width: 100%;
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .containerSlider {
+    display: none;
+  }
+
+  .mobileContainerImg {
+    display: block;
+  }
 }

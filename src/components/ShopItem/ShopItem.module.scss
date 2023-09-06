@@ -61,11 +61,21 @@
 }
 
 .itemPrice {
+  display: flex;
+  align-items: center;
   margin: 6px 30px 0px 30px;
   font-size: 24px;
   font-weight: bold;
   color: var(--orange);
   white-space: nowrap;
+}
+
+.oldPrice {
+  font-size: 17px;
+  color: var(--txt-gray2);
+  margin-left: 10px;
+  font-weight: 400;
+  text-decoration: line-through;
 }
 
 .button {
