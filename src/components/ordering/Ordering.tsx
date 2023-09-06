@@ -5,6 +5,7 @@ import {
   getCountItemsInBasket,
   getSumBasket,
 } from "../../context/basketContext";
+import ModalThanksOrder from "../modalThanksOrder/ModalThanksOrder";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import LineButton from "../UI/button/lineButton/LineButton";
 import MyChecked from "../UI/checked/MyChecked";
@@ -19,9 +20,11 @@ const Ordering = () => {
   const [checked, setChecked] = useState(false);
   const [promo, setPromo] = useState("");
   const { basket, setBasket } = useContext(BasketContext);
+  const [modal, setModal] = useState(false);
 
   return (
     <div className={st.container}>
+      {modal && <ModalThanksOrder setModal={setModal} />}
       <div className={st.block1}>
         <div className={st.priceInfoWrapper}>
           <div className={st.priceInfoContainer}>
@@ -107,7 +110,13 @@ const Ordering = () => {
         >
           Оформить заказ
         </ClipButton>
-        <ClipButton className={st.clipBtn} onClick={() => {}} theme="light">
+        <ClipButton
+          className={st.clipBtn}
+          onClick={() => {
+            setModal(true);
+          }}
+          theme="light"
+        >
           Купить в 1 клик
         </ClipButton>
         <MyChecked
