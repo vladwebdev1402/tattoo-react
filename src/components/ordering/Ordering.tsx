@@ -101,7 +101,7 @@ const Ordering = () => {
         <ClipButton
           className={st.clipBtn}
           onClick={() => {
-            navigate("services");
+            navigate("/catalog/basket/services");
           }}
           theme="dark"
         >

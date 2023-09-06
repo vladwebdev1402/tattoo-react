@@ -16,7 +16,9 @@ const ItemPage: FC = () => {
   const [item, setItem] = useState<IShopItem>();
   const [modal, setModal] = useState<boolean>(false);
   useEffect(() => {
-    setItem(minishopData.filter((item) => item.id === Number(params.id))[0]);
+    setTimeout(() => {
+      setItem(minishopData.filter((item) => item.id === Number(params.id))[0]);
+    }, 800);
   }, [params]);
 
   useEffect(() => {
@@ -85,7 +87,7 @@ const ItemPage: FC = () => {
     );
   }
 
-  return <></>;
+  return <div className={st.load}></div>;
 };
 
 export default ItemPage;

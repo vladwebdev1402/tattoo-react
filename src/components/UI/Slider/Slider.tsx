@@ -187,6 +187,7 @@ const Slider: FC<Props> = ({
       const indMulti = Math.round(-newOffset.current / getContainer());
       newOffset.current = indMulti * getContainer() * -1;
     }
+    changePagIndicator();
   };
 
   const checkActive = () => {

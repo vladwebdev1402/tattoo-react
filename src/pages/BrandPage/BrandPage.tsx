@@ -18,16 +18,19 @@ const BrandPage = () => {
   const [filterItems, setFilterItems] = useState<IShopItem[]>([]);
 
   useEffect(() => {
+    window.scrollTo({ top: 120, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
     const brand = brands.filter((brand) => brand.id === Number(params.id))[0];
     setBrand(brand);
     setItems(minishopData.filter((item) => item.brand === brand.name));
-    setFilterItems(minishopData.filter((item) => item.brand === brand.name));
   }, [params]);
 
   useEffect(() => {
     if (currentType == "all") setFilterItems(items);
     else setFilterItems(items.filter((item) => item.type === currentType));
-  }, [currentType]);
+  }, [currentType, items]);
   return (
     <div className={st.container}>
       <Breadcrumbs params={true} nameParams={brand?.name} />
@@ -35,6 +38,7 @@ const BrandPage = () => {
       <FilterCategoryCatalog
         setType={setCurrentType}
         currentType={currentType}
+        all={true}
       />
       <div className={st.itemsContainer}>
         {filterItems.length ? (
