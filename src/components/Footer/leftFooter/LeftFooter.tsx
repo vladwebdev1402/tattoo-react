@@ -7,7 +7,7 @@ const LeftFooter: FC = () => {
   return (
     <div className={styles.leftFooter}>
       <div className={styles.logo}>
-        <Link to={"/"}>
+        <Link to={"/tattoo-react"}>
           <img src={logoImg} alt="logo" />
         </Link>
         <a className={`${styles.link} ${styles.conf}`}>
@@ -16,27 +16,27 @@ const LeftFooter: FC = () => {
       </div>
       <ul className={styles.menu}>
         <li className={styles.menuLink}>
-          <Link to={"/promo"} className={styles.link}>
+          <Link to={"/tattoo-react/promo"} className={styles.link}>
             Промокоды
           </Link>
         </li>
         <li className={styles.menuLink}>
-          <Link to={"/discount"} className={styles.link}>
+          <Link to={"/tattoo-react/discount"} className={styles.link}>
             Скидки
           </Link>
         </li>
         <li className={styles.menuLink}>
-          <Link to={"/help"} className={styles.link}>
+          <Link to={"/tattoo-react/help"} className={styles.link}>
             Помощь
           </Link>
         </li>
         <li className={styles.menuLink}>
-          <Link to={"/about"} className={styles.link}>
+          <Link to={"/tattoo-react/about"} className={styles.link}>
             О нас
           </Link>
         </li>
         <li className={styles.menuLink}>
-          <Link to={"/contacts"} className={styles.link}>
+          <Link to={"/tattoo-react/contacts"} className={styles.link}>
             Контакты
           </Link>
         </li>

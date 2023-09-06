@@ -13,15 +13,15 @@ const Breadcrumbs: FC<Props> = ({
   nameParams = "",
   className = "",
 }) => {
-  const location = useLocation().pathname.split("/").slice(1);
+  const location = useLocation().pathname.split("/").slice(2);
 
-  let allPath = "";
+  let allPath = "/tattoo-react";
 
   return (
     <div className={`${styles.breadcrumbsContainer} ${className}`}>
       <ul className={styles.breadcrumbsList}>
         <li className={`${styles.link}`}>
-          <Link to="/">
+          <Link to="/tattoo-react">
             <span className={styles.linkTxt}>Главная</span>
           </Link>
         </li>

@@ -21,18 +21,24 @@ import ServicesPage from "../../pages/ServicesPage/ServicesPage";
 const AppRouter: FC = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />}>
+      <Route path="/tattoo-react" element={<Root />}>
         <Route index element={<MainPage />} />
-        <Route path="promo" element={<PromocodesPage />} />
-        <Route path="contacts" element={<ContactsPage />} />
-        <Route path="catalog" element={<CatalogPage />} />
-        <Route path="catalog/:type/" element={<CatalogCategoryPage />} />
-        <Route path="catalog/:type/:id" element={<ItemPage />} />
-        <Route path="brands/:id" element={<BrandPage />} />
-        <Route path="profile" element={<ProfilePage />} />
-        <Route path="catalog/basket" element={<BasketPage />} />
-        <Route path="catalog/basket/services" element={<ServicesPage />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/tattoo-react/promo" element={<PromocodesPage />} />
+        <Route path="/tattoo-react/contacts" element={<ContactsPage />} />
+        <Route path="/tattoo-react/catalog" element={<CatalogPage />} />
+        <Route
+          path="/tattoo-react/catalog/:type/"
+          element={<CatalogCategoryPage />}
+        />
+        <Route path="/tattoo-react/catalog/:type/:id" element={<ItemPage />} />
+        <Route path="/tattoo-react/brands/:id" element={<BrandPage />} />
+        <Route path="/tattoo-react/profile" element={<ProfilePage />} />
+        <Route path="/tattoo-react/catalog/basket" element={<BasketPage />} />
+        <Route
+          path="/tattoo-react/catalog/basket/services"
+          element={<ServicesPage />}
+        />
+        <Route path="/tattoo-react/*" element={<ErrorPage />} />
       </Route>
     )
   );

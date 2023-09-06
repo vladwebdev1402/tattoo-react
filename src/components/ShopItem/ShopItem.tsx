@@ -58,7 +58,7 @@ const ShopItem: FC<ShopItemProps> = ({
       <div
         className={styles.itemContainer}
         onClick={() => {
-          if (!swipe) navigate(`/catalog/${item.type}/${item.id}`);
+          if (!swipe) navigate(`/tattoo-react/catalog/${item.type}/${item.id}`);
         }}
       >
         <ShopItemSwiper

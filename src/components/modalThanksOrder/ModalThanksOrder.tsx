@@ -32,7 +32,7 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
           <ClipButton
             onClick={() => {
               setModal(false);
-              navigate("/");
+              navigate("/tattoo-react/");
             }}
             theme="dark"
             className={st.returnMainbtn}
@@ -46,7 +46,7 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
           <LineButton
             onClick={() => {
               setModal(false);
-              navigate("/catalog");
+              navigate("/tattoo-react//catalog");
             }}
           >
             Вернуться в каталог

@@ -3,6 +3,7 @@ interface Pathnames {
   }
 
 export const pathnames: Pathnames = {
+  "tattoo-react": "Главная",
     promo: "Промокоды",
     contacts: "Контакты",
     catalog: "Каталог",

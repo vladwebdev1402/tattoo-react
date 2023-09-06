@@ -14,7 +14,7 @@ const BrandItem: FC<Props> = ({ img, id }) => {
         src={img}
         alt=""
         onClick={() => {
-          navigate(`brands/${id}`);
+          navigate(`/tattoo-react/brands/${id}`);
         }}
       />
     </div>

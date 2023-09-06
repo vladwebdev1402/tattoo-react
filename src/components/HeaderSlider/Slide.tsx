@@ -20,7 +20,7 @@ const Slide: FC = () => {
         <div className={styles.slideBtn}>
           <ClipButton
             onClick={() => {
-              navigate("catalog");
+              navigate("/tattoo-react/catalog");
             }}
             theme="dark"
           >

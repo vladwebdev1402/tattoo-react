@@ -18,7 +18,7 @@ const ErrorPage: FC = () => {
             <ClipButton
               theme="dark"
               onClick={() => {
-                navigate("/");
+                navigate("/tattoo-react");
               }}
             >
               Вернуться на главную
@@ -27,7 +27,7 @@ const ErrorPage: FC = () => {
           <div className={styles.lineBtn}>
             <LineButton
               onClick={() => {
-                navigate("/catalog");
+                navigate("/tattoo-react/catalog");
               }}
             >
               Вернуться в каталог

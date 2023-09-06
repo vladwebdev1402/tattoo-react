@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   return (
     <div className={styles.up}>
       <Contacts />
-      <Link className={styles.logo} to="/">
+      <Link className={styles.logo} to="/tattoo-react">
         <img src={logoImg} alt="logo" />
       </Link>
       <Account />

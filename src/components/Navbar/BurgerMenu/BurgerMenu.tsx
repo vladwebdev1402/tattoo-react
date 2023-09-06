@@ -46,7 +46,7 @@ const BurgerMenu: FC = () => {
                 {category.map((category) => (
                   <Link
                     key={category.id}
-                    to={`catalog/${category.link}`}
+                    to={`/tattoo-react/catalog/${category.link}`}
                     className={styles.linkCategory}
                     onClick={() => {
                       setIsActiveMenu(!isActiveMenu);
@@ -65,25 +65,25 @@ const BurgerMenu: FC = () => {
           >
             <ul className={styles.linkColumn}>
               <li className={styles.linkLi}>
-                <MyLink name={"Промокоды"} to="/promo" />
+                <MyLink name={"Промокоды"} to="/tattoo-react/promo" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Скидки"} to="/discount" />
+                <MyLink name={"Скидки"} to="/tattoo-react/discount" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Помощь"} to="/help" />
+                <MyLink name={"Помощь"} to="/tattoo-react/help" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"О нас"} to="/about" />
+                <MyLink name={"О нас"} to="/tattoo-react/about" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Контакты"} to="/contacts" />
+                <MyLink name={"Контакты"} to="/tattoo-react/contacts" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Избранное"} to="/contacts" />
+                <MyLink name={"Избранное"} to="/tattoo-react/contacts" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Личный кабинет"} to="/profile" />
+                <MyLink name={"Личный кабинет"} to="/tattoo-react/profile" />
               </li>
             </ul>
           </nav>

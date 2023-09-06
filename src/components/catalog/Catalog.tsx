@@ -12,46 +12,46 @@ const Catalog: FC = () => {
       <div className={styles.catalogBody}>
         <CatalogItem
           name="Тату наборы"
-          onClick={() => navigate("/catalog/tatto-kits")}
+          onClick={() => navigate("/tattoo-react/catalog/tatto-kits")}
         />
         <CatalogItem
           name="Держатели"
-          onClick={() => navigate("/catalog/holders")}
+          onClick={() => navigate("/tattoo-react/catalog/holders")}
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/tattoo-machine")}
+          onClick={() => navigate("/tattoo-react/catalog/tattoo-machine")}
           name="Тату машинки"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/wires")}
+          onClick={() => navigate("/tattoo-react/catalog/wires")}
           name="Педали и провода"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/paints")}
+          onClick={() => navigate("/tattoo-react/catalog/paints")}
           name="Краски"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/power")}
+          onClick={() => navigate("/tattoo-react/catalog/power")}
           name="Блоки питания"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/tattoo-tips")}
+          onClick={() => navigate("/tattoo-react/catalog/tattoo-tips")}
           name="Наконечники"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/tatto-needles")}
+          onClick={() => navigate("/tattoo-react/catalog/tatto-needles")}
           name="Тату иглы"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/consumables")}
+          onClick={() => navigate("/tattoo-react/catalog/consumables")}
           name="Защита, ёмкости, расходники"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/accessories")}
+          onClick={() => navigate("/tattoo-react/catalog/accessories")}
           name="Аксессуары"
         />
         <CatalogItem
-          onClick={() => navigate("/catalog/printers")}
+          onClick={() => navigate("/tattoo-react/catalog/printers")}
           name="Принтеры и планшеты"
         />
       </div>
