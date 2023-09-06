@@ -37,6 +37,7 @@ const MiniShop: FC = () => {
             onSwipe={setSwipe}
             spaceBetween={20}
             freeMode={true}
+            transition={1000}
           >
             {items.map((item) => (
               <ShopItem swipe={swipe} key={item.id} item={item} />

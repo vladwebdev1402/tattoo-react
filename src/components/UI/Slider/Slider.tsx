@@ -73,6 +73,8 @@ const Slider: FC<Props> = ({
   const [offset, setOffset] = useState<number>(0);
   const [currentPagIdx, setCurrentPagIdx] = useState<number>(0);
   const startOffset = useRef(0);
+  const startTimeEvent = useRef(0);
+  const speedSwipe = useRef(0);
   const currentOffset = useRef(0);
   const maxOffset = useRef<number>(0);
   const newOffset = useRef<number>(0);
@@ -179,17 +181,46 @@ const Slider: FC<Props> = ({
   };
 
   const magnet = () => {
-    if (withEffect) {
-      const activeLeftPosition = document
+    const getLeftPositionFirstActiveElement = (): number => {
+      return document
         .getElementsByClassName(st__slide__active || "")[0]
         .getBoundingClientRect().left;
+    };
+
+    const checkMinMaxIdx = (idx: number): number => {
+      if (idx < 0) return 0;
+      if (idx == countPag) return countPag - 1;
+      return idx;
+    };
+
+    if (withEffect) {
+      const activeLeftPosition = getLeftPositionFirstActiveElement();
 
       newOffset.current += calcPosActiveBlock()[0] - activeLeftPosition;
+      return;
+    }
+    if (Math.abs(speedSwipe.current) > 0.4) {
+      let idx = currentPagIdx;
+      if (speedSwipe.current > 0) idx++;
+      else idx--;
+
+      idx = checkMinMaxIdx(idx);
+      newOffset.current = idx * getContainer() * -1;
+      setCurrentPagIdx(idx);
     } else {
       const indMulti = Math.round(-newOffset.current / getContainer());
       newOffset.current = indMulti * getContainer() * -1;
     }
-    changePagIndicator();
+  };
+
+  const swipeAcceleration = () => {
+    const diff = currentOffset.current - startOffset.current;
+    if (speedSwipe.current > 0.3)
+      newOffset.current += diff * speedSwipe.current * 2;
+    else if (speedSwipe.current < -0.3)
+      newOffset.current -= diff * speedSwipe.current * 2;
+
+    checkMinMaxOffset();
   };
 
   const checkActive = () => {
@@ -268,6 +299,7 @@ const Slider: FC<Props> = ({
     e: React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>
   ) => {
     startOffset.current = getCursorPos(e);
+    startTimeEvent.current = e.timeStamp;
     setIsAnimatade(false);
     window.addEventListener("touchmove", onMouseMove);
     window.addEventListener("mousemove", onMouseMove);
@@ -287,11 +319,15 @@ const Slider: FC<Props> = ({
     if (withEffect) checkActive();
   };
 
-  const onClickEnd = () => {
+  const onClickEnd = (e: TouchEvent | MouseEvent) => {
+    speedSwipe.current =
+      (startOffset.current - getCursorPos(e)) /
+      (e.timeStamp - startTimeEvent.current);
     if (!freeMode || withEffect) magnet();
+    if (freeMode && !withEffect) swipeAcceleration();
     setIsAnimatade(true);
     if (onSwipe) setTimeout(() => onSwipe(false), 50);
-
+    changePagIndicator();
     setOffset(newOffset.current);
     window.removeEventListener("touchmove", onMouseMove);
     window.removeEventListener("mousemove", onMouseMove);

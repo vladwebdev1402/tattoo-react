@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { ISlide } from "../../types/swiper";
 import styles from "./Swiper.module.scss";
-import bgImg from "../../assets/images/bg1.png";
 import Slide from "./Slide";
 import Slider from "../UI/Slider/Slider";
 import { useWidth } from "../../hooks/useWidth";

@@ -35,6 +35,7 @@ const SubBlockItems: FC<Props> = ({ watchAll, items, title }) => {
           st__pag__item__active={st.pagItemActive}
           countPagItem={5}
           onSwipe={setSwipe}
+          transition={1000}
         >
           {items.map((item) => (
             <ShopItem
