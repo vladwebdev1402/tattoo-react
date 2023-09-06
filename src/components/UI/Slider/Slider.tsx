@@ -37,6 +37,7 @@ interface Props {
   st__slide__active?: string;
   st__slide__notActive?: string;
   transition?: number;
+  pagItemFromImgChildren?: boolean;
   onSwipe?: (swipe: boolean) => void;
 }
 
@@ -49,6 +50,7 @@ const Slider: FC<Props> = ({
   withEffect = false,
   countActive = 0,
   transition = 300,
+  pagItemFromImgChildren = false,
   onSwipe,
   st__pagination,
   st__list,
@@ -353,14 +355,16 @@ const Slider: FC<Props> = ({
 
       {st__pagination && (
         <div className={st__pagination}>
-          {arrayPagination.map((item) => (
+          {arrayPagination.map((item, idx) => (
             <div
               onClick={() => onClickPagIndicator(item)}
               key={item}
               className={`${st__pag__item} ${
                 currentPagIdx === item ? st__pag__item__active : ""
               }`}
-            ></div>
+            >
+              {pagItemFromImgChildren && React.Children.toArray(children)[idx]}
+            </div>
           ))}
         </div>
       )}

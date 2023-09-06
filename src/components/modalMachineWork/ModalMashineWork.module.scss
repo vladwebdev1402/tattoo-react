@@ -12,25 +12,27 @@
   position: relative;
   margin: 100px auto 0 auto;
   max-width: 1032px;
-  overflow: hidden;
 }
 .swiper {
   max-width: 832px;
-  overflow: hidden;
   margin: 0 auto 0 auto;
 }
 
 .pagination {
-  bottom: unset !important;
-  position: static !important;
-  top: unset !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80%;
+  margin: 20px auto 0 auto;
+  gap: 10px;
 }
 
-.bullet {
-  width: 60px !important;
-  height: 60px !important;
-  background-color: transparent !important;
-  opacity: 1 !important;
+.pagItem {
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+  transition: 0.2s;
+
   img {
     width: 100%;
     height: 100%;
@@ -38,10 +40,18 @@
   }
 }
 
-.btn {
+.itemActive {
+  opacity: 1;
+}
+
+.slideImg {
+  width: inherit;
+}
+
+%btn {
   cursor: pointer;
   width: 50px;
-  height: 50px !important;
+  height: 50px;
   border: 2px solid var(--orange);
   background-color: var(--white);
   position: absolute;
@@ -50,6 +60,7 @@
   z-index: 10;
 }
 .btnPrev {
+  @extend %btn;
   &::after {
     content: "";
     position: absolute;
@@ -63,6 +74,7 @@
   }
 }
 .btnNext {
+  @extend %btn;
   left: unset;
   right: 0px;
   &::after {
@@ -75,5 +87,31 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 992px) {
+  .swiperContainer {
+    margin-top: 50px;
+  }
+  %btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .pagItem {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .swiperContainer {
+    margin-top: 30%;
+  }
+  .pagItem {
+    width: 30px;
+    height: 30px;
   }
 }
