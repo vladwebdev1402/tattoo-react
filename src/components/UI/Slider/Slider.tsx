@@ -216,9 +216,9 @@ const Slider: FC<Props> = ({
   const swipeAcceleration = () => {
     const diff = currentOffset.current - startOffset.current;
     if (speedSwipe.current > 0.3)
-      newOffset.current += diff * speedSwipe.current * 2;
+      newOffset.current += diff * speedSwipe.current * 3;
     else if (speedSwipe.current < -0.3)
-      newOffset.current -= diff * speedSwipe.current * 2;
+      newOffset.current -= diff * speedSwipe.current * 3;
 
     checkMinMaxOffset();
   };

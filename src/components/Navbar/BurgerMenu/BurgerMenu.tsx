@@ -21,10 +21,10 @@ const BurgerMenu: FC = () => {
         <BurgerIcon isActive={isActiveMenu} />
       </div>
       <div className={`${styles.menuBody} ${isActiveMenu && styles.active}`}>
-        <div
-          className="horizontal-divider"
-          style={{ backgroundColor: "var(--dark-orange)" }}
-        ></div>
+        <div className={styles.dividerWrapper}>
+          <div className={`horizontal-divider`}></div>
+        </div>
+
         <div className={styles.burgerMenuNav}>
           <div
             className={`${styles.catalogContainer} ${
@@ -38,10 +38,10 @@ const BurgerMenu: FC = () => {
               Каталог
             </span>
             <div className={styles.categorys}>
-              <div
-                className="vertical-divider"
-                style={{ backgroundColor: "var(--dark-orange)" }}
-              ></div>
+              <div className={styles.verticalDividerWrapper}>
+                <div className="vertical-divider"></div>
+              </div>
+
               <div className={styles.categorysBody}>
                 {category.map((category) => (
                   <Link
@@ -92,10 +92,9 @@ const BurgerMenu: FC = () => {
           </div>
         </div>
 
-        <div
-          className="horizontal-divider"
-          style={{ marginTop: "30px", backgroundColor: "var(--dark-orange)" }}
-        ></div>
+        <div className={styles.dividerWrapper}>
+          <div className={`horizontal-divider`}></div>
+        </div>
         <div className={styles.footerContainer}>
           <RightFooter />
         </div>
