@@ -36,6 +36,9 @@ const CatalogPage = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
+  }, []);
+
+  useEffect(() => {
     setItems(minishopData.filter((item) => item.type === params.type));
   }, [params]);
 

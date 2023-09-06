@@ -12,6 +12,16 @@ const MiniShopHeader: FC<Props> = ({ setCurrentCategory, currentCategory }) => {
         <li>
           <MiniShopHeaderLink
             onClick={() => {
+              setCurrentCategory("new");
+            }}
+            active={currentCategory == "new"}
+          >
+            Новые поступления
+          </MiniShopHeaderLink>
+        </li>
+        <li>
+          <MiniShopHeaderLink
+            onClick={() => {
               setCurrentCategory("hot");
             }}
             active={currentCategory == "hot"}
@@ -27,16 +37,6 @@ const MiniShopHeader: FC<Props> = ({ setCurrentCategory, currentCategory }) => {
             active={currentCategory == "popular"}
           >
             Самые популярные
-          </MiniShopHeaderLink>
-        </li>
-        <li>
-          <MiniShopHeaderLink
-            onClick={() => {
-              setCurrentCategory("new");
-            }}
-            active={currentCategory == "new"}
-          >
-            Новые поступления
           </MiniShopHeaderLink>
         </li>
         <li>
