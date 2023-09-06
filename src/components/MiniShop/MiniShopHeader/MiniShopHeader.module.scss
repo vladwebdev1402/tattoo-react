@@ -18,6 +18,7 @@
 
 .miniShopHeader {
   overflow: scroll;
+  position: relative;
   &::-webkit-scrollbar {
     display: none;
   }
