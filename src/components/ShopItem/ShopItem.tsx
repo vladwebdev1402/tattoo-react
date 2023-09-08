@@ -4,7 +4,6 @@ import FavoriteItem from "../UI/icons/itemIcons/favoriteIcon/FavoriteItem";
 import ShopItemSwiper from "./ShopItemSwiper/ShopItemSwiper";
 import styles from "./ShopItem.module.scss";
 import ClipButton from "../UI/button/clipButton/ClipButton";
-import { useWidth } from "../../hooks/useWidth";
 import Marcers from "./Marcers/Marcers";
 
 import { useNavigate } from "react-router-dom";

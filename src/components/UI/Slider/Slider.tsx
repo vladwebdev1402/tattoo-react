@@ -364,7 +364,7 @@ const Slider: FC<Props> = ({
             transform: `translate3d(${direction === "row" ? offset : 0}px, ${
               direction === "column" ? offset : 0
             }px, 0)`,
-            transition: `${isAnimatade ? `${transition}ms` : "0ms"}`,
+            transition: `${isAnimatade ? `${transition}ms` : "0ms"} ease-out`,
           }}
         >
           {Children.toArray(children).map((child, idx) => (
