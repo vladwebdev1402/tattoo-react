@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HeadAndNav from "../../components/headerAndNavbar/HeadAndNav";
 import ClipButton from "../../components/UI/button/clipButton/ClipButton";
@@ -6,6 +6,9 @@ import LineButton from "../../components/UI/button/lineButton/LineButton";
 import styles from "./ErrorPage.module.scss";
 const ErrorPage: FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   return (
     <div className={styles.errorContainer}>
       <div className={styles.errorBody}>

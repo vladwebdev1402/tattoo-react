@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import Ordering from "../../components/ordering/Ordering";
 import ServiceItem from "../../components/serviceItem/ServiceItem";
 import { servicesData } from "../../data/servicesData";
 import st from "./ServicesPage.module.scss";
 const ServicesPage = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 100, behavior: "smooth" });
+  }, []);
   return (
     <div className={st.container}>
       <Breadcrumbs className={st.margin} />

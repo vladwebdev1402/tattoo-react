@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
 import FilterCategoryCatalog from "../../components/filterCategoryCatalog/FilterCategoryCatalog";
@@ -10,6 +10,9 @@ const CatalogPage = () => {
   const onClick = (link: string) => {
     navigate(`${link}`);
   };
+  useEffect(() => {
+    window.scrollTo({ top: 100, behavior: "smooth" });
+  });
   return (
     <div className={st.container}>
       <Breadcrumbs />

@@ -104,7 +104,7 @@ const Ordering = () => {
         <ClipButton
           className={st.clipBtn}
           onClick={() => {
-            navigate("/catalog/basket/services");
+            navigate("/tattoo-react/catalog/basket/services");
           }}
           theme="dark"
         >

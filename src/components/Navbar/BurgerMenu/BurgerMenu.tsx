@@ -80,7 +80,7 @@ const BurgerMenu: FC = () => {
                 <MyLink name={"Контакты"} to="/tattoo-react/contacts" />
               </li>
               <li className={styles.linkLi}>
-                <MyLink name={"Избранное"} to="/tattoo-react/contacts" />
+                <MyLink name={"Избранное"} to="/tattoo-react/favorite" />
               </li>
               <li className={styles.linkLi}>
                 <MyLink name={"Личный кабинет"} to="/tattoo-react/profile" />
