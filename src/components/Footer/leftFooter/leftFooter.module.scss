@@ -13,10 +13,11 @@
     flex-direction: column;
     height: 256px;
     max-width: 270px;
+    margin: 70px auto 70px auto;
   }
 
   @media (max-width: 400px) {
-    margin: 70px 0px 70px 20px;
+    margin: 70px auto 70px auto;
   }
 }
 
@@ -52,17 +53,10 @@
 
 .menu {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 306px;
-  gap: 26px;
+  display: grid;
+  gap: 26px 80px;
   margin-left: 70px;
-  height: 140px;
-
-  @media (max-width: 600px) {
-    width: 280px;
-  }
+  grid-template-columns: 1fr 1fr;
 
   @media (max-width: 600px) {
     margin-left: 0px;
