@@ -4,12 +4,17 @@
   padding: 0 15px;
 }
 
-.miniShopItems {
+.miniShopItems,
+.miniShopSwiper {
   gap: 20px;
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.miniShopSwiper {
+  display: none;
 }
 
 .swiper__pagination {
@@ -48,5 +53,15 @@
 .active {
   &::after {
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .miniShopSwiper {
+    display: flex;
+  }
+
+  .miniShopItems {
+    display: none;
   }
 }

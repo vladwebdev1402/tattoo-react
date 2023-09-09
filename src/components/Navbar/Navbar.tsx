@@ -10,27 +10,13 @@ import BurgerMenu from "./BurgerMenu/BurgerMenu";
 const Navbar: React.FC = () => {
   const width = useWidth();
 
-  if (width <= 992) {
-    return (
-      <div className={styles.down}>
-        <BurgerMenu />
-        <div className={styles.inputContainer}>
-          <Search />
-        </div>
-
-        <Account />
-      </div>
-    );
-  }
-
   return (
     <div className={styles.down}>
       <LinkCatalog />
-      <div className={styles.inputContainer}>
-        <Search />
-      </div>
-
+      <BurgerMenu />
+      <Search className={styles.inputContainer} />
       <LinkRow />
+      <Account className={styles.account} />
     </div>
   );
 };

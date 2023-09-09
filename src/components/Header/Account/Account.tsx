@@ -10,14 +10,16 @@ import {
   getCountItemsInBasket,
   getSumBasket,
 } from "../../../context/basketContext";
-
-const Account: React.FC = () => {
+interface Props {
+  className?: string;
+}
+const Account: React.FC<Props> = ({ className }) => {
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
   const { basket, setBasket } = useContext(BasketContext);
   const countItems = getCountItemsInBasket(basket);
   return (
-    <div className={styles.account}>
+    <div className={`${className} ${styles.account}`}>
       {modal && <ModalAuth setModal={setModal} />}
       <div className={styles.balance}>
         <span className={styles.balanceText}>
