@@ -7,6 +7,7 @@ import MySwitch from "../UI/switch/MySwitch";
 import Filter from "./Filter";
 import InputPrice from "../UI/input/InputPrice";
 import ModalFilters from "./ModalFiltersWindow";
+import { regNumber } from "../../utils/regNumber";
 interface Props {
   filters: IFiltersParametrs;
   setFilters: (filters: IFiltersParametrs) => void;
@@ -15,20 +16,23 @@ interface Props {
 const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
   const [modal, setModal] = useState<boolean>(false);
 
-  const regValue = (prevValue: string, targetValue: string): string => {
-    const valueSplit = targetValue.split(/\s+/).join("");
-    const re = /^\d+$/;
-    let value = re.test(valueSplit) ? valueSplit : prevValue;
-    value = valueSplit ? value : "0";
-    return value;
-  };
+  // const regValue = (prevValue: string, targetValue: string): string => {
+  //   const valueSplit = targetValue.split(/\s+/).join("");
+  //   const re = /^\d+$/;
+  //   let value = re.test(valueSplit) ? valueSplit : prevValue;
+  //   value = valueSplit ? value : "0";
+  //   return value;
+  // };
 
   const changeMinPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({
       ...filters,
       price: {
         ...filters.price,
-        minPrice: regValue(filters.price.minPrice, e.target.value),
+        minPrice: regNumber(
+          filters.price.minPrice,
+          e.target.value.split(/\s+/).join("")
+        ),
       },
     });
   };
@@ -38,7 +42,10 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
       ...filters,
       price: {
         ...filters.price,
-        maxPrice: regValue(filters.price.maxPrice, e.target.value),
+        maxPrice: regNumber(
+          filters.price.maxPrice,
+          e.target.value.split(/\s+/).join("")
+        ),
       },
     });
   };

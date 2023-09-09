@@ -15,7 +15,7 @@ const BasketPage = () => {
       <div className={st.contentPageContainer}>
         <div className={st.leftContainer}>
           <ContentBasket items={basket} className={st.margin} />
-          <ProfileDataInputs />
+          <ProfileDataInputs isBasket={true} />
         </div>
         <div className={st.rightContainer}>
           <Ordering />

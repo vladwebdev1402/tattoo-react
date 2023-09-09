@@ -257,7 +257,7 @@ const Slider: FC<Props> = ({
       newOffset.current =
         offset -
         calcWidthActiveBlock() / countActive -
-        spaceBetween * (countActive - 1 || 1);
+        (spaceBetween * (countActive - 1 || 1)) / countActive;
 
       checkMinMaxOffset();
       setOffset(newOffset.current);
@@ -279,7 +279,7 @@ const Slider: FC<Props> = ({
       newOffset.current =
         offset +
         calcWidthActiveBlock() / countActive +
-        spaceBetween * (countActive - 1 || 1);
+        (spaceBetween * (countActive - 1 || 1)) / countActive;
 
       checkMinMaxOffset();
       setOffset(newOffset.current);
