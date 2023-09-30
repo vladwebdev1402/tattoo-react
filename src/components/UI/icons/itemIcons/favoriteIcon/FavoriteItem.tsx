@@ -1,10 +1,12 @@
-import React, { FC, useContext } from "react";
-import {
-  clickFavorite,
-  FavoriteContext,
-  findFavorite,
-} from "../../../../../context/favoriteContext";
+import React, { FC, useState, useEffect } from "react";
+
 import styles from "./icon.module.scss";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import {
+  IFavorite,
+  IFavoriteReducer,
+} from "../../../../../store/reducers/favoritesReducer";
 
 interface FavoriteIconProps {
   className?: string;
@@ -12,16 +14,35 @@ interface FavoriteIconProps {
 }
 
 const FavoriteItem: FC<FavoriteIconProps> = ({ className = "", id }) => {
-  const { favorites, setFavorites } = useContext(FavoriteContext);
+  const dispatch = useDispatch();
+  const favorites = useSelector<IFavoriteReducer>((state) => state.favorites);
+  const [isFavorite, setFavorite] = useState(false);
+  const click = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+
+    if (isFavorite) {
+      dispatch({ type: "DELETE_FAVORITE", payload: id });
+    } else {
+      dispatch({ type: "ADD_FAVORITE", payload: id });
+    }
+    console.log(favorites);
+  };
+
+  useEffect(() => {
+    if (
+      Array.isArray(favorites) &&
+      favorites.filter((f) => f === id).length > 0
+    ) {
+      setFavorite(true);
+    } else setFavorite(false);
+  }, [isFavorite, favorites]);
+
   return (
     <div
       className={`icon ${styles.icon} ${className} ${
-        findFavorite(favorites, id) ? styles.active : ""
+        isFavorite ? styles.active : ""
       } ${styles.favorite}`}
-      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-        clickFavorite(setFavorites, favorites, id);
-      }}
+      onClick={click}
     >
       <svg
         width="20"
