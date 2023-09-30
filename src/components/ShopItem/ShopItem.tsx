@@ -8,12 +8,7 @@ import Marcers from "./Marcers/Marcers";
 
 import { useNavigate } from "react-router-dom";
 import MyChecked from "../UI/checked/MyChecked";
-import {
-  BasketContext,
-  getCountItemInBasket,
-  removeFromBasket,
-  setCountItemsInBasket,
-} from "../../context/basketContext";
+
 interface ShopItemProps {
   item: IShopItem;
   smallItem?: boolean;
@@ -29,23 +24,13 @@ const ShopItem: FC<ShopItemProps> = ({
   checkbox = false,
   swipe = false,
 }) => {
-  const { basket, setBasket } = useContext(BasketContext);
-  const itemsInBasket = getCountItemInBasket(basket, item.id);
-
+  const [inBasket, setInBasket] = useState(false);
   const navigate = useNavigate();
   const plusBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    setCountItemsInBasket(
-      setBasket,
-      basket,
-      item,
-      itemsInBasket + 1 < item.count ? itemsInBasket + 1 : item.count
-    );
   };
   const minusBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    if (itemsInBasket - 1 == 0) removeFromBasket(setBasket, basket, item.id);
-    else setCountItemsInBasket(setBasket, basket, item, itemsInBasket - 1);
   };
 
   return (
@@ -75,24 +60,21 @@ const ShopItem: FC<ShopItemProps> = ({
         </div>
 
         <div className={styles.button}>
-          {!itemsInBasket && (
-            <ClipButton
-              onClick={() => setCountItemsInBasket(setBasket, basket, item, 1)}
-              theme="light"
-            >
+          {!inBasket && (
+            <ClipButton onClick={() => setInBasket(true)} theme="light">
               <span className={styles.addTextDesktop}>Добавить в корзину</span>
               <span className={styles.addTextMobile}>В корзину</span>
             </ClipButton>
           )}
 
-          {itemsInBasket > 0 && (
+          {inBasket && (
             <div className={styles.basketBtnContainer}>
               <button
                 className={styles.basketBtn}
                 onClick={minusBasket}
               ></button>
               <div className={styles.countInBasket}>
-                <span className={styles.countTxt}>{itemsInBasket}шт</span>
+                <span className={styles.countTxt}>{0}шт</span>
                 <span className={styles.infoTxt}>В корзине</span>
               </div>
               <button

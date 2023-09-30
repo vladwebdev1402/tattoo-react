@@ -1,10 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  BasketContext,
-  getCountItemsInBasket,
-  getSumBasket,
-} from "../../context/basketContext";
+
 import ModalThanksOrder from "../modalThanksOrder/ModalThanksOrder";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import LineButton from "../UI/button/lineButton/LineButton";
@@ -19,7 +15,6 @@ const Ordering = () => {
   const [delivery, setDelivery] = useState("Курьерская служба");
   const [checked, setChecked] = useState(false);
   const [promo, setPromo] = useState("");
-  const { basket, setBasket } = useContext(BasketContext);
   const [modal, setModal] = useState(false);
 
   return (
@@ -29,9 +24,7 @@ const Ordering = () => {
         <div className={st.priceInfoWrapper}>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Всего единиц товара:</span>
-            <span className={st.infoValueTxt}>
-              {getCountItemsInBasket(basket)}
-            </span>
+            <span className={st.infoValueTxt}>{0}</span>
           </div>
           <div className={st.priceInfoContainer}>
             <span className={st.infoHeadTxt}>Общая скидка:</span>
@@ -43,9 +36,7 @@ const Ordering = () => {
           </div>
           <div className={`${st.priceInfoContainer} ${st.totalPrice}`}>
             <span className={st.infoHeadTxt}>Итого:</span>
-            <span className={st.infoValueTxt}>
-              {getSumBasket(basket).toLocaleString("ru-RU")}₽
-            </span>
+            <span className={st.infoValueTxt}>{0}₽</span>
           </div>
         </div>
         <div className={st.promocodeContainer}>

@@ -25,7 +25,6 @@ const FavoriteItem: FC<FavoriteIconProps> = ({ className = "", id }) => {
     } else {
       dispatch({ type: "ADD_FAVORITE", payload: id });
     }
-    console.log(favorites);
   };
 
   useEffect(() => {

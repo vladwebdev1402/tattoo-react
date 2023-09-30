@@ -1,9 +1,5 @@
 import React, { FC, useContext } from "react";
-import {
-  BasketContext,
-  getCountItemInBasket,
-  removeFromBasket,
-} from "../../context/basketContext";
+
 import { IShopItem } from "../../types/shopItem";
 import BtnChangeCount from "../btnChangeCount/BtnChangeCount";
 import st from "./ContentBasket.module.scss";
@@ -13,11 +9,7 @@ interface Props {
   isOrder: boolean;
 }
 const BasketRow: FC<Props> = ({ item, isOrder, count }) => {
-  const { basket, setBasket } = useContext(BasketContext);
-
-  const deleteItem = () => {
-    removeFromBasket(setBasket, basket, item.id);
-  };
+  const deleteItem = () => {};
 
   return (
     <div className={st.tableRow}>
@@ -48,9 +40,7 @@ const BasketRow: FC<Props> = ({ item, isOrder, count }) => {
         <span className={st.hint}>Стоимость: </span>
         {isOrder && count
           ? (item.price * count).toLocaleString("ru-RU")
-          : (item.price * getCountItemInBasket(basket, item.id)).toLocaleString(
-              "ru-RU"
-            )}
+          : (item.price * 0).toLocaleString("ru-RU")}
         ₽
       </div>
       {!isOrder && (

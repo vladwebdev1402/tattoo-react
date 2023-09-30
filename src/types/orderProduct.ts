@@ -1,4 +1,4 @@
-import { IBasket } from "../context/basketContext";
+import { IBasket } from "../store/reducers/basketReducers";
 import { IContactPerson } from "./contactPerson";
 
 export interface IProductOrder {

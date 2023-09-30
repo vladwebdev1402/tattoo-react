@@ -8,7 +8,6 @@ import { minishopData } from "../../data/minishopData";
 import { IShopItem } from "../../types/shopItem";
 import st from "./ItemPage.module.scss";
 import SubBlockItems from "../../components/subBlockItems/SubBlockItems";
-import ShopItem from "../../components/ShopItem/ShopItem";
 import MoreItemsMoreDiscount from "../../components/moreItemsMoreDiscount/MoreItemsMoreDiscount";
 import ModalMashineWork from "../../components/modalMachineWork/ModalMashineWork";
 const ItemPage: FC = () => {
