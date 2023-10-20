@@ -5,6 +5,7 @@ import MyChecked from "../UI/checked/MyChecked";
 import InputCode from "../UI/input/InputCode";
 import MyInput from "../UI/input/MyInput";
 import st from "./ModalAuth.module.scss";
+import ModalView from "../UI/modal/ModalView";
 interface Props {
   setModal: (modal: boolean) => void;
 }
@@ -15,7 +16,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
   const [smsTo, setSmsTo] = useState(false);
   const [code, setCode] = useState({ 0: "", 1: "", 2: "", 3: "" });
   return (
-    <div className={st.modalCOntainer} onClick={() => setModal(false)}>
+    <ModalView onClick={() => setModal(false)}>
       <div
         className={`${st.modalBody} ${smsTo && st.smsToBody}`}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -38,7 +39,6 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setNumber(e.target.value);
             }}
-            className={st.input}
           />
         )}
 
@@ -114,7 +114,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
           checked={checked}
         />
       </div>
-    </div>
+    </ModalView>
   );
 };
 

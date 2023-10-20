@@ -8,6 +8,7 @@ import img5 from "../../assets/images/tattoo-works/5.png";
 import img6 from "../../assets/images/tattoo-works/6.png";
 import img7 from "../../assets/images/tattoo-works/7.png";
 import Slider from "../UI/Slider/Slider";
+import ModalView from "../UI/modal/ModalView";
 
 interface Props {
   setModal: (modal: boolean) => void;
@@ -17,11 +18,11 @@ const ModalMashineWork: FC<Props> = ({ setModal }) => {
   const [swipe, setSwipe] = useState(false);
 
   return (
-    <div
-      className={st.modalContainer}
+    <ModalView
       onClick={() => {
         if (!swipe) setModal(false);
       }}
+      className={st.modalContainer}
     >
       <div
         className={st.swiperContainer}
@@ -50,7 +51,7 @@ const ModalMashineWork: FC<Props> = ({ setModal }) => {
           ))}
         </Slider>
       </div>
-    </div>
+    </ModalView>
   );
 };
 

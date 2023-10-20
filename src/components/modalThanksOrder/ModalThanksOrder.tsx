@@ -3,13 +3,15 @@ import { useNavigate } from "react-router-dom";
 import ClipButton from "../UI/button/clipButton/ClipButton";
 import LineButton from "../UI/button/lineButton/LineButton";
 import st from "./ModalThanksOrder.module.scss";
+import ModalView from "../UI/modal/ModalView";
 interface Props {
   setModal: (value: boolean) => void;
 }
+
 const ModalThanksOrder: FC<Props> = ({ setModal }) => {
   const navigate = useNavigate();
   return (
-    <div className={st.modalContainer} onClick={() => setModal(false)}>
+    <ModalView onClick={() => setModal(false)}>
       <div
         className={st.modalWrapper}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -53,7 +55,7 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
           </LineButton>
         </div>
       </div>
-    </div>
+    </ModalView>
   );
 };
 

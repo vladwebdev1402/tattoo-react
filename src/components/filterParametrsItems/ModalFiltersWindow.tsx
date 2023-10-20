@@ -5,6 +5,7 @@ import MyRadio from "../UI/radio/MyRadio";
 import MySwitch from "../UI/switch/MySwitch";
 import ModalFilter from "./ModalFilter";
 import st from "./ModalFiltersWindow.module.scss";
+import ModalView from "../UI/modal/ModalView";
 
 interface Props {
   closeWindow: () => void;
@@ -26,7 +27,7 @@ const ModalFilters: FC<Props> = ({
   setSwitch,
 }) => {
   return (
-    <div className={st.modalWindow} onClick={closeWindow}>
+    <ModalView onClick={closeWindow} className={st.modal}>
       <div
         className={st.modalFiltersContainer}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
@@ -70,7 +71,7 @@ const ModalFilters: FC<Props> = ({
           <MySwitch active={filters.inStock} setState={setSwitch} />
         </ModalFilter>
       </div>
-    </div>
+    </ModalView>
   );
 };
 
