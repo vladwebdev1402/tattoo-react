@@ -9,26 +9,6 @@
   position: absolute;
   top: 30px;
   right: 30px;
-
-  width: 10px;
-  height: 10px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    height: 10px;
-    width: 1px;
-    rotate: 45deg;
-    background-color: var(--dark);
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    height: 10px;
-    width: 1px;
-    rotate: -45deg;
-    background-color: var(--dark);
-  }
 }
 
 .head {

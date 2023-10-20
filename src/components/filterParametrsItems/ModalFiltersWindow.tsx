@@ -6,6 +6,7 @@ import MySwitch from "../UI/switch/MySwitch";
 import ModalFilter from "./ModalFilter";
 import st from "./ModalFiltersWindow.module.scss";
 import ModalView from "../UI/modal/ModalView";
+import CloseModal from "../UI/button/closeModal/CloseModal";
 
 interface Props {
   closeWindow: () => void;
@@ -34,7 +35,7 @@ const ModalFilters: FC<Props> = ({
       >
         <div className={st.headModal}>
           <span className={st.headTxt}>Фильтры</span>
-          <div className={st.closeIcon} onClick={closeWindow}></div>
+          <CloseModal onClick={closeWindow} />
         </div>
         <ModalFilter name="Цена">
           <InputPrice value={filters.price.minPrice} onChange={changeMin} />

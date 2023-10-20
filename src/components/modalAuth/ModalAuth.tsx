@@ -6,6 +6,7 @@ import InputCode from "../UI/input/InputCode";
 import MyInput from "../UI/input/MyInput";
 import st from "./ModalAuth.module.scss";
 import ModalView from "../UI/modal/ModalView";
+import CloseModal from "../UI/button/closeModal/CloseModal";
 interface Props {
   setModal: (modal: boolean) => void;
 }
@@ -23,10 +24,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
           e.stopPropagation();
         }}
       >
-        <button
-          className={st.closeBtn}
-          onClick={() => setModal(false)}
-        ></button>
+        <CloseModal onClick={() => setModal(false)} className={st.closeBtn} />
 
         {!smsTo && <div className={st.headTxt}>Личный кабинет</div>}
         {smsTo && <div className={st.headTxt}>Введите код</div>}

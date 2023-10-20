@@ -41,27 +41,3 @@
   }
 }
 
-.closeIcon {
-  position: relative;
-  height: 11px;
-  width: 11px;
-  cursor: pointer;
-
-  &::after,
-  &::before {
-    position: absolute;
-    content: "";
-    height: 11px;
-    width: 1px;
-    background-color: var(--gray);
-    right: 0;
-  }
-
-  &::after {
-    rotate: 45deg;
-  }
-
-  &::before {
-    rotate: -45deg;
-  }
-}

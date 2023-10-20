@@ -4,6 +4,7 @@ import ClipButton from "../UI/button/clipButton/ClipButton";
 import LineButton from "../UI/button/lineButton/LineButton";
 import st from "./ModalThanksOrder.module.scss";
 import ModalView from "../UI/modal/ModalView";
+import CloseModal from "../UI/button/closeModal/CloseModal";
 interface Props {
   setModal: (value: boolean) => void;
 }
@@ -18,10 +19,8 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
           e.stopPropagation();
         }}
       >
-        <button
-          className={st.closeBtn}
-          onClick={() => setModal(false)}
-        ></button>
+        <CloseModal onClick={() => setModal(false)} className={st.closeBtn} />
+
         <div className={st.head}>Спасибо за заказ!</div>
         <div className={st.numberOrder}>
           Номер вашего заказа: <span className={st.number}>123456789</span>
