@@ -23,7 +23,7 @@ export interface IBasketAction {
     payload: any;
 }
 
-export const favoriteReducer = (state = initialState, action: IBasketAction): IBasketState=> {
+export const basketReducer = (state = initialState, action: IBasketAction): IBasketState=> {
     switch (action.type) {
         case ADD_BASKET:
             return {...state, basket: [...state.basket, action.payload]  }

@@ -10,6 +10,7 @@ import FilterParametrsItems from "../../components/filterParametrsItems/FilterPa
 import { useParams } from "react-router-dom";
 import { IFiltersParametrs } from "../../types/FilterParametrs";
 import { IShopItem } from "../../types/shopItem";
+import ItemsContainer from "../../components/UI/containers/ItemsContainer/ItemsContainer";
 
 interface CategoryPage {
   type: string;
@@ -73,13 +74,14 @@ const CatalogPage = () => {
       <h1>{pathnames[params.type || ""]}</h1>
       <FiltersBtnCatalogPage />
       <FilterParametrsItems filters={filters} setFilters={setFilters} />
-      <div className={styles.itemsContainer}>
+      <ItemsContainer>
         {filtersItem.length ? (
           filtersItem.map((item) => <ShopItem item={item} key={item.id} />)
         ) : (
           <h1>Товары данного типа отсутствуют</h1>
         )}
-      </div>
+      </ItemsContainer>
+
       {items.length !== 0 && (
         <ClipButton
           className={styles.btn}

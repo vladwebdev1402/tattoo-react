@@ -10,6 +10,7 @@ import { minishopData } from "../../data/minishopData";
 import { ICategory } from "../../types/category";
 import { IShopItem } from "../../types/shopItem";
 import st from "./BrandPage.module.scss";
+import ItemsContainer from "../../components/UI/containers/ItemsContainer/ItemsContainer";
 const BrandPage = () => {
   const params = useParams<{ id: string }>();
   const [brand, setBrand] = useState<ICategory>();
@@ -40,13 +41,14 @@ const BrandPage = () => {
         currentType={currentType}
         all={true}
       />
-      <div className={st.itemsContainer}>
+      <ItemsContainer>
         {filterItems.length ? (
           filterItems.map((item) => <ShopItem item={item} key={item.id} />)
         ) : (
           <h1>Товары этой категории от данного бренда отсутствуют</h1>
         )}
-      </div>
+      </ItemsContainer>
+
       {filterItems.length > 0 && (
         <ClipButton theme="light" onClick={() => {}} className={st.btn}>
           Показать ещё

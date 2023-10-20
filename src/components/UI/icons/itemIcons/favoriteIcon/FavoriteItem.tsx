@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import {
   IFavorite,
   IFavoriteReducer,
+  itemInFavorites,
 } from "../../../../../store/reducers/favoritesReducer";
 
 interface FavoriteIconProps {
@@ -16,7 +17,7 @@ interface FavoriteIconProps {
 const FavoriteItem: FC<FavoriteIconProps> = ({ className = "", id }) => {
   const dispatch = useDispatch();
   const favorites = useSelector<IFavoriteReducer>((state) => state.favorites);
-  const [isFavorite, setFavorite] = useState(false);
+  const [isFavorite, setFavorite] = useState(itemInFavorites(favorites, id));
   const click = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
 
@@ -28,10 +29,7 @@ const FavoriteItem: FC<FavoriteIconProps> = ({ className = "", id }) => {
   };
 
   useEffect(() => {
-    if (
-      Array.isArray(favorites) &&
-      favorites.filter((f) => f === id).length > 0
-    ) {
+    if (itemInFavorites(favorites, id)) {
       setFavorite(true);
     } else setFavorite(false);
   }, [isFavorite, favorites]);

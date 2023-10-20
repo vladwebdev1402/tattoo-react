@@ -5,8 +5,8 @@ import styles from "./MiniShop.module.scss";
 import MiniShopFooter from "./MiniShopFooter/MiniShopFooter";
 import MiniShopHeader from "./MiniShopHeader/MiniShopHeader";
 import ShopItem from "../ShopItem/ShopItem";
-import { useWidth } from "../../hooks/useWidth";
 import Slider from "../UI/Slider/Slider";
+import ItemsContainer from "../UI/containers/ItemsContainer/ItemsContainer";
 const MiniShop: FC = () => {
   const [items, setItems] = useState<IShopItem[]>([]);
   const [currentCategory, setCurrentCategory] = useState("new");
@@ -44,11 +44,13 @@ const MiniShop: FC = () => {
           ))}
         </Slider>
       </div>
-      <div className={styles.miniShopItems}>
+      <ItemsContainer className={styles.miniShopItems}>
         {items.map((item) => (
           <ShopItem key={item.id} item={item} />
         ))}
-      </div>
+      </ItemsContainer>
+
+      <MiniShopFooter />
     </section>
   );
 };

@@ -5,6 +5,7 @@ import FilterCategoryCatalog from "../../components/filterCategoryCatalog/Filter
 import ShopItem from "../../components/ShopItem/ShopItem";
 import { minishopData } from "../../data/minishopData";
 import st from "./CatalogPage.module.scss";
+import ItemsContainer from "../../components/UI/containers/ItemsContainer/ItemsContainer";
 const CatalogPage = () => {
   const navigate = useNavigate();
   const onClick = (link: string) => {
@@ -17,11 +18,11 @@ const CatalogPage = () => {
     <div className={st.container}>
       <Breadcrumbs />
       <FilterCategoryCatalog navigate={onClick} />
-      <div className={st.itemsContainer}>
+      <ItemsContainer>
         {minishopData.map((item) => (
           <ShopItem item={item} key={item.id} />
         ))}
-      </div>
+      </ItemsContainer>
     </div>
   );
 };
