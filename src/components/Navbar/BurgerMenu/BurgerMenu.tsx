@@ -6,12 +6,15 @@ import RightFooter from "../../Footer/RightFooter/RightFooter";
 import MyLink from "../LinkRow/MyLink";
 import Search from "../Seacrh/Search";
 import BurgerIcon from "../../UI/icons/headerAndNavIcons/BurgerIcon";
+import { useStopScroll } from "../../../hooks/useStopScroll";
 const BurgerMenu: FC = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [isActiveCatalog, setIsActiveCatalog] = useState(false);
   const clickMenu = () => {
     setIsActiveMenu(!isActiveMenu);
   };
+
+  useStopScroll(isActiveMenu);
   return (
     <>
       <div className={styles.burgerMenu}>

@@ -114,3 +114,7 @@ h1 {
   color: var(--txt-gray2);
   text-decoration: line-through;
 }
+
+.stop_scroll {
+  overflow: hidden;
+}

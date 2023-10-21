@@ -28,14 +28,14 @@
   background-color: var(--black);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: scroll;
   transition: 0.3s;
   &::-webkit-scrollbar {
     display: none;
   }
 }
 .active {
-  max-height: 1400px;
+  max-height: 100%;
 }
 .burgerMenuNav {
   margin: 20px 0px 0px 25px;
