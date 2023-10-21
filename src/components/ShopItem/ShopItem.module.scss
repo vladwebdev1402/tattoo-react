@@ -239,7 +239,8 @@
     background-color: var(--bg);
   }
 
-  .smallImg img {
+  .smallImg {
     width: 130px;
+    height: 103px !important;
   }
 }

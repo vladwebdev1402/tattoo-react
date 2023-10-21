@@ -10,7 +10,7 @@ interface Props {
 const ShopItemSwiper: FC<Props> = ({ images, className = "" }) => {
   return (
     <>
-      <div className={`${styles.containerSlider} ${className}`}>
+      <div className={`${styles.containerSlider}`}>
         <Slider
           st__pagination={styles.slider__pagination}
           st__pag__item={styles.pagination__item}
@@ -26,7 +26,7 @@ const ShopItemSwiper: FC<Props> = ({ images, className = "" }) => {
           ))}
         </Slider>
       </div>
-      <div className={styles.mobileContainerImg}>
+      <div className={`${styles.mobileContainerImg}  ${className}`}>
         <img src={images.img0} />
       </div>
     </>
