@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://vladwebdev1402.github.io/tattoo-react",
   "dependencies": {
+    "clsx": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",

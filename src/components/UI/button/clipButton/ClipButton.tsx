@@ -1,17 +1,12 @@
-import React, { FC } from "react";
-import styles from "./ClipButton.module.scss";
+import React, { FC } from 'react';
+import styles from './ClipButton.module.scss';
 interface Props {
-  theme: "dark" | "light";
+  theme: 'dark' | 'light';
   children: React.ReactNode;
   onClick: () => void;
   className?: string;
 }
-const ClipButton: FC<Props> = ({
-  theme,
-  children,
-  onClick,
-  className = "",
-}) => {
+const ClipButton: FC<Props> = ({ theme, children, onClick, className = '' }) => {
   return (
     <div
       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -19,7 +14,7 @@ const ClipButton: FC<Props> = ({
         onClick();
       }}
       className={` ${className} ${styles.btnWrapper} ${
-        theme == "dark" ? styles.darkBtn : styles.lightBtn
+        theme == 'dark' ? styles.darkBtn : styles.lightBtn
       }`}
     >
       <button className={styles.btn}></button>
