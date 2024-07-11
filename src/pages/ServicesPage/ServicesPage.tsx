@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import Ordering from "../../components/ordering/Ordering";
-import ServiceItem from "../../components/serviceItem/ServiceItem";
-import { servicesData } from "../../data/servicesData";
-import st from "./ServicesPage.module.scss";
+import { useEffect } from 'react';
+import ServiceItem from '../../components/serviceItem/ServiceItem';
+import { servicesData } from '../../data/servicesData';
+import st from './ServicesPage.module.scss';
+import { Breadcrumbs, Ordering } from '@/components';
 const ServicesPage = () => {
   useEffect(() => {
-    window.scrollTo({ top: 100, behavior: "smooth" });
+    window.scrollTo({ top: 100, behavior: 'smooth' });
   }, []);
   return (
     <div className={st.container}>

@@ -1,10 +1,9 @@
-import React, { FC } from "react";
-import { useNavigate } from "react-router-dom";
-import ClipButton from "../UI/button/clipButton/ClipButton";
-import LineButton from "../UI/button/lineButton/LineButton";
-import st from "./ModalThanksOrder.module.scss";
-import ModalView from "../UI/modal/ModalView";
-import CloseModal from "../UI/button/closeModal/CloseModal";
+import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+import st from './ModalThanksOrder.module.scss';
+import { ROUTER_PATHS } from '@/constants';
+import CloseModal from '../UI/button/closeModal/CloseModal';
+import { Button, Modal } from '../UI';
 interface Props {
   setModal: (value: boolean) => void;
 }
@@ -12,7 +11,7 @@ interface Props {
 const ModalThanksOrder: FC<Props> = ({ setModal }) => {
   const navigate = useNavigate();
   return (
-    <ModalView onClick={() => setModal(false)}>
+    <Modal onClick={() => setModal(false)}>
       <div
         className={st.modalWrapper}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -26,35 +25,32 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
           Номер вашего заказа: <span className={st.number}>123456789</span>
         </div>
         <div className={st.helpInfo}>
-          В ближайшее время с вами свяжется наш менеджер для уточнения деталей
-          заказа
+          В ближайшее время с вами свяжется наш менеджер для уточнения деталей заказа
         </div>
         <div className={st.navigationContainer}>
-          <ClipButton
+          <Button
             onClick={() => {
               setModal(false);
-              navigate("/tattoo-react/");
+              navigate(ROUTER_PATHS.main);
             }}
-            theme="dark"
             className={st.returnMainbtn}
           >
             <span className={st.btnText}>Вернуться на главную</span>
-            <span className={`${st.btnText} ${st.mobileBtnText}`}>
-              На главную
-            </span>
-          </ClipButton>
+            <span className={`${st.btnText} ${st.mobileBtnText}`}>На главную</span>
+          </Button>
 
-          <LineButton
+          <Button
+            variant="text"
             onClick={() => {
               setModal(false);
-              navigate("/tattoo-react//catalog");
+              navigate(ROUTER_PATHS.catalog);
             }}
           >
             Вернуться в каталог
-          </LineButton>
+          </Button>
         </div>
       </div>
-    </ModalView>
+    </Modal>
   );
 };
 

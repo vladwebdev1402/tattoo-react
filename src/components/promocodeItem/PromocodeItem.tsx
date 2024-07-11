@@ -1,7 +1,9 @@
-import React, { FC } from "react";
-import { IPromocodeItem } from "../../types/promocodeItem";
-import ClipButton from "../UI/button/clipButton/ClipButton";
-import styles from "./PromocodeItem.module.scss";
+import { FC } from 'react';
+
+import { IPromocodeItem } from '@/types';
+import { Button } from '../UI';
+
+import styles from './PromocodeItem.module.scss';
 interface Props {
   promo: IPromocodeItem;
 }
@@ -13,21 +15,21 @@ const PromocodeItem: FC<Props> = ({ promo }) => {
       <div className={styles.promDescContainer}>
         <div className={styles.promHeaderTxt}>{promo.name}</div>
         <div className={styles.promDesc}>
-          {promo.description.split("\n").map((p, idx) => (
+          {promo.description.split('\n').map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
         </div>
       </div>
 
       <div className={styles.btn}>
-        <ClipButton
+        <Button
           onClick={() => {
             navigator.clipboard.writeText(promo.promocode);
           }}
           theme="light"
         >
           Скопировать промокод
-        </ClipButton>
+        </Button>
       </div>
     </div>
   );

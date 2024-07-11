@@ -8,6 +8,7 @@
   border: 2px solid $orange;
   transition: $transition;
   white-space: nowrap;
+  width: 100%;
 
   @media (min-width: 992px) {
     &:hover {
@@ -79,6 +80,8 @@
   background-color: $orange;
   position: relative;
   padding: 20px 10px;
+  width: 100%;
+
   clip-path: polygon(
     15px 0px,
     15px calc(50% - 8px),

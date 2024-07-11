@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import FiltersBtnCatalogPage from "../../components/filtersBtnCatalogPage/FiltersBtnCatalogPage";
-import styles from "./CatalogPage.module.scss";
-import { minishopData } from "../../data/minishopData";
-import ShopItem from "../../components/ShopItem/ShopItem";
-import ClipButton from "../../components/UI/button/clipButton/ClipButton";
-import { pathnames } from "../../data/pathnames";
-import FilterParametrsItems from "../../components/filterParametrsItems/FilterParametrsItems";
-import { useParams } from "react-router-dom";
-import { IFiltersParametrs } from "../../types/FilterParametrs";
-import { IShopItem } from "../../types/shopItem";
-import ItemsContainer from "../../components/UI/containers/ItemsContainer/ItemsContainer";
+import React, { useEffect, useState } from 'react';
+import styles from './CatalogPage.module.scss';
+import { minishopData } from '../../data/minishopData';
+import { pathnames } from '../../data/pathnames';
+import FilterParametrsItems from '../../components/filterParametrsItems/FilterParametrsItems';
+import { useParams } from 'react-router-dom';
+import { IFiltersParametrs } from '../../types/FilterParametrs';
+import { IShopItem } from '../../types/shopItem';
+import { Breadcrumbs, Button, ItemsContainer, ShopItem } from '@/components';
+import { FiltersBtnCatalogPage } from './components';
 
 interface CategoryPage {
   type: string;
@@ -21,17 +18,17 @@ const CatalogPage = () => {
   const [items, setItems] = useState<IShopItem[]>([]);
   const [filtersItem, setFiltersItem] = useState<IShopItem[]>([]);
   const [filters, setFilters] = useState<IFiltersParametrs>({
-    price: { maxPrice: "999999", minPrice: "0" },
+    price: { maxPrice: '999999', minPrice: '0' },
     inStock: false,
     sortOptions: [
-      { name: "Популярные", isActive: true },
-      { name: "По алфавиту", isActive: false },
-      { name: "Дешёвые", isActive: false },
-      { name: "Дорогие", isActive: false },
+      { name: 'Популярные', isActive: true },
+      { name: 'По алфавиту', isActive: false },
+      { name: 'Дешёвые', isActive: false },
+      { name: 'Дорогие', isActive: false },
     ],
     typeOptions: [
-      { name: "Роторные", isActive: true },
-      { name: "Индукционные", isActive: false },
+      { name: 'Роторные', isActive: true },
+      { name: 'Индукционные', isActive: false },
     ],
   });
 
@@ -52,11 +49,11 @@ const CatalogPage = () => {
     );
     filters.sortOptions.forEach((filter) => {
       if (filter.isActive) {
-        if (filter.name === "Дешёвые")
+        if (filter.name === 'Дешёвые')
           setFiltersItem(itemsWithFilter.sort((a, b) => a.price - b.price));
-        if (filter.name === "Дорогие")
+        if (filter.name === 'Дорогие')
           setFiltersItem(itemsWithFilter.sort((a, b) => b.price - a.price));
-        if (filter.name === "По алфавиту")
+        if (filter.name === 'По алфавиту')
           setFiltersItem(
             itemsWithFilter.sort((a, b) => {
               if (a.name > b.name) return 1;
@@ -71,7 +68,7 @@ const CatalogPage = () => {
   return (
     <div className={styles.catalogContainer}>
       <Breadcrumbs />
-      <h1>{pathnames[params.type || ""]}</h1>
+      <h1>{pathnames[params.type || '']}</h1>
       <FiltersBtnCatalogPage />
       <FilterParametrsItems filters={filters} setFilters={setFilters} />
       <ItemsContainer>
@@ -83,7 +80,7 @@ const CatalogPage = () => {
       </ItemsContainer>
 
       {items.length !== 0 && (
-        <ClipButton
+        <Button
           className={styles.btn}
           theme="light"
           onClick={() => {
@@ -91,7 +88,7 @@ const CatalogPage = () => {
           }}
         >
           Показать ещё
-        </ClipButton>
+        </Button>
       )}
     </div>
   );

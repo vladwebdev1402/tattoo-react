@@ -1,20 +1,16 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import ModalThanksOrder from "../modalThanksOrder/ModalThanksOrder";
-import ClipButton from "../UI/button/clipButton/ClipButton";
-import LineButton from "../UI/button/lineButton/LineButton";
-import MyChecked from "../UI/checked/MyChecked";
-import MyInput from "../UI/input/MyInput";
-import MyRadio from "../UI/radio/MyRadio";
-import st from "./Ordering.module.scss";
-import { deliveryRadios, paymentRadios } from "./radios";
+import ModalThanksOrder from '../modalThanksOrder/ModalThanksOrder';
+import st from './Ordering.module.scss';
+import { deliveryRadios, paymentRadios } from './radios';
+import { Button, Checked, Input, Radio } from '../UI';
 const Ordering = () => {
   const navigate = useNavigate();
-  const [payment, setPayment] = useState("Онлайн на сайте");
-  const [delivery, setDelivery] = useState("Курьерская служба");
+  const [payment, setPayment] = useState('Онлайн на сайте');
+  const [delivery, setDelivery] = useState('Курьерская служба');
   const [checked, setChecked] = useState(false);
-  const [promo, setPromo] = useState("");
+  const [promo, setPromo] = useState('');
   const [modal, setModal] = useState(false);
 
   return (
@@ -40,18 +36,18 @@ const Ordering = () => {
           </div>
         </div>
         <div className={st.promocodeContainer}>
-          <MyInput
+          <Input
             className={st.inputPromocode}
             placeholder="Driskell2000"
-            title="Промокод"
+            label="Промокод"
             value={promo}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setPromo(e.target.value);
             }}
           />
-          <LineButton className={st.lineBtn} onClick={() => {}}>
+          <Button variant="text" className={st.lineBtn} onClick={() => {}}>
             Активировать промокод
-          </LineButton>
+          </Button>
         </div>
         <div className="horizontal-divider"></div>
       </div>
@@ -61,7 +57,7 @@ const Ordering = () => {
             <div className={st.radiosTitle}>Оплата</div>
             <div className={st.radios}>
               {paymentRadios.map((r) => (
-                <MyRadio
+                <Radio
                   onChange={() => setPayment(r.title)}
                   title={r.title}
                   checked={payment == r.title}
@@ -76,7 +72,7 @@ const Ordering = () => {
             <div className={st.radiosTitle}>Доставка</div>
             <div className={st.radios}>
               {deliveryRadios.map((r) => (
-                <MyRadio
+                <Radio
                   onChange={() => setDelivery(r.title)}
                   title={r.title}
                   checked={delivery == r.title}
@@ -92,16 +88,15 @@ const Ordering = () => {
       </div>
 
       <div className={st.btnWrapper}>
-        <ClipButton
-          className={st.clipBtn}
+        <Button
           onClick={() => {
-            navigate("/tattoo-react/catalog/basket/services");
+            navigate('/tattoo-react/catalog/basket/services');
           }}
           theme="dark"
         >
           Оформить заказ
-        </ClipButton>
-        <ClipButton
+        </Button>
+        <Button
           className={st.clipBtn}
           onClick={() => {
             setModal(true);
@@ -109,25 +104,20 @@ const Ordering = () => {
           theme="light"
         >
           Купить в 1 клик
-        </ClipButton>
-        <MyChecked
-          className={st.checked}
-          onChange={() => setChecked(!checked)}
-          checked={checked}
-        >
+        </Button>
+        <Checked className={st.checked} onChange={() => setChecked(!checked)} checked={checked}>
           Согласен с
           <a href="#" className={st.link}>
             публичной офертой
-          </a>{" "}
+          </a>
           и
           <a href="#" className={st.link}>
-            {" "}
             обработкой персональных данных
           </a>
-        </MyChecked>
+        </Checked>
       </div>
     </div>
   );
 };
 
-export default Ordering;
+export { Ordering };

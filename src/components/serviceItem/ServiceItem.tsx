@@ -1,8 +1,7 @@
-import React, { FC, useState } from "react";
-import st from "./Service.module.scss";
-import img from "../../assets/images/services/1.png";
-import ClipButton from "../UI/button/clipButton/ClipButton";
-import { IServiceItem } from "../../types/serviceItem";
+import { FC, useState } from 'react';
+import st from './Service.module.scss';
+import { IServiceItem } from '@/types';
+import { Button } from '../UI';
 interface Props {
   item: IServiceItem;
 }
@@ -14,27 +13,19 @@ const ServiceItem: FC<Props> = ({ item }) => {
       <div className={st.serviceBody}>
         <div className={st.bodyTitle}>{item.title}</div>
         <div className={st.bodyDescription}>
-          <span className={(readMore && st.readMore) || ""}>
-            {item.description}
-          </span>
-          <button
-            className={st.readMoreBtn}
-            onClick={() => setReadMore(!readMore)}
-          >
+          <span className={(readMore && st.readMore) || ''}>{item.description}</span>
+          <button className={st.readMoreBtn} onClick={() => setReadMore(!readMore)}>
             {!readMore ? <>Читать далее...</> : <>Скрыть</>}
           </button>
         </div>
         <div className={st.servicePrice}>
-          Стоимость услуги:{" "}
-          {item.price.moneyPrice && <>{item.price.moneyPrice}₽</>}
-          {item.price.procentPrice && (
-            <>{item.price.procentPrice}% от суммы заказа</>
-          )}
+          Стоимость услуги: {item.price.moneyPrice && <>{item.price.moneyPrice}₽</>}
+          {item.price.procentPrice && <>{item.price.procentPrice}% от суммы заказа</>}
         </div>
       </div>
-      <ClipButton className={st.clipBtn} onClick={() => {}} theme="light">
+      <Button className={st.clipBtn} onClick={() => {}} theme="light">
         Добавить к заказу
-      </ClipButton>
+      </Button>
     </div>
   );
 };

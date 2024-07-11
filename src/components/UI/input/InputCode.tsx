@@ -1,8 +1,11 @@
-import React, { FC } from "react";
-import st from "./InputCode.module.scss";
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {}
+import { FC, InputHTMLAttributes } from 'react';
+
+import style from './InputCode.module.scss';
+
+interface Props extends InputHTMLAttributes<HTMLInputElement> {}
+
 const InputCode: FC<Props> = ({ ...props }) => {
-  return <input {...props} className={st.inputCode}></input>;
+  return <input {...props} className={style.inputCode}></input>;
 };
 
-export default InputCode;
+export { InputCode };

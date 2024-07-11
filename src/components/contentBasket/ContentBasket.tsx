@@ -1,7 +1,9 @@
-import React, { FC } from "react";
-import BasketRow from "./BasketRow";
-import st from "./ContentBasket.module.scss";
-import { IBasket } from "../../store/reducers/basketReducers";
+import { FC } from 'react';
+
+import BasketRow from './BasketRow';
+import { IBasket } from '../../store/reducers/basketReducers';
+
+import st from './ContentBasket.module.scss';
 
 interface Props {
   items: IBasket[];
@@ -32,4 +34,4 @@ const ContentBasket: FC<Props> = ({ items, isOrder = false, className }) => {
   );
 };
 
-export default ContentBasket;
+export { ContentBasket };

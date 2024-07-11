@@ -1,12 +1,9 @@
-import React, { FC } from "react";
-import { IFiltersParametrs } from "../../types/FilterParametrs";
-import InputPrice from "../UI/input/InputPrice";
-import MyRadio from "../UI/radio/MyRadio";
-import MySwitch from "../UI/switch/MySwitch";
-import ModalFilter from "./ModalFilter";
-import st from "./ModalFiltersWindow.module.scss";
-import ModalView from "../UI/modal/ModalView";
-import CloseModal from "../UI/button/closeModal/CloseModal";
+import React, { FC } from 'react';
+import { IFiltersParametrs } from '../../types/FilterParametrs';
+import ModalFilter from './ModalFilter';
+import st from './ModalFiltersWindow.module.scss';
+import CloseModal from '../UI/button/closeModal/CloseModal';
+import { InputPrice, Modal, Radio, Switch } from '../UI';
 
 interface Props {
   closeWindow: () => void;
@@ -28,7 +25,7 @@ const ModalFilters: FC<Props> = ({
   setSwitch,
 }) => {
   return (
-    <ModalView onClick={closeWindow} className={st.modal}>
+    <Modal onClick={closeWindow} className={st.modal}>
       <div
         className={st.modalFiltersContainer}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
@@ -45,7 +42,7 @@ const ModalFilters: FC<Props> = ({
         <ModalFilter name="Сортировка">
           {filters.sortOptions.map((option) => (
             <div key={option.name} className={st.radioItem}>
-              <MyRadio
+              <Radio
                 onChange={() => {
                   changeSort(option.name);
                 }}
@@ -58,7 +55,7 @@ const ModalFilters: FC<Props> = ({
         <ModalFilter name="Тип машинки">
           {filters.typeOptions.map((option) => (
             <div key={option.name} className={st.radioItem}>
-              <MyRadio
+              <Radio
                 onChange={() => {
                   changeType(option.name);
                 }}
@@ -69,10 +66,10 @@ const ModalFilters: FC<Props> = ({
           ))}
         </ModalFilter>
         <ModalFilter name="Только в наличии" inStock={true}>
-          <MySwitch active={filters.inStock} setState={setSwitch} />
+          <Switch active={filters.inStock} setState={setSwitch} />
         </ModalFilter>
       </div>
-    </ModalView>
+    </Modal>
   );
 };
 

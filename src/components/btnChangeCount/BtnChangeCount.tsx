@@ -1,7 +1,7 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from 'react';
 
-import { IShopItem } from "../../types/shopItem";
-import st from "./btnChangeCount.module.scss";
+import st from './btnChangeCount.module.scss';
+import { IShopItem } from '@/types';
 interface Props {
   item: IShopItem;
   className?: string;

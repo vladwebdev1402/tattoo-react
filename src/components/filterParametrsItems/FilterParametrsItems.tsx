@@ -1,13 +1,11 @@
-import React, { FC, useState } from "react";
-import { IFiltersParametrs } from "../../types/FilterParametrs";
-import MySelect from "../UI/select/MySelect";
-import styles from "./FilterParametrsItems.module.scss";
-import filterIcon from "../../assets/staticIcons/filter.svg";
-import MySwitch from "../UI/switch/MySwitch";
-import Filter from "./Filter";
-import InputPrice from "../UI/input/InputPrice";
-import ModalFilters from "./ModalFiltersWindow";
-import { regNumber } from "../../utils/regNumber";
+import React, { FC, useState } from 'react';
+import { IFiltersParametrs } from '../../types/FilterParametrs';
+import styles from './FilterParametrsItems.module.scss';
+import filterIcon from '../../assets/staticIcons/filter.svg';
+import Filter from './Filter';
+import ModalFilters from './ModalFiltersWindow';
+import { regNumber } from '../../utils/regNumber';
+import { InputPrice, Select, Switch } from '../UI';
 interface Props {
   filters: IFiltersParametrs;
   setFilters: (filters: IFiltersParametrs) => void;
@@ -29,10 +27,7 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
       ...filters,
       price: {
         ...filters.price,
-        minPrice: regNumber(
-          filters.price.minPrice,
-          e.target.value.split(/\s+/).join("")
-        ),
+        minPrice: regNumber(filters.price.minPrice, e.target.value.split(/\s+/).join('')),
       },
     });
   };
@@ -42,10 +37,7 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
       ...filters,
       price: {
         ...filters.price,
-        maxPrice: regNumber(
-          filters.price.maxPrice,
-          e.target.value.split(/\s+/).join("")
-        ),
+        maxPrice: regNumber(filters.price.maxPrice, e.target.value.split(/\s+/).join('')),
       },
     });
   };
@@ -82,10 +74,7 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
 
   return (
     <div className={styles.container}>
-      <div
-        className={styles.filterIconContainer}
-        onClick={() => setModal(!modal)}
-      >
+      <div className={styles.filterIconContainer} onClick={() => setModal(!modal)}>
         <img src={filterIcon} />
         <span className={styles.txtFilterIcon}>Фильтры</span>
       </div>
@@ -97,18 +86,15 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
       </Filter>
 
       <Filter name="Тип машинки">
-        <MySelect
-          options={filters.typeOptions}
-          setOptions={setTypeItemSelect}
-        />
+        <Select options={filters.typeOptions} setOptions={setTypeItemSelect} />
       </Filter>
 
       <Filter name="Только в наличии">
-        <MySwitch active={filters.inStock} setState={setSwitch} />
+        <Switch active={filters.inStock} setState={setSwitch} />
       </Filter>
 
       <Filter name="Сортировка">
-        <MySelect options={filters.sortOptions} setOptions={setSortingSelect} />
+        <Select options={filters.sortOptions} setOptions={setSortingSelect} />
       </Filter>
 
       {modal && (

@@ -1,8 +1,8 @@
-import { IServiceItem } from "../types/serviceItem";
-import img1 from "../assets/images/services/1.png"
-import img2 from "../assets/images/services/2.png"
-import img3 from "../assets/images/services/3.png"
-import img4 from "../assets/images/services/4.png"
+import { IServiceItem } from "@/types";
+import img1 from "../assets/images/services/1.webp"
+import img2 from "../assets/images/services/2.webp"
+import img3 from "../assets/images/services/3.webp"
+import img4 from "../assets/images/services/4.webp"
 
 export const servicesData: IServiceItem[] = [
     {   

@@ -1,10 +1,10 @@
 import { IPromocodeItem } from "../types/promocodeItem";
-import img1 from "../assets/images/promocode/1.png"
-import img2 from "../assets/images/promocode/2.png"
-import img3 from "../assets/images/promocode/3.png"
-import img4 from "../assets/images/promocode/4.png"
-import img5 from "../assets/images/promocode/5.png"
-import img6 from "../assets/images/promocode/6.png"
+import img1 from "../assets/images/promocode/1.webp"
+import img2 from "../assets/images/promocode/2.webp"
+import img3 from "../assets/images/promocode/3.webp"
+import img4 from "../assets/images/promocode/4.webp"
+import img5 from "../assets/images/promocode/5.webp"
+import img6 from "../assets/images/promocode/6.webp"
 export const promocodes: IPromocodeItem[] = [{
     id: 0,
     img: img1,
@@ -37,7 +37,7 @@ export const promocodes: IPromocodeItem[] = [{
     promocode: "55555555"
 },{
     id: 5,
-    img: "https://w.forfun.com/fetch/35/35bd14603db3e0657d710da1faedcc63.jpeg?w=1600",
+    img: img6,
     name: 'Пакет “Черный лебедь”',
     description: "Тату набор + 2 пачки игл 2\nСпециально для четких и дерзких есть супервыгодное предложение, при покупке двух тату-наборов и двух пачек игл, Вы получите целых 5% скидки на воопложение своей мечты.\nДействуй и ты будешь непобедим!",
     promocode: "66666666"

@@ -1,27 +1,18 @@
-import React, {
-  Children,
-  FC,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { usePagination } from "../../../hooks/usePaginatioRadios";
-import st from "./Slider.module.scss";
+import React, { Children, FC, RefObject, useEffect, useRef, useState } from 'react';
+
+import { usePagination } from '@/hooks';
+
+import st from './Slider.module.scss';
 
 function getTouchEventData(
-  e:
-    | TouchEvent
-    | MouseEvent
-    | React.TouchEvent<HTMLElement>
-    | React.MouseEvent<HTMLElement>
+  e: TouchEvent | MouseEvent | React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>
 ) {
-  return "changedTouches" in e ? e.changedTouches[0] : e;
+  return 'changedTouches' in e ? e.changedTouches[0] : e;
 }
 
 interface Props {
   children?: React.ReactNode;
-  direction?: "row" | "column";
+  direction?: 'row' | 'column';
   st__pagination?: string;
   st__list?: string;
   st__pag__item?: string;
@@ -44,7 +35,7 @@ interface Props {
 const Slider: FC<Props> = ({
   spaceBetween = 0,
   children,
-  direction = "row",
+  direction = 'row',
   freeMode = false,
   countPagItem = 0,
   withEffect = false,
@@ -62,12 +53,10 @@ const Slider: FC<Props> = ({
   st__slide__active,
   st__slide__notActive,
 }) => {
-  const countPag: number = countPagItem
-    ? countPagItem
-    : React.Children.count(children);
+  const countPag: number = countPagItem ? countPagItem : React.Children.count(children);
   const containerRef: RefObject<HTMLUListElement> = useRef(null);
   const sliderRef: RefObject<HTMLDivElement> = useRef(null);
-  const [width, setWidth] = useState("100%");
+  const [width, setWidth] = useState('100%');
   const arrayPagination = usePagination(countPag);
   const [isAnimatade, setIsAnimatade] = useState<boolean>(false);
   const [offset, setOffset] = useState<number>(0);
@@ -80,10 +69,10 @@ const Slider: FC<Props> = ({
   const newOffset = useRef<number>(0);
 
   useEffect(() => {
-    setWidth(`${sliderRef.current?.clientWidth}px` || "100%");
+    setWidth(`${sliderRef.current?.clientWidth}px` || '100%');
 
     var observer = new window.ResizeObserver(() =>
-      setWidth(`${sliderRef.current?.clientWidth}px` || "100%")
+      setWidth(`${sliderRef.current?.clientWidth}px` || '100%')
     );
 
     if (withEffect) {
@@ -105,27 +94,21 @@ const Slider: FC<Props> = ({
 
   const getScroll = () => {
     const spaceWithEffect = withEffect ? calcPosActiveBlock()[0] : 0;
-    return direction === "row"
+    return direction === 'row'
       ? containerRef.current!.scrollWidth + spaceBetween + spaceWithEffect
       : containerRef.current!.scrollHeight + spaceBetween;
   };
 
   const getContainer = () => {
-    return direction === "row"
+    return direction === 'row'
       ? containerRef.current!.clientWidth + spaceBetween
       : containerRef.current!.clientHeight + spaceBetween;
   };
 
   const getCursorPos = (
-    e:
-      | TouchEvent
-      | MouseEvent
-      | React.TouchEvent<HTMLElement>
-      | React.MouseEvent<HTMLElement>
+    e: TouchEvent | MouseEvent | React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>
   ) => {
-    return direction === "row"
-      ? getTouchEventData(e).clientX
-      : getTouchEventData(e).clientY;
+    return direction === 'row' ? getTouchEventData(e).clientX : getTouchEventData(e).clientY;
   };
 
   const calcMinOffset = (): number => {
@@ -139,8 +122,7 @@ const Slider: FC<Props> = ({
   const calcWidthActiveBlock = (): number => {
     if (countActive == 0) return 0;
     return (
-      containerRef.current!.children[0].clientWidth * countActive +
-      spaceBetween * (countActive - 1)
+      containerRef.current!.children[0].clientWidth * countActive + spaceBetween * (countActive - 1)
     );
   };
 
@@ -162,9 +144,7 @@ const Slider: FC<Props> = ({
   const setNewOffsetThroughIdx = (idx: number) => {
     if (freeMode)
       newOffset.current =
-        idx == countPag - 1
-          ? -getScroll() + getContainer()
-          : (-idx * getScroll()) / countPag;
+        idx == countPag - 1 ? -getScroll() + getContainer() : (-idx * getScroll()) / countPag;
     else newOffset.current = -idx * getContainer();
     checkMinMaxOffset();
   };
@@ -182,9 +162,8 @@ const Slider: FC<Props> = ({
 
   const magnet = () => {
     const getLeftPositionFirstActiveElement = (): number => {
-      return document
-        .getElementsByClassName(st__slide__active || "")[0]
-        .getBoundingClientRect().left;
+      return document.getElementsByClassName(st__slide__active || '')[0].getBoundingClientRect()
+        .left;
     };
 
     const checkMinMaxIdx = (idx: number): number => {
@@ -215,10 +194,8 @@ const Slider: FC<Props> = ({
 
   const swipeAcceleration = () => {
     const diff = currentOffset.current - startOffset.current;
-    if (speedSwipe.current > 0.3)
-      newOffset.current += diff * speedSwipe.current * 3;
-    else if (speedSwipe.current < -0.3)
-      newOffset.current -= diff * speedSwipe.current * 3;
+    if (speedSwipe.current > 0.3) newOffset.current += diff * speedSwipe.current * 3;
+    else if (speedSwipe.current < -0.3) newOffset.current -= diff * speedSwipe.current * 3;
 
     checkMinMaxOffset();
   };
@@ -233,8 +210,8 @@ const Slider: FC<Props> = ({
         rect.right - element.clientWidth / 2 >= left &&
         ++count <= countActive
       ) {
-        element.className = st__slide__active || "";
-      } else element.className = st__slide__notActive || "";
+        element.className = st__slide__active || '';
+      } else element.className = st__slide__notActive || '';
     });
   };
 
@@ -265,8 +242,7 @@ const Slider: FC<Props> = ({
         checkActive();
       }, transition);
     } else {
-      let pagInd =
-        currentPagIdx + 1 == countPag ? currentPagIdx : currentPagIdx + 1;
+      let pagInd = currentPagIdx + 1 == countPag ? currentPagIdx : currentPagIdx + 1;
       setNewOffsetThroughIdx(pagInd);
       setOffset(newOffset.current);
       setCurrentPagIdx(pagInd);
@@ -295,16 +271,14 @@ const Slider: FC<Props> = ({
     setIsAnimatade(true);
   };
 
-  const onClickStart = (
-    e: React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>
-  ) => {
+  const onClickStart = (e: React.TouchEvent<HTMLElement> | React.MouseEvent<HTMLElement>) => {
     startOffset.current = getCursorPos(e);
     startTimeEvent.current = e.timeStamp;
     setIsAnimatade(false);
-    window.addEventListener("touchmove", onMouseMove);
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseup", onClickEnd);
-    window.addEventListener("touchend", onClickEnd);
+    window.addEventListener('touchmove', onMouseMove);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onClickEnd);
+    window.addEventListener('touchend', onClickEnd);
   };
 
   const onMouseMove = (e: TouchEvent | MouseEvent) => {
@@ -321,26 +295,23 @@ const Slider: FC<Props> = ({
 
   const onClickEnd = (e: TouchEvent | MouseEvent) => {
     speedSwipe.current =
-      (startOffset.current - getCursorPos(e)) /
-      (e.timeStamp - startTimeEvent.current);
+      (startOffset.current - getCursorPos(e)) / (e.timeStamp - startTimeEvent.current);
     if (!freeMode || withEffect) magnet();
     if (freeMode && !withEffect) swipeAcceleration();
     setIsAnimatade(true);
     if (onSwipe) setTimeout(() => onSwipe(false), 50);
     changePagIndicator();
     setOffset(newOffset.current);
-    window.removeEventListener("touchmove", onMouseMove);
-    window.removeEventListener("mousemove", onMouseMove);
-    window.removeEventListener("touchend", onClickEnd);
-    window.removeEventListener("mouseup", onClickEnd);
+    window.removeEventListener('touchmove', onMouseMove);
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('touchend', onClickEnd);
+    window.removeEventListener('mouseup', onClickEnd);
   };
 
   return (
     <div
       className={st.slider__wrapper}
-      onClick={(
-        e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
-      ) => {
+      onClick={(e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
       }}
       onMouseDown={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -361,10 +332,10 @@ const Slider: FC<Props> = ({
           className={`${st.slider__list} ${st__list}`}
           style={{
             flexDirection: direction,
-            transform: `translate3d(${direction === "row" ? offset : 0}px, ${
-              direction === "column" ? offset : 0
+            transform: `translate3d(${direction === 'row' ? offset : 0}px, ${
+              direction === 'column' ? offset : 0
             }px, 0)`,
-            transition: `${isAnimatade ? `${transition}ms` : "0ms"} ease-out`,
+            transition: `${isAnimatade ? `${transition}ms` : '0ms'} ease-out`,
           }}
         >
           {Children.toArray(children).map((child, idx) => (
@@ -372,7 +343,7 @@ const Slider: FC<Props> = ({
               key={idx}
               className={st.list__item}
               style={{
-                width: !freeMode ? width : "auto",
+                width: !freeMode ? width : 'auto',
                 marginRight: `${spaceBetween}px`,
               }}
             >
@@ -383,10 +354,7 @@ const Slider: FC<Props> = ({
       </div>
 
       {st__pag__btn__next && (
-        <button
-          className={`${st__pag__btn__next}`}
-          onClick={onClickNext}
-        ></button>
+        <button className={`${st__pag__btn__next}`} onClick={onClickNext}></button>
       )}
 
       {st__pagination && (
@@ -395,9 +363,7 @@ const Slider: FC<Props> = ({
             <div
               onClick={() => onClickPagIndicator(item)}
               key={item}
-              className={`${st__pag__item} ${
-                currentPagIdx === item ? st__pag__item__active : ""
-              }`}
+              className={`${st__pag__item} ${currentPagIdx === item ? st__pag__item__active : ''}`}
             >
               {pagItemFromImgChildren && React.Children.toArray(children)[idx]}
             </div>
@@ -406,13 +372,10 @@ const Slider: FC<Props> = ({
       )}
 
       {st__pag__btn__prev && (
-        <button
-          className={`${st__pag__btn__prev}`}
-          onClick={onClickPrev}
-        ></button>
+        <button className={`${st__pag__btn__prev}`} onClick={onClickPrev}></button>
       )}
     </div>
   );
 };
 
-export default Slider;
+export { Slider };

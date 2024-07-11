@@ -1,14 +1,14 @@
 import { ICategory } from "../types/category";
-import img1 from "../assets/images/brands/brand-1.png"
-import img2 from "../assets/images/brands/brand-2.png"
-import img3 from "../assets/images/brands/brand-3.png"
-import img4 from "../assets/images/brands/brand-4.png"
-import img5 from "../assets/images/brands/brand-5.png"
-import img6 from "../assets/images/brands/brand-6.png"
-import img7 from "../assets/images/brands/brand-7.png"
-import img8 from "../assets/images/brands/brand-8.png"
-import img9 from "../assets/images/brands/brand-9.png"
-import img10 from "../assets/images/brands/brand-10.png"
+import img1 from "../assets/images/brands/brand-1.webp"
+import img2 from "../assets/images/brands/brand-2.webp"
+import img3 from "../assets/images/brands/brand-3.webp"
+import img4 from "../assets/images/brands/brand-4.webp"
+import img5 from "../assets/images/brands/brand-5.webp"
+import img6 from "../assets/images/brands/brand-6.webp"
+import img7 from "../assets/images/brands/brand-7.webp"
+import img8 from "../assets/images/brands/brand-8.webp"
+import img9 from "../assets/images/brands/brand-9.webp"
+import img10 from "../assets/images/brands/brand-10.webp"
 export const category: ICategory[] = [
     {id: 0, name: "Новинки", link: "news", filter: "Новинки"},
     {id: 1, name: "Наборы для татуировок", link: "tatto-kits", filter: "Промо наборы"},
