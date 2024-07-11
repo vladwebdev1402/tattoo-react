@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Breadcrumbs, ProfileDataInputs, TechnicalSupport } from '@/components';
+import { Breadcrumbs, ProfileDataInputs, TechnicalSupport, Typography } from '@/components';
 import { managersData } from '@/data';
 import st from './ProfilePage.module.scss';
 import { StoryOrders } from './components';
@@ -9,7 +9,9 @@ const ProfilePage: FC = () => {
     <div className={st.container}>
       <div className={st.leftContainer}>
         <Breadcrumbs className={st.margin} />
-        <h1 className={st.margin}>Личный кабинет</h1>
+        <Typography variant="h1" tag="h1" className={st.margin}>
+          Личный кабинет
+        </Typography>
         <ProfileDataInputs />
         <StoryOrders />
       </div>
@@ -24,4 +26,4 @@ const ProfilePage: FC = () => {
   );
 };
 
-export default ProfilePage;
+export { ProfilePage };

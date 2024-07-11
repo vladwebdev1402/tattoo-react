@@ -1,14 +1,17 @@
-import React from "react";
-import Account from "./Account/Account";
-import Contacts from "./Contacts/Contacts";
-import styles from "./Header.module.scss";
-import logoImg from "../../assets/images/logo.svg";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import logoImg from '@/assets/images/logo.svg';
+
+import { Contacts } from './Contacts/Contacts';
+import { Account } from './Account/Account';
+import style from './Header.module.scss';
+
 const Header: React.FC = () => {
   return (
-    <div className={styles.up}>
+    <div className={style.up}>
       <Contacts />
-      <Link className={styles.logo} to="/tattoo-react">
+      <Link className={style.logo} to="/tattoo-react">
         <img src={logoImg} alt="logo" />
       </Link>
       <Account />
@@ -16,4 +19,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export { Header };

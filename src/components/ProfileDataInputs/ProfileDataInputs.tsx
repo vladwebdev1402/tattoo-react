@@ -1,8 +1,11 @@
-import React, { FC, useState } from 'react';
-import { IContactPerson } from '../../types/contactPerson';
-import { regNumber } from '../../utils/regNumber';
-import st from './ProfileDataInputs.module.scss';
-import { Button, Input } from '../UI';
+import { ChangeEvent, FC, useState } from 'react';
+
+import { regNumber } from '@/utils';
+import { IContactPerson } from '@/types';
+
+import { Button, Input, Typography } from '../UI';
+import style from './ProfileDataInputs.module.scss';
+
 interface Props {
   isBasket?: boolean;
 }
@@ -21,30 +24,32 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
   });
 
   return (
-    <div className={st.profileDataWrapper}>
-      <div className={st.profileDataContainer}>
-        <div className={st.profileDataHead}>
-          <div className={st.headTxt}>Информация о получателе</div>
+    <div className={style.profileDataWrapper}>
+      <div className={style.profileDataContainer}>
+        <div className={style.profileDataHead}>
+          <Typography variant="h3" tag="h3" className={style.headTxt}>
+            Информация о получателе
+          </Typography>
           {!isBasket && (
             <Button variant="text" onClick={() => {}}>
-              <span className={st.editTxt}> Редактировать</span>
+              <span className={style.editTxt}> Редактировать</span>
             </Button>
           )}
         </div>
-        <div className={st.inputsContainer}>
+        <div className={style.inputsContainer}>
           <Input
             label="ФИО*"
             value={profile.fullName || ''}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, fullName: e.target.value });
             }}
             placeholder="Иванов Иван Иванович"
           />
           <Input
-            className={st.number}
+            className={style.number}
             label="Телефон*"
             value={profile.number || ''}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, number: e.target.value });
             }}
             placeholder="8(800)555-35-35"
@@ -52,48 +57,50 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
           <Input
             label="Эл. почта*"
             value={profile.mail || ''}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, mail: e.target.value });
             }}
             placeholder="Ivanov2021@mail.ru"
           />
         </div>
       </div>
-      <div className={st.profileDataContainer}>
-        <div className={st.profileDataHead}>
-          <div className={st.headTxt}>Адрес доставки</div>
+      <div className={style.profileDataContainer}>
+        <div className={style.profileDataHead}>
+          <Typography variant="h3" tag="h3" className={style.headTxt}>
+            Адрес доставки
+          </Typography>
           {!isBasket && (
             <Button variant="text" onClick={() => {}}>
-              <span className={st.editTxt}> Редактировать</span>
+              <span className={style.editTxt}> Редактировать</span>
             </Button>
           )}
         </div>
-        <div className={st.inputsContainer}>
+        <div className={style.inputsContainer}>
           <Input
-            className={st.city}
+            className={style.city}
             label="Город*"
             value={profile.city || ''}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, city: e.target.value });
             }}
             placeholder="Москва"
           />
           <Input
-            className={st.street}
+            className={style.street}
             label="Улица, дом*"
             value={profile.streetAndHouse || ''}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, streetAndHouse: e.target.value });
             }}
             placeholder="ул. Ленина д. 25"
           />
         </div>
 
-        <div className={`${st.inputsContainer} ${st.inputsContainerFlat}`}>
+        <div className={`${style.inputsContainer} ${style.inputsContainerFlat}`}>
           <Input
             label="Квартира*"
             value={`${profile.flat}` == '0' ? '' : `${profile.flat}`}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({
                 ...profile,
                 flat: Number(regNumber(`${profile.flat}`, e.target.value)),
@@ -104,7 +111,7 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
           <Input
             label="Подъезд"
             value={`${profile.entrance}` == '0' ? '' : `${profile.entrance}`}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({
                 ...profile,
                 entrance: Number(regNumber(`${profile.entrance}`, e.target.value)),
@@ -115,7 +122,7 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
           <Input
             label="Этаж"
             value={`${profile.floor}` == '0' ? '' : `${profile.floor}`}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({
                 ...profile,
                 floor: Number(regNumber(`${profile.floor}`, e.target.value)),
@@ -126,7 +133,7 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
           <Input
             label="Домофон"
             value={`${profile.intercom}` == '0' ? '' : `${profile.intercom}`}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setProfile({
                 ...profile,
                 intercom: Number(regNumber(`${profile.intercom}`, e.target.value)),

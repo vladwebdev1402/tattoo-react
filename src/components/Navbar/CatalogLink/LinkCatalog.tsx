@@ -1,12 +1,16 @@
-import React, { FC, useEffect, useRef, useState } from "react";
-import { useClose } from "../../../hooks/useClose";
-import BurgerIcon from "../../UI/icons/headerAndNavIcons/BurgerIcon";
-import LinkCatalogBody from "./CatalogBody/LinkCatalogBody";
-import styles from "./LinkCatalog.module.scss";
+import { FC, useRef } from 'react';
+
+import BurgerIcon from '@/components/UI/icons/headerAndNavIcons/BurgerIcon';
+import { useClose } from '@/hooks';
+
+import { LinkCatalogBody } from './CatalogBody/LinkCatalogBody';
+import styles from './LinkCatalog.module.scss';
+
 const LinkCatalog: FC = () => {
   const catalogRef = useRef<HTMLDivElement>(null);
 
   const { isVisible, setIsVisible } = useClose(catalogRef);
+
   const clickCatalog = () => {
     setIsVisible(!isVisible);
   };
@@ -20,4 +24,4 @@ const LinkCatalog: FC = () => {
   );
 };
 
-export default LinkCatalog;
+export { LinkCatalog };

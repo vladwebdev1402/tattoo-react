@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import styles from './CatalogPage.module.scss';
-import { minishopData } from '../../data/minishopData';
-import { pathnames } from '../../data/pathnames';
-import FilterParametrsItems from '../../components/filterParametrsItems/FilterParametrsItems';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { IFiltersParametrs } from '../../types/FilterParametrs';
-import { IShopItem } from '../../types/shopItem';
-import { Breadcrumbs, Button, ItemsContainer, ShopItem } from '@/components';
+
+import { IFiltersParametrs, IShopItem } from '@/types';
+import {
+  Breadcrumbs,
+  Button,
+  FilterParametrsItems,
+  ItemsContainer,
+  ShopItem,
+  Typography,
+} from '@/components';
+import { minishopData, pathnames } from '@/data';
+
 import { FiltersBtnCatalogPage } from './components';
+import style from './CatalogPage.module.scss';
 
 interface CategoryPage {
   type: string;
   [key: string]: string;
 }
-const CatalogPage = () => {
+const CatalogCategoryPage = () => {
   const params = useParams<CategoryPage>();
   const [items, setItems] = useState<IShopItem[]>([]);
   const [filtersItem, setFiltersItem] = useState<IShopItem[]>([]);
@@ -66,9 +72,11 @@ const CatalogPage = () => {
   }, [items, filters]);
 
   return (
-    <div className={styles.catalogContainer}>
+    <div className={style.catalogContainer}>
       <Breadcrumbs />
-      <h1>{pathnames[params.type || '']}</h1>
+      <Typography variant="h1" tag="h1">
+        {pathnames[params.type || '']}
+      </Typography>
       <FiltersBtnCatalogPage />
       <FilterParametrsItems filters={filters} setFilters={setFilters} />
       <ItemsContainer>
@@ -81,7 +89,7 @@ const CatalogPage = () => {
 
       {items.length !== 0 && (
         <Button
-          className={styles.btn}
+          className={style.btn}
           theme="light"
           onClick={() => {
             console.log(filtersItem);
@@ -94,4 +102,4 @@ const CatalogPage = () => {
   );
 };
 
-export default CatalogPage;
+export { CatalogCategoryPage };

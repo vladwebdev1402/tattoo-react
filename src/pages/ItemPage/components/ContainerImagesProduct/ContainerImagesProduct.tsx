@@ -1,10 +1,12 @@
 import { FC, useState } from 'react';
-import { IItemImg, IMarcers } from '../../../../types/shopItem';
-import Marcers from '../../../../components/ShopItem/Marcers/Marcers';
-import FavoriteItem from '../../../../components/UI/icons/itemIcons/favoriteIcon/FavoriteItem';
-import st from './container.module.scss';
+
+import FavoriteItem from '@/components/UI/icons/itemIcons/favoriteIcon/FavoriteItem';
+import { IItemImg, IMarcers } from '@/types';
+import { ImgRadio, Marcers } from '@/components';
+
 import ImagesSlider from './Slider/ImagesSlider';
-import { ImgRadio } from '@/components';
+import style from './container.module.scss';
+
 interface Props {
   images: IItemImg;
   marcers: IMarcers;
@@ -14,9 +16,9 @@ const ContainerImagesProduct: FC<Props> = ({ images, marcers, id }) => {
   const [activeIdx, setActiveIdx] = useState<number>(0);
 
   return (
-    <div className={st.containerImages}>
-      <div className={st.desktopContainer}>
-        <div className={st.radioConrainer}>
+    <div className={style.containerImages}>
+      <div className={style.desktopContainer}>
+        <div className={style.radioConrainer}>
           {Object.values(images).map((img, idx) => (
             <ImgRadio
               onClick={() => setActiveIdx(idx)}
@@ -26,10 +28,10 @@ const ContainerImagesProduct: FC<Props> = ({ images, marcers, id }) => {
             />
           ))}
         </div>
-        <div className={st.currentImage}>
+        <div className={style.currentImage}>
           <Marcers marcers={marcers} />
-          <FavoriteItem id={id} className={st.favorite} />
-          <img className={st.image} src={Object.values(images)[activeIdx]} />
+          <FavoriteItem id={id} className={style.favorite} />
+          <img className={style.image} src={Object.values(images)[activeIdx]} />
         </div>
       </div>
 

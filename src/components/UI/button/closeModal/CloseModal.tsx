@@ -1,10 +1,11 @@
-import React, { FC } from "react";
-import st from "./CloseModal.module.scss";
+import { FC, HTMLAttributes } from 'react';
 
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {}
+import style from './CloseModal.module.scss';
+
+interface Props extends HTMLAttributes<HTMLButtonElement> {}
 
 const CloseModal: FC<Props> = ({ className, ...props }) => {
-  return <button className={`${st.btn} ${className}`} {...props}></button>;
+  return <button className={`${style.btn} ${className}`} {...props}></button>;
 };
 
-export default CloseModal;
+export { CloseModal };

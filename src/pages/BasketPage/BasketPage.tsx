@@ -1,4 +1,4 @@
-import { Breadcrumbs, ContentBasket, Ordering, ProfileDataInputs } from '@/components';
+import { Breadcrumbs, ContentBasket, Ordering, ProfileDataInputs, Typography } from '@/components';
 
 import style from './BasketPage.module.scss';
 
@@ -6,7 +6,9 @@ const BasketPage = () => {
   return (
     <div className={style.container}>
       <Breadcrumbs className={style.margin} />
-      <h1 className={style.pageTitle}>Корзина</h1>
+      <Typography variant="h1" tag="h1" className={style.pageTitle}>
+        Корзина
+      </Typography>
       <div className={style.contentPageContainer}>
         <div className={style.leftContainer}>
           <ContentBasket items={[]} className={style.margin} />
@@ -20,4 +22,4 @@ const BasketPage = () => {
   );
 };
 
-export default BasketPage;
+export { BasketPage };

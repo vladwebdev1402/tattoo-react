@@ -1,11 +1,13 @@
-import React, { FC } from "react";
-import styles from "./RightFooter.module.scss";
-import callImg from "../../../assets/staticIcons/call.svg";
-import mailImg from "../../../assets/staticIcons/mail.svg";
-import viberImg from "../../../assets/staticIcons/viber.svg";
-import telegramImg from "../../../assets/staticIcons/telegram.svg";
-import whatsappImg from "../../../assets/staticIcons/whatsapp.svg";
-import { useWidth } from "../../../hooks/useWidth";
+import { FC } from 'react';
+
+import callImg from '@/assets/staticIcons/call.svg';
+import mailImg from '@/assets/staticIcons/mail.svg';
+import viberImg from '@/assets/staticIcons/viber.svg';
+import telegramImg from '@/assets/staticIcons/telegram.svg';
+import whatsappImg from '@/assets/staticIcons/whatsapp.svg';
+
+import styles from './RightFooter.module.scss';
+
 const RightFooter: FC = () => {
   return (
     <div className={styles.rightFooter}>
@@ -29,9 +31,7 @@ const RightFooter: FC = () => {
             </a>
           </div>
         </div>
-        <span className={styles.time}>
-          Время работы: с 9:00 до 20:00 по мск
-        </span>
+        <span className={styles.time}>Время работы: с 9:00 до 20:00 по мск</span>
       </div>
       <div className={styles.mail}>
         <div className="icon">
@@ -43,4 +43,4 @@ const RightFooter: FC = () => {
   );
 };
 
-export default RightFooter;
+export { RightFooter };

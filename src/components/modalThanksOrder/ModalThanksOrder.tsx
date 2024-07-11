@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import st from './ModalThanksOrder.module.scss';
+
 import { ROUTER_PATHS } from '@/constants';
-import CloseModal from '../UI/button/closeModal/CloseModal';
-import { Button, Modal } from '../UI';
+import { Button, CloseModal, Modal } from '../UI';
+
+import style from './ModalThanksOrder.module.scss';
+
 interface Props {
   setModal: (value: boolean) => void;
 }
@@ -13,30 +15,30 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
   return (
     <Modal onClick={() => setModal(false)}>
       <div
-        className={st.modalWrapper}
-        onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+        className={style.modalWrapper}
+        onClick={(e: MouseEvent<HTMLDivElement>) => {
           e.stopPropagation();
         }}
       >
-        <CloseModal onClick={() => setModal(false)} className={st.closeBtn} />
+        <CloseModal onClick={() => setModal(false)} className={style.closeBtn} />
 
-        <div className={st.head}>Спасибо за заказ!</div>
-        <div className={st.numberOrder}>
-          Номер вашего заказа: <span className={st.number}>123456789</span>
+        <div className={style.head}>Спасибо за заказ!</div>
+        <div className={style.numberOrder}>
+          Номер вашего заказа: <span className={style.number}>123456789</span>
         </div>
-        <div className={st.helpInfo}>
+        <div className={style.helpInfo}>
           В ближайшее время с вами свяжется наш менеджер для уточнения деталей заказа
         </div>
-        <div className={st.navigationContainer}>
+        <div className={style.navigationContainer}>
           <Button
             onClick={() => {
               setModal(false);
               navigate(ROUTER_PATHS.main);
             }}
-            className={st.returnMainbtn}
+            className={style.returnMainbtn}
           >
-            <span className={st.btnText}>Вернуться на главную</span>
-            <span className={`${st.btnText} ${st.mobileBtnText}`}>На главную</span>
+            <span className={style.btnText}>Вернуться на главную</span>
+            <span className={`${style.btnText} ${style.mobileBtnText}`}>На главную</span>
           </Button>
 
           <Button
@@ -54,4 +56,4 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
   );
 };
 
-export default ModalThanksOrder;
+export { ModalThanksOrder };

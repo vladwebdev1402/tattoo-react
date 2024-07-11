@@ -1,12 +1,14 @@
-import React from "react";
-import styles from "./LinkRow.module.scss";
-import { useMatch, Link } from "react-router-dom";
+import { FC } from 'react';
+import { useMatch, Link } from 'react-router-dom';
+
+import styles from './LinkRow.module.scss';
+
 interface LinkProps {
   name: string;
   to: string;
 }
 
-const MyLink: React.FC<LinkProps> = ({ name, to }) => {
+const MyLink: FC<LinkProps> = ({ name, to }) => {
   const match = useMatch(to);
   return (
     <Link to={to}>
@@ -15,4 +17,4 @@ const MyLink: React.FC<LinkProps> = ({ name, to }) => {
   );
 };
 
-export default MyLink;
+export { MyLink };

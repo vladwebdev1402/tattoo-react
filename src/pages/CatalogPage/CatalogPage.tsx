@@ -24,4 +24,4 @@ const CatalogPage = () => {
   );
 };
 
-export default CatalogPage;
+export { CatalogPage };

@@ -17,9 +17,6 @@
 }
 
 .headTxt {
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--dark);
   margin-right: 20px;
 }
 
@@ -60,10 +57,6 @@
 }
 
 @media (max-width: 576px) {
-  .headTxt {
-    font-size: 17px;
-  }
-
   .editTxt {
     font-size: 15px;
   }

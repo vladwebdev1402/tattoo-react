@@ -1,5 +1,7 @@
-import React, { FC } from "react";
-import styles from "./LinkCatalogBody.module.scss";
+import { FC, MouseEvent } from 'react';
+
+import style from './LinkCatalogBody.module.scss';
+
 interface Props {
   name: string;
   isActive: boolean;
@@ -8,18 +10,16 @@ interface Props {
 const CategoryLink: FC<Props> = ({ name, isActive, onClick }) => {
   return (
     <div
-      onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+      onClick={(e: MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         onClick();
       }}
-      className={`${styles.catalogCategoryLinkBlock} ${
-        isActive && styles.active
-      }`}
+      className={`${style.catalogCategoryLinkBlock} ${isActive && style.active}`}
     >
-      <span className={styles.catalogCategoryLink}>{name}</span>
-      <div className={styles.hoverLine}></div>
+      <span className={style.catalogCategoryLink}>{name}</span>
+      <div className={style.hoverLine}></div>
     </div>
   );
 };
 
-export default CategoryLink;
+export { CategoryLink };

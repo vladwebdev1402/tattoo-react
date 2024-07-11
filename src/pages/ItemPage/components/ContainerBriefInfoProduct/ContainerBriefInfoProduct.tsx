@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { IShopItem } from '../../../../types/shopItem';
-import BtnChangeCount from '../../../../components/btnChangeCount/BtnChangeCount';
+
+import { IShopItem } from '@/types';
+import { BtnChangeCount, Button, Typography } from '@/components';
+
 import st from './container.module.scss';
-import { Button } from '@/components';
 
 interface Props {
   item: IShopItem;
@@ -13,7 +14,9 @@ interface Props {
 const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
   return (
     <div className={st.containerBriefInfo}>
-      <div className={st.itemNameTxt}>{item.name}</div>
+      <Typography variant="h2" className={st.itemNameTxt}>
+        {item.name}
+      </Typography>
       <div className={st.priceBlock}>
         <span className={st.currentPrice}>{item.price.toLocaleString('ru-RU')} ₽</span>
         {item.oldPrice > 0 && (

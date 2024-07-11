@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import ModalThanksOrder from '../modalThanksOrder/ModalThanksOrder';
-import st from './Ordering.module.scss';
 import { deliveryRadios, paymentRadios } from './radios';
 import { Button, Checked, Input, Radio } from '../UI';
+
+import { ModalThanksOrder } from '../modalThanksOrder/ModalThanksOrder';
+import style from './Ordering.module.scss';
+
 const Ordering = () => {
   const navigate = useNavigate();
   const [payment, setPayment] = useState('Онлайн на сайте');
@@ -14,48 +16,48 @@ const Ordering = () => {
   const [modal, setModal] = useState(false);
 
   return (
-    <div className={st.container}>
+    <div className={style.container}>
       {modal && <ModalThanksOrder setModal={setModal} />}
-      <div className={st.block1}>
-        <div className={st.priceInfoWrapper}>
-          <div className={st.priceInfoContainer}>
-            <span className={st.infoHeadTxt}>Всего единиц товара:</span>
-            <span className={st.infoValueTxt}>{0}</span>
+      <div className={style.block1}>
+        <div className={style.priceInfoWrapper}>
+          <div className={style.priceInfoContainer}>
+            <span className={style.infoHeadTxt}>Всего единиц товара:</span>
+            <span className={style.infoValueTxt}>{0}</span>
           </div>
-          <div className={st.priceInfoContainer}>
-            <span className={st.infoHeadTxt}>Общая скидка:</span>
-            <span className={st.infoValueTxt}>0₽</span>
+          <div className={style.priceInfoContainer}>
+            <span className={style.infoHeadTxt}>Общая скидка:</span>
+            <span className={style.infoValueTxt}>0₽</span>
           </div>
-          <div className={st.priceInfoContainer}>
-            <span className={st.infoHeadTxt}>Доп. услуги</span>
-            <span className={st.infoValueTxt}>0₽</span>
+          <div className={style.priceInfoContainer}>
+            <span className={style.infoHeadTxt}>Доп. услуги</span>
+            <span className={style.infoValueTxt}>0₽</span>
           </div>
-          <div className={`${st.priceInfoContainer} ${st.totalPrice}`}>
-            <span className={st.infoHeadTxt}>Итого:</span>
-            <span className={st.infoValueTxt}>{0}₽</span>
+          <div className={`${style.priceInfoContainer} ${style.totalPrice}`}>
+            <span className={style.infoHeadTxt}>Итого:</span>
+            <span className={style.infoValueTxt}>{0}₽</span>
           </div>
         </div>
-        <div className={st.promocodeContainer}>
+        <div className={style.promocodeContainer}>
           <Input
-            className={st.inputPromocode}
+            className={style.inputPromocode}
             placeholder="Driskell2000"
             label="Промокод"
             value={promo}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setPromo(e.target.value);
             }}
           />
-          <Button variant="text" className={st.lineBtn} onClick={() => {}}>
+          <Button variant="text" full className={style.lineBtn} onClick={() => {}}>
             Активировать промокод
           </Button>
         </div>
         <div className="horizontal-divider"></div>
       </div>
-      <div className={st.block2}>
-        <div className={st.radiosWrapper}>
-          <div className={st.radiosContainer}>
-            <div className={st.radiosTitle}>Оплата</div>
-            <div className={st.radios}>
+      <div className={style.block2}>
+        <div className={style.radiosWrapper}>
+          <div className={style.radiosContainer}>
+            <div className={style.radiosTitle}>Оплата</div>
+            <div className={style.radios}>
               {paymentRadios.map((r) => (
                 <Radio
                   onChange={() => setPayment(r.title)}
@@ -63,14 +65,14 @@ const Ordering = () => {
                   checked={payment == r.title}
                   question={r.question}
                   key={r.title}
-                  className={st.radio}
+                  className={style.radio}
                 />
               ))}
             </div>
           </div>
-          <div className={st.radiosContainer}>
-            <div className={st.radiosTitle}>Доставка</div>
-            <div className={st.radios}>
+          <div className={style.radiosContainer}>
+            <div className={style.radiosTitle}>Доставка</div>
+            <div className={style.radios}>
               {deliveryRadios.map((r) => (
                 <Radio
                   onChange={() => setDelivery(r.title)}
@@ -78,7 +80,7 @@ const Ordering = () => {
                   checked={delivery == r.title}
                   question={r.question}
                   key={r.title}
-                  className={st.radio}
+                  className={style.radio}
                 />
               ))}
             </div>
@@ -87,7 +89,7 @@ const Ordering = () => {
         <div className="horizontal-divider"></div>
       </div>
 
-      <div className={st.btnWrapper}>
+      <div className={style.btnWrapper}>
         <Button
           onClick={() => {
             navigate('/tattoo-react/catalog/basket/services');
@@ -97,7 +99,7 @@ const Ordering = () => {
           Оформить заказ
         </Button>
         <Button
-          className={st.clipBtn}
+          className={style.clipBtn}
           onClick={() => {
             setModal(true);
           }}
@@ -105,13 +107,13 @@ const Ordering = () => {
         >
           Купить в 1 клик
         </Button>
-        <Checked className={st.checked} onChange={() => setChecked(!checked)} checked={checked}>
+        <Checked className={style.checked} onChange={() => setChecked(!checked)} checked={checked}>
           Согласен с
-          <a href="#" className={st.link}>
+          <a href="#" className={style.link}>
             публичной офертой
           </a>
           и
-          <a href="#" className={st.link}>
+          <a href="#" className={style.link}>
             обработкой персональных данных
           </a>
         </Checked>

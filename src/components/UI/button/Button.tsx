@@ -29,13 +29,16 @@ const Button: FC<Props> = ({
     <button
       className={clsx(
         {
-          [style.button_default]: borderStyle === 'default',
+          [style.button_default]: borderStyle === 'default' && variant !== 'text',
           [style.button_clip]: borderStyle === 'clip' && variant !== 'text',
           [style.button_text]: variant === 'text',
-          [style.button_clip_dark]: theme === 'dark' && borderStyle === 'clip',
-          [style.button_clip_light]: theme === 'light' && borderStyle === 'clip',
-          [style.button_clip_small]: size === 'small' && borderStyle === 'clip',
-          [style.button_clip_big]: size === 'big' && borderStyle === 'clip',
+          [style.button_clip_dark]:
+            theme === 'dark' && borderStyle === 'clip' && variant !== 'text',
+          [style.button_clip_light]:
+            theme === 'light' && borderStyle === 'clip' && variant !== 'text',
+          [style.button_clip_small]:
+            size === 'small' && borderStyle === 'clip' && variant !== 'text',
+          [style.button_clip_big]: size === 'big' && borderStyle === 'clip' && variant !== 'text',
           [style.button_fullwidth]: full,
           [style.button_active]: active,
         },
