@@ -1,7 +1,7 @@
 import { ComponentProps, FC } from 'react';
 import clsx from 'clsx';
 
-import st from './Button.module.scss';
+import style from './Button.module.scss';
 
 type ButtonProps = {
   variant?: 'text';
@@ -25,18 +25,18 @@ const Button: FC<Props> = ({
   return (
     <button
       className={clsx({
-        [st.button_default]: borderStyle === 'default',
-        [st.button_clip]: borderStyle === 'clip' && variant !== 'text',
-        [st.button_text]: variant === 'text',
-        [st.button_clip_dark]: theme === 'dark' && borderStyle === 'clip',
-        [st.button_clip_light]: theme === 'light' && borderStyle === 'clip',
-        [st.button_clip_small]: size === 'small' && borderStyle === 'clip',
-        [st.button_clip_big]: size === 'big' && borderStyle === 'clip',
-        [st.button_fullwidth]: size === 'big' && borderStyle === 'clip',
+        [style.button_default]: borderStyle === 'default',
+        [style.button_clip]: borderStyle === 'clip' && variant !== 'text',
+        [style.button_text]: variant === 'text',
+        [style.button_clip_dark]: theme === 'dark' && borderStyle === 'clip',
+        [style.button_clip_light]: theme === 'light' && borderStyle === 'clip',
+        [style.button_clip_small]: size === 'small' && borderStyle === 'clip',
+        [style.button_clip_big]: size === 'big' && borderStyle === 'clip',
+        [style.button_fullwidth]: size === 'big' && borderStyle === 'clip',
       })}
       {...props}
     >
-      <span className={st.text}>{children}</span>
+      <span className={style.text}>{children}</span>
     </button>
   );
 };
