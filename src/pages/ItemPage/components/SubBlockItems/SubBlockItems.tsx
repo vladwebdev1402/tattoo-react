@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import { ShopItem, Slider } from '@/components';
+import { ShopItem, Slider, Typography } from '@/components';
 import { IShopItem } from '@/types';
 
 import st from './SubBlockItems.module.scss';
@@ -15,7 +15,7 @@ const SubBlockItems: FC<Props> = ({ watchAll, items, title }) => {
   return (
     <div className={st.container}>
       <div className={st.header}>
-        <h1>{title}</h1>
+        <Typography variant="h1">{title}</Typography>
         <span
           className={st.watchAll}
           onClick={() => {

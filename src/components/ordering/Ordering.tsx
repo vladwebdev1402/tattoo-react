@@ -45,7 +45,7 @@ const Ordering = () => {
               setPromo(e.target.value);
             }}
           />
-          <Button variant="text" className={st.lineBtn} onClick={() => {}}>
+          <Button variant="text" full className={st.lineBtn} onClick={() => {}}>
             Активировать промокод
           </Button>
         </div>

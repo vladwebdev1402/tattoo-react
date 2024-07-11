@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { IContactPerson } from '../../types/contactPerson';
 import { regNumber } from '../../utils/regNumber';
 import st from './ProfileDataInputs.module.scss';
-import { Button, Input } from '../UI';
+import { Button, Input, Typography } from '../UI';
 interface Props {
   isBasket?: boolean;
 }
@@ -24,7 +24,9 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
     <div className={st.profileDataWrapper}>
       <div className={st.profileDataContainer}>
         <div className={st.profileDataHead}>
-          <div className={st.headTxt}>Информация о получателе</div>
+          <Typography variant="h3" tag="h3" className={st.headTxt}>
+            Информация о получателе
+          </Typography>
           {!isBasket && (
             <Button variant="text" onClick={() => {}}>
               <span className={st.editTxt}> Редактировать</span>
@@ -61,7 +63,9 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
       </div>
       <div className={st.profileDataContainer}>
         <div className={st.profileDataHead}>
-          <div className={st.headTxt}>Адрес доставки</div>
+          <Typography variant="h3" tag="h3" className={st.headTxt}>
+            Адрес доставки
+          </Typography>
           {!isBasket && (
             <Button variant="text" onClick={() => {}}>
               <span className={st.editTxt}> Редактировать</span>

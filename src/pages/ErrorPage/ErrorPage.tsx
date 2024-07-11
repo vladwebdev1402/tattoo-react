@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Button } from '@/components';
+import { Button, Typography } from '@/components';
 import { ROUTER_PATHS } from '@/constants';
 
 import styles from './ErrorPage.module.scss';
@@ -13,13 +13,14 @@ const ErrorPage: FC = () => {
   return (
     <div className={styles.errorContainer}>
       <div className={styles.errorBody}>
-        <div className={styles.errorHeadetTxt}>Ошибка 404!</div>
-        <div className={styles.errorDescTxt}>
+        <Typography variant="h0">Ошибка 404!</Typography>
+        <Typography variant="h3" className={styles.errorDescTxt}>
           Эта страница не найдена, мы уже работаем, чтобы ее восстановить!
-        </div>
+        </Typography>
         <div className={styles.navigationContainer}>
           <div className={styles.clipBtn}>
             <Button
+              full
               onClick={() => {
                 navigate(ROUTER_PATHS.main);
               }}

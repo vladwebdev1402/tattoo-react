@@ -1,7 +1,9 @@
 import { FC, useState } from 'react';
-import st from './Service.module.scss';
+
 import { IServiceItem } from '@/types';
 import { Button } from '../UI';
+
+import st from './Service.module.scss';
 interface Props {
   item: IServiceItem;
 }
@@ -23,9 +25,11 @@ const ServiceItem: FC<Props> = ({ item }) => {
           {item.price.procentPrice && <>{item.price.procentPrice}% от суммы заказа</>}
         </div>
       </div>
-      <Button className={st.clipBtn} onClick={() => {}} theme="light">
-        Добавить к заказу
-      </Button>
+      <div className={st.clipBtn}>
+        <Button onClick={() => {}} theme="light">
+          Добавить к заказу
+        </Button>
+      </div>
     </div>
   );
 };

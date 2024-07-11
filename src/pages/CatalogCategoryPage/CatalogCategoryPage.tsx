@@ -6,7 +6,7 @@ import FilterParametrsItems from '../../components/filterParametrsItems/FilterPa
 import { useParams } from 'react-router-dom';
 import { IFiltersParametrs } from '../../types/FilterParametrs';
 import { IShopItem } from '../../types/shopItem';
-import { Breadcrumbs, Button, ItemsContainer, ShopItem } from '@/components';
+import { Breadcrumbs, Button, ItemsContainer, ShopItem, Typography } from '@/components';
 import { FiltersBtnCatalogPage } from './components';
 
 interface CategoryPage {
@@ -68,7 +68,9 @@ const CatalogPage = () => {
   return (
     <div className={styles.catalogContainer}>
       <Breadcrumbs />
-      <h1>{pathnames[params.type || '']}</h1>
+      <Typography variant="h1" tag="h1">
+        {pathnames[params.type || '']}
+      </Typography>
       <FiltersBtnCatalogPage />
       <FilterParametrsItems filters={filters} setFilters={setFilters} />
       <ItemsContainer>

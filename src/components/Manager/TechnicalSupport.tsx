@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import ManagerContacts from '@/components/managerContacts/ManagerContacts';
 import { IManager } from '@/types';
 import styles from './Manager.module.scss';

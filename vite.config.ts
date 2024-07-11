@@ -10,4 +10,5 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src/') }],
   },
+  base: 'https://vladwebdev1402.github.io/tattoo-react',
 });
