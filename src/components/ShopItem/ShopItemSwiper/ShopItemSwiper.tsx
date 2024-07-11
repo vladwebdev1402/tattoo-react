@@ -1,13 +1,15 @@
-import React, { FC, useEffect } from "react";
-import { IItemImg } from "../../../types/shopItem";
-import Slider from "../../UI/Slider/Slider";
-import styles from "./ShopItemSwiper.module.scss";
+import { FC } from 'react';
+import { IItemImg } from '../../../types/shopItem';
+
+import { Slider } from '@/components/UI';
+
+import styles from './ShopItemSwiper.module.scss';
 interface Props {
   images: IItemImg;
   className?: string;
 }
 
-const ShopItemSwiper: FC<Props> = ({ images, className = "" }) => {
+const ShopItemSwiper: FC<Props> = ({ images, className = '' }) => {
   return (
     <>
       <div className={`${styles.containerSlider}`}>
@@ -17,12 +19,7 @@ const ShopItemSwiper: FC<Props> = ({ images, className = "" }) => {
           st__pag__item__active={styles.active}
         >
           {Object.values(images).map((img, idx) => (
-            <img
-              key={idx}
-              src={img}
-              draggable="false"
-              className={styles.itemImage}
-            />
+            <img key={idx} src={img} draggable="false" className={styles.itemImage} />
           ))}
         </Slider>
       </div>

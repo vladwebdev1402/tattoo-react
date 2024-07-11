@@ -1,13 +1,13 @@
-import React, { FC, useContext, useState } from "react";
-import { IShopItem } from "../../types/shopItem";
-import FavoriteItem from "../UI/icons/itemIcons/favoriteIcon/FavoriteItem";
-import ShopItemSwiper from "./ShopItemSwiper/ShopItemSwiper";
-import styles from "./ShopItem.module.scss";
-import ClipButton from "../UI/button/clipButton/ClipButton";
-import Marcers from "./Marcers/Marcers";
+import React, { FC, useContext, useState } from 'react';
+import { IShopItem } from '../../types/shopItem';
+import FavoriteItem from '../UI/icons/itemIcons/favoriteIcon/FavoriteItem';
+import ShopItemSwiper from './ShopItemSwiper/ShopItemSwiper';
+import styles from './ShopItem.module.scss';
+import ClipButton from '../UI/button/clipButton/ClipButton';
+import Marcers from './Marcers/Marcers';
 
-import { useNavigate } from "react-router-dom";
-import MyChecked from "../UI/checked/MyChecked";
+import { useNavigate } from 'react-router-dom';
+import MyChecked from '../UI/checked/MyChecked';
 
 interface ShopItemProps {
   item: IShopItem;
@@ -34,28 +34,19 @@ const ShopItem: FC<ShopItemProps> = ({
   };
 
   return (
-    <div
-      className={`${styles.item} ${smallItem && styles.smallItem} ${
-        noneBtn && styles.noneBtn
-      }`}
-    >
+    <div className={`${styles.item} ${smallItem && styles.smallItem} ${noneBtn && styles.noneBtn}`}>
       <div
         className={styles.itemContainer}
         onClick={() => {
           if (!swipe) navigate(`/tattoo-react/catalog/${item.type}/${item.id}`);
         }}
       >
-        <ShopItemSwiper
-          images={item.img}
-          className={smallItem ? styles.smallImg : ""}
-        />
+        <ShopItemSwiper images={item.img} className={smallItem ? styles.smallImg : ''} />
         <div className={styles.itemName}>{item.name}</div>
         <div className={styles.itemPrice}>
-          {item.price.toLocaleString("ru-RU")} ₽
+          {item.price.toLocaleString('ru-RU')} ₽
           {item.oldPrice > 0 && (
-            <span className={styles.oldPrice}>
-              {item.oldPrice.toLocaleString("ru-RU")}
-            </span>
+            <span className={styles.oldPrice}>{item.oldPrice.toLocaleString('ru-RU')}</span>
           )}
         </div>
 
@@ -69,10 +60,7 @@ const ShopItem: FC<ShopItemProps> = ({
 
           {inBasket && (
             <div className={styles.basketBtnContainer}>
-              <button
-                className={styles.basketBtn}
-                onClick={minusBasket}
-              ></button>
+              <button className={styles.basketBtn} onClick={minusBasket}></button>
               <div className={styles.countInBasket}>
                 <span className={styles.countTxt}>{0}шт</span>
                 <span className={styles.infoTxt}>В корзине</span>
@@ -85,10 +73,7 @@ const ShopItem: FC<ShopItemProps> = ({
           )}
         </div>
         {!checkbox && (
-          <Marcers
-            marcers={item.marcers || {}}
-            className={smallItem ? styles.marcersSmall : ""}
-          />
+          <Marcers marcers={item.marcers || {}} className={smallItem ? styles.marcersSmall : ''} />
         )}
 
         {checkbox && (
@@ -111,4 +96,4 @@ const ShopItem: FC<ShopItemProps> = ({
   );
 };
 
-export default ShopItem;
+export { ShopItem };

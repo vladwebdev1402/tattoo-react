@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useRef, useState } from "react";
-import { useWidth } from "../../../hooks/useWidth";
-import { IItemImg, IMarcers } from "../../../types/shopItem";
-import Marcers from "../../ShopItem/Marcers/Marcers";
-import FavoriteItem from "../../UI/icons/itemIcons/favoriteIcon/FavoriteItem";
-import Slider from "../../UI/Slider/Slider";
-import st from "./imagesSlider.module.scss";
+import React, { FC, useEffect, useRef, useState } from 'react';
+import { useWidth } from '../../../hooks/useWidth';
+import { IItemImg, IMarcers } from '../../../types/shopItem';
+import Marcers from '../../ShopItem/Marcers/Marcers';
+import FavoriteItem from '../../UI/icons/itemIcons/favoriteIcon/FavoriteItem';
+import { Slider } from '@/components/UI';
+import st from './imagesSlider.module.scss';
 interface Props {
   images: IItemImg;
   marcers: IMarcers;

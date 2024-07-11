@@ -1,14 +1,14 @@
-import React, { FC, useEffect, useState } from "react";
-import st from "./ModalMashineWork.module.scss";
-import img1 from "../../assets/images/tattoo-works/1.png";
-import img2 from "../../assets/images/tattoo-works/2.png";
-import img3 from "../../assets/images/tattoo-works/3.png";
-import img4 from "../../assets/images/tattoo-works/4.png";
-import img5 from "../../assets/images/tattoo-works/5.png";
-import img6 from "../../assets/images/tattoo-works/6.png";
-import img7 from "../../assets/images/tattoo-works/7.png";
-import Slider from "../UI/Slider/Slider";
-import ModalView from "../UI/modal/ModalView";
+import React, { FC, useEffect, useState } from 'react';
+import st from './ModalMashineWork.module.scss';
+import img1 from '../../assets/images/tattoo-works/1.png';
+import img2 from '../../assets/images/tattoo-works/2.png';
+import img3 from '../../assets/images/tattoo-works/3.png';
+import img4 from '../../assets/images/tattoo-works/4.png';
+import img5 from '../../assets/images/tattoo-works/5.png';
+import img6 from '../../assets/images/tattoo-works/6.png';
+import img7 from '../../assets/images/tattoo-works/7.png';
+import ModalView from '../UI/modal/ModalView';
+import { Slider } from '../UI';
 
 interface Props {
   setModal: (modal: boolean) => void;
@@ -42,12 +42,7 @@ const ModalMashineWork: FC<Props> = ({ setModal }) => {
           onSwipe={setSwipe}
         >
           {images.map((img, idx) => (
-            <img
-              className={st.slideImg}
-              draggable={false}
-              key={idx}
-              src={img}
-            />
+            <img className={st.slideImg} draggable={false} key={idx} src={img} />
           ))}
         </Slider>
       </div>

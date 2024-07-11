@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
-import HeaderSlider from "../../components/HeaderSlider/HeaderSlider";
-import MiniShop from "../../components/MiniShop/MiniShop";
-import Catalog from "../../components/catalog/Catalog";
-import Banners from "../../components/banners/Banners";
-import AboutCompany from "../../components/aboutCompany/AboutCompany";
-import Subscribe from "../../components/subscribe/Subscribe";
-import Brands from "../../components/brands/Brands";
-import Reviews from "../../components/reviews/Reviews";
+import { useEffect } from 'react';
+
+import {
+  AboutCompany,
+  Banners,
+  Brands,
+  Catalog,
+  HeaderSlider,
+  MiniShop,
+  Reviews,
+  Subscribe,
+} from './components';
 
 const MainPage = () => {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (

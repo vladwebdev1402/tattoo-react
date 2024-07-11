@@ -1,8 +1,8 @@
-import React, { FC, useState } from "react";
-import { IShopItem } from "../../types/shopItem";
-import ShopItem from "../ShopItem/ShopItem";
-import Slider from "../UI/Slider/Slider";
-import st from "./SubBlockItems.module.scss";
+import { FC, useState } from 'react';
+import { IShopItem } from '../../types/shopItem';
+import st from './SubBlockItems.module.scss';
+import { Slider } from '../UI';
+import { ShopItem } from '../ShopItem';
 interface Props {
   watchAll: () => void;
   items: IShopItem[];
@@ -38,12 +38,7 @@ const SubBlockItems: FC<Props> = ({ watchAll, items, title }) => {
           transition={1000}
         >
           {items.map((item) => (
-            <ShopItem
-              swipe={swipe}
-              item={item}
-              key={item.id}
-              smallItem={true}
-            />
+            <ShopItem swipe={swipe} item={item} key={item.id} smallItem={true} />
           ))}
         </Slider>
       </div>
