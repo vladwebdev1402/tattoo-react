@@ -1,8 +1,13 @@
 @import '@/styles/variables.scss';
 
+.container {
+  width: 100%;
+}
+
 .label {
   font-size: 17px;
   color: var(--txt-gray2);
+  display: block;
 }
 
 .input {
@@ -14,7 +19,7 @@
   background-color: #f5f5f5;
   font-size: 17px;
   color: $dark-orange;
-
+  width: 100%;
   &:focus {
     outline: none;
   }

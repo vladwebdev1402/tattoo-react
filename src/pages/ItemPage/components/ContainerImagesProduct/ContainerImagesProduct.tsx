@@ -2,9 +2,9 @@ import { FC, useState } from 'react';
 import { IItemImg, IMarcers } from '../../../../types/shopItem';
 import Marcers from '../../../../components/ShopItem/Marcers/Marcers';
 import FavoriteItem from '../../../../components/UI/icons/itemIcons/favoriteIcon/FavoriteItem';
-import ImgRadio from '../../../../components/UI/radio/imgRadio/ImgRadio';
 import st from './container.module.scss';
 import ImagesSlider from './Slider/ImagesSlider';
+import { ImgRadio } from '@/components';
 interface Props {
   images: IItemImg;
   marcers: IMarcers;

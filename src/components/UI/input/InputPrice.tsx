@@ -1,18 +1,20 @@
-import React, { FC } from "react";
-import styles from "./InputPrice.module.scss";
+import { ChangeEvent, FC } from 'react';
+
+import style from './InputPrice.module.scss';
+
 interface Props {
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputPrice: FC<Props> = ({ value, onChange }) => {
   return (
     <input
-      className={styles.inputPrice}
-      value={Number(value).toLocaleString("ru-RU")}
+      className={style.inputPrice}
+      value={Number(value).toLocaleString('ru-RU')}
       onChange={onChange}
     />
   );
 };
 
-export default InputPrice;
+export { InputPrice };

@@ -34,7 +34,7 @@ const Button: FC<Props> = ({
           [style.button_clip_light]: theme === 'light' && borderStyle === 'clip',
           [style.button_clip_small]: size === 'small' && borderStyle === 'clip',
           [style.button_clip_big]: size === 'big' && borderStyle === 'clip',
-          [style.button_fullwidth]: size === 'big' && borderStyle === 'clip',
+          [style.button_fullwidth]: full,
         },
         className
       )}

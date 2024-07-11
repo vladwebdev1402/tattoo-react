@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ModalThanksOrder from '../modalThanksOrder/ModalThanksOrder';
-import MyChecked from '../UI/checked/MyChecked';
-import MyInput from '../UI/input/MyInput';
-import MyRadio from '../UI/radio/MyRadio';
 import st from './Ordering.module.scss';
 import { deliveryRadios, paymentRadios } from './radios';
-import { Button } from '../UI';
+import { Button, Checked, Input, Radio } from '../UI';
 const Ordering = () => {
   const navigate = useNavigate();
   const [payment, setPayment] = useState('Онлайн на сайте');
@@ -39,10 +36,10 @@ const Ordering = () => {
           </div>
         </div>
         <div className={st.promocodeContainer}>
-          <MyInput
+          <Input
             className={st.inputPromocode}
             placeholder="Driskell2000"
-            title="Промокод"
+            label="Промокод"
             value={promo}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setPromo(e.target.value);
@@ -60,7 +57,7 @@ const Ordering = () => {
             <div className={st.radiosTitle}>Оплата</div>
             <div className={st.radios}>
               {paymentRadios.map((r) => (
-                <MyRadio
+                <Radio
                   onChange={() => setPayment(r.title)}
                   title={r.title}
                   checked={payment == r.title}
@@ -75,7 +72,7 @@ const Ordering = () => {
             <div className={st.radiosTitle}>Доставка</div>
             <div className={st.radios}>
               {deliveryRadios.map((r) => (
-                <MyRadio
+                <Radio
                   onChange={() => setDelivery(r.title)}
                   title={r.title}
                   checked={delivery == r.title}
@@ -108,7 +105,7 @@ const Ordering = () => {
         >
           Купить в 1 клик
         </Button>
-        <MyChecked className={st.checked} onChange={() => setChecked(!checked)} checked={checked}>
+        <Checked className={st.checked} onChange={() => setChecked(!checked)} checked={checked}>
           Согласен с
           <a href="#" className={st.link}>
             публичной офертой
@@ -117,7 +114,7 @@ const Ordering = () => {
           <a href="#" className={st.link}>
             обработкой персональных данных
           </a>
-        </MyChecked>
+        </Checked>
       </div>
     </div>
   );

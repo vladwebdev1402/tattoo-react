@@ -1,9 +1,10 @@
-import React, { FC, useState } from "react";
-import st from "./ModalFilter.module.scss";
+import { FC, ReactNode, useState } from 'react';
+
+import st from './ModalFilter.module.scss';
 
 interface Props {
   name: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   inStock?: boolean;
 }
 
@@ -16,7 +17,7 @@ const ModalFilter: FC<Props> = ({ name, children, inStock = false }) => {
           <span className={st.filterName}>{name}</span>
           {children}
         </div>
-        <div className="horizontal-divider" style={{ marginTop: "30px" }}></div>
+        <div className="horizontal-divider" style={{ marginTop: '30px' }}></div>
       </div>
     );
   }
@@ -34,7 +35,7 @@ const ModalFilter: FC<Props> = ({ name, children, inStock = false }) => {
       <div className={st.filterBody}>
         <div className={st.filterChildren}>{children}</div>
 
-        <div className="horizontal-divider" style={{ marginTop: "30px" }}></div>
+        <div className="horizontal-divider" style={{ marginTop: '30px' }}></div>
       </div>
     </div>
   );

@@ -6,8 +6,7 @@ import styles from './ShopItem.module.scss';
 import Marcers from './Marcers/Marcers';
 
 import { useNavigate } from 'react-router-dom';
-import MyChecked from '../UI/checked/MyChecked';
-import { Button } from '../UI';
+import { Button, Checked } from '../UI';
 
 interface ShopItemProps {
   item: IShopItem;
@@ -83,7 +82,7 @@ const ShopItem: FC<ShopItemProps> = ({
               e.stopPropagation();
             }}
           >
-            <MyChecked
+            <Checked
               className={styles.checkbox}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {}}
               checked={true}

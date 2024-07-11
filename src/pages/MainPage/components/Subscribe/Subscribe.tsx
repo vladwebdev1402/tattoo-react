@@ -1,9 +1,7 @@
 import React, { FC, useState } from 'react';
 
-import MyChecked from '@/components/UI/checked/MyChecked';
-import MyInput from '@/components/UI/input/MyInput';
 import img from '@/assets/images/hand.png';
-import { Button, Typography } from '@/components';
+import { Button, Checked, Input, Typography } from '@/components';
 
 import styles from './Subscribe.module.scss';
 
@@ -39,14 +37,14 @@ const Subscribe: FC = () => {
           Подпишитесь на новостную рассылку с самыми интересными новостями и акциями
         </div>
         <div className={styles.inputsContainer}>
-          <MyInput
+          <Input
             onChange={changeMail}
             value={values.mail}
             label="Эл. почта"
             placeholder="Figur@mail.ru"
             containerClassName={styles.input}
           />
-          <MyInput
+          <Input
             containerClassName={styles.input}
             onChange={changeName}
             value={values.name}
@@ -55,7 +53,7 @@ const Subscribe: FC = () => {
           />
         </div>
         <div className={styles.btnsContainer}>
-          <MyChecked
+          <Checked
             className={styles.checked}
             checked={checked}
             onChange={changeChecked}

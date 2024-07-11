@@ -1,5 +1,7 @@
-import React, { FC } from "react";
-import st from "./ImgRadio.module.scss";
+import { FC } from 'react';
+
+import st from './ImgRadio.module.scss';
+
 interface Props {
   img: string;
   onClick: () => void;
@@ -13,4 +15,4 @@ const ImgRadio: FC<Props> = ({ img, onClick, active }) => {
   );
 };
 
-export default ImgRadio;
+export { ImgRadio };

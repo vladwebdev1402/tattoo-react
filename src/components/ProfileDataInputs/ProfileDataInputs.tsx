@@ -1,9 +1,8 @@
 import React, { FC, useState } from 'react';
 import { IContactPerson } from '../../types/contactPerson';
 import { regNumber } from '../../utils/regNumber';
-import MyInput from '../UI/input/MyInput';
 import st from './ProfileDataInputs.module.scss';
-import { Button } from '../UI';
+import { Button, Input } from '../UI';
 interface Props {
   isBasket?: boolean;
 }
@@ -33,25 +32,25 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
           )}
         </div>
         <div className={st.inputsContainer}>
-          <MyInput
-            title="ФИО*"
+          <Input
+            label="ФИО*"
             value={profile.fullName || ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, fullName: e.target.value });
             }}
             placeholder="Иванов Иван Иванович"
           />
-          <MyInput
+          <Input
             className={st.number}
-            title="Телефон*"
+            label="Телефон*"
             value={profile.number || ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, number: e.target.value });
             }}
             placeholder="8(800)555-35-35"
           />
-          <MyInput
-            title="Эл. почта*"
+          <Input
+            label="Эл. почта*"
             value={profile.mail || ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, mail: e.target.value });
@@ -70,18 +69,18 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
           )}
         </div>
         <div className={st.inputsContainer}>
-          <MyInput
+          <Input
             className={st.city}
-            title="Город*"
+            label="Город*"
             value={profile.city || ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, city: e.target.value });
             }}
             placeholder="Москва"
           />
-          <MyInput
+          <Input
             className={st.street}
-            title="Улица, дом*"
+            label="Улица, дом*"
             value={profile.streetAndHouse || ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({ ...profile, streetAndHouse: e.target.value });
@@ -91,8 +90,8 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
         </div>
 
         <div className={`${st.inputsContainer} ${st.inputsContainerFlat}`}>
-          <MyInput
-            title="Квартира*"
+          <Input
+            label="Квартира*"
             value={`${profile.flat}` == '0' ? '' : `${profile.flat}`}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({
@@ -102,8 +101,8 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
             }}
             placeholder="12"
           />
-          <MyInput
-            title="Подъезд"
+          <Input
+            label="Подъезд"
             value={`${profile.entrance}` == '0' ? '' : `${profile.entrance}`}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({
@@ -112,9 +111,9 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
               });
             }}
             placeholder="3"
-          />{' '}
-          <MyInput
-            title="Этаж"
+          />
+          <Input
+            label="Этаж"
             value={`${profile.floor}` == '0' ? '' : `${profile.floor}`}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({
@@ -124,8 +123,8 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
             }}
             placeholder="2"
           />
-          <MyInput
-            title="Домофон"
+          <Input
+            label="Домофон"
             value={`${profile.intercom}` == '0' ? '' : `${profile.intercom}`}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setProfile({

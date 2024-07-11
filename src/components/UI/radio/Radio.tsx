@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import st from "./Radio.module.scss";
+import React, { FC } from 'react';
+import st from './Radio.module.scss';
 
 interface Props {
   title: string;
@@ -9,21 +9,10 @@ interface Props {
   className?: string;
 }
 
-const MyRadio: FC<Props> = ({
-  title,
-  onChange,
-  checked,
-  question = "",
-  className = "",
-}) => {
+const Radio: FC<Props> = ({ title, onChange, checked, question = '', className = '' }) => {
   return (
     <label className={`${st.radioContainer} ${className}`}>
-      <input
-        className={st.input}
-        type="radio"
-        onChange={onChange}
-        checked={checked}
-      />
+      <input className={st.input} type="radio" onChange={onChange} checked={checked} />
       <div className={st.radioIcon}></div>
       <span className={st.title}>{title}</span>
       {question && (
@@ -35,4 +24,4 @@ const MyRadio: FC<Props> = ({
   );
 };
 
-export default MyRadio;
+export { Radio };

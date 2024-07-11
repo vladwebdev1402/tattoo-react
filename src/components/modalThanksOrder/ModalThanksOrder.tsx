@@ -2,9 +2,8 @@ import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import st from './ModalThanksOrder.module.scss';
 import { ROUTER_PATHS } from '@/constants';
-import ModalView from '../UI/modal/ModalView';
 import CloseModal from '../UI/button/closeModal/CloseModal';
-import { Button } from '../UI';
+import { Button, Modal } from '../UI';
 interface Props {
   setModal: (value: boolean) => void;
 }
@@ -12,7 +11,7 @@ interface Props {
 const ModalThanksOrder: FC<Props> = ({ setModal }) => {
   const navigate = useNavigate();
   return (
-    <ModalView onClick={() => setModal(false)}>
+    <Modal onClick={() => setModal(false)}>
       <div
         className={st.modalWrapper}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -51,7 +50,7 @@ const ModalThanksOrder: FC<Props> = ({ setModal }) => {
           </Button>
         </div>
       </div>
-    </ModalView>
+    </Modal>
   );
 };
 

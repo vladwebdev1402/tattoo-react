@@ -1,18 +1,21 @@
-import React, { FC, useEffect, useRef, useState } from "react";
-import { useClose } from "../../../hooks/useClose";
-import styles from "./MySelect.module.scss";
+import { FC, useEffect, useRef, useState } from 'react';
+
+import { useClose } from '@/hooks/useClose';
+
+import styles from './Select.module.scss';
+
 interface Props {
   options: { name: string; isActive: boolean }[];
   setOptions: (option: string) => void;
 }
 
-const MySelect: FC<Props> = ({ options, setOptions }) => {
+const Select: FC<Props> = ({ options, setOptions }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { isVisible, setIsVisible } = useClose(ref);
-  const [currentOption, setCurrentOption] = useState<string>("");
+  const [currentOption, setCurrentOption] = useState<string>('');
 
   const seacrhCurrentOption = () => {
-    let optionName: string = "";
+    let optionName: string = '';
 
     options.forEach((option) => {
       option.isActive ? (optionName = option.name) : (optionName = optionName);
@@ -35,9 +38,7 @@ const MySelect: FC<Props> = ({ options, setOptions }) => {
       onClick={clickSelect}
       ref={ref}
     >
-      <span className={`${styles.txtOption} ${styles.currentTxtOption}`}>
-        {currentOption}
-      </span>
+      <span className={`${styles.txtOption} ${styles.currentTxtOption}`}>{currentOption}</span>
 
       <div className={styles.optionsContainer}>
         {options.map((option) => (
@@ -56,4 +57,4 @@ const MySelect: FC<Props> = ({ options, setOptions }) => {
   );
 };
 
-export default MySelect;
+export { Select };

@@ -1,5 +1,4 @@
 import { FC, MouseEvent, useState } from 'react';
-import st from './ModalMashineWork.module.scss';
 import img1 from '@/assets/images/tattoo-works/1.png';
 import img2 from '@/assets/images/tattoo-works/2.png';
 import img3 from '@/assets/images/tattoo-works/3.png';
@@ -7,8 +6,9 @@ import img4 from '@/assets/images/tattoo-works/4.png';
 import img5 from '@/assets/images/tattoo-works/5.png';
 import img6 from '@/assets/images/tattoo-works/6.png';
 import img7 from '@/assets/images/tattoo-works/7.png';
-import ModalView from '@/components/UI/modal/ModalView';
-import { Slider } from '@/components/UI';
+import { Modal, Slider } from '@/components';
+
+import st from './ModalMashineWork.module.scss';
 
 interface Props {
   setModal: (modal: boolean) => void;
@@ -18,7 +18,7 @@ const ModalMashineWork: FC<Props> = ({ setModal }) => {
   const [swipe, setSwipe] = useState(false);
 
   return (
-    <ModalView
+    <Modal
       onClick={() => {
         if (!swipe) setModal(false);
       }}
@@ -46,7 +46,7 @@ const ModalMashineWork: FC<Props> = ({ setModal }) => {
           ))}
         </Slider>
       </div>
-    </ModalView>
+    </Modal>
   );
 };
 

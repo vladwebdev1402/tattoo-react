@@ -1,11 +1,8 @@
 import React, { FC, useState } from 'react';
-import MyChecked from '../UI/checked/MyChecked';
-import InputCode from '../UI/input/InputCode';
-import MyInput from '../UI/input/MyInput';
-import st from './ModalAuth.module.scss';
-import ModalView from '../UI/modal/ModalView';
 import CloseModal from '../UI/button/closeModal/CloseModal';
-import { Button } from '../UI';
+import { Button, Checked, Input, InputCode, Modal } from '../UI';
+import st from './ModalAuth.module.scss';
+
 interface Props {
   setModal: (modal: boolean) => void;
 }
@@ -16,7 +13,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
   const [smsTo, setSmsTo] = useState(false);
   const [code, setCode] = useState({ 0: '', 1: '', 2: '', 3: '' });
   return (
-    <ModalView onClick={() => setModal(false)}>
+    <Modal onClick={() => setModal(false)}>
       <div
         className={`${st.modalBody} ${smsTo && st.smsToBody}`}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => {
@@ -29,7 +26,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
         {smsTo && <div className={st.headTxt}>Введите код</div>}
 
         {!smsTo && (
-          <MyInput
+          <Input
             value={number}
             placeholder="+7 ХХХ ХХХ ХХ ХХ"
             title="Введите номер"
@@ -101,7 +98,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
           </Button>
         )}
 
-        <MyChecked
+        <Checked
           className={st.checked}
           title="При воходе или регистрации вы соглашаетесь с условиями предоставления сервиса"
           onChange={() => {
@@ -110,7 +107,7 @@ const ModalAuth: FC<Props> = ({ setModal }) => {
           checked={checked}
         />
       </div>
-    </ModalView>
+    </Modal>
   );
 };
 

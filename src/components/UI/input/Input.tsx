@@ -1,7 +1,7 @@
 import { ComponentPropsWithRef, forwardRef, useId } from 'react';
 import clsx from 'clsx';
 
-import style from './MyInput.module.scss';
+import style from './Input.module.scss';
 
 type InputProps = {
   label?: string;
@@ -9,21 +9,23 @@ type InputProps = {
   containerClassName?: string;
 } & ComponentPropsWithRef<'input'>;
 
-const MyInput = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, containerClassName, className, ...props }, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ label, error, containerClassName, required, className, ...props }, ref) => {
     const id = useId();
 
     return (
-      <div className={containerClassName}>
+      <div className={clsx(style.container, containerClassName)}>
         {label && (
           <label className={style.label} htmlFor={id}>
             {label}
+            {required && '*'}
           </label>
         )}
         <input
           {...props}
           id={id}
           ref={ref}
+          required={required}
           className={clsx(style.input, { [style.input_error]: error }, className)}
         />
         {error && <p className={style.error}>{error}</p>}
@@ -32,4 +34,4 @@ const MyInput = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-export default MyInput;
+export { Input };
