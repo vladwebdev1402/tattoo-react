@@ -8,7 +8,7 @@ const HeadAndNav = () => {
     <header className={style.headContainer}>
       <div className={style.head}>
         <Header />
-        <div className={`${style.divider} horizontal-divider`}></div>
+        <div className={`horizontal-divider vertical-divider_dark ${style.divider}`}></div>
         <Navbar />
       </div>
     </header>
