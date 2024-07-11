@@ -1,32 +1,35 @@
-import React, { FC, useState } from "react";
-import styles from "./MyInput.module.scss";
+import { ComponentPropsWithRef, forwardRef, useId } from 'react';
+import clsx from 'clsx';
 
-interface MyInputProps {
-  title: string;
-  value: string;
-  placeholder: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  className?: string;
-}
+import style from './MyInput.module.scss';
 
-const MyInput: FC<MyInputProps> = ({
-  title,
-  placeholder,
-  onChange,
-  value,
-  className = "",
-}) => {
-  return (
-    <div className={`${styles.inputContainer} ${className}`}>
-      <div className={styles.inputName}>{title}</div>
-      <input
-        value={value}
-        onChange={onChange}
-        className={styles.input}
-        placeholder={placeholder}
-      />
-    </div>
-  );
-};
+type InputProps = {
+  label?: string;
+  error?: string;
+  containerClassName?: string;
+} & ComponentPropsWithRef<'input'>;
+
+const MyInput = forwardRef<HTMLInputElement, InputProps>(
+  ({ label, error, containerClassName, className, ...props }, ref) => {
+    const id = useId();
+
+    return (
+      <div className={containerClassName}>
+        {label && (
+          <label className={style.label} htmlFor={id}>
+            {label}
+          </label>
+        )}
+        <input
+          {...props}
+          id={id}
+          ref={ref}
+          className={clsx(style.input, { [style.input_error]: error }, className)}
+        />
+        {error && <p className={style.error}>{error}</p>}
+      </div>
+    );
+  }
+);
 
 export default MyInput;
