@@ -1,10 +1,9 @@
-import { FC } from 'react';
-import PromocodeItem from '../../components/promocodeItem/PromocodeItem';
-import { promocodes } from '../../data/promocode';
-import { Breadcrumbs, Typography } from '@/components';
+import { Breadcrumbs, PromocodeItem, Typography } from '@/components';
+import { promocodes } from '@/data';
 
 import styles from './PromocodesPage.module.scss';
-const PromocodesPage: FC = () => {
+
+const PromocodesPage = () => {
   return (
     <div className={styles.promocodesContainer}>
       <Breadcrumbs className={styles.margin} />
@@ -20,4 +19,4 @@ const PromocodesPage: FC = () => {
   );
 };
 
-export default PromocodesPage;
+export { PromocodesPage };

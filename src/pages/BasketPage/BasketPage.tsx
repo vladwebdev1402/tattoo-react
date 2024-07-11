@@ -22,4 +22,4 @@ const BasketPage = () => {
   );
 };
 
-export default BasketPage;
+export { BasketPage };

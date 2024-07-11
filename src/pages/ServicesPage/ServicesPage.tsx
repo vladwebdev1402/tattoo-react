@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 
-import ServiceItem from '../../components/serviceItem/ServiceItem';
-import { servicesData } from '../../data/servicesData';
-import { Breadcrumbs, Ordering, Typography } from '@/components';
+import { Breadcrumbs, Ordering, ServiceItem, Typography } from '@/components';
+import { servicesData } from '@/data';
 
 import st from './ServicesPage.module.scss';
 const ServicesPage = () => {
@@ -27,4 +26,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export { ServicesPage };

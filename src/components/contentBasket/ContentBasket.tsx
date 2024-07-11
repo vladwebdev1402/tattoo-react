@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import BasketRow from './BasketRow';
 import { IBasket } from '../../store/reducers/basketReducers';
+import { BasketRow } from './BasketRow';
 
-import st from './ContentBasket.module.scss';
+import style from './ContentBasket.module.scss';
 
 interface Props {
   items: IBasket[];
@@ -13,19 +13,17 @@ interface Props {
 
 const ContentBasket: FC<Props> = ({ items, isOrder = false, className }) => {
   return (
-    <div className={`${st.container} ${className}`}>
-      <div className={st.tableContainer}>
-        <div className={st.tableHeader}>
+    <div className={`${style.container} ${className}`}>
+      <div className={style.tableContainer}>
+        <div className={style.tableHeader}>
           <span>Наименование</span>
-          <span className={st.tableHeadTxt}>Цена</span>
-          <span className={st.tableHeadTxt}>Количество</span>
-          <span className={st.tableHeadTxt}>Стоимость</span>
+          <span className={style.tableHeadTxt}>Цена</span>
+          <span className={style.tableHeadTxt}>Количество</span>
+          <span className={style.tableHeadTxt}>Стоимость</span>
         </div>
-        <div className={`horizontal-divider ${st.divider}`}></div>
+        <div className={`horizontal-divider ${style.divider}`}></div>
         {items.length ? (
-          items.map(({ item, count }, idx) => (
-            <BasketRow item={item} count={count} isOrder={isOrder} />
-          ))
+          items.map(({ item, count }) => <BasketRow item={item} count={count} isOrder={isOrder} />)
         ) : (
           <>Корзина пуста</>
         )}

@@ -1,11 +1,14 @@
 import React, { FC, useState } from 'react';
-import { IFiltersParametrs } from '../../types/FilterParametrs';
-import styles from './FilterParametrsItems.module.scss';
-import filterIcon from '../../assets/staticIcons/filter.svg';
-import Filter from './Filter';
-import ModalFilters from './ModalFiltersWindow';
-import { regNumber } from '../../utils/regNumber';
+
+import filterIcon from '@/assets/staticIcons/filter.svg';
+import { IFiltersParametrs } from '@/types';
+import { regNumber } from '@/utils';
+
 import { InputPrice, Select, Switch } from '../UI';
+import { Filter } from './Filter';
+import { ModalFilters } from './ModalFiltersWindow';
+import style from './FilterParametrsItems.module.scss';
+
 interface Props {
   filters: IFiltersParametrs;
   setFilters: (filters: IFiltersParametrs) => void;
@@ -13,14 +16,6 @@ interface Props {
 
 const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
   const [modal, setModal] = useState<boolean>(false);
-
-  // const regValue = (prevValue: string, targetValue: string): string => {
-  //   const valueSplit = targetValue.split(/\s+/).join("");
-  //   const re = /^\d+$/;
-  //   let value = re.test(valueSplit) ? valueSplit : prevValue;
-  //   value = valueSplit ? value : "0";
-  //   return value;
-  // };
 
   const changeMinPrice = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({
@@ -73,15 +68,15 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.filterIconContainer} onClick={() => setModal(!modal)}>
+    <div className={style.container}>
+      <div className={style.filterIconContainer} onClick={() => setModal(!modal)}>
         <img src={filterIcon} />
-        <span className={styles.txtFilterIcon}>Фильтры</span>
+        <span className={style.txtFilterIcon}>Фильтры</span>
       </div>
 
       <Filter name="Цена">
         <InputPrice value={filters.price.minPrice} onChange={changeMinPrice} />
-        <span className={styles.dash}> — </span>
+        <span className={style.dash}> — </span>
         <InputPrice value={filters.price.maxPrice} onChange={changeMaxPrice} />
       </Filter>
 
@@ -114,4 +109,4 @@ const FilterParametrsItems: FC<Props> = ({ filters, setFilters }) => {
   );
 };
 
-export default FilterParametrsItems;
+export { FilterParametrsItems };

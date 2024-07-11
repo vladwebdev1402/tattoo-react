@@ -3,9 +3,10 @@ export * from './Typography';
 export * from './Slider';
 export * from './input';
 export * from './ItemsContainer';
-export * from './Select/Select'
+export * from './Select/Select';
 export * from './Checked/Checked';
 export * from './ImgRadio/ImgRadio';
 export * from './Modal/Modal';
 export * from './Radio/Radio';
 export * from './Switch/Switch';
+export * from './button/closeModal/CloseModal';

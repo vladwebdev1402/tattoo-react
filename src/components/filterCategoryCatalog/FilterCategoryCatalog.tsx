@@ -1,7 +1,10 @@
 import { FC } from 'react';
-import { category } from '../../data/catalogCategory';
-import st from './FIlterCategoryCatalog.module.scss';
+
+import { category } from '@/data';
+
 import { Button } from '../UI';
+import style from './FIlterCategoryCatalog.module.scss';
+
 interface Props {
   navigate?: (link: string) => void;
   setType?: (value: string) => void;
@@ -14,10 +17,10 @@ const FilterCategoryCatalog: FC<Props> = ({ navigate, setType, currentType = '',
     else if (setType) setType(str);
   };
   return (
-    <div className={st.containerFilters}>
-      <ul className={st.filterList}>
+    <div className={style.containerFilters}>
+      <ul className={style.filterList}>
         {all && (
-          <li className={st.filter}>
+          <li className={style.filter}>
             <Button
               borderStyle="default"
               onClick={() => onClick('all')}
@@ -28,7 +31,7 @@ const FilterCategoryCatalog: FC<Props> = ({ navigate, setType, currentType = '',
           </li>
         )}
         {category.slice(1).map((category) => (
-          <li className={st.filter} key={category.id}>
+          <li className={style.filter} key={category.id}>
             <Button
               borderStyle="default"
               onClick={() => onClick(category.link || '')}

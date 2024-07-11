@@ -26,4 +26,4 @@ const ProfilePage: FC = () => {
   );
 };
 
-export default ProfilePage;
+export { ProfilePage };

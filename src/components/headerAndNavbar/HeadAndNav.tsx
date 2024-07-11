@@ -1,19 +1,18 @@
-import React, { FC, useState, useEffect } from "react";
-import { useWidth } from "../../hooks/useWidth";
-import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
-import styles from "./HeadAndNav.module.scss";
+import { Header } from '../Header/Header';
+import { Navbar } from '../Navbar/Navbar';
 
-const HeadAndNav: FC = () => {
+import style from './HeadAndNav.module.scss';
+
+const HeadAndNav = () => {
   return (
-    <header className={styles.headContainer}>
-      <div className={styles.head}>
+    <header className={style.headContainer}>
+      <div className={style.head}>
         <Header />
-        <div className={`${styles.divider} horizontal-divider`}></div>
+        <div className={`${style.divider} horizontal-divider`}></div>
         <Navbar />
       </div>
     </header>
   );
 };
 
-export default HeadAndNav;
+export { HeadAndNav };

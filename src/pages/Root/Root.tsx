@@ -1,9 +1,8 @@
-import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
-import HeadAndNav from '../../components/headerAndNavbar/HeadAndNav';
 
-const Root: FC = () => {
+import { Footer, HeadAndNav } from '@/components';
+
+const Root = () => {
   return (
     <>
       <HeadAndNav />
@@ -13,4 +12,4 @@ const Root: FC = () => {
   );
 };
 
-export default Root;
+export { Root };

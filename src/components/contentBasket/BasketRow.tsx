@@ -1,8 +1,10 @@
 import { FC } from 'react';
 
-import { IShopItem } from '../../types/shopItem';
-import BtnChangeCount from '../btnChangeCount/BtnChangeCount';
-import st from './ContentBasket.module.scss';
+import { IShopItem } from '@/types';
+
+import { BtnChangeCount } from '../BtnChangeCount';
+import style from './ContentBasket.module.scss';
+
 interface Props {
   item: IShopItem;
   count?: number;
@@ -12,39 +14,41 @@ const BasketRow: FC<Props> = ({ item, isOrder, count }) => {
   const deleteItem = () => {};
 
   return (
-    <div className={st.tableRow}>
-      <div className={st.itemImgNameContainer}>
-        <div className={st.imgContainer}>
-          <img className={st.itemImg} src={item.img.img0} />
+    <div className={style.tableRow}>
+      <div className={style.itemImgNameContainer}>
+        <div className={style.imgContainer}>
+          <img className={style.itemImg} src={item.img.img0} />
         </div>
 
-        <div className={st.itemNameContainer}>
-          <span className={`${st.itemTxt} ${st.itemName}`}>{item.name}</span>
-          <span className={st.itemPrice}>Цена: {item.price}₽</span>
+        <div className={style.itemNameContainer}>
+          <span className={`${style.itemTxt} ${style.itemName}`}>{item.name}</span>
+          <span className={style.itemPrice}>Цена: {item.price}₽</span>
         </div>
       </div>
-      <div className={`${st.itemTxt} ${st.tablePrice}`}>{item.price.toLocaleString('ru-RU')}₽</div>
-      <div className={st.itemTxt}>
+      <div className={`${style.itemTxt} ${style.tablePrice}`}>
+        {item.price.toLocaleString('ru-RU')}₽
+      </div>
+      <div className={style.itemTxt}>
         {isOrder ? (
           <>
-            <span className={st.hint}>Количество: </span>
+            <span className={style.hint}>Количество: </span>
             {count}
           </>
         ) : (
-          <BtnChangeCount className={st.changeCountBtn} item={item} />
+          <BtnChangeCount className={style.changeCountBtn} item={item} />
         )}
       </div>
-      <div className={st.itemTxt}>
-        <span className={st.hint}>Стоимость: </span>
+      <div className={style.itemTxt}>
+        <span className={style.hint}>Стоимость: </span>
         {isOrder && count
           ? (item.price * count).toLocaleString('ru-RU')
           : (item.price * 0).toLocaleString('ru-RU')}
         ₽
       </div>
-      {!isOrder && <button className={st.closeBtn} onClick={deleteItem}></button>}
-      <div className={`horizontal-divider ${st.itemDivider}`}></div>
+      {!isOrder && <button className={style.closeBtn} onClick={deleteItem}></button>}
+      <div className={`horizontal-divider ${style.itemDivider}`}></div>
     </div>
   );
 };
 
-export default BasketRow;
+export { BasketRow };

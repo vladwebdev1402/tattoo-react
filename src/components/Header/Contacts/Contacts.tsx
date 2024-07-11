@@ -1,43 +1,44 @@
-import React from "react";
-import callImg from "../../../assets/staticIcons/call.svg";
-import mailImg from "../../../assets/staticIcons/mail.svg";
-import styles from "./Contacts.module.scss";
+import callImg from '@/assets/staticIcons/call.svg';
+import mailImg from '@/assets/staticIcons/mail.svg';
+
+import style from './Contacts.module.scss';
+
 const Contacts = () => {
   return (
-    <div className={styles.contacts}>
-      <div className={styles.phone}>
-        <div className={styles.number}>
+    <div className={style.contacts}>
+      <div className={style.phone}>
+        <div className={style.number}>
           <div className="icon">
             <img src={callImg} />
           </div>
-          <a className={styles.contactText}>+7 952 552-52-52</a>
+          <a className={style.contactText}>+7 952 552-52-52</a>
         </div>
-        <ul className={styles.contacsLink}>
-          <li className={styles.link}>
-            <a className={styles.linkTxt} href="#">
+        <ul className={style.contacsLink}>
+          <li className={style.link}>
+            <a className={style.linkTxt} href="#">
               Viber
             </a>
           </li>
-          <li className={styles.link}>
-            <a className={styles.linkTxt} href="#">
+          <li className={style.link}>
+            <a className={style.linkTxt} href="#">
               Whats App
             </a>
           </li>
-          <li className={styles.link}>
-            <a className={styles.linkTxt} href="#">
+          <li className={style.link}>
+            <a className={style.linkTxt} href="#">
               Telegram
             </a>
           </li>
         </ul>
       </div>
-      <div className={styles.mail}>
+      <div className={style.mail}>
         <div className="icon">
           <img src={mailImg} />
         </div>
-        <a className={styles.contactText}>Mr.Driskell@mail.ru</a>
+        <a className={style.contactText}>Mr.Driskell@mail.ru</a>
       </div>
     </div>
   );
 };
 
-export default Contacts;
+export { Contacts };

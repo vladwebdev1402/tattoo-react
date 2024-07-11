@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
 import { pathnames } from '@/data';
 
-import styles from './Breadcrumbs.module.scss';
+import style from './Breadcrumbs.module.scss';
 
 interface Props {
   params?: boolean;
@@ -15,11 +16,11 @@ const Breadcrumbs: FC<Props> = ({ params = false, nameParams = '', className = '
   let allPath = '/tattoo-react';
 
   return (
-    <div className={`${styles.breadcrumbsContainer} ${className}`}>
-      <ul className={styles.breadcrumbsList}>
-        <li className={`${styles.link}`}>
+    <div className={`${style.breadcrumbsContainer} ${className}`}>
+      <ul className={style.breadcrumbsList}>
+        <li className={`${style.link}`}>
           <Link to="/tattoo-react">
-            <span className={styles.linkTxt}>Главная</span>
+            <span className={style.linkTxt}>Главная</span>
           </Link>
         </li>
 
@@ -28,19 +29,19 @@ const Breadcrumbs: FC<Props> = ({ params = false, nameParams = '', className = '
           return (
             <li
               key={idx}
-              className={`${styles.link} ${idx === location.length - 1 && styles.active}`}
+              className={`${style.link} ${idx === location.length - 1 && style.active}`}
             >
-              <span className={styles.slash}>/</span>
+              <span className={style.slash}>/</span>
               <Link to={allPath}>
-                <span className={styles.linkTxt}>{pathnames[path]}</span>
+                <span className={style.linkTxt}>{pathnames[path]}</span>
               </Link>
             </li>
           );
         })}
         {params && (
-          <li className={`${styles.link} ${styles.active}`}>
+          <li className={`${style.link} ${style.active}`}>
             <Link to={allPath}>
-              <span className={styles.linkTxt}>{nameParams}</span>
+              <span className={style.linkTxt}>{nameParams}</span>
             </Link>
           </li>
         )}

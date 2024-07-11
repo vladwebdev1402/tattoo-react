@@ -1,9 +1,11 @@
 import { FC, useEffect, useRef, useState } from 'react';
+
 import { useWidth } from '@/hooks';
 import { IItemImg, IMarcers } from '@/types';
-import Marcers from '@/components/ShopItem/Marcers/Marcers';
 import FavoriteItem from '@/components/UI/icons/itemIcons/favoriteIcon/FavoriteItem';
 import { Slider } from '@/components/UI';
+import { Marcers } from '@/components';
+
 import st from './ImagesSlider.module.scss';
 interface Props {
   images: IItemImg;

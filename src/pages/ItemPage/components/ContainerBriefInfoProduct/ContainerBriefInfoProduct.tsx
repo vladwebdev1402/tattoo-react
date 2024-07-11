@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { IShopItem } from '../../../../types/shopItem';
-import BtnChangeCount from '../../../../components/btnChangeCount/BtnChangeCount';
+
+import { IShopItem } from '@/types';
+import { BtnChangeCount, Button, Typography } from '@/components';
+
 import st from './container.module.scss';
-import { Button, Typography } from '@/components';
 
 interface Props {
   item: IShopItem;

@@ -1,16 +1,19 @@
-import React, { FC } from "react";
-import { IMarcers } from "../../../types/shopItem";
-import st from "./Marcers.module.scss";
-import m1 from "../../../assets/staticIcons/marcers/new.svg";
-import m2 from "../../../assets/staticIcons/marcers/hot.svg";
-import m3 from "../../../assets/staticIcons/marcers/promotion.svg";
-import m4 from "../../../assets/staticIcons/marcers/discount.svg";
-import m5 from "../../../assets/staticIcons/marcers/no.svg";
+import { FC } from 'react';
+
+import { IMarcers } from '@/types';
+import m1 from '@/assets/staticIcons/marcers/new.svg';
+import m2 from '@/assets/staticIcons/marcers/hot.svg';
+import m3 from '@/assets/staticIcons/marcers/promotion.svg';
+import m4 from '@/assets/staticIcons/marcers/discount.svg';
+import m5 from '@/assets/staticIcons/marcers/no.svg';
+
+import style from './Marcers.module.scss';
+
 interface Props {
   marcers: IMarcers;
   className?: string;
 }
-const Marcers: FC<Props> = ({ marcers, className = "" }) => {
+const Marcers: FC<Props> = ({ marcers, className = '' }) => {
   const marcersImg: { [key: string]: string } = {
     new: m1,
     hot: m2,
@@ -19,9 +22,9 @@ const Marcers: FC<Props> = ({ marcers, className = "" }) => {
     no: m5,
   };
   return (
-    <div className={`${st.marcersContainer} ${className}`}>
+    <div className={`${style.marcersContainer} ${className}`}>
       {Object.keys(marcers).map((key, idx) => (
-        <div className={st.marcer} key={idx}>
+        <div className={style.marcer} key={idx}>
           <img src={marcersImg[key]} />
         </div>
       ))}
@@ -29,4 +32,4 @@ const Marcers: FC<Props> = ({ marcers, className = "" }) => {
   );
 };
 
-export default Marcers;
+export { Marcers };

@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import { IItemImg } from '../../../types/shopItem';
 
 import { Slider } from '@/components/UI';
+import { IItemImg } from '@/types';
 
-import styles from './ShopItemSwiper.module.scss';
+import style from './ShopItemSwiper.module.scss';
+
 interface Props {
   images: IItemImg;
   className?: string;
@@ -12,22 +13,22 @@ interface Props {
 const ShopItemSwiper: FC<Props> = ({ images, className = '' }) => {
   return (
     <>
-      <div className={`${styles.containerSlider}`}>
+      <div className={`${style.containerSlider}`}>
         <Slider
-          st__pagination={styles.slider__pagination}
-          st__pag__item={styles.pagination__item}
-          st__pag__item__active={styles.active}
+          st__pagination={style.slider__pagination}
+          st__pag__item={style.pagination__item}
+          st__pag__item__active={style.active}
         >
           {Object.values(images).map((img, idx) => (
-            <img key={idx} src={img} draggable="false" className={styles.itemImage} />
+            <img key={idx} src={img} draggable="false" className={style.itemImage} />
           ))}
         </Slider>
       </div>
-      <div className={`${styles.mobileContainerImg}  ${className}`}>
+      <div className={`${style.mobileContainerImg}  ${className}`}>
         <img src={images.img0} />
       </div>
     </>
   );
 };
 
-export default ShopItemSwiper;
+export { ShopItemSwiper };

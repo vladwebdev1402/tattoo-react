@@ -1,7 +1,10 @@
-import React, { FC } from "react";
-import { useNavigate } from "react-router-dom";
-import { ICategory } from "../../../../types/category";
-import styles from "./LinkCatalogBody.module.scss";
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { ICategory } from '@/types';
+
+import style from './LinkCatalogBody.module.scss';
+
 interface Props {
   items: ICategory[];
   brands: boolean;
@@ -9,11 +12,11 @@ interface Props {
 const CategoryContainer: FC<Props> = ({ items, brands }) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.categoryContainer}>
+    <div className={style.categoryContainer}>
       {items.map((item) => (
         <div
           key={item.id}
-          className={styles.category}
+          className={style.category}
           onClick={() => {
             if (brands) navigate(`brands/${item?.id}`);
             else navigate(`catalog/${item?.link}`);
@@ -26,4 +29,4 @@ const CategoryContainer: FC<Props> = ({ items, brands }) => {
   );
 };
 
-export default CategoryContainer;
+export { CategoryContainer };

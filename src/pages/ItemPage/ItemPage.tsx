@@ -68,4 +68,4 @@ const ItemPage: FC = () => {
   return <div className={st.load}></div>;
 };
 
-export default ItemPage;
+export { ItemPage };

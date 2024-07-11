@@ -3,25 +3,26 @@ import { FC } from 'react';
 import { IPromocodeItem } from '@/types';
 import { Button } from '../UI';
 
-import styles from './PromocodeItem.module.scss';
+import style from './PromocodeItem.module.scss';
+
 interface Props {
   promo: IPromocodeItem;
 }
 
 const PromocodeItem: FC<Props> = ({ promo }) => {
   return (
-    <div className={styles.promocodeItem}>
-      <img src={promo.img} className={styles.promItemImg} />
-      <div className={styles.promDescContainer}>
-        <div className={styles.promHeaderTxt}>{promo.name}</div>
-        <div className={styles.promDesc}>
+    <div className={style.promocodeItem}>
+      <img src={promo.img} className={style.promItemImg} />
+      <div className={style.promDescContainer}>
+        <div className={style.promHeaderTxt}>{promo.name}</div>
+        <div className={style.promDesc}>
           {promo.description.split('\n').map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
         </div>
       </div>
 
-      <div className={styles.btn}>
+      <div className={style.btn}>
         <Button
           onClick={() => {
             navigator.clipboard.writeText(promo.promocode);
@@ -35,4 +36,4 @@ const PromocodeItem: FC<Props> = ({ promo }) => {
   );
 };
 
-export default PromocodeItem;
+export { PromocodeItem };
