@@ -8,6 +8,7 @@ type ButtonProps = {
   borderStyle?: 'clip' | 'default';
   theme?: 'light' | 'dark';
   size?: 'small' | 'big';
+  active?: boolean;
   full?: boolean;
 };
 
@@ -20,6 +21,7 @@ const Button: FC<Props> = ({
   borderStyle = 'clip',
   size = 'big',
   full = false,
+  active = false,
   children,
   ...props
 }) => {
@@ -35,6 +37,7 @@ const Button: FC<Props> = ({
           [style.button_clip_small]: size === 'small' && borderStyle === 'clip',
           [style.button_clip_big]: size === 'big' && borderStyle === 'clip',
           [style.button_fullwidth]: full,
+          [style.button_active]: active,
         },
         className
       )}
