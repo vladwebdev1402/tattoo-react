@@ -1,0 +1,70 @@
+@import '@/styles/variables.scss';
+
+.h0 {
+  font-family: 'Forum';
+  font-size: 75px;
+  line-height: 75px;
+  color: $orange;
+  font-weight: 400;
+}
+
+.h1 {
+  font-family: 'Forum';
+  font-size: 60px;
+  line-height: 60px;
+  color: $dark;
+  font-weight: 400;
+}
+
+.h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34.5px;
+}
+
+.h3 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 28.75px;
+}
+
+.paragraph_17 {
+  font-size: 17px;
+  color: $dark;
+  line-height: 23.8px;
+}
+
+.adaptive {
+  .h0 {
+    @media (max-width: 992px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    @media (max-width: 576px) {
+      font-size: 35px;
+      font-size: 35px;
+    }
+  }
+  .h1 {
+    @media (max-width: 992px) {
+      font-size: 50px;
+      line-height: 65px;
+    }
+    @media (max-width: 576px) {
+      font-size: 25px;
+      line-height: 32.5px;
+    }
+  }
+  .h3 {
+    @media (max-width: 992px) {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 28.75px;
+    }
+    @media (max-width: 576px) {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 23px;
+    }
+  }
+}

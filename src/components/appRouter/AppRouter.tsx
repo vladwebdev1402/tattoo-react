@@ -1,22 +1,24 @@
-import React, { FC } from "react";
+import React, {FC} from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
-} from "react-router-dom";
-import CatalogPage from "../../pages/CatalogPage/CatalogPage";
-import CatalogCategoryPage from "../../pages/CatalogCategoryPage/CatalogCategoryPage";
-import ContactsPage from "../../pages/ContactsPage/ContactsPage";
-import ErrorPage from "../../pages/ErrorPage/ErrorPage";
-import ItemPage from "../../pages/ItemPage/ItemPage";
-import MainPage from "../../pages/MainPage/MainPage";
-import PromocodesPage from "../../pages/PromocodesPage/PromocodesPage";
-import Root from "../../pages/Root/Root";
-import BrandPage from "../../pages/BrandPage/BrandPage";
-import ProfilePage from "../../pages/ProfilePage/ProfilePage";
-import BasketPage from "../../pages/BasketPage/BasketPage";
-import ServicesPage from "../../pages/ServicesPage/ServicesPage";
+} from 'react-router-dom';
+import CatalogPage from '../../pages/CatalogPage/CatalogPage';
+import CatalogCategoryPage from '../../pages/CatalogCategoryPage/CatalogCategoryPage';
+import ContactsPage from '../../pages/ContactsPage/ContactsPage';
+import ErrorPage from '../../pages/ErrorPage/ErrorPage';
+import ItemPage from '../../pages/ItemPage/ItemPage';
+import MainPage from '../../pages/MainPage/MainPage';
+import PromocodesPage from '../../pages/PromocodesPage/PromocodesPage';
+import Root from '../../pages/Root/Root';
+import BrandPage from '../../pages/BrandPage/BrandPage';
+import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+import BasketPage from '../../pages/BasketPage/BasketPage';
+import ServicesPage from '../../pages/ServicesPage/ServicesPage';
+
+import {TestPage} from '@/pages/TestPage/TestPage';
 
 const AppRouter: FC = () => {
   const router = createBrowserRouter(
@@ -38,6 +40,7 @@ const AppRouter: FC = () => {
           path="/tattoo-react/catalog/basket/services"
           element={<ServicesPage />}
         />
+        <Route path="/tattoo-react/test" element={<TestPage />} />
         <Route path="/tattoo-react/*" element={<ErrorPage />} />
       </Route>
     )
