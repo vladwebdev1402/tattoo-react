@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 
-import img from '@/assets/images/hand.png';
+import img from '@/assets/images/hand.webp';
 import { Button, Checked, Input, Typography } from '@/components';
 
 import styles from './Subscribe.module.scss';

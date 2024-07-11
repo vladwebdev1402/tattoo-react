@@ -1,15 +1,15 @@
 import { IShopItem } from "../types/shopItem";
-import img0 from "../assets/images/tattoo-mashine/1.png";
-import img11 from "../assets/images/tattoo-mashine/2_1.png";
-import img12 from "../assets/images/tattoo-mashine/2_2.png";
-import img13 from "../assets/images/tattoo-mashine/2_3.png";
-import img14 from "../assets/images/tattoo-mashine/2_4.png";
-import img2 from "../assets/images/tattoo-mashine/3.png";
-import img3 from "../assets/images/tattoo-mashine/4.png";
-import img4 from "../assets/images/tattoo-mashine/5.png";
-import img5 from "../assets/images/tattoo-mashine/6.png";
-import img6 from "../assets/images/tattoo-mashine/7.png";
-import img7 from "../assets/images/tattoo-mashine/8.png";
+import img0 from "../assets/images/tattoo-mashine/1.webp";
+import img11 from "../assets/images/tattoo-mashine/2_1.webp";
+import img12 from "../assets/images/tattoo-mashine/2_2.webp";
+import img13 from "../assets/images/tattoo-mashine/2_3.webp";
+import img14 from "../assets/images/tattoo-mashine/2_4.webp";
+import img2 from "../assets/images/tattoo-mashine/3.webp";
+import img3 from "../assets/images/tattoo-mashine/4.webp";
+import img4 from "../assets/images/tattoo-mashine/5.webp";
+import img5 from "../assets/images/tattoo-mashine/6.webp";
+import img6 from "../assets/images/tattoo-mashine/7.webp";
+import img7 from "../assets/images/tattoo-mashine/8.webp";
 
 export const minishopData: IShopItem[] = [
   {

@@ -1,7 +1,9 @@
-import React, { FC } from 'react';
-import { IPromocodeItem } from '../../types/promocodeItem';
-import styles from './PromocodeItem.module.scss';
+import { FC } from 'react';
+
+import { IPromocodeItem } from '@/types';
 import { Button } from '../UI';
+
+import styles from './PromocodeItem.module.scss';
 interface Props {
   promo: IPromocodeItem;
 }

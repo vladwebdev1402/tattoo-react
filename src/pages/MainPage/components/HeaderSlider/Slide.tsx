@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import img from '@/assets/images/bg1.png';
+import img from '@/assets/images/bg1.webp';
 import { Button, Typography } from '@/components';
 
 import styles from './Swiper.module.scss';

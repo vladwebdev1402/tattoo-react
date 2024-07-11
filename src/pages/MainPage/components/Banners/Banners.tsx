@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import paintsImg from '@/assets/images/banners/paints.png';
-import foxxImg from '@/assets/images/banners/foxx-viper.png';
+import paintsImg from '@/assets/images/banners/paints.webp';
+import foxxImg from '@/assets/images/banners/foxx-viper.webp';
 import { Button } from '@/components';
 
 import styles from './Banners.module.scss';

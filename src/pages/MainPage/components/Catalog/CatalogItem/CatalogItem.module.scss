@@ -18,7 +18,7 @@
   &:nth-child(1) {
     flex: 1 1 494px;
     background-position: right;
-    background-image: url(@/assets/images/catalog-category/tattoo-kits.png);
+    background-image: url(@/assets/images/catalog-category/tattoo-kits.webp);
 
     .itemName {
       width: 30px;
@@ -40,7 +40,7 @@
   }
   &:nth-child(2) {
     flex: 1 1 701px;
-    background-image: url(@/assets/images/catalog-category/holders.png);
+    background-image: url(@/assets/images/catalog-category/holders.webp);
 
     @media (max-width: 992px) {
       background-position: center calc(100% - 10px);
@@ -51,7 +51,7 @@
   }
   &:nth-child(3) {
     flex: 1 1 342px;
-    background-image: url(@/assets/images/catalog-category/tattoo-machine.png);
+    background-image: url(@/assets/images/catalog-category/tattoo-machine.webp);
     @media (max-width: 992px) {
       background-position: center calc(100% - 10px);
       flex: 1 1 354px;
@@ -61,7 +61,7 @@
   }
   &:nth-child(4) {
     flex: 1 1 493px;
-    background-image: url(@/assets/images/catalog-category/wires.png);
+    background-image: url(@/assets/images/catalog-category/wires.webp);
     background-position: right;
     .itemName {
       width: 30px;
@@ -86,9 +86,9 @@
   &:nth-child(5) {
     flex: 1 1 341px;
 
-    background-image: url(@/assets/images/catalog-category/smallpaints.png);
+    background-image: url(@/assets/images/catalog-category/smallpaints.webp);
     @media (max-width: 992px) and (min-width: 577px) {
-      background-image: url(@/assets/images/catalog-category/paints.png);
+      background-image: url(@/assets/images/catalog-category/paints.webp);
       background-position: center bottom;
       flex: 1 1 728px;
       height: 314px;
@@ -96,29 +96,29 @@
   }
   &:nth-child(6) {
     flex: 1 1 495px;
-    background-image: url(@/assets/images/catalog-category/power.png);
+    background-image: url(@/assets/images/catalog-category/power.webp);
   }
   &:nth-child(7) {
     flex: 1 1 341px;
-    background-image: url(@/assets/images/catalog-category/tattoo-tips.png);
+    background-image: url(@/assets/images/catalog-category/tattoo-tips.webp);
   }
   &:nth-child(8) {
     flex: 1 1 341px;
-    background-image: url(@/assets/images/catalog-category/tattoo-needles.png);
+    background-image: url(@/assets/images/catalog-category/tattoo-needles.webp);
   }
   &:nth-child(9) {
     flex: 1 1 340px;
-    background-image: url(@/assets/images/catalog-category/consumables.png);
+    background-image: url(@/assets/images/catalog-category/consumables.webp);
   }
   &:nth-child(10) {
     flex: 1 1 340px;
 
-    background-image: url(@/assets/images/catalog-category/accessories.png);
+    background-image: url(@/assets/images/catalog-category/accessories.webp);
   }
   &:nth-child(11) {
     flex: 1 1 495px;
     margin-left: 1px;
-    background-image: url(@/assets/images/catalog-category/printers.png);
+    background-image: url(@/assets/images/catalog-category/printers.webp);
   }
   &:nth-child(n + 6) {
     @media (max-width: 992px) {

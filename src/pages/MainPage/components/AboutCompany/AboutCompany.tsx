@@ -1,5 +1,5 @@
 import { Button, Typography } from '@/components';
-import img from '@/assets/images/about.png';
+import img from '@/assets/images/about.webp';
 
 import styles from './AboutCompany.module.scss';
 
