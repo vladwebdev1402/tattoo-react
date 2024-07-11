@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import BrandImgHeader from '../../components/brandImgHeader/BrandImgHeader';
-import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
-import FilterCategoryCatalog from '../../components/filterCategoryCatalog/FilterCategoryCatalog';
 import ClipButton from '../../components/UI/button/clipButton/ClipButton';
-import { brands } from '../../data/catalogCategory';
-import { minishopData } from '../../data/minishopData';
-import { ICategory } from '../../types/category';
-import { IShopItem } from '../../types/shopItem';
 import st from './BrandPage.module.scss';
-import { ItemsContainer, ShopItem } from '@/components';
+import { Breadcrumbs, FilterCategoryCatalog, ItemsContainer, ShopItem } from '@/components';
+import { ICategory, IShopItem } from '@/types';
+import { brands, minishopData } from '@/data';
+import { BrandImgHeader } from './components';
 const BrandPage = () => {
   const params = useParams<{ id: string }>();
   const [brand, setBrand] = useState<ICategory>();

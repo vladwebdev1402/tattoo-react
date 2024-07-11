@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
-import FiltersBtnCatalogPage from '../../components/filtersBtnCatalogPage/FiltersBtnCatalogPage';
 import styles from './CatalogPage.module.scss';
 import { minishopData } from '../../data/minishopData';
 import ClipButton from '../../components/UI/button/clipButton/ClipButton';
@@ -9,7 +7,8 @@ import FilterParametrsItems from '../../components/filterParametrsItems/FilterPa
 import { useParams } from 'react-router-dom';
 import { IFiltersParametrs } from '../../types/FilterParametrs';
 import { IShopItem } from '../../types/shopItem';
-import { ItemsContainer, ShopItem } from '@/components';
+import { Breadcrumbs, ItemsContainer, ShopItem } from '@/components';
+import FiltersBtnCatalogPage from './components/FiltersBtnCatalogPage/FiltersBtnCatalogPage';
 
 interface CategoryPage {
   type: string;

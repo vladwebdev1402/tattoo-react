@@ -1,10 +1,8 @@
-import React, { FC } from "react";
-import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import TechnicalSupport from "../../components/contactsManagers/manager/TechnicalSupport";
-import ProfileDataInputs from "../../components/profileDataInputs.tsx/ProfileDataInputs";
-import StoryOrders from "../../components/storyOrders/StoryOrders";
-import { managersData } from "../../data/managersData";
-import st from "./ProfilePage.module.scss";
+import { FC } from 'react';
+import { Breadcrumbs, ProfileDataInputs, TechnicalSupport } from '@/components';
+import { managersData } from '@/data';
+import st from './ProfilePage.module.scss';
+import { StoryOrders } from './components';
 const ProfilePage: FC = () => {
   const discount: number = 15;
   return (

@@ -1,7 +1,8 @@
-import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
-import ContactsManagers from '../../components/contactsManagers/ContactsManagers';
-import ContactsOffice from '../../components/contactsOffice/ContactsOffice';
+import { Breadcrumbs } from '@/components';
+
+import { ContactsManagers, ContactsOffice } from './components';
 import styles from './ContactsPage.module.scss';
+
 const ContactsPage = () => {
   return (
     <div className={styles.containerContacts}>

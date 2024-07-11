@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs';
-import FilterCategoryCatalog from '../../components/filterCategoryCatalog/FilterCategoryCatalog';
 import { minishopData } from '../../data/minishopData';
 import st from './CatalogPage.module.scss';
-import { ItemsContainer, ShopItem } from '@/components';
+import { Breadcrumbs, FilterCategoryCatalog, ItemsContainer, ShopItem } from '@/components';
 const CatalogPage = () => {
   const navigate = useNavigate();
   const onClick = (link: string) => {

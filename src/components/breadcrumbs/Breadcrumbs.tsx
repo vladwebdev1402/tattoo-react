@@ -1,21 +1,18 @@
-import React, { FC } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { pathnames } from "../../data/pathnames";
-import styles from "./Breadcrumbs.module.scss";
+import { FC } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { pathnames } from '@/data';
+
+import styles from './Breadcrumbs.module.scss';
 
 interface Props {
   params?: boolean;
   nameParams?: string;
   className?: string;
 }
-const Breadcrumbs: FC<Props> = ({
-  params = false,
-  nameParams = "",
-  className = "",
-}) => {
-  const location = useLocation().pathname.split("/").slice(2);
+const Breadcrumbs: FC<Props> = ({ params = false, nameParams = '', className = '' }) => {
+  const location = useLocation().pathname.split('/').slice(2);
 
-  let allPath = "/tattoo-react";
+  let allPath = '/tattoo-react';
 
   return (
     <div className={`${styles.breadcrumbsContainer} ${className}`}>
@@ -31,9 +28,7 @@ const Breadcrumbs: FC<Props> = ({
           return (
             <li
               key={idx}
-              className={`${styles.link} ${
-                idx === location.length - 1 && styles.active
-              }`}
+              className={`${styles.link} ${idx === location.length - 1 && styles.active}`}
             >
               <span className={styles.slash}>/</span>
               <Link to={allPath}>
@@ -54,4 +49,4 @@ const Breadcrumbs: FC<Props> = ({
   );
 };
 
-export default Breadcrumbs;
+export { Breadcrumbs };

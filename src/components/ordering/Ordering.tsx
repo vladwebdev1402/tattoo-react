@@ -1,20 +1,20 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import ModalThanksOrder from "../modalThanksOrder/ModalThanksOrder";
-import ClipButton from "../UI/button/clipButton/ClipButton";
-import LineButton from "../UI/button/lineButton/LineButton";
-import MyChecked from "../UI/checked/MyChecked";
-import MyInput from "../UI/input/MyInput";
-import MyRadio from "../UI/radio/MyRadio";
-import st from "./Ordering.module.scss";
-import { deliveryRadios, paymentRadios } from "./radios";
+import ModalThanksOrder from '../modalThanksOrder/ModalThanksOrder';
+import ClipButton from '../UI/button/clipButton/ClipButton';
+import LineButton from '../UI/button/lineButton/LineButton';
+import MyChecked from '../UI/checked/MyChecked';
+import MyInput from '../UI/input/MyInput';
+import MyRadio from '../UI/radio/MyRadio';
+import st from './Ordering.module.scss';
+import { deliveryRadios, paymentRadios } from './radios';
 const Ordering = () => {
   const navigate = useNavigate();
-  const [payment, setPayment] = useState("Онлайн на сайте");
-  const [delivery, setDelivery] = useState("Курьерская служба");
+  const [payment, setPayment] = useState('Онлайн на сайте');
+  const [delivery, setDelivery] = useState('Курьерская служба');
   const [checked, setChecked] = useState(false);
-  const [promo, setPromo] = useState("");
+  const [promo, setPromo] = useState('');
   const [modal, setModal] = useState(false);
 
   return (
@@ -95,7 +95,7 @@ const Ordering = () => {
         <ClipButton
           className={st.clipBtn}
           onClick={() => {
-            navigate("/tattoo-react/catalog/basket/services");
+            navigate('/tattoo-react/catalog/basket/services');
           }}
           theme="dark"
         >
@@ -110,18 +110,13 @@ const Ordering = () => {
         >
           Купить в 1 клик
         </ClipButton>
-        <MyChecked
-          className={st.checked}
-          onChange={() => setChecked(!checked)}
-          checked={checked}
-        >
+        <MyChecked className={st.checked} onChange={() => setChecked(!checked)} checked={checked}>
           Согласен с
           <a href="#" className={st.link}>
             публичной офертой
-          </a>{" "}
+          </a>
           и
           <a href="#" className={st.link}>
-            {" "}
             обработкой персональных данных
           </a>
         </MyChecked>
@@ -130,4 +125,4 @@ const Ordering = () => {
   );
 };
 
-export default Ordering;
+export { Ordering };

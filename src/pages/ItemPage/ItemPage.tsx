@@ -1,19 +1,22 @@
-import React, { FC, useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
-import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
-import ContainerBriefInfoProduct from "../../components/containerBriefInfoProduct/ContainerBriefInfoProduct";
-import ContainerImagesProduct from "../../components/containerImagesProduct/ContainerImagesProduct";
-import Сharacteristics from "../../components/characteristics/Сharacteristics";
-import { minishopData } from "../../data/minishopData";
-import { IShopItem } from "../../types/shopItem";
-import st from "./ItemPage.module.scss";
-import SubBlockItems from "../../components/subBlockItems/SubBlockItems";
-import MoreItemsMoreDiscount from "../../components/moreItemsMoreDiscount/MoreItemsMoreDiscount";
-import ModalMashineWork from "../../components/modalMachineWork/ModalMashineWork";
+import { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { minishopData } from '../../data/minishopData';
+import { IShopItem } from '../../types/shopItem';
+import st from './ItemPage.module.scss';
+import { Breadcrumbs } from '@/components';
+import {
+  ContainerBriefInfoProduct,
+  ContainerImagesProduct,
+  ModalMashineWork,
+  MoreItemsMoreDiscount,
+  SubBlockItems,
+  Сharacteristics,
+} from './components';
 const ItemPage: FC = () => {
   const params = useParams<{ id: string }>();
   const [item, setItem] = useState<IShopItem>();
   const [modal, setModal] = useState<boolean>(false);
+
   useEffect(() => {
     setTimeout(() => {
       setItem(minishopData.filter((item) => item.id === Number(params.id))[0]);
@@ -21,37 +24,25 @@ const ItemPage: FC = () => {
   }, [params]);
 
   useEffect(() => {
-    window.scrollTo({ top: 100, behavior: "smooth" });
+    window.scrollTo({ top: 100, behavior: 'smooth' });
   }, [item]);
 
   if (item) {
     return (
       <div className={st.containerPage}>
         {modal && <ModalMashineWork setModal={setModal} />}
-        <Breadcrumbs
-          params={true}
-          nameParams={item.name}
-          className={st.breadcrumbs}
-        />
+        <Breadcrumbs params={true} nameParams={item.name} className={st.breadcrumbs} />
 
         <div className={st.itemNameTxt}>{item.name}</div>
         <div className={st.imagesAndBriefInfo}>
-          <ContainerImagesProduct
-            images={item.img}
-            marcers={item.marcers || {}}
-            id={item.id}
-          />
-          <ContainerBriefInfoProduct
-            modal={modal}
-            setModal={setModal}
-            item={item}
-          />
+          <ContainerImagesProduct images={item.img} marcers={item.marcers || {}} id={item.id} />
+          <ContainerBriefInfoProduct modal={modal} setModal={setModal} item={item} />
         </div>
         <div className={st.fullInfoContainer}>
           <div className={st.descriptionContainer}>
             <div className={st.titleBlock}>Описание</div>
             <div className={st.descriptionBlock}>
-              {item.description.split("/").map((desc) => (
+              {item.description.split('/').map((desc) => (
                 <p key={desc}>{desc}</p>
               ))}
             </div>
@@ -65,23 +56,11 @@ const ItemPage: FC = () => {
         </div>
         <MoreItemsMoreDiscount />
 
-        <SubBlockItems
-          title="Рекомендованные товары"
-          watchAll={() => {}}
-          items={minishopData}
-        />
+        <SubBlockItems title="Рекомендованные товары" watchAll={() => {}} items={minishopData} />
 
-        <SubBlockItems
-          title="Товары этого бренда"
-          watchAll={() => {}}
-          items={minishopData}
-        />
+        <SubBlockItems title="Товары этого бренда" watchAll={() => {}} items={minishopData} />
 
-        <SubBlockItems
-          title="Похожие товары"
-          watchAll={() => {}}
-          items={minishopData}
-        />
+        <SubBlockItems title="Похожие товары" watchAll={() => {}} items={minishopData} />
       </div>
     );
   }

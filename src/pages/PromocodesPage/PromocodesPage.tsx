@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import PromocodeItem from "../../components/promocodeItem/PromocodeItem";
-import styles from "./PromocodesPage.module.scss";
-import { promocodes } from "../../data/promocode";
-import Breadcrumbs from "../../components/breadcrumbs/Breadcrumbs";
+import React, { FC } from 'react';
+import PromocodeItem from '../../components/promocodeItem/PromocodeItem';
+import styles from './PromocodesPage.module.scss';
+import { promocodes } from '../../data/promocode';
+import { Breadcrumbs } from '@/components';
 const PromocodesPage: FC = () => {
   return (
     <div className={styles.promocodesContainer}>
