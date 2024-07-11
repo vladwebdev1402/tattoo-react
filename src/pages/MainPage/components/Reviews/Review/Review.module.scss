@@ -1,8 +1,11 @@
+@import "@/styles/variables.scss";
+
+
 .container {
   position: relative;
   min-width: 598px;
   height: 307px;
-  background-color: var(--black);
+  background-color: $black;
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -15,14 +18,12 @@
 }
 
 .reviewTxt {
-  flex-grow: 1;
   font-size: 17px;
-  line-height: 23.8px;
-  color: var(--gray);
+  color: $gray;
 }
 
 .divider {
-  background-color: var(--orange);
+  background-color: $orange;
   position: absolute;
   width: 100%;
 
@@ -44,12 +45,12 @@
 }
 
 .icon {
-  border: 1px solid var(--orange);
+  border: 1px solid $orange;
 }
 
 .instLink {
   margin-left: 15px;
-  color: var(--orange);
+  color: $orange;
   font-size: 20px;
   font-family: "Forum";
 }
@@ -59,7 +60,7 @@
   top: -50px;
   width: 80px;
   height: 80px;
-  border: 3px solid var(--orange);
+  border: 3px solid $orange;
   img {
     max-width: 100%;
   }

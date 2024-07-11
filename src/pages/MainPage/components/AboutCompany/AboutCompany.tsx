@@ -1,4 +1,4 @@
-import { Button } from '@/components';
+import { Button, Typography } from '@/components';
 import img from '@/assets/images/about.png';
 
 import styles from './AboutCompany.module.scss';
@@ -11,8 +11,10 @@ const AboutCompany = () => {
       </div>
 
       <div className={styles.aboutInfo}>
-        <span className={styles.aboutInfoHead}>Тату магазин Mr. Driskell</span>
-        <span className={styles.aboutInfoDesc}>
+        <Typography className={styles.aboutInfoHead} variant="h1" tag="h2">
+          Тату магазин Mr. Driskell
+        </Typography>
+        <Typography className={styles.aboutInfoDesc}>
           Приветствуем вас в Tattoo Mall — в нашем тату магазине собираются энтузиасты индустрии,
           профессиональные мастера и новички, которые только делают первые шаги в тату искусстве.
           Мы знаем, насколько важно грамотно и точно подобрать инструменты для продуктивных тату
@@ -24,7 +26,7 @@ const AboutCompany = () => {
           разработок и бесчисленных тестов под пристальным взглядом отечественных машиностроителей,
           космецевтов и брендов с мировым именем, эти товары нарабатывали опыт и каждый день
           становились лучше, чтобы показать, на что они способны, и помочь раскрыть ваш потенциал.
-        </span>
+        </Typography>
         <Button className={styles.btn} borderStyle="clip">
           О компании
         </Button>

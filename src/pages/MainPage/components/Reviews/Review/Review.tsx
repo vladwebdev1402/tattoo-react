@@ -4,6 +4,7 @@ import instImg from '@/assets/staticIcons/inst.svg';
 import { IReview } from '@/types';
 
 import st from './Review.module.scss';
+import { Typography } from '@/components';
 
 interface Props {
   review: IReview;
@@ -16,7 +17,7 @@ const Review: FC<Props> = ({ review }) => {
       <div className={st.faceContainer}>
         <img src={review.img} />
       </div>
-      <div className={st.reviewTxt}>{review.text}</div>
+      <Typography className={st.reviewTxt}>{review.text}</Typography>
       <div className={st.instContainer}>
         <div className={`icon ${st.icon}`}>
           <img src={instImg} />

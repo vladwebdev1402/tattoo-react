@@ -41,6 +41,7 @@
   padding: 20px 0px 30px 0px;
   position: absolute;
   transition: 0.2s;
+  height: 100%;
   @media screen and (max-width: 992px) {
     padding: 20px 0px 20px 0px;
   }
@@ -105,7 +106,7 @@
 
 %pseudo-btn {
   position: absolute;
-  content: "";
+  content: '';
   width: 11px;
   height: 1px;
   background-color: var(--dark);
