@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { IItemImg, IMarcers } from '../../../../types/shopItem';
 import Marcers from '../../../../components/ShopItem/Marcers/Marcers';
 import FavoriteItem from '../../../../components/UI/icons/itemIcons/favoriteIcon/FavoriteItem';

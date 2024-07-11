@@ -1,1 +1,1 @@
-export * from './Filters.module.scss';
+export * from './FiltersBtnCatalogPage';

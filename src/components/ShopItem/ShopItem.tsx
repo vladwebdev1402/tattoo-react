@@ -3,11 +3,11 @@ import { IShopItem } from '../../types/shopItem';
 import FavoriteItem from '../UI/icons/itemIcons/favoriteIcon/FavoriteItem';
 import ShopItemSwiper from './ShopItemSwiper/ShopItemSwiper';
 import styles from './ShopItem.module.scss';
-import ClipButton from '../UI/button/clipButton/ClipButton';
 import Marcers from './Marcers/Marcers';
 
 import { useNavigate } from 'react-router-dom';
 import MyChecked from '../UI/checked/MyChecked';
+import { Button } from '../UI';
 
 interface ShopItemProps {
   item: IShopItem;
@@ -52,10 +52,10 @@ const ShopItem: FC<ShopItemProps> = ({
 
         <div className={styles.button}>
           {!inBasket && (
-            <ClipButton onClick={() => setInBasket(true)} theme="light">
+            <Button onClick={() => setInBasket(true)} theme="light" size="small">
               <span className={styles.addTextDesktop}>Добавить в корзину</span>
               <span className={styles.addTextMobile}>В корзину</span>
-            </ClipButton>
+            </Button>
           )}
 
           {inBasket && (

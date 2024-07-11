@@ -1,4 +1,4 @@
-import FilterBtn from '@/components/UI/button/filterBtn/FilterBtn';
+import { Button } from '@/components';
 
 import styles from './Filters.module.scss';
 
@@ -7,20 +7,20 @@ const FiltersBtnCatalogPage = () => {
     <div className={styles.containerFilters}>
       <ul className={styles.filterList}>
         <li className={styles.filter}>
-          <FilterBtn>Для начинающих</FilterBtn>
+          <Button borderStyle="default">Для начинающих</Button>
         </li>
         <li className={styles.filter}>
-          <FilterBtn>От билдеров</FilterBtn>
+          <Button borderStyle="default">От билдеров</Button>
         </li>
         <li className={styles.filter}>
-          <FilterBtn>Для профессионалов</FilterBtn>
+          <Button borderStyle="default">Для профессионалов</Button>
         </li>
         <li className={styles.filter}>
-          <FilterBtn>Расходники</FilterBtn>
+          <Button borderStyle="default">Расходники</Button>
         </li>
       </ul>
     </div>
   );
 };
 
-export default FiltersBtnCatalogPage;
+export { FiltersBtnCatalogPage };

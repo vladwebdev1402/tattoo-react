@@ -1,8 +1,8 @@
-import React, { FC, useContext } from "react";
+import { FC } from 'react';
 
-import { IShopItem } from "../../types/shopItem";
-import BtnChangeCount from "../btnChangeCount/BtnChangeCount";
-import st from "./ContentBasket.module.scss";
+import { IShopItem } from '../../types/shopItem';
+import BtnChangeCount from '../btnChangeCount/BtnChangeCount';
+import st from './ContentBasket.module.scss';
 interface Props {
   item: IShopItem;
   count?: number;
@@ -23,9 +23,7 @@ const BasketRow: FC<Props> = ({ item, isOrder, count }) => {
           <span className={st.itemPrice}>Цена: {item.price}₽</span>
         </div>
       </div>
-      <div className={`${st.itemTxt} ${st.tablePrice}`}>
-        {item.price.toLocaleString("ru-RU")}₽
-      </div>
+      <div className={`${st.itemTxt} ${st.tablePrice}`}>{item.price.toLocaleString('ru-RU')}₽</div>
       <div className={st.itemTxt}>
         {isOrder ? (
           <>
@@ -39,13 +37,11 @@ const BasketRow: FC<Props> = ({ item, isOrder, count }) => {
       <div className={st.itemTxt}>
         <span className={st.hint}>Стоимость: </span>
         {isOrder && count
-          ? (item.price * count).toLocaleString("ru-RU")
-          : (item.price * 0).toLocaleString("ru-RU")}
+          ? (item.price * count).toLocaleString('ru-RU')
+          : (item.price * 0).toLocaleString('ru-RU')}
         ₽
       </div>
-      {!isOrder && (
-        <button className={st.closeBtn} onClick={deleteItem}></button>
-      )}
+      {!isOrder && <button className={st.closeBtn} onClick={deleteItem}></button>}
       <div className={`horizontal-divider ${st.itemDivider}`}></div>
     </div>
   );

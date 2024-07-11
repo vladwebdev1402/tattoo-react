@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import LineButton from '../../../../components/UI/button/lineButton/LineButton';
+import { FC } from 'react';
+import { Button } from '@/components';
 import st from './StoryOrders.module.scss';
 interface Props {
   isOpen: boolean;
@@ -9,7 +9,8 @@ const OrderFooter: FC<Props> = ({ isOpen, setIsOpen }) => {
   return (
     <div className={st.footerContainer}>
       <div className="horizontal-divider"></div>
-      <LineButton
+      <Button
+        variant="text"
         onClick={() => {
           setIsOpen(!isOpen);
         }}
@@ -17,7 +18,7 @@ const OrderFooter: FC<Props> = ({ isOpen, setIsOpen }) => {
       >
         {!isOpen && <span className={st.lineBtnText}>Подробнее о заказе</span>}
         {isOpen && <span className={st.lineBtnText}>Скрыть информацию</span>}
-      </LineButton>
+      </Button>
     </div>
   );
 };

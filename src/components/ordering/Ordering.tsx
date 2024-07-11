@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ModalThanksOrder from '../modalThanksOrder/ModalThanksOrder';
-import ClipButton from '../UI/button/clipButton/ClipButton';
-import LineButton from '../UI/button/lineButton/LineButton';
 import MyChecked from '../UI/checked/MyChecked';
 import MyInput from '../UI/input/MyInput';
 import MyRadio from '../UI/radio/MyRadio';
 import st from './Ordering.module.scss';
 import { deliveryRadios, paymentRadios } from './radios';
+import { Button } from '../UI';
 const Ordering = () => {
   const navigate = useNavigate();
   const [payment, setPayment] = useState('Онлайн на сайте');
@@ -49,9 +48,9 @@ const Ordering = () => {
               setPromo(e.target.value);
             }}
           />
-          <LineButton className={st.lineBtn} onClick={() => {}}>
+          <Button variant="text" className={st.lineBtn} onClick={() => {}}>
             Активировать промокод
-          </LineButton>
+          </Button>
         </div>
         <div className="horizontal-divider"></div>
       </div>
@@ -92,16 +91,15 @@ const Ordering = () => {
       </div>
 
       <div className={st.btnWrapper}>
-        <ClipButton
-          className={st.clipBtn}
+        <Button
           onClick={() => {
             navigate('/tattoo-react/catalog/basket/services');
           }}
           theme="dark"
         >
           Оформить заказ
-        </ClipButton>
-        <ClipButton
+        </Button>
+        <Button
           className={st.clipBtn}
           onClick={() => {
             setModal(true);
@@ -109,7 +107,7 @@ const Ordering = () => {
           theme="light"
         >
           Купить в 1 клик
-        </ClipButton>
+        </Button>
         <MyChecked className={st.checked} onChange={() => setChecked(!checked)} checked={checked}>
           Согласен с
           <a href="#" className={st.link}>

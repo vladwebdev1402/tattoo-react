@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, MouseEvent, useState } from 'react';
 import st from './ModalMashineWork.module.scss';
 import img1 from '@/assets/images/tattoo-works/1.png';
 import img2 from '@/assets/images/tattoo-works/2.png';
@@ -26,7 +26,7 @@ const ModalMashineWork: FC<Props> = ({ setModal }) => {
     >
       <div
         className={st.swiperContainer}
-        onClick={(e: React.MouseEvent) => {
+        onClick={(e: MouseEvent) => {
           e.stopPropagation();
         }}
       >

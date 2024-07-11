@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import { IContactPerson } from '../../types/contactPerson';
 import { regNumber } from '../../utils/regNumber';
-import LineButton from '../UI/button/lineButton/LineButton';
 import MyInput from '../UI/input/MyInput';
 import st from './ProfileDataInputs.module.scss';
+import { Button } from '../UI';
 interface Props {
   isBasket?: boolean;
 }
@@ -27,9 +27,9 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
         <div className={st.profileDataHead}>
           <div className={st.headTxt}>Информация о получателе</div>
           {!isBasket && (
-            <LineButton onClick={() => {}}>
+            <Button variant="text" onClick={() => {}}>
               <span className={st.editTxt}> Редактировать</span>
-            </LineButton>
+            </Button>
           )}
         </div>
         <div className={st.inputsContainer}>
@@ -64,9 +64,9 @@ const ProfileDataInputs: FC<Props> = ({ isBasket = false }) => {
         <div className={st.profileDataHead}>
           <div className={st.headTxt}>Адрес доставки</div>
           {!isBasket && (
-            <LineButton onClick={() => {}}>
+            <Button variant="text" onClick={() => {}}>
               <span className={st.editTxt}> Редактировать</span>
-            </LineButton>
+            </Button>
           )}
         </div>
         <div className={st.inputsContainer}>

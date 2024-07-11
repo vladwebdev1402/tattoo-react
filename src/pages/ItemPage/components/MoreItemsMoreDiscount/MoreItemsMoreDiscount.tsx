@@ -1,8 +1,7 @@
 import React from 'react';
-import { minishopData } from '../../../../data/minishopData';
-import ClipButton from '../../../../components/UI/button/clipButton/ClipButton';
 import st from './MoreItemsMoreDiscount.module.scss';
-import { ShopItem } from '../../../../components/ShopItem';
+import { minishopData } from '@/data';
+import { Button, ShopItem } from '@/components';
 const MoreItemsMoreDiscount = () => {
   return (
     <div className={st.moreItemsMoreDiscountContainer}>
@@ -21,9 +20,9 @@ const MoreItemsMoreDiscount = () => {
 
         <div className={`horizontal-divider ${st.divider}`}></div>
         <div className={st.discountContainer}>
-          <ClipButton className={st.addInBasketBtn} onClick={() => {}} theme="dark">
+          <Button className={st.addInBasketBtn} onClick={() => {}} full>
             Добавить в корзину
-          </ClipButton>
+          </Button>
           <div className={st.priceInfo}>
             <div className={st.priceContainer}>
               <div className={st.countItems}>3 товара на сумму:</div>

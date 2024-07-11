@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styles from './CatalogPage.module.scss';
 import { minishopData } from '../../data/minishopData';
-import ClipButton from '../../components/UI/button/clipButton/ClipButton';
 import { pathnames } from '../../data/pathnames';
 import FilterParametrsItems from '../../components/filterParametrsItems/FilterParametrsItems';
 import { useParams } from 'react-router-dom';
 import { IFiltersParametrs } from '../../types/FilterParametrs';
 import { IShopItem } from '../../types/shopItem';
-import { Breadcrumbs, ItemsContainer, ShopItem } from '@/components';
-import FiltersBtnCatalogPage from './components/FiltersBtnCatalogPage/FiltersBtnCatalogPage';
+import { Breadcrumbs, Button, ItemsContainer, ShopItem } from '@/components';
+import { FiltersBtnCatalogPage } from './components';
 
 interface CategoryPage {
   type: string;
@@ -81,7 +80,7 @@ const CatalogPage = () => {
       </ItemsContainer>
 
       {items.length !== 0 && (
-        <ClipButton
+        <Button
           className={styles.btn}
           theme="light"
           onClick={() => {
@@ -89,7 +88,7 @@ const CatalogPage = () => {
           }}
         >
           Показать ещё
-        </ClipButton>
+        </Button>
       )}
     </div>
   );

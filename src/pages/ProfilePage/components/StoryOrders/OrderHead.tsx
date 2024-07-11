@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import { IProductOrder } from '../../../../types/orderProduct';
+import { FC } from 'react';
 import st from './StoryOrders.module.scss';
+import { IProductOrder } from '@/types';
 
 interface Props {
   isOpen: boolean;

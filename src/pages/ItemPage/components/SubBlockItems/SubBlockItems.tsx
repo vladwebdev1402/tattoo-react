@@ -1,8 +1,10 @@
 import { FC, useState } from 'react';
-import { IShopItem } from '../../../../types/shopItem';
+
+import { ShopItem, Slider } from '@/components';
+import { IShopItem } from '@/types';
+
 import st from './SubBlockItems.module.scss';
-import { Slider } from '../../../../components/UI';
-import { ShopItem } from '../../../../components/ShopItem';
+
 interface Props {
   watchAll: () => void;
   items: IShopItem[];

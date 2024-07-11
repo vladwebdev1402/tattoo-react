@@ -1,9 +1,8 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 import { IShopItem } from '../../../../types/shopItem';
-import ClipButton from '../../../../components/UI/button/clipButton/ClipButton';
-import LineButton from '../../../../components/UI/button/lineButton/LineButton';
 import BtnChangeCount from '../../../../components/btnChangeCount/BtnChangeCount';
 import st from './container.module.scss';
+import { Button } from '@/components';
 
 interface Props {
   item: IShopItem;
@@ -30,21 +29,20 @@ const ContainerBriefInfoProduct: FC<Props> = ({ item, modal, setModal }) => {
         <div className={st.descriptionTxt}>Описание:</div>
         <span className={st.descriptionTxt}>{item.description.split('/')[0]}</span>
       </div>
-      <LineButton
+      <Button
         className={st.btnJob}
+        variant="text"
         onClick={() => {
           setModal(!modal);
         }}
       >
         Работы сделанные этой машинкой
-      </LineButton>
+      </Button>
       <div className={st.basketUtilsContainer}>
         <div className={st.utilsBasket}>
           <BtnChangeCount item={item} className={st.desktopChangeCount} />
           <div className={st.addInBasketBtn}>
-            <ClipButton theme="dark" onClick={() => {}}>
-              Добавить в корзину
-            </ClipButton>
+            <Button onClick={() => {}}>Добавить в корзину</Button>
           </div>
           <button className={st.shareBtn}>Поделиться</button>
         </div>

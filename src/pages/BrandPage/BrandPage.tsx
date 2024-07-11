@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ClipButton from '../../components/UI/button/clipButton/ClipButton';
 import st from './BrandPage.module.scss';
-import { Breadcrumbs, FilterCategoryCatalog, ItemsContainer, ShopItem } from '@/components';
+import { Breadcrumbs, Button, FilterCategoryCatalog, ItemsContainer, ShopItem } from '@/components';
 import { ICategory, IShopItem } from '@/types';
 import { brands, minishopData } from '@/data';
 import { BrandImgHeader } from './components';
@@ -41,9 +40,9 @@ const BrandPage = () => {
       </ItemsContainer>
 
       {filterItems.length > 0 && (
-        <ClipButton theme="light" onClick={() => {}} className={st.btn}>
+        <Button theme="light" onClick={() => {}} className={st.btn}>
           Показать ещё
-        </ClipButton>
+        </Button>
       )}
     </div>
   );

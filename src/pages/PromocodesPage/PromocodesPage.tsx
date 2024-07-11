@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import PromocodeItem from '../../components/promocodeItem/PromocodeItem';
 import styles from './PromocodesPage.module.scss';
 import { promocodes } from '../../data/promocode';
