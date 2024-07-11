@@ -1,14 +1,14 @@
 import { ICategory } from "../types/category";
-import img1 from "../assets/images/brands/1.png"
-import img2 from "../assets/images/brands/2.png"
-import img3 from "../assets/images/brands/3.png"
-import img4 from "../assets/images/brands/4.png"
-import img5 from "../assets/images/brands/5.png"
-import img6 from "../assets/images/brands/6.png"
-import img7 from "../assets/images/brands/7.png"
-import img8 from "../assets/images/brands/8.png"
-import img9 from "../assets/images/brands/9.png"
-import img10 from "../assets/images/brands/10.png"
+import img1 from "../assets/images/brands/brand-1.png"
+import img2 from "../assets/images/brands/brand-2.png"
+import img3 from "../assets/images/brands/brand-3.png"
+import img4 from "../assets/images/brands/brand-4.png"
+import img5 from "../assets/images/brands/brand-5.png"
+import img6 from "../assets/images/brands/brand-6.png"
+import img7 from "../assets/images/brands/brand-7.png"
+import img8 from "../assets/images/brands/brand-8.png"
+import img9 from "../assets/images/brands/brand-9.png"
+import img10 from "../assets/images/brands/brand-10.png"
 export const category: ICategory[] = [
     {id: 0, name: "Новинки", link: "news", filter: "Новинки"},
     {id: 1, name: "Наборы для татуировок", link: "tatto-kits", filter: "Промо наборы"},
